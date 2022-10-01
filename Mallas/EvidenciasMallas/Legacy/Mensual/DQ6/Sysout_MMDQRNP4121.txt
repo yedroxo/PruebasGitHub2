@@ -1,0 +1,18 @@
++ fechaodate=
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ DSLOGS=/SREPGRM/Shells/Logs
++ PATH=/SREPGRM/IFRS9_Output/Codigos
++ FILENAM=P0_Ejecucion_General_Output
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/P0_Ejecucion_General_Output_20211213_1829.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211213_1829 INICIA PROCESO IFRS9 MENSUAL'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO IFRS9 MENSUAL                                     *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 13/12/2021 hora:18:29:21 '            *'
++ echo '***********************************************************************************************'
++ PASO_00

@@ -1,0 +1,97 @@
++ CDDIR=/NDM36/cdunix/
++ NDMAPICFG=/NDM36/cdunix//ndm/cfg/cliapi/ndmapi.cfg
++ fecha=20220731
++ export NDMAPICFG
++ set -v
+$CDDIR/ndm/bin/direct  -x << EOJ
+submit maxdelay=unlimited
+       procUNX     process    snode=CDLPMSASMET03
+       stepUNX1    copy from  (pnode
+                     file=/etl_work/idi_fs16/MDCO/KYHI_PFIN_PFI_MEX_${fecha}_0001.dat
+                     sysopts='strip.blanks=no:datatype=binary:'
+                           )
+                     to    (snode
+                     file=/SREPGRM/RISK_TEST/CTLG/Insumos/KYHI_PFIN_PFI_MEX_${fecha}_0001.dat
+                     disp=rpl
+                     sysopts='strip.blanks=no:datatype=binary:'
+                           )
+                     COMPRESS EXTENDED
+      valida1   if (stepUNX1 = 0) then
+	   borra  run task (pgm=unix) pnode
+	          sysopts="rm -f /etl_work/idi_fs16/MDCO/KYHI_PFIN_PFI_MEX_${fecha}_0001.dat"
+              eif					 					 
+pend;
+EOJ
++ /NDM36/cdunix//ndm/bin/direct -x
++ 0<< \EOJ
+submit maxdelay=unlimited
+       procUNX     process    snode=CDLPMSASMET03
+       stepUNX1    copy from  (pnode
+                     file=/etl_work/idi_fs16/MDCO/KYHI_PFIN_PFI_MEX_20220731_0001.dat
+                     sysopts='strip.blanks=no:datatype=binary:'
+                           )
+                     to    (snode
+                     file=/SREPGRM/RISK_TEST/CTLG/Insumos/KYHI_PFIN_PFI_MEX_20220731_0001.dat
+                     disp=rpl
+                     sysopts='strip.blanks=no:datatype=binary:'
+                           )
+                     COMPRESS EXTENDED
+      valida1   if (stepUNX1 = 0) then
+	   borra  run task (pgm=unix) pnode
+	          sysopts="rm -f /etl_work/idi_fs16/MDCO/KYHI_PFIN_PFI_MEX_20220731_0001.dat"
+              eif					 					 
+pend;
+EOJ
+
+	**************************************************************
+	*                                                            *
+	*            Licensed Materials - Property of IBM            *
+	*                                                            *
+	* IBM(R) Sterling Connect:Direct(R) for UNIX 4.2.0.4_iFix056 *
+	*                   Build date: 11Jul2017                    *
+	*                                                            *
+	*  (C) Copyright IBM Corp. 1992, 2016 All Rights Reserved.   *
+	*                                                            *
+	**************************************************************
+
+Direct> Enter a ';' at the end of a command to submit it. Type 'quit;' to exit CLI.
+
+submit maxdelay=unlimited
+        procUNX     process    snode=CDLPMSASMET03
+        stepUNX1    copy from  (pnode
+                      file=/etl_work/idi_fs16/MDCO/KYHI_PFIN_PFI_MEX_20220731_0001.dat
+                      sysopts='strip.blanks=no:datatype=binary:'
+                            )
+                      to    (snode
+                      file=/SREPGRM/RISK_TEST/CTLG/Insumos/KYHI_PFIN_PFI_MEX_20220731_0001.dat
+                      disp=rpl
+                      sysopts='strip.blanks=no:datatype=binary:'
+                            )
+                      COMPRESS EXTENDED
+       valida1   if (stepUNX1 = 0) then
+ 	   borra  run task (pgm=unix) pnode
+ 	          sysopts="rm -f /etl_work/idi_fs16/MDCO/KYHI_PFIN_PFI_MEX_20220731_0001.dat"
+               eif					 					 
+ pend;
+ 
+Process Submitted, Process Number = 18974
+                   Return code    = 0
+                   Message id     = XSMG252I
+Direct> 
+Connect:Direct CLI Terminated...
+SAVE=$?
++ SAVE=0
+echo $SAVE
++ echo 0
+0
+if [[ $SAVE > 0 ]]
+then
+   echo 'Error:$SAVE'
+exit 1
+fi
++ [[ 0 > 0 ]]
+echo 'No error'
++ echo 'No error'
+No error
+exit 0
++ exit 0

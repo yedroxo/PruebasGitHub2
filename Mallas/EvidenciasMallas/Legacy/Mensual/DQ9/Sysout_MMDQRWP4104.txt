@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/RAF/Setting/ConfRaf.xlsx CREATE 0 60 10 3 10
+1123 19:15:00 : File '/SREPGRM/RAF/Setting/ConfRaf.xlsx' exists, it's current size is 2911650 bytes . id=1.
+1123 19:15:30 : File transfer was completed. The size of file '/SREPGRM/RAF/Setting/ConfRaf.xlsx' is 2911650 bytes. id=1. Modified 18/11/2021 10:47

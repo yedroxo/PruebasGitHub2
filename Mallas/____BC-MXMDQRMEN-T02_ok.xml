@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported at 06-07-2021 12:33:08-->
+<DEFTABLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Folder.xsd">
+    <FOLDER DATACENTER="CTM_CTRLMCCR" VERSION="900" PLATFORM="UNIX" FOLDER_NAME="BC-MXMDQRMEN-T02" FOLDER_ORDER_METHOD="SYSTEM" REAL_FOLDER_ID="0" TYPE="1">
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4001" DESCRIPTION="Generacion de Atributos de Contrato CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh CTO" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVOC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVOC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0086Concluyo de forma exitosa el job %%JOBNAME para la carga de Atributos de Contrato CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0086Concluyo de forma fallida el job %%JOBNAME para la carga de Atributos de Contrato CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4002" DESCRIPTION="Generacion de Atributos de Cliente CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh CTE" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVCC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVCC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0085Concluyo de forma exitosa el job %%JOBNAME para la carga de Atributos de Cliente CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0076Concluyo de forma fallida el job %%JOBNAME para la Atributos de Cliente CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4003" DESCRIPTION="Generacion de Vertical de Saldos CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh SDO" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVVC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVVC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0083Concluyo de forma exitosa el job %%JOBNAME para la carga de Vertical de Saldos CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0083Concluyo de forma fallida el job %%JOBNAME para la carga de Vertical de Saldos CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4004" DESCRIPTION="Generacion de Garantias CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh GAR" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVGC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVGC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0074Concluyo de forma exitosa el job %%JOBNAME para la carga de Garantias CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0074Concluyo de forma fallida el job %%JOBNAME para la carga de Garantias CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4005" DESCRIPTION="Generacion de Garantes CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh GTE" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D2" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVTC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVTC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0073Concluyo de forma exitosa el job %%JOBNAME para la carga de Garantes CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0073Concluyo de forma fallida el job %%JOBNAME para la carga de Garantes CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4006" DESCRIPTION="Generacion de Scoring Vision Regulatorio CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh SCOR" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D2" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVSC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVSC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0091Concluyo de forma exitosa el job %%JOBNAME para la carga de Scoring Vision Regulatorio CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0091Concluyo de forma fallida el job %%JOBNAME para la carga de Scoring Vision Regulatorio CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4007" DESCRIPTION="Generacion de Rating vision regulatorio CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh RTG" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D2" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVRC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVRC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0090Concluyo de forma exitosa el job %%JOBNAME para la carga de Rating vision regulatorio CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0090Concluyo de forma fallida el job %%JOBNAME para la carga de Rating vision regulatorio CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4008" DESCRIPTION="Generacion de Atributos contrato mercados CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh CTOM" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVON00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVON00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0092Concluyo de forma exitosa el job %%JOBNAME para la carga de Atributos contrato mercados CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0092Concluyo de forma fallida el job %%JOBNAME para la carga de Atributos contrato mercados CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4009" DESCRIPTION="Generacion de Renta Variable Modelo Interno CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh RVMI" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVIC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVIC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0094Concluyo de forma exitosa el job %%JOBNAME para la carga de Renta Variable Modelo Interno CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0094Concluyo de forma fallida el job %%JOBNAME para la carga de Renta Variable Modelo Interno CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4010" DESCRIPTION="Generacion de Comprado Vendido CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh COV" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVKC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVKC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0081Concluyo de forma exitosa el job %%JOBNAME para la carga de Comprado Vendido CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0081Concluyo de forma fallida el job %%JOBNAME para la carga de Comprado Vendido CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4011" DESCRIPTION="Generacion de Estados Financieros CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh EEFF" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D7" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVED00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVED00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0085Concluyo de forma exitosa el job %%JOBNAME para la carga de Estados Financieros COREz" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0084Concluyo de forma fallida el job %%JOBNAME para la carga de Estados Financieros CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4012" DESCRIPTION="Generacion de Acuerdo Colateral CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh ACCO" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVLC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVLC00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0082Concluyo de forma exitosa el job %%JOBNAME para la carga de Acuerdo Colateral CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0082Concluyo de forma fallida el job %%JOBNAME para la carga de Acuerdo Colateral CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4017" DESCRIPTION="Generacion de Marcaje_Malos_RAR_Cliente CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh MMRARCTE" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVMC00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVMC00" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRNP4017-TO-MMDQRNP4019" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0090Concluyo de forma exitosa el job %%JOBNAME para la carga de Marcaje_Malos_RAR_Cliente CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0091Concluyo de forma fallida el job %%JOBNAME para la carga de  Marcaje_Malos_RAR_Cliente CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4014" DESCRIPTION="Generacion de Marcaje_Malos_nDoD_cliente CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh NDODCTE" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MMDQRNP4013-TO-MMDQRNP4014" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MMDQRNP4013-TO-MMDQRNP4014" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0091Concluyo de forma exitosa el job %%JOBNAME para la carga de Marcaje_Malos_nDoD_cliente CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0091Concluyo de forma fallida el job %%JOBNAME para la carga de Marcaje_Malos_nDoD_cliente CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4015" DESCRIPTION="Generacion de Fallidos CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh FALL" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVFC01" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVFC01" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0073Concluyo de forma exitosa el job %%JOBNAME para la carga de Fallidos CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0073Concluyo de forma fallida el job %%JOBNAME para la carga de Fallidos CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4013" DESCRIPTION="Generacion de Marcaje_Malos_nDoD_contrato CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh NDODCTO" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVDD00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVDD00" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRNP4013-TO-MMDQRNP4014" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0092Concluyo de forma exitosa el job %%JOBNAME para la carga de Marcaje_Malos_nDoD_contrato CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0092Concluyo de forma fallida el job %%JOBNAME para la carga de Marcaje_Malos_nDoD_contrato CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4016" DESCRIPTION="Generacion de Atributos Derivados SACCR CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh SACCR" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVUH00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVUH00" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0073Concluyo de forma exitosa el job %%JOBNAME para la carga de Fallidos CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0073Concluyo de forma fallida el job %%JOBNAME para la carga de Fallidos CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4018" DESCRIPTION="Generacion de Marcaje_Fechas_Malos_RAR_Cliente CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh FMRARCTE" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MX2CRX_MGYLFVMF00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MX2CRX_MGYLFVMF00" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRNP4018-TO-MMDQRNP4020" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0097Concluyo de forma exitosa el job %%JOBNAME para la carga de Fechas_Marcaje_Malos_RAR_Cliente CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0098Concluyo de forma fallida el job %%JOBNAME para la carga de  Fechas_Marcaje_Malos_RAR_Cliente CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4019" DESCRIPTION="Generacion de Marcaje_Malos_RAR_Contrato CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh MMRARCTO" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MMDQRNP4017-TO-MMDQRNP4019" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MMDQRNP4017-TO-MMDQRNP4019" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0091Concluyo de forma exitosa el job %%JOBNAME para la carga de Marcaje_Malos_RAR_Contrato CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0092Concluyo de forma fallida el job %%JOBNAME para la carga de  Marcaje_Malos_RAR_Contrato CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRNP4020" DESCRIPTION="Generacion de Fechas_Marcaje_Malos_RAR_Contrato CORE" CREATED_BY="XME5821" RUN_AS="zmrgcore" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="lpmsaspro01" INTERVAL="00001M" CMDLINE="/CORE/PROD/./CORE_CR.sh FMRARCTO" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D6" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MMDQRNP4018-TO-MMDQRNP4020" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MMDQRNP4018-TO-MMDQRNP4020" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion exitosa del job %%JOBNAME" MESSAGE="0090Concluyo de forma exitosa el job %%JOBNAME para la carga de Fechas_Malos_RAR_Contrato CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="luciatamara.aguirre.contractor@bbva.com" CC_DEST="moises.solorzano.contractor@bbva.com;core-mexico.mx@bbva.com;isaacelias.yunes@bbva.com" SUBJECT="Ejecucion fallida del job %%JOBNAME" MESSAGE="0091Concluyo de forma fallida el job %%JOBNAME para la carga de  Fechas_Malos_RAR_Contrato CORE" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>	
+	    <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRWP4101" DESCRIPTION="Filewacher para revisar la llegada del archivo mes_ant_MEXICO_RL.xls para liquidez mensual DQ15" CREATED_BY="XM020HY" RUN_AS="ag700" CRITICAL="0" TASKTYPE="Command" CYCLIC="1" NODEID="150.100.195.64" INTERVAL="00001H" CMDLINE="ctmfw /SREPGRM/Liquidez/Mensual/Setting/mes_ant_MEXICO_RL.xls CREATE 0 60 10 3 10" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" TIMEFROM="1200" DAYS="&gt;26" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM020HY" CREATION_DATE="20210815" CREATION_TIME="122530" CHANGE_USERID="XM020HY" CHANGE_DATE="20210815" CHANGE_TIME="143603" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="2" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <ON STMT="*" CODE="NOTOK">
+                <DOACTION ACTION="SPCYC" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 7">
+                <DOACTION ACTION="OK" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 0">
+                <DOCOND NAME="MMDQRWP4101-TO-MMDQRNP4101" ODATE="ODAT" SIGN="+" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 0">
+                <DOACTION ACTION="SPCYC" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRWP4102" DESCRIPTION="Filewacher para revisar la llegada del archivo arc_act_MEXICO_RL.xls para liquidez mensual DQ15" CREATED_BY="XM020HY" RUN_AS="ag700" CRITICAL="0" TASKTYPE="Command" CYCLIC="1" NODEID="150.100.195.64" INTERVAL="00001H" CMDLINE="ctmfw /SREPGRM/Liquidez/Mensual/Setting/arc_act_MEXICO_RL.xls CREATE 0 60 10 3 10" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" TIMEFROM="1200" DAYS="&gt;26" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM020HY" CREATION_DATE="20210815" CREATION_TIME="122530" CHANGE_USERID="XM020HY" CHANGE_DATE="20210815" CHANGE_TIME="143603" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="2" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <ON STMT="*" CODE="NOTOK">
+                <DOACTION ACTION="SPCYC" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 7">
+                <DOACTION ACTION="OK" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 0">
+                <DOCOND NAME="MMDQRWP4102-TO-MMDQRNP4101" ODATE="ODAT" SIGN="+" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 0">
+                <DOACTION ACTION="SPCYC" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" JOBNAME="MMDQRWP4103" DESCRIPTION="Filewacher para revisar la llegada del archivo ConfLiq.xlsx para liquidez mensual DQ15" CREATED_BY="XM020HY" RUN_AS="ag700" CRITICAL="0" TASKTYPE="Command" CYCLIC="1" NODEID="150.100.195.64" INTERVAL="00001H" CMDLINE="ctmfw /SREPGRM/Liquidez/Setting/ConfLiq.xlsx CREATE 0 60 10 3 10" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" TIMEFROM="1200" DAYS="&gt;26" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM020HY" CREATION_DATE="20210815" CREATION_TIME="122530" CHANGE_USERID="XM020HY" CHANGE_DATE="20210815" CHANGE_TIME="143603" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="2" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <ON STMT="*" CODE="NOTOK">
+                <DOACTION ACTION="SPCYC" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 7">
+                <DOACTION ACTION="OK" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 0">
+                <DOCOND NAME="MMDQRWP4103-TO-MMDQRNP4101" ODATE="ODAT" SIGN="+" />
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ 0">
+                <DOACTION ACTION="SPCYC" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" MEMNAME="LiquidezMensualDQ15.sh" JOBNAME="MMDQRNP4101" DESCRIPTION="Proceso que genera los archivos DQ15 para liquidez mensual y para su ingesta en Datio" CREATED_BY="JCJY" RUN_AS="usrrpgrm" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="150.100.195.61" INTERVAL="00001M" MEMLIB="/SREPGRM/Shells" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="0" MAXDAYS="0" MAXRUNS="0" DAYS="&gt;26" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="0" IND_CYCLIC="S" CREATION_USER="XM020HY" CREATION_DATE="20170430" CREATION_TIME="210113" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MMDQRWP4101-TO-MMDQRNP4101" ODATE="ODAT" AND_OR="A" />
+            <INCOND NAME="MMDQRWP4102-TO-MMDQRNP4101" ODATE="ODAT" AND_OR="A" />
+            <INCOND NAME="MMDQRWP4103-TO-MMDQRNP4101" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MMDQRWP4101-TO-MMDQRNP4101" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRWP4102-TO-MMDQRNP4101" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRWP4103-TO-MMDQRNP4101" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRNP4101-TO-MMDQRNP4102" ODATE="ODAT" SIGN="+" />
+	    <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Se ejecuto OK el proceso %%JOBNAME variable %%PARM" MESSAGE="0050Se ejecuto OK el proceso %%JOBNAME variable %%PARM" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Se ejecuto NOT OK el proceso %%JOBNAME variable %%PARM" MESSAGE="0054Se ejecuto NOT OK el proceso %%JOBNAME variable %%PARM" ATTACH_SYSOUT="Y" />
+            </ON>	    
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" MEMNAME="DataSystem_DQ15.sh" JOBNAME="MMDQRNP4102" DESCRIPTION="Proceso que da formato al listado DATASYSTEM_DQ15.txt" CREATED_BY="JCJY" RUN_AS="usrrpgrm" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="150.100.195.61" INTERVAL="00001M" MEMLIB="/SREPGRM/Shells" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="0" MAXDAYS="0" MAXRUNS="0" DAYS="&gt;26" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="0" IND_CYCLIC="S" CREATION_USER="XM020HY" CREATION_DATE="20210802" CREATION_TIME="200040" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_OPCODE="N" IS_CURRENT_VERSION="Y" VERSION_SERIAL="1" VERSION_HOST="LER1XACCR03" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <INCOND NAME="MMDQRNP4101-TO-MMDQRNP4102" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MMDQRNP4101-TO-MMDQRNP4102" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRNP4102-TO-MMDQRNP4103" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com" SUBJECT="Se ejecuto OK el proceso %%JOBNAME variable %%PARM" MESSAGE="0050Se ejecuto OK el proceso %%JOBNAME variable %%PARM" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com" SUBJECT="Se ejecuto NOT OK el proceso %%JOBNAME variable %%PARM" MESSAGE="0054Se ejecuto NOT OK el proceso %%JOBNAME variable %%PARM" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" MEMNAME="DataSystemNew_DQ15.sh" JOBNAME="MMDQRNP4103" DESCRIPTION="Proceso que toma la nueva cadena resulatnte de MMDQRNP4102" CREATED_BY="JCJY" RUN_AS="usrrpgrm" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="150.100.195.61" INTERVAL="00001M" MEMLIB="/SREPGRM/Shells" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="0" MAXDAYS="0" MAXRUNS="0" DAYS="&gt;26" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="0" IND_CYCLIC="S" CREATION_USER="XM020HY" CREATION_DATE="20210802" CREATION_TIME="200040" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_OPCODE="N" IS_CURRENT_VERSION="Y" VERSION_SERIAL="2" VERSION_HOST="LER1XACCR03" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <VARIABLE NAME="%%\PARM" VALUE="esta es una prueba" />
+            <VARIABLE NAME="%%POSTCMD" />
+            <INCOND NAME="MMDQRNP4102-TO-MMDQRNP4103" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MMDQRNP4102-TO-MMDQRNP4103" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRNP4103-TO-MMDQRTP4101" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com" SUBJECT="Se ejecuto OK el proceso %%JOBNAME variable %%PARM" MESSAGE="0050Se ejecuto OK el proceso %%JOBNAME variable %%PARM" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com" SUBJECT="Se ejecuto NOT OK el proceso %%JOBNAME variable %%PARM" MESSAGE="0054Se ejecuto NOT OK el proceso %%JOBNAME variable %%PARM" ATTACH_SYSOUT="Y" />
+            </ON>
+            <CAPTURE SEARCH_STRING="|1|" SKIP_LINES="3" SKIP_COLUMNS="3" BY_WHAT="C" DELIMITER="\w" COUNT_TO_TAKE="700" VARIABLE="%%\VAL1" />
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="MDQR-MX-RISKDQLEGACY" SUB_APPLICATION="SASCONTROLES-BMR" MEMNAME="TX_MDQRCDDQ15.sh" JOBNAME="MMDQRTP4101" DESCRIPTION="Transmite archivos DQ15 SAS al staging de DATIO" CREATED_BY="JCJY" RUN_AS="ndm36" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="150.100.195.64" INTERVAL="00001M" MEMLIB="/NDM36/cdunix/progs" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="&gt;26" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="0" IND_CYCLIC="E" CREATION_USER="XM020HY" CREATION_DATE="20210802" CREATION_TIME="200040" CHANGE_USERID="XM020HY" CHANGE_DATE="20210802" CHANGE_TIME="201608" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_OPCODE="N" IS_CURRENT_VERSION="Y" VERSION_SERIAL="2" VERSION_HOST="LER1XACCR03" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRMEN-T02">
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%POSTCMD" VALUE="echo %%VAL1" />
+            <INCOND NAME="MMDQRNP4103-TO-MMDQRTP4101" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MMDQRNP4103-TO-MMDQRTP4101" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MMDQRTP4101-TO-MKQPDVP4022" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com" SUBJECT="Ejecucion exitosa del %%JOBNAME - Proceso Valida Variables - Odate %%$ODATE variable %%PARM" MESSAGE="0015variable %%PARM" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com" SUBJECT="Fallo el job %%JOBNAME - Odate %%$ODATE Proceso Valida Variables" MESSAGE="0015variable %%PARM" ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>		
+    </FOLDER>
+</DEFTABLE>

@@ -1,0 +1,15 @@
++ for i in '{1..1000}'
+++ grep '|1|' /SREPGRM/DQLEGACY_RIESGOS/SEMANAL/DATASYSTEM_DQ14.txt
+++ awk '-F|' '{print $3}'
++ ds=BCBS_Excel_Liquidez_Semanal
++ '[' 27 -gt 0 ']'
++ '[' 0 == 0 ']'
++ cadena='|1|BCBS_Excel_Liquidez_Semanal'
++ for i in '{1..1000}'
+++ grep '|2|' /SREPGRM/DQLEGACY_RIESGOS/SEMANAL/DATASYSTEM_DQ14.txt
+++ awk '-F|' '{print $3}'
++ ds=
++ '[' 0 -gt 0 ']'
++ break
++ echo '|1|BCBS_Excel_Liquidez_Semanal'
++ chmod 666 /SREPGRM/DQLEGACY_RIESGOS/SEMANAL/DATASYSTEMNEW_DQ14.txt

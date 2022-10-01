@@ -1,0 +1,93 @@
+                                                           The SAS System                       18:59 Tuesday, December 14, 2021   1
+
+         Proc  Proc  Ant   Ant
+         Ano   Mes   Ano   Mes  Archivo               NomSal  InfInp                                 TablaSalida
+                                                                                                          Arc   Arc
+         PathLocal                               InfFuente  NomArch         NomDatio                      Ctrl  Csv  Email
+         -----------------------------------------------------------------------------------------------------------------
+         2021  10    2021  09   Cuadro de Mandos.txt  OUTPUT  /SREPGRM/GroupCreditRiskMetrics/Input  DQLEGACY   
+         /SREPGRM/GroupCreditRiskMetrics/Output  'SAS'      'DQLEGACY.CSV'  't_ries_sas_quality_results'  ctl   csv  'SI' 
+                                                           The SAS System                       18:59 Tuesday, December 14, 2021   2
+
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                  Fecha  IDEMetrica  Responsable                               Metrica                                 
+             2021-10-31  0401700100  Victor Guillermo Chávez                   Saneamiento crediticio YTD (LLP)        
+             2021-10-31  0400300100  Victor Guillermo Chávez                   Coste de riesgo                         
+             2021-10-31  0400400100  Victor Guillermo Chávez                   Coste de riesgo YTD                     
+             2021-10-31  0400900100  Victor Guillermo Chávez                   Fondo de cobertura                      
+             2021-10-31  0400700100  Victor Guillermo Chávez                   Dudosos/NPL                             
+             2021-10-31  0401500100  Victor Guillermo Chávez                   Riesgo crediticio                       
+             2021-10-31  0401900100  Victor Guillermo Chávez                   Tasa de mora                            
+             2021-10-31  0400800100  Victor Guillermo Chávez                   Entradas (NPL)                          
+             2021-10-31  0401400100  Victor Guillermo Chávez                   Recuperaciones (NPL)                    
+             2021-10-31  0401300100  Victor Guillermo Chávez                   Pase a falllidos (NPL)                  
+             2021-10-31  0401800100  Victor Guillermo Chávez                   Tasa de cobertura                       
+             2021-10-31  0401600100  Victor Guillermo Chávez                   Saneamiento crediticio (LLP)            
+                                                           The SAS System                       18:59 Tuesday, December 14, 2021   3
+
+                                                                                                                                   
+                                                                                                                                   
+                                                                                                                                   
+                                                                                                                       Umbra  Umbra
+                                                                                                                           l      l
+                                                                                                                  Tip  Mínim  Máxim
+ Rubro                                                                                                    Umbral  o        o      o
+ 11) Saneamientos Consolidado (Acumulado) [Contable] - $MM                                                   0.5  %    50.00  150.0
+ 12)  Prima de Riesgos España (12 meses) - % (cálculo pesos)                                                1000  pb   90.00  110.0
+ 12)  Prima de Riesgos España (YTD) - % (cálculo pesos)                                                       50  pb   99.50  100.5
+ 14) Reservas Consolidado (TOTAL) - $MM                                                                      0.1  %    90.00  110.0
+ 2c) Cartera Dudosa -criterio España- (sdo fin) - $MM                                                        0.1  %    90.00  110.0
+ 2c) Inversion Crediticia España (con afectaciones consolidación) - $MM                                      0.1  %    90.00  110.0
+ 3c) Tasa de Mora (ICV- España: con criterios de consolidación) - %                                           50  pb   99.50  100.5
+ 5) Entradas a Cartera Vencida (sdo fin) - $MM                                                              0.25  %    75.00  125.0
+ 7) Recuperaciones Cartera Vencida - $MM                                                                    0.25  %    75.00  125.0
+ Fallidos + Castigos + Quitas (conso..)                                                                     0.25  %    75.00  125.0
+ III.4d) Cobertura de Cartera Dudosa (Consolidado) - %                                                       500  pb   95.00  105.0
+ IV.3) Saneamientos Consolidado (estanco) [Contable] - $MM                                                   0.5  %    50.00  150.0
+                                                           The SAS System                       18:59 Tuesday, December 14, 2021   4
+
+             Porce                                                                                                           
+             ntaje                                                                                                           
+             Cumpl                                                  Porcentaj                                                
+      Umbra  imien                                                          e                                                
+          l     to                                                  Cumplimie                                                
+      Objet  Regis                                                        nto                                                
+        ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo    Importe     Suma Saldos Cumplen      Suma Saldos Objeto
+      100.0  100.0                       1                       1     110.49           28,370,184.12           25,677,204.56
+      100.0  100.0                       1                       1          0                    0.00                    0.00
+      100.0  100.0                       1                       1          0                    0.00                    0.00
+      100.0  100.0                       1                       1     101.15           48,298,778.87           47,748,857.98
+      100.0  100.0                       1                       1      95.73           33,167,598.98           34,647,436.47
+      100.0  100.0                       1                       1     101.17        1,377,460,609.00        1,361,562,715.00
+      100.0  100.0                       1                       1          0                    0.00                    0.00
+      100.0   0.00                       0                       0      74.11            2,629,370.03            3,548,118.51
+      100.0  100.0                       1                       1      93.33            1,253,581.42            1,343,170.60
+      100.0   0.00                       0                       0      54.16            2,186,213.79            4,036,549.02
+      100.0   0.00                       0                       0          0                    0.00                    0.00
+      100.0  100.0                       1                       1     104.98            2,692,979.56            2,565,334.20
+                                                           The SAS System                       18:59 Tuesday, December 14, 2021   5
+
+                                                                                 
+                                                                                 
+                                                                  Suma   Suma    
+                                                                 Porce  Porce  SE
+                                                     Diferencia  ntaje  ntaje  MA
+                                                   Cumplimiento  Cumpl  Objet  FO
+                                                     Porcentaje     en      o  RO
+                                                           0.00   0.00   0.00  SI
+                                                          -9.23   2.70   2.79  SI
+                                                          -2.59   2.63   2.66  SI
+                                                           0.00   0.00   0.00  SI
+                                                           0.00   0.00   0.00  SI
+                                                           0.00   0.00   0.00  SI
+                                                         -13.68   2.41   2.54  SI
+                                                           0.00   0.00   0.00  NO
+                                                           0.00   0.00   0.00  SI
+                                                           0.00   0.00   0.00  NO
+                                                         780.68  145.6  137.8  NO
+                                                           0.00   0.00   0.00  SI

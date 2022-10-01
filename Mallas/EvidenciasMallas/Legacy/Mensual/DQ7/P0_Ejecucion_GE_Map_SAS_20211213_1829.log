@@ -1,0 +1,93 @@
+1                                                          The SAS System                            18:29 Monday, December 13, 2021
+
+NOTE: Unable to open SASUSER.REGSTRY. WORK.REGSTRY will be opened instead.
+NOTE: All registry changes will be lost at the end of the session.
+
+WARNING: Unable to copy SASUSER registry to WORK registry. Because of this, you will not see registry customizations during this 
+         session.
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.40 seconds
+      cpu time            0.02 seconds
+      
+1          %let ruta_codigos=/SREPGRM/GE_Map/Codigos/;
+2          
+3          %include "&ruta_codigos.P1_AutoExe.sas";
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              1090.15k
+2                                                          The SAS System                            18:29 Monday, December 13, 2021
+
+      OS Memory           7840.00k
+      Timestamp           12/13/2021 06:29:53 PM
+      Step Count                        1  Switch Count  0
+      Page Faults                       559
+      Page Reclaims                     344
+      Page Swaps                        0
+      Voluntary Context Switches        0
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           0
+      
+
+VALOR FECHA_LOG=20211213T182954
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5.38 seconds
+      user cpu time       0.56 seconds
+      system cpu time     0.74 seconds
+      memory              26305.15k
+      OS Memory           27844.00k
+      Timestamp           12/13/2021 06:29:58 PM
+      Step Count                        120  Switch Count  291
+      Page Faults                       10520
+      Page Reclaims                     12658
+      Page Swaps                        0
+      Voluntary Context Switches        1756
+      Involuntary Context Switches      44
+      Block Input Operations            3352
+      Block Output Operations           17392
+      

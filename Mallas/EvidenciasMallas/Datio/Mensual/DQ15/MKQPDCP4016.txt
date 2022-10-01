@@ -1,0 +1,83 @@
+Environment information:
++-------------------------+--------------------------------------------------+
+|Connection Profile Name  |MX_DATIO_NS                                       |
++-------------------------+--------------------------------------------------+
+
+
+=============================================
+Operation: Execute
+Step name: 'GET_TOKEN'
+=============================================
+REST service details: 
+--------------------
+
+method: 	POST
+URL: 	https://daas.work.mx.ether.igrupobbva path: /auth/token?grant_type=client_credentials
+
+Response: 
+--------
+HttpResponseInfo [m_statusCode=200, m_statusMesg=OK, m_message={"access_token":"eyJ6aXAiOiJERUYiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.CXsfPuXh9C-MMOYzuGIlAEV2sNSVHpWAPuEnipyIkN8DotiB2rx1Cmg_JJBOszQaU7TJtOso66u-IRtjNXZMKIHAL_YmDPxSd8DwlpEbkMDUseWuMVaDbU9n2dA5xOIb_bxi8-Rej9q7HHjE3ShEYVTCokjwirsvuHQVnH7iJp3JUKxLyOQZPJSc5ADig8I8RpQQ7gdhnjnHTXrxeo641izlPXj9uf5RMbwbjUzVdKHuy6TAp5g8IbVkOpHgM4X9v5lyUR4rfySSnk0DDL_QXUU1FIrdoo96f2lsUXiKXpQb7WPbG4Mu-f-NlAzWv1Pl4_G8b45EAQcgM-7GoRM47A.StPDROMZJ8heMT9J.l2lbTBeB2QdZzWb0qZLBpM0q1A7ri78SwNXN1vpTAFo1w_OkETn1mBSL38Ul4rdQ5c6oBLqbwHwLMgGd7DjAlzQaRgz8rVCn5JAB8qiShMenDRkyQuDGbY4zYmYe0A_3JePYs9dDVpUC6h75VxNTECAnSFBXQAr7B_T26no3kFFWHAQpusLLxIU8fMgY3JdGPWjXPt48smcfG9aeK5opwaboprZbLFu0CQnd85_xycXAEEL5gbkyao0zAUsPwKE_O8FXiijVzyvDNagJgpbEvxNjrFLkxHY1ZWIKbZd1AACW7Helsc7qs8XshanxDBmvBoshz6JQiRCEU6cLlEK_0v1KbbRoF4Fvq_i4SgOPWPpk8vBBuJ_3y69-SNb_3lqdHbNwdL-SyH_A--WTuJkbA2s1y2-qUKYJcn5vOPY2EbkJ7ZyIe88NDKRmDGVW46KD1Cr4muIMDxsXb3JrB6FMKUcIZlzQADQv0yMA5mK8aRDtv8FLVQnOPI_vWG3t6PH1gJjdgS0jzL2JGhifhbfk3ftsU3tFEPZAwg.yD2wQ8I5xVjHCDJMZ9M6Jw","token_type":"jwt","expires_in":35999,"scope":"ether;armadillo/admin-us ether;armadillo/admin-pe ether;armadillo/automation-api-pe ether;armadillo/admin-mx ether;armadillo/admin-co ether;armadillo/admin-ar"}, m_contentType=application/json;charset=UTF-8, m_headers=null:[HTTP/1.1 200 OK]; x-frame-options:[DENY]; x-envoy-upstream-service-time:[15]; x-rho-traceid:[60f1ffc52eebe246263a22baeee7bd57c8614b41]; vnd.bbva.security-transaction-id:[60f1ffc52eebe246263a22baeee7bd57c8614b41]; Connection:[keep-alive]; Server:[my-server]; pragma:[no-cache]; cache-control:[no-store]; Strict-Transport-Security:[max-age=63072000; includeSubDomains; preload]; x-content-type-options:[nosniff]; x-xss-protection:[1; mode=block]; Transfer-Encoding:[chunked]; Date:[Wed, 27 Oct 2021 23:18:23 GMT]; x-trace-id:[60f1ffc52eebe246263a22baeee7bd57c8614b41]; Content-Type:[application/json;charset=UTF-8]; ]
+Extracted runtime parameter:
+----------------------------
+'TOKEN'==> 'eyJ6aXAiOiJERUYiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.CXsfPuXh9C-MMOYzuGIlAEV2sNSVHpWAPuEnipyIkN8DotiB2rx1Cmg_JJBOszQaU7TJtOso66u-IRtjNXZMKIHAL_YmDPxSd8DwlpEbkMDUseWuMVaDbU9n2dA5xOIb_bxi8-Rej9q7HHjE3ShEYVTCokjwirsvuHQVnH7iJp3JUKxLyOQZPJSc5ADig8I8RpQQ7gdhnjnHTXrxeo641izlPXj9uf5RMbwbjUzVdKHuy6TAp5g8IbVkOpHgM4X9v5lyUR4rfySSnk0DDL_QXUU1FIrdoo96f2lsUXiKXpQb7WPbG4Mu-f-NlAzWv1Pl4_G8b45EAQcgM-7GoRM47A.StPDROMZJ8heMT9J.l2lbTBeB2QdZzWb0qZLBpM0q1A7ri78SwNXN1vpTAFo1w_OkETn1mBSL38Ul4rdQ5c6oBLqbwHwLMgGd7DjAlzQaRgz8rVCn5JAB8qiShMenDRkyQuDGbY4zYmYe0A_3JePYs9dDVpUC6h75VxNTECAnSFBXQAr7B_T26no3kFFWHAQpusLLxIU8fMgY3JdGPWjXPt48smcfG9aeK5opwaboprZbLFu0CQnd85_xycXAEEL5gbkyao0zAUsPwKE_O8FXiijVzyvDNagJgpbEvxNjrFLkxHY1ZWIKbZd1AACW7Helsc7qs8XshanxDBmvBoshz6JQiRCEU6cLlEK_0v1KbbRoF4Fvq_i4SgOPWPpk8vBBuJ_3y69-SNb_3lqdHbNwdL-SyH_A--WTuJkbA2s1y2-qUKYJcn5vOPY2EbkJ7ZyIe88NDKRmDGVW46KD1Cr4muIMDxsXb3JrB6FMKUcIZlzQADQv0yMA5mK8aRDtv8FLVQnOPI_vWG3t6PH1gJjdgS0jzL2JGhifhbfk3ftsU3tFEPZAwg.yD2wQ8I5xVjHCDJMZ9M6Jw' 
+
+=============================================
+Operation: Execute
+Step name: 'LAUNCH_JOB'
+=============================================
+REST service details: 
+--------------------
+
+method: 	POST
+URL: 	https://daas.work.mx.ether.igrupobbva path: /services/automation-api/v2/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs
+
+Response: 
+--------
+HttpResponseInfo [m_statusCode=201, m_statusMesg=null, m_message={"data":{"jobName":"kqpd-mx-krb-inm-sasqualityresultsi-01","status":{"id":"PENDING","name":"PENDING"},"internalRunId":"","createdDate":"2021-10-27T23:18:23.720327Z","params":[{"CONTROLM_JOB_ID":"MKQPDCP4016","TRACE_ID":"c37f6dd8e8d40c5c04809e65c48301ae934c86f0","CONTROLM_JOB_FLOW":"BC-MXFRASEM-T02","AAUUID":"ff454544-095f-4475-8e76-e13d9dec133a"}],"runId":"ff454544-095f-4475-8e76-e13d9dec133a","_id":"ff454544-095f-4475-8e76-e13d9dec133a","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs/ff454544-095f-4475-8e76-e13d9dec133a","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs","_createdBy":"controlm","_updatedBy":null,"_type":"dataproc.run","_ac":false,"_createdAt":"2021-10-27T23:18:23.720327Z","_updatedAt":"2021-10-27T23:18:23.720328Z","id":"ff454544-095f-4475-8e76-e13d9dec133a"}}, m_contentType=application/json;charset=UTF-8, m_headers=null:[HTTP/1.1 201]; x-frame-options:[DENY]; location:[/v2/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs/ff454544-095f-4475-8e76-e13d9dec133a]; deprecation:[true]; X-LP:[2]; X-RHO-TRACEID:[c37f6dd8e8d40c5c04809e65c48301ae934c86f0]; Connection:[keep-alive]; vnd.bbva.Security-Transaction-Id:[c37f6dd8e8d40c5c04809e65c48301ae934c86f0]; Server:[my-server]; marathonlb-host:[agent-public-3]; pragma:[no-cache]; cache-control:[no-cache, no-store, max-age=0, must-revalidate]; x-content-type-options:[nosniff]; x-xss-protection:[1; mode=block]; Strict-Transport-Security:[max-age=63072000; includeSubDomains; preload]; expires:[0]; Transfer-Encoding:[chunked]; Date:[Wed, 27 Oct 2021 23:18:23 GMT]; strict-transport-security:[max-age=31536000 ; includeSubDomains]; X-TRACE-ID:[c37f6dd8e8d40c5c04809e65c48301ae934c86f0]; Content-Type:[application/json;charset=UTF-8]; ]
+Extracted runtime parameter:
+----------------------------
+'RUNID'==> 'ff454544-095f-4475-8e76-e13d9dec133a' 
+
+=============================================
+Operation: MonitorCompletion
+Step name: 'Verify operation completion'
+=============================================
+REST service details: 
+--------------------
+
+method: 	GET
+URL: 	https://daas.work.mx.ether.igrupobbva path: /services/automation-api/v2/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs/ff454544-095f-4475-8e76-e13d9dec133a
+
+Response: 
+--------
+HttpResponseInfo [m_statusCode=200, m_statusMesg=null, m_message={"data":{"jobName":"kqpd-mx-krb-inm-sasqualityresultsi-01","status":{"id":"PENDING","name":"PENDING"},"internalRunId":"","createdDate":"2021-10-27T23:18:23.720327Z","params":[{"CONTROLM_JOB_ID":"MKQPDCP4016","TRACE_ID":"c37f6dd8e8d40c5c04809e65c48301ae934c86f0","CONTROLM_JOB_FLOW":"BC-MXFRASEM-T02","AAUUID":"ff454544-095f-4475-8e76-e13d9dec133a"}],"runId":"ff454544-095f-4475-8e76-e13d9dec133a","_id":"ff454544-095f-4475-8e76-e13d9dec133a","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs/ff454544-095f-4475-8e76-e13d9dec133a","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs","_createdBy":"controlm","_updatedBy":null,"_type":"dataproc.run","_ac":false,"_createdAt":"2021-10-27T23:18:23.720327Z","_updatedAt":"2021-10-27T23:18:23.720328Z","id":"ff454544-095f-4475-8e76-e13d9dec133a"}}, m_contentType=application/json;charset=UTF-8, m_headers=null:[HTTP/1.1 200]; x-frame-options:[DENY]; deprecation:[true]; X-LP:[1]; X-RHO-TRACEID:[cffdda1b39a4ae75e09f2ed1f9f123bba4454eb9]; Connection:[keep-alive]; vnd.bbva.Security-Transaction-Id:[cffdda1b39a4ae75e09f2ed1f9f123bba4454eb9]; Server:[my-server]; marathonlb-host:[agent-public-2]; pragma:[no-cache]; cache-control:[no-cache, no-store, max-age=0, must-revalidate]; x-content-type-options:[nosniff]; x-xss-protection:[1; mode=block]; Strict-Transport-Security:[max-age=63072000; includeSubDomains; preload]; expires:[0]; Vary:[Accept-Encoding]; Transfer-Encoding:[chunked]; Date:[Wed, 27 Oct 2021 23:18:23 GMT]; strict-transport-security:[max-age=31536000 ; includeSubDomains]; X-TRACE-ID:[cffdda1b39a4ae75e09f2ed1f9f123bba4454eb9]; Content-Type:[application/json;charset=UTF-8]; ]
+
+=============================================
+Operation: MonitorCompletion
+Step name: 'Verify operation completion'
+=============================================
+REST service details: 
+--------------------
+
+method: 	GET
+URL: 	https://daas.work.mx.ether.igrupobbva path: /services/automation-api/v2/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs/ff454544-095f-4475-8e76-e13d9dec133a
+
+Response: 
+--------
+HttpResponseInfo [m_statusCode=200, m_statusMesg=null, m_message={"data":{"jobName":"kqpd-mx-krb-inm-sasqualityresultsi-01","status":{"id":"SUCCESS","name":"SUCCESS"},"internalRunId":"","createdDate":"2021-10-27T23:18:23.720327Z","completedDate":"2021-10-27T23:19:47.309Z","params":[{"CONTROLM_JOB_ID":"MKQPDCP4016","TRACE_ID":"c37f6dd8e8d40c5c04809e65c48301ae934c86f0","CONTROLM_JOB_FLOW":"BC-MXFRASEM-T02","AAUUID":"ff454544-095f-4475-8e76-e13d9dec133a"}],"runId":"ff454544-095f-4475-8e76-e13d9dec133a","_id":"ff454544-095f-4475-8e76-e13d9dec133a","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs/ff454544-095f-4475-8e76-e13d9dec133a","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-krb-inm-sasqualityresultsi-01/runs","_createdBy":"controlm","_updatedBy":null,"_type":"dataproc.run","_ac":false,"_createdAt":"2021-10-27T23:18:23.720327Z","_updatedAt":"2021-10-27T23:18:23.720328Z","id":"ff454544-095f-4475-8e76-e13d9dec133a"}}, m_contentType=application/json;charset=UTF-8, m_headers=null:[HTTP/1.1 200]; x-frame-options:[DENY]; deprecation:[true]; X-LP:[1]; X-RHO-TRACEID:[b74c10e9349c0f88d9fd53a8eb27df17869c1e90]; Connection:[keep-alive]; vnd.bbva.Security-Transaction-Id:[b74c10e9349c0f88d9fd53a8eb27df17869c1e90]; Server:[my-server]; marathonlb-host:[agent-public-2]; pragma:[no-cache]; cache-control:[no-cache, no-store, max-age=0, must-revalidate]; x-content-type-options:[nosniff]; x-xss-protection:[1; mode=block]; Strict-Transport-Security:[max-age=63072000; includeSubDomains; preload]; expires:[0]; Vary:[Accept-Encoding]; Transfer-Encoding:[chunked]; Date:[Wed, 27 Oct 2021 23:20:24 GMT]; strict-transport-security:[max-age=31536000 ; includeSubDomains]; X-TRACE-ID:[b74c10e9349c0f88d9fd53a8eb27df17869c1e90]; Content-Type:[application/json;charset=UTF-8]; ]
+
+
+
+
+Job statistics:
++-------------------------+-------------------------+
+|Start Time               |20211027181823           |
++-------------------------+-------------------------+
+|End Time                 |20211027182024           |
++-------------------------+-------------------------+
+|Elapsed Time             |12059                    |
++-------------------------+-------------------------+
+Exit Code    = 0
+Exit Message = Normal completion
+
+

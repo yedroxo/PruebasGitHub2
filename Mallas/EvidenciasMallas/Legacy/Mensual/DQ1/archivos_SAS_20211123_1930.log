@@ -1,0 +1,353 @@
+1                                                          The SAS System                           19:30 Tuesday, November 23, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.23 seconds
+      cpu time            0.04 seconds
+      
+1           /*carga la hora con la cual podemos hacer reprocesos*/
+2          *Carga catalogo de configuración;
+3          PROC IMPORT FILE = '/SREPGRM/Concentraciones/Setting/ConfConcentraciones.xlsx'
+4          	OUT=TMP_CONFIG
+5          	DBMS=xlsx
+6          	REPLACE;
+7          	RANGE = "Config$A1:E2";
+8          RUN;
+
+NOTE: The import data set has 1 observations and 5 variables.
+NOTE: WORK.TMP_CONFIG data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+2                                                          The SAS System                           19:30 Tuesday, November 23, 2021
+
+9          PROC SQL;
+10         	SELECT ProcAno, ProcMes, AntAno, AntMes,id_mes
+11         		INTO :dProcAno, :dProcMes, :dAntAno, :dAntMes, :Id_reproceso
+12         			FROM TMP_CONFIG;
+13         QUIT;
+NOTE: The PROCEDURE SQL printed page 1.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.04 seconds
+      
+
+14         
+15         /* Generación de los archivos para la ingesta en directorio local*/
+16         %let PathConfig = /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/;
+17         LIBNAME OUTPUT '/SREPGRM/DQLEGACY_RIESGOS/';
+NOTE: Libref OUTPUT was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/DQLEGACY_RIESGOS
+18         %LET RES_FINALES_HOLDING = OUTPUT.DQLEGACY;
+19         /*%LET cutoff_date = put(intnx("month", today(),-&Id_reproceso., 'e'), yymmdd10.);
+20         %LET DQ_FIN = DQLEGACY_DQ1_&cutoff_date.;
+21         %PUT &=DQ_FIN;*/
+22         
+23         DATA _NULL_;
+24         	CUT     = put(intnx('month', today(),-&Id_reproceso., 'e'), yymmddn8.);
+25         	CALL SYMPUT(COMPRESS('cutoff_date'),CUT);
+26         RUN;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+
+27         
+28         %PUT =&cutoff_date.;
+=20210831
+29         
+30         %let DQ_FIN = DQLEGACY_DQ1_&cutoff_date.;
+31         %PUT &=DQ_FIN;
+DQ_FIN=DQLEGACY_DQ1_20210831
+32         
+33         PROC FORMAT;
+34         picture ymdhms other='%0Y-%0m-%0d %0H:%0M:%0S' (datatype=datetime);
+NOTE: Format YMDHMS has been output.
+35         RUN;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+36         
+37         *Tabla final CSV;
+38         PROC SQL ;
+39         SELECT count(*) INTO :nobs_1 separated by ' '
+40         FROM &RES_FINALES_HOLDING.;
+41         RUN;
+NOTE: PROC SQL statements are executed immediately; The RUN statement has no effect.
+3                                                          The SAS System                           19:30 Tuesday, November 23, 2021
+
+NOTE: The PROCEDURE SQL printed page 2.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+42         DATA _null_;
+43         FILE "/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/&DQ_FIN..csv" dsd dlm='|' lrecl=32767 encoding="us-ascii";
+44         SET  &RES_FINALES_HOLDING.;
+45         PUT ( _all_)(+0);
+46         RUN;
+
+NOTE: The file "/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.csv" is:
+      Filename=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.csv,
+      Owner Name=usrrpgrm,Group Name=grprpgrm,
+      Access Permission=-rw-r-----,
+      Last Modified=23Nov2021:19:31:03
+
+NOTE: 25 records were written to the file "/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.csv".
+      The minimum record length was 135.
+      The maximum record length was 233.
+NOTE: There were 25 observations read from the data set OUTPUT.DQLEGACY.
+NOTE: At least one W.D format was too small for the number to be printed. The decimal may be shifted by the "BEST" format.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+47         filename csv pipe "chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/&DQ_FIN..csv" encoding="us-ascii";
+48         data _null_;
+49             file csv;
+50          run;
+
+NOTE: The file CSV is:
+      Pipe command="chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.csv"
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chmod: not found
+
+NOTE: 0 records were written to the file CSV.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+51         
+52         *Archivo CTL;
+53         filename ctl  "&PathConfig.&DQ_FIN..ctl" encoding="us-ascii";
+54         DATA _null_;
+55         LENGTH ws_cutoff_date $10 ws_font_origin $10 ws_file_origin $44
+56         ws_read_for_staging $15 ws_name_object $32;
+57         CALL missing(of _all_);
+58         ws_cutoff_date=put(intnx('month', today(),-&Id_reproceso., 'e'), yymmdd10.);
+59         ws_font_origin='SAS';
+60         ws_file_origin="&DQ_FIN.";
+61         ws_read_for_staging=put(&nobs_1, z15.);
+62         ws_name_object="t_ries_sas_quality_results";
+63         FILE ctl dsd;
+4                                                          The SAS System                           19:30 Tuesday, November 23, 2021
+
+64         PUT @1  ws_cutoff_date      $char10.
+65         @11 '|'
+66         @12 ws_font_origin      $char10.
+67         @22 '|'
+68         @23 ws_file_origin      $char44.
+69         @67 '|'
+70         @68 ws_read_for_staging $char15.
+71         @83 '|'
+72         @84 ws_name_object      $char32.;
+73         STOP;
+74         RUN;
+
+NOTE: The file CTL is:
+      Filename=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.ctl,
+      Owner Name=xmz8599,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=23Nov2021:19:31:03
+
+NOTE: 1 record was written to the file CTL.
+      The minimum record length was 115.
+      The maximum record length was 115.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+75         filename ctl pipe "chmod 777 &PathConfig.&DQ_FIN..ctl" encoding="us-ascii";
+76         data _null_;
+77             file ctl;
+78          run;
+
+NOTE: The file CTL is:
+      Pipe command="chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.ctl"
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chmod: not found
+
+NOTE: 0 records were written to the file CTL.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+79         *FILENAME ctl_file CLEAR;
+80          *Archivo TXT DATASYSTEM;
+81         
+82         PROC SQL;
+83         CREATE TABLE PRUEBA AS
+84         SELECT DISTINCT gf_data_system_name
+85         FROM OUTPUT.DQLEGACY;
+NOTE: Table WORK.PRUEBA created, with 3 rows and 1 columns.
+
+86         CREATE TABLE PRUEBA2 AS
+87         SELECT DISTINCT MONOTONIC() AS ID,gf_data_system_name
+88         FROM PRUEBA;
+NOTE: Table WORK.PRUEBA2 created, with 3 rows and 2 columns.
+
+89         QUIT;
+5                                                          The SAS System                           19:30 Tuesday, November 23, 2021
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+90         
+91         data PRUEBA3 (drop=ID GF_DATA_SYSTEM_NAME);
+92          set PRUEBA2;
+93          var = cat('|', ID, '|', GF_DATA_SYSTEM_NAME);
+94         run;
+
+NOTE: There were 3 observations read from the data set WORK.PRUEBA2.
+NOTE: The data set WORK.PRUEBA3 has 3 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+95         
+96         %LET DQ_FIN2 = DATASYSTEM_DQ1;
+97         FILENAME txt "/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/&DQ_Fin2..txt" encoding="us-ascii";
+98         proc export data=PRUEBA3 outfile=txt dbms=tab replace;
+99         /*delimiter="|";*/
+100        putnames=NO;
+101        run;
+
+102         /**********************************************************************
+103         *   PRODUCT:   SAS
+104         *   VERSION:   9.4
+105         *   CREATOR:   External File Interface
+106         *   DATE:      23NOV21
+107         *   DESC:      Generated SAS Datastep Code
+108         *   TEMPLATE SOURCE:  (None Specified.)
+109         ***********************************************************************/
+110            data _null_;
+111            %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+112            %let _EFIREC_ = 0;     /* clear export record count macro variable */
+113            file TXT delimiter='09'x DSD DROPOVER ;
+114           set  PRUEBA3   end=EFIEOD;
+115               format var $200. ;
+116             do;
+117               EFIOUT + 1;
+118               put var $ ;
+119               ;
+120             end;
+121            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+122            if EFIEOD then call symputx('_EFIREC_',EFIOUT);
+123            run;
+
+NOTE: The file TXT is:
+      Filename=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ1.txt,
+      Owner Name=usrrpgrm,Group Name=grprpgrm,
+      Access Permission=-rw-r-----,
+      Last Modified=23Nov2021:19:31:03
+
+NOTE: 3 records were written to the file TXT.
+      The minimum record length was 14.
+      The maximum record length was 38.
+6                                                          The SAS System                           19:30 Tuesday, November 23, 2021
+
+NOTE: There were 3 observations read from the data set WORK.PRUEBA3.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.02 seconds
+      
+
+3 records created in TXT from PRUEBA3.
+  
+  
+NOTE: "TXT" file was successfully created.
+NOTE: PROCEDURE EXPORT used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.05 seconds
+      
+
+124        
+125        filename txt pipe "chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/&DQ_Fin2..txt" encoding="us-ascii";
+126        data _null_;
+127            file txt;
+128         run;
+
+NOTE: The file TXT is:
+      Pipe command="chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ1.txt"
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chmod: not found
+
+NOTE: 0 records were written to the file TXT.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+129        proc delete data=OUTPUT.DQLEGACY; run;
+
+NOTE: Deleting OUTPUT.DQLEGACY (memtype=DATA).
+NOTE: PROCEDURE DELETE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+130        
+131        
+132        
+133        
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.60 seconds
+      cpu time            0.21 seconds
+      

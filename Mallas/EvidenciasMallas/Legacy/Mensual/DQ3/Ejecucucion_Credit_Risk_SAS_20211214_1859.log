@@ -1,0 +1,60 @@
+1                                                          The SAS System                           18:59 Tuesday, December 14, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.19 seconds
+      cpu time            0.03 seconds
+      
+1          %let ruta_codigos=/SREPGRM/GroupCreditRiskMetrics/Codigos/;
+2          
+3          %include "&ruta_codigos.00 Carga tablas.sas";
+
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+VALOR FECHA_LOG=20211214T185951
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.93 seconds
+      cpu time            0.71 seconds
+      

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported at 08-04-2022 20:44:39-->
+<DEFTABLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Folder.xsd">
+    <FOLDER DATACENTER="CTM_CTRLMCCR" VERSION="900" PLATFORM="UNIX" FOLDER_NAME="CR-MXKQPDSEM-K02" LAST_UPLOAD="20220218023335UTC" FOLDER_ORDER_METHOD="SYSTEM" REAL_FOLDER_ID="0" TYPE="1" USED_BY_CODE="0">
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" MEMNAME="MKQPDVP1004" JOBNAME="MKQPDVP1004" DESCRIPTION="QA REGLAS BASICAS STAGING - DQR - DQ14" CREATED_BY="XM020HY" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" WEEKSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" WEEKDAYS="&lt;5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XMZ0643" CREATION_DATE="20220307" CREATION_TIME="125309" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDSEM-K02">
+            <VARIABLE NAME="%%CORREOS" VALUE="dqtaskforceriesgos.group@bbva.com;dqteam.riesgos.mx@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="sasqualityresults" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ STAGING" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="DQ14" />
+			<VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.%%ODAY" /> 
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd -7" />
+            <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kqpd.app-id-21822.pro -jn kqpd-mx-spk-qlt-sasqualityresultss-03 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;SUFFIX&quot;: &quot;%%SUFIJO&quot;, &quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <SHOUT WHEN="EXECTIME" TIME="&gt;020" URGENCY="U" DEST="EM" MESSAGE="Excede tirmpo de ejecución notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" />
+            <SHOUT WHEN="LATESUB" TIME="0600" URGENCY="U" DEST="EM" MESSAGE="Debe de ejecutar en la madrugada notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" DAYSOFFSET="0" />
+            <CONTROL NAME="KQPD-DQ-LEGACY-EXCLUSIVE" TYPE="E" ONFAIL="R" />
+            <INCOND NAME="MMDQRTP1001-TO-MKQPDVP1004" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MMDQRTP1001-TO-MKQPDVP1004" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKQPDVP1004-TO-MKQPDCP1003" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" MEMNAME="MKQPDCP1003" JOBNAME="MKQPDCP1003" DESCRIPTION="INGESTA RAW - DQR - DQ14" CREATED_BY="XM020HY" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" WEEKSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" WEEKDAYS="&lt;5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XMZ0643" CREATION_DATE="20220307" CREATION_TIME="125309" CHANGE_USERID="XMZ0643" CHANGE_DATE="20220322" CHANGE_TIME="144635" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDSEM-K02">
+            <VARIABLE NAME="%%CORREOS" VALUE="dqtaskforceriesgos.group@bbva.com;dqteam.riesgos.mx@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="sasqualityresults" />
+            <VARIABLE NAME="%%FASE" VALUE="INGESTA RAW" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="DQ14" />
+            <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.%%ODAY" /> 
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd -7" />
+            <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kqpd.app-id-21822.pro -jn kqpd-mx-krb-inr-sasqualityresultsi-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;SUFFIX&quot;:&quot;%%SUFIJO&quot;, &quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <SHOUT WHEN="EXECTIME" TIME="&gt;020" URGENCY="U" DEST="EM" MESSAGE="Excede tirmpo de ejecución notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" />
+            <SHOUT WHEN="LATESUB" TIME="0600" URGENCY="U" DEST="EM" MESSAGE="Debe de ejecutar en la madrugada notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" DAYSOFFSET="0" />
+            <CONTROL NAME="KQPD-DQ-LEGACY-EXCLUSIVE" TYPE="E" ONFAIL="R" />
+            <INCOND NAME="MKQPDVP1004-TO-MKQPDCP1003" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKQPDVP1004-TO-MKQPDCP1003" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKQPDCP1003-TO-MKQPDCP1004" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" MEMNAME="MKQPDCP1004" JOBNAME="MKQPDCP1004" DESCRIPTION="INGESTA MASTER - DQR - DQ14" CREATED_BY="XM020HY" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" WEEKSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" WEEKDAYS="&lt;5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XMZ0643" CREATION_DATE="20220307" CREATION_TIME="125309" CHANGE_USERID="XMZ0643" CHANGE_DATE="20220322" CHANGE_TIME="144635" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDSEM-K02">
+            <VARIABLE NAME="%%CORREOS" VALUE="dqtaskforceriesgos.group@bbva.com;dqteam.riesgos.mx@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="sasqualityresults" />
+            <VARIABLE NAME="%%FASE" VALUE="INGESTA MASTER" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="DQ14" />
+            <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.%%ODAY" /> 
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd -7" />
+            <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />
+            <VARIABLE NAME="%%UUAA_1" VALUE="BCBS" />
+            <VARIABLE NAME="%%UUAA_2" VALUE="null" />
+            <VARIABLE NAME="%%UUAA_3" VALUE="null" />
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kqpd.app-id-21822.pro -jn kqpd-mx-krb-inm-legacystatsr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;UUAA_ID1&quot;:&quot;%%UUAA_1&quot;, &quot;UUAA_ID2&quot;:&quot;%%UUAA_2&quot;, &quot;UUAA_ID3&quot;:&quot;%%UUAA_3&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <SHOUT WHEN="EXECTIME" TIME="&gt;020" URGENCY="U" DEST="EM" MESSAGE="Excede tirmpo de ejecución notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" />
+            <SHOUT WHEN="LATESUB" TIME="0600" URGENCY="U" DEST="EM" MESSAGE="Debe de ejecutar en la madrugada notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" DAYSOFFSET="0" />
+            <CONTROL NAME="KQPD-DQ-LEGACY-EXCLUSIVE" TYPE="E" ONFAIL="R" />
+            <INCOND NAME="MKQPDCP1003-TO-MKQPDCP1004" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKQPDCP1003-TO-MKQPDCP1004" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKQPDCP1004-TO-MKQPDVP1005" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" MEMNAME="MKQPDVP1005" JOBNAME="MKQPDVP1005" DESCRIPTION="QA REGLAS BASICAS RAW - DQR - DQ14" CREATED_BY="XM020HY" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" WEEKSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" WEEKDAYS="&lt;5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XMZ0643" CREATION_DATE="20220307" CREATION_TIME="125309" CHANGE_USERID="XMZ0643" CHANGE_DATE="20220322" CHANGE_TIME="144635" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDSEM-K02">
+            <VARIABLE NAME="%%CORREOS" VALUE="dqtaskforceriesgos.group@bbva.com;dqteam.riesgos.mx@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="sasqualityresults" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ RAW" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="DQ14" />
+            <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.%%ODAY" /> 
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd -7" />
+            <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />
+            <VARIABLE NAME="%%DATAS1" VALUE="BCBS_Excel_Liquidez_Semanal" />
+            <VARIABLE NAME="%%DATAS2" VALUE="" />
+            <VARIABLE NAME="%%DATAS3" VALUE="" />
+            <VARIABLE NAME="%%DATAS4" VALUE="" />
+            <VARIABLE NAME="%%DATAS5" VALUE="" />
+            <VARIABLE NAME="%%DATAS6" VALUE="" />
+            <VARIABLE NAME="%%DATAS7" VALUE="" />
+            <VARIABLE NAME="%%DATAS8" VALUE="" />
+            <VARIABLE NAME="%%DATAS9" VALUE="" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kqpd.app-id-21822.pro -jn kqpd-mx-spk-qlt-sasqualityresultsr-03 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;,&quot;SUBSET_DATE&quot;:&quot;%%PARM2&quot;, &quot;SUFFIX&quot;:&quot;%%SUFIJO&quot;, &quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;DATA1&quot;: &quot;%%DATAS1&quot;,&quot;DATA2&quot;: &quot;%%DATAS2&quot;,&quot;DATA3&quot;: &quot;%%DATAS3&quot;, &quot;DATA4&quot;: &quot;%%DATAS4&quot;, &quot;DATA5&quot;: &quot;%%DATAS5&quot;, &quot;DATA6&quot;: &quot;%%DATAS6&quot;, &quot;DATA7&quot;: &quot;%%DATAS7&quot;, &quot;DATA8&quot;: &quot;%%DATAS8&quot;, &quot;DATA9&quot;: &quot;%%DATAS9&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <SHOUT WHEN="EXECTIME" TIME="&gt;020" URGENCY="U" DEST="EM" MESSAGE="Excede tirmpo de ejecución notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" />
+            <SHOUT WHEN="LATESUB" TIME="0600" URGENCY="U" DEST="EM" MESSAGE="Debe de ejecutar en la madrugada notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" DAYSOFFSET="0" />
+            <CONTROL NAME="KQPD-DQ-LEGACY-EXCLUSIVE" TYPE="E" ONFAIL="R" />
+            <INCOND NAME="MKQPDCP1004-TO-MKQPDVP1005" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKQPDCP1004-TO-MKQPDVP1005" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKQPDVP1005-TO-MKQPDVP1006" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" MEMNAME="MKQPDVP1006" JOBNAME="MKQPDVP1006" DESCRIPTION="QA REGLAS BASICAS MASTER - DQR - DQ14" CREATED_BY="XM020HY" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" WEEKSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" WEEKDAYS="&lt;5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XMZ0643" CREATION_DATE="20220307" CREATION_TIME="125309" CHANGE_USERID="XMZ0643" CHANGE_DATE="20220322" CHANGE_TIME="144635" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDSEM-K02">
+            <VARIABLE NAME="%%CORREOS" VALUE="dqtaskforceriesgos.group@bbva.com;dqteam.riesgos.mx@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="sasqualityresults" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ MASTER" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="DQ14" />
+            <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.%%ODAY" /> 
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd -7" />
+            <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />
+            <VARIABLE NAME="%%DATAS1" VALUE="BCBS_Excel_Liquidez_Semanal" />
+            <VARIABLE NAME="%%DATAS2" VALUE="" />
+            <VARIABLE NAME="%%DATAS3" VALUE="" />
+            <VARIABLE NAME="%%DATAS4" VALUE="" />
+            <VARIABLE NAME="%%DATAS5" VALUE="" />
+            <VARIABLE NAME="%%DATAS6" VALUE="" />
+            <VARIABLE NAME="%%DATAS7" VALUE="" />
+            <VARIABLE NAME="%%DATAS8" VALUE="" />
+            <VARIABLE NAME="%%DATAS9" VALUE="" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kqpd.app-id-21822.pro -jn kqpd-mx-spk-qlt-legacystatsm-03 -o %%ORDERID" />            
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;SUBSET_DATE&quot;:&quot;%%PARM2&quot;, &quot;DATA1&quot;:&quot;%%DATAS1&quot;, &quot;DATA2&quot;:&quot;%%DATAS2&quot;, &quot;DATA3&quot;:&quot;%%DATAS3&quot;, &quot;DATA4&quot;:&quot;%%DATAS4&quot;, &quot;DATA5&quot;:&quot;%%DATAS5&quot;, &quot;DATA6&quot;:&quot;%%DATAS6&quot;, &quot;DATA7&quot;:&quot;%%DATAS7&quot;, &quot;DATA8&quot;:&quot;%%DATAS8&quot;, &quot;DATA9&quot;:&quot;%%DATAS9&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <SHOUT WHEN="EXECTIME" TIME="&gt;020" URGENCY="U" DEST="EM" MESSAGE="Excede tirmpo de ejecución notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" />
+            <SHOUT WHEN="LATESUB" TIME="0600" URGENCY="U" DEST="EM" MESSAGE="Debe de ejecutar en la madrugada notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" DAYSOFFSET="0" />
+            <CONTROL NAME="KQPD-DQ-LEGACY-EXCLUSIVE" TYPE="E" ONFAIL="R" />
+            <INCOND NAME="MKQPDVP1005-TO-MKQPDVP1006" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKQPDVP1005-TO-MKQPDVP1006" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKQPDVP1006-TO-MKQPDDP1002" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" MEMNAME="MKQPDDP1002" JOBNAME="MKQPDDP1002" DESCRIPTION="BORRADO STAGING - DQR - DQ14" CREATED_BY="XM020HY" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" WEEKSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" WEEKDAYS="&lt;5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XMZ0643" CREATION_DATE="20220307" CREATION_TIME="125309" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDSEM-K02">
+            <VARIABLE NAME="%%CORREOS" VALUE="dqtaskforceriesgos.group@bbva.com;dqteam.riesgos.mx@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="sasqualityresults" />
+            <VARIABLE NAME="%%FASE" VALUE="BORRADO" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="DQ14" />
+            <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.%%ODAY" /> 
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd -7" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kqpd.app-id-21822.pro -jn kqpd-mx-dfs-rmv-hdfs-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;HADOOP_MODE&quot;: &quot;REMOVE&quot;, &quot;HADOOP_PATH&quot;: &quot;/in/staging/ratransmit/sas/bcbs/DQLEGACY_%%SUFIJO._%%PARM1..c*&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot; } }" />
+            <SHOUT WHEN="EXECTIME" TIME="&gt;020" URGENCY="U" DEST="EM" MESSAGE="Excede tirmpo de ejecución notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" />
+            <SHOUT WHEN="LATESUB" TIME="0600" URGENCY="U" DEST="EM" MESSAGE="Debe de ejecutar en la madrugada notificar a Juan Gibran Miranda Romero juangibran.romero.miranda@bbva.com" DAYSOFFSET="0" />
+            <INCOND NAME="MKQPDVP1006-TO-MKQPDDP1002" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKQPDVP1006-TO-MKQPDDP1002" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM1" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM1" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLE con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>		
+    </FOLDER>
+</DEFTABLE>

@@ -1,0 +1,18 @@
++ fechaodate=
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ DSLOGS=/SREPGRM/Shells/Logs
++ PATH=/SREPGRM/COVID_PyME/codigos
++ FILENAM=COVID_PyME_Maestro
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/COVID_PyME_Maestro_20220613_1830.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20220613_1830 INICIA PROCESO LIQUIDEZ MENSUAL'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO LIQUIDEZ MENSUAL                                   *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 13/06/2022 hora:18:30:31 '            *'
++ echo '***********************************************************************************************'
++ PASO_00

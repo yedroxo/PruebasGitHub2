@@ -1,0 +1,98 @@
++ CDDIR=/NDM36/cdunix/
++ NDMAPICFG=/NDM36/cdunix//ndm/cfg/cliapi/ndmapi.cfg
++ fecha=20211112
++ export NDMAPICFG
++ set -v
+$CDDIR/ndm/bin/direct  -x << EOJ
+submit maxdelay=unlimited
+       procUNX     process    snode=CDLCVPMXAXFT01
+       stepUNX1    copy from  (pnode
+                     file=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ9_*.c*
+                     sysopts='strip.blanks=no:datatype=binary:'
+                           )
+                     to    (snode
+                     file=/in/staging/sas/bcbs/
+                     disp=rpl
+                     sysopts='strip.blanks=no:datatype=binary:'
+                           )
+                     COMPRESS EXTENDED
+      valida1   if (stepUNX1 = 0) then
+	   borra  run task (pgm=unix) pnode
+	          sysopts="rm -f /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ9_*.c* /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM*_DQ9.txt"
+              eif					 
+pend;
+EOJ
++ /NDM36/cdunix//ndm/bin/direct -x
++ 0<< \EOJ
+submit maxdelay=unlimited
+       procUNX     process    snode=CDLCVPMXAXFT01
+       stepUNX1    copy from  (pnode
+                     file=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ9_*.c*
+                     sysopts='strip.blanks=no:datatype=binary:'
+                           )
+                     to    (snode
+                     file=/in/staging/sas/bcbs/
+                     disp=rpl
+                     sysopts='strip.blanks=no:datatype=binary:'
+                           )
+                     COMPRESS EXTENDED
+      valida1   if (stepUNX1 = 0) then
+	   borra  run task (pgm=unix) pnode
+	          sysopts="rm -f /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ9_*.c* /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM*_DQ9.txt"
+              eif					 
+pend;
+EOJ
+
+	**************************************************************
+	*                                                            *
+	*            Licensed Materials - Property of IBM            *
+	*                                                            *
+	* IBM(R) Sterling Connect:Direct(R) for UNIX 4.2.0.4_iFix056 *
+	*                   Build date: 11Jul2017                    *
+	*                                                            *
+	*  (C) Copyright IBM Corp. 1992, 2016 All Rights Reserved.   *
+	*                                                            *
+	**************************************************************
+
+Direct> Enter a ';' at the end of a command to submit it. Type 'quit;' to exit CLI.
+
+submit maxdelay=unlimited
+        procUNX     process    snode=CDLCVPMXAXFT01
+        stepUNX1    copy from  (pnode
+                      file=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ9_*.c*
+                      sysopts='strip.blanks=no:datatype=binary:'
+                            )
+                      to    (snode
+                      file=/in/staging/sas/bcbs/
+                      disp=rpl
+                      sysopts='strip.blanks=no:datatype=binary:'
+                            )
+                      COMPRESS EXTENDED
+       valida1   if (stepUNX1 = 0) then
+ 	   borra  run task (pgm=unix) pnode
+ 	          sysopts="rm -f /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ9_*.c* /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM*_DQ9.txt"
+               eif					 
+ pend;
+ 
+Process Submitted, Process Number = 5770
+                   Return code    = 0
+                   Message id     = XSMG252I
+Direct> 
+Connect:Direct CLI Terminated...
+SAVE=$?
++ SAVE=0
+echo $SAVE
++ echo 0
+0
+if [[ $SAVE > 0 ]]
+then
+   echo 'Error:$SAVE'
+exit 1
+fi
++ [[ 0 > 0 ]]
+echo 'No error'
++ echo 'No error'
+No error
+exit 0
++ exit 0
+BCBS_Excel_Dashboard_RAF

@@ -1,0 +1,163 @@
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   1
+
+                                                                MAXIMO
+                                                              --------
+                                                                    14
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   2
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1701900100       0.031926   0.031926       -0.08        0.08
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   3
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1704300100        0.01908    0.01908        -0.1         0.1
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   4
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1703000100       -0.00073   -0.00073      -0.035       0.035
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   5
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1700900100       43532.18   43532.18      -75000       75000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   6
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1700300100       4869.362   4869.362      -18000       18000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   7
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1700400100       4938.003   4938.003     -120000      120000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   8
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1704100100       7288.637   7288.637      -98000       98000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021   9
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1703100100       -41379.1   -41379.1      -80000       80000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  10
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1703200100       -37523.6   -37523.6      -70000       70000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  11
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1704000100       -3855.45   -3855.45      -40000       40000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  12
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1700800100       69246.98   69246.98     -185000      185000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  13
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1700600100       67480.98   67480.98     -185000      185000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  14
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1700700100       1765.998   1765.998      -28000       28000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  15
+
+                                    gf_legacy_qr_
+                                    sequential_id   VARIACION  VARIACION  Umbral_Min  Umbral_Max
+                                    ------------------------------------------------------------
+                                    1704200100       1271.555   1271.555      -98000       98000
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  16
+
+                                                                      
+                                                              --------
+                                                                    14
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  17
+
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+         Fecha  Reporte                         Métrica                                                                         
+    2021-11-19  Liquidez                        Caja y cuentas obligatorias en bancos centrales                                 
+    2021-11-19  Liquidez                        Cartera de títulos                                                              
+    2021-11-19  Liquidez                        Financiación Mayorista Neta Corto Plazo                                         
+    2021-11-19  Liquidez                        Financiación Mayorista Neta Largo Plazo                                         
+    2021-11-19  Liquidez                        FINANCIACIÓN MAYORISTA NETA TOTAL                                               
+    2021-11-19  Liquidez                        Gap de Crédito                                                                  
+    2021-11-19  Liquidez                        LOAN TO STABLE CUSTOMER DEPOSITS (LtSCD = ICN / REC)                            
+    2021-11-19  Liquidez                        REC (Haircut Promedio)                                                          
+    2021-11-19  Liquidez                        Recursos de Clientes                                                            
+    2021-11-19  Liquidez                        Recursos Estables de Clientes (REC)                                             
+    2021-11-19  Liquidez                        Recursos Volátiles de Clientes                                                  
+    2021-11-19  Liquidez                        Resto de Activos                                                                
+    2021-11-19  Liquidez                        RESTO DE PASIVOS                                                                
+    2021-11-19  Liquidez                        Loan to Stable Funding Moneda Extranjera (LtSF ME)                              
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  18
+
+                                                                         Porce                                                
+                                                                         ntaje                                                
+                                                                         Cumpl                                                
+                                                           Umbra  Umbra  imien                                                
+                                                               l      l     to                                                
+     Regla de                                              Mínim  Objet  Regis                                                
+     calidad     Responsable                                   o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo
+     1700300100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1700400100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1700600100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1700700100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1700800100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1700900100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1701900100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1703000100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1703100100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1703200100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1704000100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1704100100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1704200100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1704300100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+                                                           The SAS System                       19:15 Tuesday, November 30, 2021  19
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                 SE
+                                                                                                                 MA
+                       Variación Máxima                                                                          FO
+                              Permitida             Dato Actual           Dato Anterior               Variación  RO
+                             18,000.000             92,547.1502             87,677.7880              4,869.3622  SI
+                            120,000.000            544,289.2109            539,351.2083              4,938.0025  SI
+                            185,000.000             84,917.3824             17,436.4025             67,480.9799  SI
+                             28,000.000            187,528.5566            185,762.5583              1,765.9983  SI
+                            185,000.000            272,445.9390            203,198.9608             69,246.9782  SI
+                             75,000.000            -40,035.2513            -83,567.4301             43,532.1788  SI
+                                  0.080                  0.9690                  0.9370                  0.0319  SI
+                                  0.035                  0.0679                  0.0686                 -0.0007  SI
+                             80,000.000          1,383,474.3812          1,424,853.4439            -41,379.0626  SI
+                             70,000.000          1,289,521.1252          1,327,044.7355            -37,523.6103  SI
+                             40,000.000             93,953.2560             97,808.7083             -3,855.4524  SI
+                             98,000.000             79,313.5785             72,024.9419              7,288.6366  SI
+                             98,000.000            327,300.7736            326,029.2189              1,271.5548  SI
+                                  0.100                  0.8500                  0.8309                  0.0191  SI

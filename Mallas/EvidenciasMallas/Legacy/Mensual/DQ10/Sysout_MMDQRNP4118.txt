@@ -1,0 +1,4 @@
+++ grep '|1|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEMNEW_DQ10.txt
+++ awk '-F|' '{print $0}'
++ echo '|1|BCBS_Excel_RDA_Mexico_Vinculos'
+|1|BCBS_Excel_RDA_Mexico_Vinculos

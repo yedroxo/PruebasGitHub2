@@ -1,0 +1,370 @@
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDVP4040" DESCRIPTION="QA REGLAS BASICAS STAGING - DQR - DQ11" CREATED_BY="XMY0139" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="1" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D1" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME7894" CREATION_DATE="20210422" CREATION_TIME="121637" CHANGE_USERID="XME7894" CHANGE_DATE="20210422" CHANGE_TIME="133009" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="2" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+            <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.01" />
+            <VARIABLE NAME="%%prev" VALUE="%%$CALCDATE %%aaaammdd -1" />
+            <VARIABLE NAME="%%A2" VALUE="%%SUBSTR %%prev 1 4" />
+            <VARIABLE NAME="%%M2" VALUE="%%SUBSTR %%prev 5 2" />
+            <VARIABLE NAME="%%aaaammdd2" VALUE="%%A2.%%M2.01" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd2 -1" /> 
+			<VARIABLE NAME="%%AA2" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%MA2" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%DA2" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%AA2-%%MA2-%%DA2" />			
+            <VARIABLE NAME="%%PARM3" VALUE="DQ11" />			
+			<VARIABLE NAME="%%PARM4" VALUE="sasqualityresults" />
+            <VARIABLE NAME="%%PARM5" VALUE="DQ STAGING" />
+            <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+            <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-spk-qlt-sasqualityresultss-01" />
+            <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;SUFFIX&quot;: &quot;%%PARM3&quot;, &quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+            <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+            <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+            <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+			<QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+			<INCOND NAME="MMDQRTP4103-TO-MKQPDVP4040" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MMDQRTP4103-TO-MKQPDVP4040" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKQPDVP4040-TO-MKQPDCP4027" ODATE="ODAT" SIGN="+" />			
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  fallida del job %%JOBNAME - %%PARM5 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM5 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM5 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM5 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDCP4027" DESCRIPTION="INGESTA RAW - DQR - DQ11" CREATED_BY="XMY0139" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="1" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D1" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME7894" CREATION_DATE="20210422" CREATION_TIME="121637" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.01" />
+           <VARIABLE NAME="%%prev" VALUE="%%$CALCDATE %%aaaammdd -1" />
+           <VARIABLE NAME="%%A2" VALUE="%%SUBSTR %%prev 1 4" />
+           <VARIABLE NAME="%%M2" VALUE="%%SUBSTR %%prev 5 2" />
+           <VARIABLE NAME="%%aaaammdd2" VALUE="%%A2.%%M2.01" />
+           <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd2 -1" /> 
+		   <VARIABLE NAME="%%AA2" VALUE="%%SUBSTR %%PARM1 1 4" />
+           <VARIABLE NAME="%%MA2" VALUE="%%SUBSTR %%PARM1 5 2" />
+           <VARIABLE NAME="%%DA2" VALUE="%%SUBSTR %%PARM1 7 2" />
+           <VARIABLE NAME="%%PARM2" VALUE="%%AA2-%%MA2-%%DA2" />
+		   <VARIABLE NAME="%%PARM3" VALUE="DQ11" />	
+           <VARIABLE NAME="%%PARM4" VALUE="%%VAL1" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="INGESTA RAW" />		
+           <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />			
+           <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-krb-inr-sasqualityresultsi-01" />
+		   <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;SUFFIX&quot;:&quot;%%PARM3&quot;,&quot;FILE_DATE&quot;:&quot;%%PARM1&quot;,&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;DATA1&quot;:&quot;%%PARM4&quot;,&quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+           <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+		   <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+		   <INCOND NAME="MKQPDVP4040-TO-MKQPDCP4027" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDVP4040-TO-MKQPDCP4027" ODATE="ODAT" SIGN="-" />
+           <OUTCOND NAME="MKQPDCP4027-TO-MKQPDCP4028" ODATE="ODAT" SIGN="+" />			
+           <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  fallida del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDCP4028" DESCRIPTION="INGESTA MASTER - DQR - DQ11" CREATED_BY="XMY0139" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="1" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D1" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME7894" CREATION_DATE="20210422" CREATION_TIME="121637" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.01" />
+           <VARIABLE NAME="%%prev" VALUE="%%$CALCDATE %%aaaammdd -1" />
+           <VARIABLE NAME="%%A2" VALUE="%%SUBSTR %%prev 1 4" />
+           <VARIABLE NAME="%%M2" VALUE="%%SUBSTR %%prev 5 2" />
+           <VARIABLE NAME="%%aaaammdd2" VALUE="%%A2.%%M2.01" />
+           <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd2 -1" /> 
+		   <VARIABLE NAME="%%AA2" VALUE="%%SUBSTR %%PARM1 1 4" />
+           <VARIABLE NAME="%%MA2" VALUE="%%SUBSTR %%PARM1 5 2" />
+           <VARIABLE NAME="%%DA2" VALUE="%%SUBSTR %%PARM1 7 2" />
+           <VARIABLE NAME="%%PARM2" VALUE="%%AA2-%%MA2-%%DA2" />
+		   <VARIABLE NAME="%%PARM3" VALUE="DQ11" />	
+           <VARIABLE NAME="%%PARM4" VALUE="%%VAL1" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="INGESTA MASTER" />		
+           <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+           <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-krb-inm-sasqualityresultsi-01" />
+		   <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;SUFFIX&quot;: &quot;%%PARM3&quot;,&quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;DATA1&quot;:&quot;%%PARM4&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+           <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+		   <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+		   <INCOND NAME="MKQPDCP4027-TO-MKQPDCP4028" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDCP4027-TO-MKQPDCP4028" ODATE="ODAT" SIGN="-" />
+           <OUTCOND NAME="MKQPDCP4028-TO-MKQPDVP4041" ODATE="ODAT" SIGN="+" />				
+           <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  fallida del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDVP4041" DESCRIPTION="QA REGLAS BASICAS RAW - DQR - DQ11" CREATED_BY="XMY0139" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="1" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D1" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME7894" CREATION_DATE="20210422" CREATION_TIME="121637" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.01" />
+           <VARIABLE NAME="%%prev" VALUE="%%$CALCDATE %%aaaammdd -1" />
+           <VARIABLE NAME="%%A2" VALUE="%%SUBSTR %%prev 1 4" />
+           <VARIABLE NAME="%%M2" VALUE="%%SUBSTR %%prev 5 2" />
+           <VARIABLE NAME="%%aaaammdd2" VALUE="%%A2.%%M2.01" />
+           <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd2 -1" /> 
+		   <VARIABLE NAME="%%AA2" VALUE="%%SUBSTR %%PARM1 1 4" />
+           <VARIABLE NAME="%%MA2" VALUE="%%SUBSTR %%PARM1 5 2" />
+           <VARIABLE NAME="%%DA2" VALUE="%%SUBSTR %%PARM1 7 2" />
+           <VARIABLE NAME="%%PARM2" VALUE="%%AA2-%%MA2-%%DA2" />
+           <VARIABLE NAME="%%PARM3" VALUE="DQ11" />
+           <VARIABLE NAME="%%PARM4" VALUE="%%VAL1" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="DQ RAW" />			
+           <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-spk-qlt-sasqualityresultsr-01" />
+		   <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;SUBSET_DATE&quot;:&quot;%%PARM2&quot;,&quot;SUFFIX&quot;:&quot;%%PARM3&quot;,&quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;DATA1&quot;: &quot;%%PARM4&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+           <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+		   <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+		   <INCOND NAME="MKQPDCP4028-TO-MKQPDVP4041" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDCP4028-TO-MKQPDVP4041" ODATE="ODAT" SIGN="-" />
+           <OUTCOND NAME="MKQPDVP4041-TO-MKQPDVP4042" ODATE="ODAT" SIGN="+" />			
+           <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  fallida del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDVP4042" DESCRIPTION="QA REGLAS BASICAS MASTER - DQR - DQ11" CREATED_BY="XMY0139" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="1" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D1" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME7894" CREATION_DATE="20210422" CREATION_TIME="121637" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.01" />
+           <VARIABLE NAME="%%prev" VALUE="%%$CALCDATE %%aaaammdd -1" />
+           <VARIABLE NAME="%%A2" VALUE="%%SUBSTR %%prev 1 4" />
+           <VARIABLE NAME="%%M2" VALUE="%%SUBSTR %%prev 5 2" />
+           <VARIABLE NAME="%%aaaammdd2" VALUE="%%A2.%%M2.01" />
+           <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd2 -1" /> 
+		   <VARIABLE NAME="%%AA2" VALUE="%%SUBSTR %%PARM1 1 4" />
+           <VARIABLE NAME="%%MA2" VALUE="%%SUBSTR %%PARM1 5 2" />
+           <VARIABLE NAME="%%DA2" VALUE="%%SUBSTR %%PARM1 7 2" />
+           <VARIABLE NAME="%%PARM2" VALUE="%%AA2-%%MA2-%%DA2" />
+           <VARIABLE NAME="%%PARM3" VALUE="DQ11" />
+           <VARIABLE NAME="%%PARM4" VALUE="%%VAL1" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="DQ MASTER" />
+           <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-spk-qlt-sasqualityresultsm-01" />
+		   <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;,&quot;SUBSET_DATE&quot;:&quot;%%PARM2&quot;,&quot;DATA1&quot;:&quot;%%PARM4&quot;,&quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+           <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+		   <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+		   <INCOND NAME="MKQPDVP4041-TO-MKQPDVP4042" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDVP4041-TO-MKQPDVP4042" ODATE="ODAT" SIGN="-" />
+           <OUTCOND NAME="MKQPDVP4042-TO-MKQPDDP4014" ODATE="ODAT" SIGN="+" />				
+           <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  fallida del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDDP4014" DESCRIPTION="BORRADO STAGING - DQR - DQ11" CREATED_BY="XMY0139" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="1" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D1" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME7894" CREATION_DATE="20210422" CREATION_TIME="121637" CHANGE_USERID="XME7894" CHANGE_DATE="20210422" CHANGE_TIME="133009" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="2" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%aaaammdd" VALUE="%%$OYEAR.%%OMONTH.01" />
+           <VARIABLE NAME="%%prev" VALUE="%%$CALCDATE %%aaaammdd -1" />
+           <VARIABLE NAME="%%A2" VALUE="%%SUBSTR %%prev 1 4" />
+           <VARIABLE NAME="%%M2" VALUE="%%SUBSTR %%prev 5 2" />
+           <VARIABLE NAME="%%aaaammdd2" VALUE="%%A2.%%M2.01" />
+           <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%aaaammdd2 -1" /> 	
+           <VARIABLE NAME="%%PARM3" VALUE="DQ11" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="BORRADO" />			
+           <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-dfs-rmv-hdfs-01" />
+           <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;HADOOP_MODE&quot;: &quot;REMOVE&quot;,&quot;HADOOP_PATH&quot;: &quot;/in/staging/ratransmit/sas/bcbs/DQLEGACY_%%PARM3._%%PARM1..c*&quot;,&quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot; } ]}" />
+           <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+		   <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+		   <INCOND NAME="MKQPDVP4042-TO-MKQPDDP4014" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDVP4042-TO-MKQPDDP4014" ODATE="ODAT" SIGN="-" />			
+           <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  fallida del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;gustavo.martinez.arambula.contractor@bbva.com" SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+        </JOB>
+		
+		
+        <JOB JOBISN="1" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDVP4049" DESCRIPTION="QA REGLAS BASICAS STAGING - DQ17 ESTANDAR RIESGOS" CREATED_BY="XME6638" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D7" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME6638" CREATION_DATE="20210126" CREATION_TIME="133445" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+	        <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+	        <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+	        <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+	        <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />   
+	        <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />  
+	        <VARIABLE NAME="%%PARM3" VALUE="DQ17" />
+            <VARIABLE NAME="%%PARM4" VALUE="sasqualityresults" />
+            <VARIABLE NAME="%%PARM5" VALUE="DQ STAGING" />	    
+	        <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+            <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-spk-qlt-sasqualityresultss-01" />
+	        <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;SUFFIX&quot;: &quot;%%PARM3&quot;, &quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+	        <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+            <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+            <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+            <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+	        <INCOND NAME="MXDCRD_NXOCMDQL00" ODATE="ODAT" AND_OR="A" />
+            <OUTCOND NAME="MXDCRD_NXOCMDQL00" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKQPDVP4049-TO-MKQPDCP4033" ODATE="ODAT" SIGN="+" />
+	        <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Fallo el job %%JOBNAME - %%PARM5 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM5 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>			
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM5 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM5 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>	
+	        <ON STMT="*" CODE="*Exit Code    = 1*">
+                <DOACTION ACTION="OK" />
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="ALERTA %%JOBNAME - %%PARM5 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Cancelo el proceso de %%PARM5 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>			
+        </JOB>
+        <JOB JOBISN="2" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDCP4033" DESCRIPTION="INGESTA RAW - DQ17 ESTANDAR RIESGOS" CREATED_BY="XME6638" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D7" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME6638" CREATION_DATE="20210126" CREATION_TIME="133445" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+	       <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+	       <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+	       <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />   
+	       <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />  
+           <VARIABLE NAME="%%PARM3" VALUE="DQ17" />
+	       <VARIABLE NAME="%%PARM4" VALUE="Siro" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="INGESTA RAW" />	 
+           <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />		   
+	       <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-krb-inr-sasqualityresultsi-01" />
+	       <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;SUFFIX&quot;:&quot;%%PARM3&quot;,&quot;FILE_DATE&quot;:&quot;%%PARM1&quot;,&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;DATA1&quot;:&quot;%%PARM4&quot;,&quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+	       <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+           <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />	
+	       <INCOND NAME="MKQPDVP4049-TO-MKQPDCP4033" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDVP4049-TO-MKQPDCP4033" ODATE="ODAT" SIGN="-" />
+	       <OUTCOND NAME="MKQPDCP4033-TO-MKQPDCP4034" ODATE="ODAT" SIGN="+" />
+	       <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Fallo el job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>			
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>	
+	       <ON STMT="*" CODE="*Exit Code    = 1*">
+                <DOACTION ACTION="OK" />
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="ALERTA %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Cancelo el proceso de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>			
+        </JOB>
+        <JOB JOBISN="3" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDCP4034" DESCRIPTION="INGESTA MASTER - DQ17 ESTANDAR RIESGOS" CREATED_BY="XME6638" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D7" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME6638" CREATION_DATE="20210126" CREATION_TIME="133445" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+	       <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+	       <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+	       <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />   
+	       <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" /> 
+           <VARIABLE NAME="%%PARM3" VALUE="DQ17" />		   
+	       <VARIABLE NAME="%%PARM4" VALUE="Siro" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="INGESTA MASTER" />	
+           <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />	   
+	       <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-krb-inm-sasqualityresultsi-01" />
+	       <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;SUFFIX&quot;: &quot;%%PARM3&quot;,&quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;DATA1&quot;:&quot;%%PARM4&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />		   
+	       <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+           <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />	
+	       <INCOND NAME="MKQPDCP4033-TO-MKQPDCP4034" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDCP4033-TO-MKQPDCP4034" ODATE="ODAT" SIGN="-" />
+           <OUTCOND NAME="MKQPDCP4034-TO-MKQPDVP4050" ODATE="ODAT" SIGN="+" />
+	       <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Fallo el job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>			
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>	
+	       <ON STMT="*" CODE="*Exit Code    = 1*">
+                <DOACTION ACTION="OK" />
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="ALERTA %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Cancelo el proceso de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+        </JOB>
+        <JOB JOBISN="4" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDVP4050" DESCRIPTION="QA REGLAS BASICAS RAW - DQ17 ESTANDAR RIESGOS" CREATED_BY="XME6638" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D7" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME6638" CREATION_DATE="20210126" CREATION_TIME="133445" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+	       <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+	       <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+	       <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />   
+	       <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />  
+	       <VARIABLE NAME="%%PARM3" VALUE="DQ17" />
+	       <VARIABLE NAME="%%PARM4" VALUE="Siro" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="DQ RAW" />	   
+	       <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-spk-qlt-sasqualityresultsr-01" />		   
+	       <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;SUBSET_DATE&quot;:&quot;%%PARM2&quot;,&quot;SUFFIX&quot;:&quot;%%PARM3&quot;,&quot;FILE_DATE&quot;:&quot;%%PARM1&quot;, &quot;DATA1&quot;: &quot;%%PARM4&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+	       <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+           <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+	       <INCOND NAME="MKQPDCP4034-TO-MKQPDVP4050" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDCP4034-TO-MKQPDVP4050" ODATE="ODAT" SIGN="-" />
+	       <OUTCOND NAME="MKQPDVP4050-TO-MKQPDVP4051" ODATE="ODAT" SIGN="+" />
+	       <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Fallo el job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>			
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>	
+	       <ON STMT="*" CODE="*Exit Code    = 1*">
+                <DOACTION ACTION="OK" />
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="ALERTA %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Cancelo el proceso de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>			
+        </JOB>
+        <JOB JOBISN="5" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDVP4051" DESCRIPTION="QA REGLAS BASICAS MASTER - DQ17 ESTANDAR RIESGOS" CREATED_BY="XME6638" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D7" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME6638" CREATION_DATE="20210126" CREATION_TIME="133445" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+	       <VARIABLE NAME="%%A" VALUE="%%SUBSTR %%PARM1 1 4" />
+	       <VARIABLE NAME="%%M" VALUE="%%SUBSTR %%PARM1 5 2" />
+	       <VARIABLE NAME="%%D" VALUE="%%SUBSTR %%PARM1 7 2" />
+	       <VARIABLE NAME="%%PARM2" VALUE="%%A-%%M-%%D" />
+	       <VARIABLE NAME="%%PARM3" VALUE="DQ17" />		   
+	       <VARIABLE NAME="%%PARM4" VALUE="Siro" />
+           <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="DQ MASTER" />
+	       <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-spk-qlt-sasqualityresultsm-01" />
+	       <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;,&quot;SUBSET_DATE&quot;:&quot;%%PARM2&quot;,&quot;DATA1&quot;:&quot;%%PARM4&quot;,&quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} ]}" />
+	       <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+           <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+	       <INCOND NAME="MKQPDVP4050-TO-MKQPDVP4051" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDVP4050-TO-MKQPDVP4051" ODATE="ODAT" SIGN="-" />
+	       <OUTCOND NAME="MKQPDVP4051-TO-MKQPDDP4017" ODATE="ODAT" SIGN="+" />
+	       <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Fallo el job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>			
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>	
+	       <ON STMT="*" CODE="*Exit Code    = 1*">
+                <DOACTION ACTION="OK" />
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="ALERTA %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Cancelo el proceso de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+        </JOB>
+        <JOB JOBISN="6" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="BCBS-RKS-DATIO-CCR" JOBNAME="MKQPDDP4017" DESCRIPTION="BORRADO STAGING - DQ17 ESTANDAR RIESGOS" CREATED_BY="XME6638" RUN_AS="MX_DATIO_NS" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="lcvpmxaxai00" INTERVAL="00001M" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D7" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XME6638" CREATION_DATE="20210126" CREATION_TIME="133445" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="DATIONS" APPL_FORM="DATIONS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKQPDMEN-K02">
+           <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+	       <VARIABLE NAME="%%PARM3" VALUE="DQ17" />			
+	       <VARIABLE NAME="%%PARM5" VALUE="sasqualityresults" />
+           <VARIABLE NAME="%%PARM6" VALUE="BORRADO" />
+           <VARIABLE NAME="%%UCM-APP_NAME" VALUE="DATIONS" />
+           <VARIABLE NAME="%%UCM-JOBNAME" VALUE="kqpd-mx-dfs-rmv-hdfs-01" />
+           <VARIABLE NAME="%%UCM-BODY" VALUE="{&quot;params&quot;: [{&quot;HADOOP_MODE&quot;: &quot;REMOVE&quot;,&quot;HADOOP_PATH&quot;: &quot;/in/staging/ratransmit/sas/bcbs/DQLEGACY_DQ17_%%PARM1..c*&quot;,&quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;}]}" />
+           <VARIABLE NAME="%%UCM-NS" VALUE="mx.kqpd.app-id-21822.pro" />
+           <VARIABLE NAME="%%UCM-GROUP_ID" VALUE="processing" />
+           <VARIABLE NAME="%%UCM-ACCOUNT" VALUE="MX_DATIO_NS" />
+           <QUANTITATIVE NAME="APX_DATIO_AI_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+	       <INCOND NAME="MKQPDVP4051-TO-MKQPDDP4017" ODATE="ODAT" AND_OR="A" />
+           <OUTCOND NAME="MKQPDVP4051-TO-MKQPDDP4017" ODATE="ODAT" SIGN="-" />
+	       <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Fallo el job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>			
+           <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="Ejecucion  exitosa del job %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Concluyo la Ejecucion  de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>	
+	       <ON STMT="*" CODE="*Exit Code    = 1*">
+                <DOACTION ACTION="OK" />
+                <DOMAIL URGENCY="R" DEST="me.jimenez@bbva.com;juangibran.romero.miranda@bbva.com;julio.jimenez.1.contractor@bbva.com;irma.salas.contractor@bbva.com"  SUBJECT="ALERTA %%JOBNAME - %%PARM6 - %%PARM3 - Odate  %%$ODATE" MESSAGE="Cancelo el proceso de %%PARM6 del job %%JOBNAME del proceso %%PARM3 con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+           </ON>
+        </JOB>		

@@ -1,0 +1,87 @@
+#---20211126_2030 INICIA PROCESO LIQUIDEZ DIARIO
+***********************************************************************************************
+*                                   PROCESO LIQUIDEZ DIARIO                                   *
+*                            FECHA:  dia: 26/11/2021 hora:20:30:20             *
+***********************************************************************************************
++ PASO=LiqDia_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211126_2030 Iniciar: SAS LiqDia_ejecucion'
+#---20211126_2030 Iniciar: SAS LiqDia_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/Liquidez/Diaria/Codigos/LiqDia_ejecucion.sas -log /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211126_2030.log -print /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211126_2030.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=0
++ echo 'El codigo de salida es:' 0
+El codigo de salida es: 0
++ '[' 0 -ne 0 ']'
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211126_2030 Completado con exito: SAS LiqDia_ejecucion'
+#---20211126_2030 Completado con exito: SAS LiqDia_ejecucion
++ fPurge '/SREPGRM/Shells/Logs/LiqDia_ejecucion_*.l*' 3
++ path='/SREPGRM/Shells/Logs/LiqDia_ejecucion_*.l*'
++ keep_file_num=3
++ echo 'Eliminando archivos '
+Eliminando archivos 
++ echo 'Ruta borra archivos  /SREPGRM/Shells/Logs/LiqDia_ejecucion_*.l*'
+Ruta borra archivos  /SREPGRM/Shells/Logs/LiqDia_ejecucion_*.l*
+++ /bin/grep '^-'
+++ /usr/bin/wc -l
+++ /bin/ls -ltr /SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.lst /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.lst /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.lst /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211126_2030.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211126_2030.lst /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211118_1914.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211123_1915.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211126_2030.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS.log
++ total_files=12
++ echo 'Num Archivos 12'
+Num Archivos 12
++ let num_to_delete=12-3
++ echo 'Resto 9'
+Resto 9
++ '[' 9 -gt 0 ']'
+++ /usr/bin/head -n 9
+++ /bin/ls -tr /SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.lst /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.lst /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.lst /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211126_2030.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211126_2030.lst /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211118_1914.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211123_1915.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211126_2030.log /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS.log
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS.log
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.lst
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.lst 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.lst Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.log
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_20210917_1804.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211118_1914.log
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211118_1914.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211118_1914.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.lst
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.lst 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.lst Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.log
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_20211118_1914.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211123_1915.log
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211123_1915.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_SAS_20211123_1915.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.lst
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.lst 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.lst Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.log
++ echo /SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqDia_ejecucion_20211123_1915.log Archivo Borrado
++ exit 0

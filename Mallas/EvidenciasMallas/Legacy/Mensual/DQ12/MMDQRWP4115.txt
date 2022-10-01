@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/COVID_PyME/settings/ConfCOVID_PyME.xlsx CREATE 0 60 10 3 10
+0613 18:30:01 : File '/SREPGRM/COVID_PyME/settings/ConfCOVID_PyME.xlsx' exists, it's current size is 2874564 bytes . id=1.
+0613 18:30:31 : File transfer was completed. The size of file '/SREPGRM/COVID_PyME/settings/ConfCOVID_PyME.xlsx' is 2874564 bytes. id=1. Modified 12/05/2022 13:43

@@ -1,0 +1,1412 @@
+1                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.32 seconds
+      cpu time            0.05 seconds
+      
+1          %let ruta_codigos=/SREPGRM/IRBB/Codigos/;
+2          options mprint;
+3          %include "&ruta_codigos.P0_Autoexec.sas";
+NOTE: Libref INPUT was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/IRBB/Input
+NOTE: Libref OUTPUT was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/IRBB/Output
+NOTE: Libref SETTING was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/IRBB/Setting
+NOTE: Libref LOGS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/IRBB/Logs
+
+2                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: The import data set has 1 observations and 1 variables.
+NOTE: WORK.TMP_CONFIG data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: The PROCEDURE SQL printed page 1.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.03 seconds
+      
+
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+=01SEP2021
+=01AUG2021
+NOTE: Format YMDHMS has been output.
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+62         %include "&ruta_codigos.P1_CargaTablas.sas";
+
+NOTE: The import data set has 13 observations and 7 variables.
+NOTE: WORK.INFOMETRIC data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The import data set has 1 observations and 7 variables.
+NOTE: WORK.CONFEMAI data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           3.12 seconds
+      cpu time            3.10 seconds
+      
+
+
+NOTE: The import data set has 1 observations and 1 variables.
+NOTE: WORK.TMP_CONFIG data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: The import data set has 13 observations and 27 variables.
+NOTE: WORK.TMP_METRICA data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.03 seconds
+3                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+      cpu time            0.01 seconds
+      
+
+NOTE: Table WORK.METRICA_SET created, with 0 rows and 27 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 13 rows were inserted into WORK.METRICA_SET.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 13 observations read from the data set WORK.METRICA_SET.
+NOTE: The data set WORK.METRICA_SET has 13 observations and 27 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.CAT_UMBRALES created, with 13 rows and 4 columns.
+
+NOTE: Table WORK.LAYOUT_CONTROLES created, with 13 rows and 16 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 13 observations read from the data set WORK.METRICA_SET.
+NOTE: The data set WORK.METRICA_SET has 13 observations and 27 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.ACUM_RESULTADOS created, with 0 rows and 9 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.TMP_DQLEGACY created, with 0 rows and 24 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.DQLEGACY_OUT created, with 0 rows and 21 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+4                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+
+290        %include "&ruta_codigos.P2_MacrosGenerales.sas";
+315        %include "&ruta_codigos.P3_ReglasMetricas.sas";
+NOTE: Table WORK.RESUMEN created, with 13 rows and 8 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ "Sens. Agregada Margen 
+Financiero Banking Book" ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 2-4.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1601500100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., -0.03736 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., -0.03708 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS((-0.03708/-0.03736)-1) AS 
+validacion, 0.2 AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+5                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.2 THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN 
+abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.2 THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . 
+AS GF_QR_BALANCE_COMPLIANCE_PER FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 1 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ "Sens. Agregada Margen 
+Financiero Banking Book" ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 5-7.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1602100100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+6                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., -0.06 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., -0.06 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS(( -0.06/ -0.06)-1) AS validacion, 0.2 
+AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE 
+GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . AS GF_QR_BALANCE_COMPLIANCE_PER 
+FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 2 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ "Margen en Riesgo Banking 
+Book" ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 8-10.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+7                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1601000100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., 0.015048 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., 0.015025 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS((0.015025/0.015048)-1) AS 
+validacion, 0.2 AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.2 THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN 
+abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.2 THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . 
+AS GF_QR_BALANCE_COMPLIANCE_PER FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 3 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ "Margen en Riesgo Banking 
+Book" ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+8                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 11-13.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1601100100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., 0.03 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., 0.03 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS(( 0.03/ 0.03)-1) AS validacion, 0.2 AS 
+umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE 
+GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . AS GF_QR_BALANCE_COMPLIANCE_PER 
+FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+9                                                          The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 4 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ "Sens. Agregada Valor 
+Económico Banking Book" ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 14-16.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1601600100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., -7722.49 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., -7485.79 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS((-7485.79/-7722.49)-1) AS 
+validacion, 0.25 AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.25 THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN 
+10                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.25 THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . 
+AS GF_QR_BALANCE_COMPLIANCE_PER FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 5 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ "Sens. Agregada Valor 
+Económico Banking Book" ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 17-19.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1602200100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., -12000 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+11                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., -12000 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS(( -12000/ -12000)-1) AS validacion, 
+0.25 AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE 
+GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . AS GF_QR_BALANCE_COMPLIANCE_PER 
+FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 6 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ "Capital Económico Banking 
+Book" ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 20-22.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+12                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1600200100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., 6520.954 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., 6538.025 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS((6538.025/6520.954)-1) AS 
+validacion, 0.25 AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.25 THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN 
+abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.25 THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . 
+AS GF_QR_BALANCE_COMPLIANCE_PER FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 7 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ "Capital Económico Banking 
+Book" ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+13                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 23-25.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1600300100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., 12000 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., 12000 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS(( 12000/ 12000)-1) AS validacion, 0.25 
+AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE 
+GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . AS GF_QR_BALANCE_COMPLIANCE_PER 
+FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+14                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: The data set WORK.ACUM_RESULTADOS has 8 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ 'Sens. Agregada Valor 
+Económico HtC&S' ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 26-28.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1601700100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., -0.02438 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., -0.02358 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS((-0.02358/-0.02438)-1) AS 
+validacion, 0.3 AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.3 THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN 
+abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.3 THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . 
+AS GF_QR_BALANCE_COMPLIANCE_PER FORMAT=5.2 FROM TAB03;
+15                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 9 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ 'Sens. Agregada Valor 
+Económico HtC&S' ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.02 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 29-31.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1601200100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., -0.04 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., -0.04 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS(( -0.04/ -0.04)-1) AS validacion, 0.3 
+AS umbral FROM RESUMEN_T2;
+16                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE 
+GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . AS GF_QR_BALANCE_COMPLIANCE_PER 
+FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 10 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ 'CER Spread Crédito HtC&S' 
+ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT ValorMetrica INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 32-34.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+17                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1600500100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., 1266.097 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., 1234.141 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS((1234.141/1266.097)-1) AS 
+validacion, 0.3 AS umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.3 THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN 
+abs((GF_QR_NUMERATOR_AMOUNT/GF_QR_DENOMINATOR_AMOUNT)-1) > 0.3 THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . 
+AS GF_QR_BALANCE_COMPLIANCE_PER FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 11 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T1 AS SELECT * ,MONOTONIC() AS ID_1 FROM RESUMEN WHERE MET EQ 'CER Spread Crédito HtC&S' 
+ORDER BY ID;
+NOTE: Table WORK.RESUMEN_T1 created, with 2 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+18                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR1 FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   SELECT Limit INTO :VAR2 FROM RESUMEN_T1 WHERE ID_1 EQ 2;
+MPRINT(CONTROL):   SELECT PARAMETRO INTO :UMBRAL FROM RESUMEN_T1 WHERE ID_1 EQ 1;
+MPRINT(CONTROL):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 35-37.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE RESUMEN_T2 AS SELECT * FROM RESUMEN_T1 WHERE ID_1 =1;
+NOTE: Table WORK.RESUMEN_T2 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB03 AS SELECT "1600600100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., 2500 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., 2500 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, ABS(( 2500/ 2500)-1) AS validacion, 0.3 AS 
+umbral FROM RESUMEN_T2;
+NOTE: Table WORK.TAB03 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(CONTROL):   PROC SQL;
+MPRINT(CONTROL):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 1 END AS 
+GF_QR_CPLC_NUMERATOR_NUMBER, . AS GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN GF_QR_NUMERATOR_AMOUNT NE 
+GF_QR_DENOMINATOR_AMOUNT THEN 0 ELSE 100 END AS GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . AS GF_QR_BALANCE_COMPLIANCE_PER 
+FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(CONTROL):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 12 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+19                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(ICAC):   PROC SQL;
+MPRINT(ICAC):   CREATE TABLE ICAC AS SELECT * FROM RESUMEN WHERE Met = "ICAC";
+NOTE: Table WORK.ICAC created, with 1 rows and 8 columns.
+
+MPRINT(ICAC):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(ICAC):   PROC SQL;
+MPRINT(ICAC):   SELECT ValorMetrica INTO :VAR1 FROM ICAC ;
+MPRINT(ICAC):   SELECT PARAMETRO INTO :UMBRAL FROM ICAC ;
+MPRINT(ICAC):   QUIT;
+NOTE: The PROCEDURE SQL printed pages 38-39.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(ICAC):   PROC SQL;
+MPRINT(ICAC):   CREATE TABLE TAB03 AS SELECT "1600700100" AS GF_LEGACY_QR_SEQUENTIAL_ID LENGTH=10 FORMAT=$CHAR10., 
+INTNX('MONTH',(INPUT("202109", YYMMN6.)),0,'E') AS GF_CUTOFF_DATE FORMAT=YYMMDD10., DATETIME() AS GF_QUALITY_RULE_EXECUTION_DATE 
+FORMAT=YMDHMS., 0 AS GF_QR_CPLC_DENOMINATOR_NUMBER FORMAT=BEST11., -0.03158 AS GF_QR_DENOMINATOR_AMOUNT FORMAT=26.6, 0 AS 
+GF_QR_CPLC_NUMERATOR_NUMBER FORMAT=BEST11., -0.03158 AS GF_QR_NUMERATOR_AMOUNT FORMAT=26.6, -0.04 AS umbral FROM ICAC;
+NOTE: Table WORK.TAB03 created, with 1 rows and 8 columns.
+
+MPRINT(ICAC):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(ICAC):   PROC SQL;
+MPRINT(ICAC):   CREATE TABLE TAB04 AS SELECT GF_LEGACY_QR_SEQUENTIAL_ID, GF_CUTOFF_DATE, GF_QUALITY_RULE_EXECUTION_DATE, 1 AS 
+GF_QR_CPLC_DENOMINATOR_NUMBER, CASE WHEN GF_QR_DENOMINATOR_AMOUNT <= umbral THEN 0 ELSE 1 END AS GF_QR_CPLC_NUMERATOR_NUMBER, . AS 
+GF_QR_DENOMINATOR_AMOUNT, . AS GF_QR_NUMERATOR_AMOUNT, CASE WHEN GF_QR_DENOMINATOR_AMOUNT <= umbral THEN 0 ELSE 100 END AS 
+GF_QUALITY_RULE_COMPLIANCE_PER FORMAT=5.2, . AS GF_QR_BALANCE_COMPLIANCE_PER FORMAT=5.2 FROM TAB03;
+NOTE: Table WORK.TAB04 created, with 1 rows and 9 columns.
+
+MPRINT(ICAC):   QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(PEGAR_RES):   PROC APPEND BASE=ACUM_RESULTADOS DATA=TAB04 FORCE;
+MPRINT(PEGAR_RES):   RUN;
+
+NOTE: Appending WORK.TAB04 to WORK.ACUM_RESULTADOS.
+NOTE: There were 1 observations read from the data set WORK.TAB04.
+NOTE: 1 observations added.
+NOTE: The data set WORK.ACUM_RESULTADOS has 13 observations and 9 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+20                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+535        %include "&ruta_codigos.P4_GeneracionOutput.sas";
+NOTE: Table WORK.TMP_SALIDA created, with 13 rows and 24 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: 13 rows were inserted into WORK.TMP_DQLEGACY.
+
+NOTE: PROC SQL statements are executed immediately; The RUN statement has no effect.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 13 observations read from the data set WORK.TMP_DQLEGACY.
+NOTE: The data set WORK.TMP_DQLEGACY_HOLDING has 13 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 13 rows were inserted into WORK.DQLEGACY_OUT.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: The PROCEDURE SQL printed page 40.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Table WORK.DS_1 created, with 1 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.DS_2 created, with 1 rows and 2 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.DS_2.
+NOTE: The data set WORK.DS_3 has 1 observations and 1 variables.
+21                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The file "/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ11.txt" is:
+      Filename=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ11.txt,
+      Owner Name=xmz5705,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=26Nov2021:20:30:36
+
+NOTE: 1 record was written to the file "/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ11.txt".
+      The minimum record length was 33.
+      The maximum record length was 33.
+NOTE: There were 1 observations read from the data set WORK.DS_3.
+NOTE: DATA statement used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The file DS is:
+      Pipe command="chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ11.txt"
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chmod: not found
+
+NOTE: 0 records were written to the file DS.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+=20210930
+DQ_FIN=DQLEGACY_DQ11_20210930
+
+NOTE: The file "/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ11_20210930.csv" is:
+      Filename=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ11_20210930.csv,
+      Owner Name=xmz5705,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=26Nov2021:20:30:36
+
+NOTE: 13 records were written to the file "/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ11_20210930.csv".
+      The minimum record length was 159.
+      The maximum record length was 190.
+NOTE: There were 13 observations read from the data set WORK.DQLEGACY_OUT.
+NOTE: At least one W.D format was too small for the number to be printed. The decimal may be shifted by the "BEST" format.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+22                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+
+
+NOTE: The file CSV is:
+      Pipe command="chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ11_20210930.csv"
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chmod: not found
+
+NOTE: 0 records were written to the file CSV.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The file CSV is:
+      Pipe command="chgrp grpmexmt /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ11_20210930.csv"
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chgrp: not found
+
+NOTE: 0 records were written to the file CSV.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The file CTL_FILE is:
+      Filename=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ11_20210930.ctl,
+      Owner Name=xmz5705,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=26Nov2021:20:30:36
+
+NOTE: 1 record was written to the file CTL_FILE.
+      The minimum record length was 115.
+      The maximum record length was 115.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: The file CTL is:
+      Pipe command="chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ11_20210930.ctl"
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chmod: not found
+
+NOTE: 0 records were written to the file CTL.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The file CTL is:
+      Pipe command="chgrp grpmexmt /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ11_20210930.ctl"
+23                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chgrp: not found
+
+NOTE: 0 records were written to the file CTL.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+702        %include "&ruta_codigos.P5_EnvioReporteCorreo.sas";
+NOTE: Table WORK.GENINF created, with 13 rows and 24 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 13 observations read from the data set WORK.GENINF.
+NOTE: The data set WORK.GENINF has 13 observations and 25 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 13 observations read from the data set WORK.GENINF.
+NOTE: At least one W.D format was too small for the number to be printed. The decimal may be shifted by the "BEST" format.
+NOTE: The PROCEDURE REPORT printed pages 41-42.
+NOTE: PROCEDURE REPORT used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.08 seconds
+      
+
+ERROR: Insufficient authorization to access /SREPGRM/IRBB/Output/DQLEGACYVALIDACION.xls.
+
+    SAS (r) Proprietary Software Release 9.4  TS1M3
+
+
+Group=EMAIL
+ EMAILACKWAIT=30   Specifies the number of seconds to wait for the SMTP server acknowledgement.
+ EMAILAUTHPROTOCOL=NONE
+                   Specifies the SMTP e-mail authentication protocol.
+ NOEMAILFROM       Does not require the FROM e-mail option when sending e-mail by using the FILE or FILENAME statements.
+ EMAILHOST=150.100.207.52
+                   Specifies one or more domain names for SMTP e-mail servers.
+ EMAILID=          Specifies the SAS user's logon ID, profile or e-mail address.
+ EMAILPORT=25      Specifies the port number for the SMTP e-mail server that is specified in the EMAILHOST option.
+ EMAILPW=XXXXXXXX  Specifies the password for the e-mail address specified by the EMAILID option.
+ EMAILUTCOFFSET=   For SMTP e-mail sent using the FILENAME statement, specifies a UTC offset that is used in the Date header field 
+                   of the e-mail message.
+ EMAILSYS=SMTP     Specifies the e-mail protocol that is used for sending electronic mail.
+NOTE: PROCEDURE OPTIONS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+24                                                         The SAS System                            20:30 Friday, November 26, 2021
+
+
+NOTE: There were 1 observations read from the data set WORK.CONFEMAI.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      804:31   
+NOTE: The data set WORK.DATA1 has 1 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Writing HTML Body file: OUTBOX
+Message sent
+      To:          'gustavo.martinez.arambula.contractor@bbva.com'
+      Cc:          'julio.jimenez.1.contractor@bbva.com'
+      Bcc:         
+      Subject:     -Controles DQLEGACY de IRBB con información al cierre del mes de Septiembre         2021-
+      Attachments: ( "/SREPGRM/IRBB/Setting/imagenes/imagenes_IRBB_M.jpg" INLINED = 'sgplot' ) 
+ERROR: Errors printed on page 23.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5.40 seconds
+      cpu time            3.95 seconds
+      

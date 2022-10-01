@@ -1,0 +1,1306 @@
+1                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: Unable to open SASUSER.REGSTRY. WORK.REGSTRY will be opened instead.
+NOTE: All registry changes will be lost at the end of the session.
+
+WARNING: Unable to copy SASUSER registry to WORK registry. Because of this, you will not see registry customizations during this 
+         session.
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.11 seconds
+      cpu time            0.03 seconds
+      
+1          %let Codes_Path=/SREPGRM/Asset_Allocation/CODIGOS/;
+2          
+3          %include "&Codes_Path.A0_LibPar.sas";
+NOTE: Libref COCAEC was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /RAR3/SAS/GYM/BD
+NOTE: Libref ASSET was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /Mexico/BKTesting/LOST/ETNG
+2                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: Libref SETASS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/Asset_Allocation/SETTING
+NOTE: Libref INPUT was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/Asset_Allocation/INPUT
+NOTE: Libref OUTPUT was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/Asset_Allocation/OUTPUT
+NOTE: Libref GLLEGACY was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/Asset_Allocation/SALIDAS
+NOTE: Libref CONCENT was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/Concentraciones/Output
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+202108
+202107
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      102:35   103:35   
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MES_ACT=01AUG2021
+MES_ANT=01JUL2021
+MES_ACT1=       22493
+MES_ANT1=       22462
+MES_ACT2=AUG2021
+MES_ANT2=JUL2021
+COHORTE=202108
+NOTE: Format YMDHMS has been output.
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+121        %include "&Codes_Path.A1_CargaTablas.sas";
+
+NOTE: The import data set has 9 observations and 28 variables.
+NOTE: WORK.TMP_METRICA data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+3                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+
+
+NOTE: The import data set has 1 observations and 9 variables.
+NOTE: SETASS.CONFIG data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Table SETASS.METRICA created, with 0 rows and 28 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 9 rows were inserted into SETASS.METRICA.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set SETASS.METRICA.
+NOTE: The data set SETASS.METRICA has 9 observations and 28 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Table SETASS.CAT_UMBRALES created, with 9 rows and 4 columns.
+
+NOTE: Table SETASS.LAYOUT_CONTROLES created, with 9 rows and 17 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set SETASS.METRICA.
+NOTE: The data set SETASS.METRICA has 9 observations and 28 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The import data set has 1 observations and 7 variables.
+NOTE: SETASS.ENVCORREO data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Table WORK.ACUM_RESULTADOS created, with 0 rows and 9 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+4                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.TMP_DQLEGACY created, with 0 rows and 24 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table OUTPUT.DQLEGACY created, with 0 rows and 21 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.TMPACUM created, with 0 rows and 11 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.ADIC created, with 0 rows and 11 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Table WORK.ADIC_GRAL created, with 0 rows and 10 columns.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+409        %include "&Codes_Path.A2_MacrosGrls.sas";
+438        %include "&Codes_Path.A3_Reglas.sas";
+NOTE: Table WORK.INFKIDS6 created, with 38679372 rows and 4 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1:23.61
+      cpu time            1:04.37
+      
+
+NOTE: Table WORK.SUMKIDS6 created, with 4 rows and 4 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           12.24 seconds
+      cpu time            22.29 seconds
+      
+
+
+NOTE: There were 4 observations read from the data set WORK.SUMKIDS6.
+NOTE: The data set WORK.SUMKIDS6 has 4 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+5                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: There were 4 observations read from the data set WORK.SUMKIDS6.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+836519375725.125 1347360574639.92 828407955341.5 1346647795300.7
+9662830 9662830 9676856 9676856
+
+NOTE: The data set WORK.TMPACUM has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 1 row was inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+532         /**********************************************************************
+533         *   PRODUCT:   SAS
+534         *   VERSION:   9.4
+535         *   CREATOR:   External File Interface
+536         *   DATE:      23NOV21
+537         *   DESC:      Generated SAS Datastep Code
+538         *   TEMPLATE SOURCE:  (None Specified.)
+539         ***********************************************************************/
+540            data WORK.ARCHMET    ;
+541            %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+542            infile '/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ;
+543               informat AAAAMM best32. ;
+544               informat Valor best32. ;
+545               format AAAAMM best12. ;
+546               format Valor best12. ;
+547            input
+548                        AAAAMM
+549                        Valor
+550            ;
+551            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+552            run;
+
+NOTE: The infile '/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv' is:
+      Filename=/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv,
+      Owner Name=xmz8599,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=23Nov2021:12:24:26,
+      File Size (bytes)=50
+
+NOTE: 2 records were read from the infile '/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv'.
+      The minimum record length was 16.
+      The maximum record length was 16.
+NOTE: The data set WORK.ARCHMET has 2 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+6                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+      cpu time            0.00 seconds
+      
+
+2 rows created in WORK.ARCHMET from /SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv.
+  
+  
+  
+NOTE: WORK.ARCHMET data set was successfully created.
+NOTE: The data set WORK.ARCHMET has 2 observations and 2 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.50 seconds
+      cpu time            0.09 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.ARCHMET.
+NOTE: The data set WORK.ARCHMET has 2 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.ARCHMET.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.TMPACUM has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 1 row was inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.ARCHIVOS has 11 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: Character values have been converted to numeric values at the places given by: (Line):(Column).
+      609:14   612:15   
+NOTE: Invalid numeric data, 'ma_m' , at line 609 column 14.
+dirid=1 numarchivos=630 nombrearchivo=mgyla_rartotlo_ma_modif.sas7bdat vDeteram=2109 variable=vArcAct vIdentam=.
+nomdatas=mgyla_rartotlo_ma_modif. vConsecu=. _ERROR_=1 _N_=7
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+7                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+      1 at 609:41   
+NOTE: There were 11 observations read from the data set WORK.ARCHIVOS.
+NOTE: The data set WORK.INDACT has 2 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.INDACT.
+NOTE: The data set WORK.INDACT has 2 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Character values have been converted to numeric values at the places given by: (Line):(Column).
+      621:14   624:15   
+NOTE: Invalid numeric data, 'ma_m' , at line 621 column 14.
+dirid=1 numarchivos=630 nombrearchivo=mgyla_rartotlo_ma_modif.sas7bdat vDeteram=2108 variable=vArcAnt vIdentam=.
+nomdatas=mgyla_rartotlo_ma_modif. vConsecu=. _ERROR_=1 _N_=7
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      1 at 621:41   
+NOTE: There were 11 observations read from the data set WORK.ARCHIVOS.
+NOTE: The data set WORK.INDANT has 1 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.INDANT.
+NOTE: The data set WORK.INDANT has 1 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 2 observations read from the data set WORK.INDACT.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.INDANT.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.GMYLAACTSUM created, with 1 rows and 4 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           2:33.30
+8                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+      cpu time            1:01.85
+      
+
+NOTE: Table WORK.GMYLAANTSUM created, with 1 rows and 4 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           3:14.04
+      cpu time            41.87 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.GMYLAACTSUM.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.GMYLAANTSUM.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.TMPACUM has 1 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: 1 row was inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: The query requires remerging summary statistics back with the original data.
+NOTE: Table WORK.CONTROL created, with 26 rows and 9 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.05 seconds
+      cpu time            0.01 seconds
+      
+
+GLOBAL ACT 298692608
+GLOBAL ACT206CON 9676856
+GLOBAL ACT206SUM 828407955341.5
+GLOBAL ACT211CON 9676856
+GLOBAL ACT211SUM 1346647795300.7
+GLOBAL ACT3 78592397635.108
+GLOBAL ANT 300736633
+GLOBAL ANT206CON 9662830
+GLOBAL ANT206SUM 836519375725.125
+GLOBAL ANT211CON 9662830
+GLOBAL ANT211SUM 1347360574639.92
+GLOBAL ANT3 79785852940.23
+9                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+GLOBAL ARCHMET2 '/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv'
+GLOBAL CAC3 9854989
+GLOBAL CAN3 9760604
+GLOBAL CCTRLACR ctl
+GLOBAL CCTRLACS csv
+GLOBAL CCTRLFUE 'SAS'
+GLOBAL CCTRLNDA 't_ries_sas_quality_results'
+GLOBAL CCTRLNOM "DQLEGACY_DQ1_20211123.csv"
+GLOBAL CCTRLOUT '/SREPGRM/Asset_Allocation/OUTPUT/DQLEGACY_DQ1_'
+GLOBAL CODES_PATH /SREPGRM/Asset_Allocation/CODIGOS/
+GLOBAL COHORTE 202108
+GLOBAL COHORTE_ANT 202107
+GLOBAL CONTEO4 
+GLOBAL CONTEO7 
+GLOBAL CONTEO9 
+GLOBAL DANT2ANIO         2021
+GLOBAL DANT2MES            6
+GLOBAL DANTANIO         2021
+GLOBAL DANTMES            7
+GLOBAL DCONTRA Mv_bancomer_1992
+GLOBAL DPROCANIO         2021
+GLOBAL DPROCMES            8
+GLOBAL DQ_FIN DQLEGACY_DQ1
+GLOBAL DSERVIP '150.100.151.47'
+GLOBAL DUSUARIO xmz8599
+GLOBAL EXNOMBREAR1 '.gz'
+GLOBAL EXNOMBREAR2 '.lck'
+GLOBAL FECHA_LOG 20211123T191527
+GLOBAL FINNOMBREAR '_ma'
+GLOBAL ININOMBREAR 'mgyla_rartotlo_'
+GLOBAL MES_ACT 01AUG2021
+GLOBAL MES_ACT1        22493
+GLOBAL MES_ACT2 AUG2021
+GLOBAL MES_ANT 01JUL2021
+GLOBAL MES_ANT1        22462
+GLOBAL MES_ANT2 JUL2021
+GLOBAL METRICA SETASS.METRICA
+GLOBAL REPOVALI '/SREPGRM/Asset_Allocation/OUTPUT/DQLEGACYVALIDACION.xls'
+GLOBAL RES_FINALES_HOLDING Output.DQLEGACY
+GLOBAL SETCONFI SETASS.CONFIG
+GLOBAL SETEMAIL SETASS.ENVCORREO
+GLOBAL SQLEXITCODE 0
+GLOBAL SQLOBS 26
+GLOBAL SQLOOPS 46
+GLOBAL SQLRC 0
+GLOBAL SQLXOBS 0
+GLOBAL SYS_SQL_IP_ALL -1
+GLOBAL SYS_SQL_IP_STMT 
+GLOBAL TABCONCE '/SREPGRM/Asset_Allocation/SALIDAS/DQLEGACY'
+GLOBAL VARCACT mgyla_rartotlo_210907_ma                                                                                             
+                                                                                   
+GLOBAL VARCANT mgyla_rartotlo_210806_ma                                                                                             
+                                                                                   
+GLOBAL VDIR "/RAR3/SAS/GYM/BD"
+GLOBAL VVALOR01 'SI'
+GLOBAL VVALOR02 'NO'
+GLOBAL VVALOR03 '979000206'
+GLOBAL VVALOR04 '979000211'
+10                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+GLOBAL _EFIERR_ 0
+CONTEO4=
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      708:24   
+NOTE: There were 26 observations read from the data set WORK.CONTROL.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 26 observations read from the data set WORK.CONTROL.
+NOTE: The data set WORK.TMPACUM has 26 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 26 rows were inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 26 observations read from the data set WORK.CONTROL.
+NOTE: The data set WORK.TMPACUM has 26 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: 26 rows were inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 26 observations read from the data set WORK.CONTROL.
+NOTE: The data set WORK.TMPACUM has 26 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 26 rows were inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE:    Variable Name Change.  44409 -> _44409                          
+11                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE:    Variable Name Change.  44166 -> _44166                          
+NOTE:    Variable Name Change.  44044 -> _44044                          
+NOTE:    Variable Name Change.  44378 -> _44378                          
+NOTE:    Variable Name Change.  44317 -> _44317                          
+NOTE:    Variable Name Change.  44348 -> _44348                          
+NOTE:    Variable Name Change.  2 -> _2                              
+NOTE: The import data set has 986 observations and 40 variables.
+NOTE: WORK.ARCHMET1 data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.50 seconds
+      cpu time            0.18 seconds
+      
+
+
+NOTE: There were 986 observations read from the data set WORK.ARCHMET1.
+NOTE: The data set WORK.ARCHMET2 has 58 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Invalid string.
+NOTE: Invalid argument to function INPUT. Missing values may be generated.
+NOTE: Table WORK.ARCHMET3 created, with 58 rows and 2 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.FILEMET created, with 26 rows and 5 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 58 observations read from the data set WORK.ARCHMET3.
+NOTE: There were 26 observations read from the data set WORK.FILEMET.
+NOTE: The data set WORK.ALL has 59 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 59 observations read from the data set WORK.ALL.
+NOTE: At least one W.D format was too small for the number to be printed. The decimal may be shifted by the "BEST" format.
+NOTE: The PROCEDURE PRINT printed pages 1-2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.03 seconds
+      
+
+
+NOTE: There were 59 observations read from the data set WORK.ALL.
+NOTE: The data set WORK.MATCH_C4A has 26 observations and 6 variables.
+12                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: The query requires remerging summary statistics back with the original data.
+NOTE: Table WORK.MATCH_C4 created, with 26 rows and 7 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+GLOBAL ACT 298692608
+GLOBAL ACT206CON 9676856
+GLOBAL ACT206SUM 828407955341.5
+GLOBAL ACT211CON 9676856
+GLOBAL ACT211SUM 1346647795300.7
+GLOBAL ACT3 78592397635.108
+GLOBAL ANT 300736633
+GLOBAL ANT206CON 9662830
+GLOBAL ANT206SUM 836519375725.125
+GLOBAL ANT211CON 9662830
+GLOBAL ANT211SUM 1347360574639.92
+GLOBAL ANT3 79785852940.23
+GLOBAL ARCHMET2 '/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv'
+GLOBAL CAC3 9854989
+GLOBAL CAN3 9760604
+GLOBAL CCTRLACR ctl
+GLOBAL CCTRLACS csv
+GLOBAL CCTRLFUE 'SAS'
+GLOBAL CCTRLNDA 't_ries_sas_quality_results'
+GLOBAL CCTRLNOM "DQLEGACY_DQ1_20211123.csv"
+GLOBAL CCTRLOUT '/SREPGRM/Asset_Allocation/OUTPUT/DQLEGACY_DQ1_'
+GLOBAL CODES_PATH /SREPGRM/Asset_Allocation/CODIGOS/
+GLOBAL COHORTE 202108
+GLOBAL COHORTE_ANT 202107
+GLOBAL CONTEO4            1
+GLOBAL CONTEO7 
+GLOBAL CONTEO9 
+GLOBAL DANT2ANIO         2021
+GLOBAL DANT2MES            6
+GLOBAL DANTANIO         2021
+GLOBAL DANTMES            7
+GLOBAL DCONTRA Mv_bancomer_1992
+GLOBAL DPROCANIO         2021
+GLOBAL DPROCMES            8
+GLOBAL DQ_FIN DQLEGACY_DQ1
+GLOBAL DSERVIP '150.100.151.47'
+GLOBAL DUSUARIO xmz8599
+GLOBAL EXNOMBREAR1 '.gz'
+GLOBAL EXNOMBREAR2 '.lck'
+GLOBAL FECHA_LOG 20211123T191527
+GLOBAL FINNOMBREAR '_ma'
+GLOBAL ININOMBREAR 'mgyla_rartotlo_'
+GLOBAL MES_ACT 01AUG2021
+GLOBAL MES_ACT1        22493
+GLOBAL MES_ACT2 AUG2021
+13                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+GLOBAL MES_ANT 01JUL2021
+GLOBAL MES_ANT1        22462
+GLOBAL MES_ANT2 JUL2021
+GLOBAL METRICA SETASS.METRICA
+GLOBAL REPOVALI '/SREPGRM/Asset_Allocation/OUTPUT/DQLEGACYVALIDACION.xls'
+GLOBAL RES_FINALES_HOLDING Output.DQLEGACY
+GLOBAL SETCONFI SETASS.CONFIG
+GLOBAL SETEMAIL SETASS.ENVCORREO
+GLOBAL SQLEXITCODE 0
+GLOBAL SQLOBS 26
+GLOBAL SQLOOPS 46
+GLOBAL SQLRC 0
+GLOBAL SQLXOBS 0
+GLOBAL SYS_SQL_IP_ALL -1
+GLOBAL SYS_SQL_IP_STMT 
+GLOBAL TABCONCE '/SREPGRM/Asset_Allocation/SALIDAS/DQLEGACY'
+GLOBAL VARCACT mgyla_rartotlo_210907_ma                                                                                             
+                                                                                   
+GLOBAL VARCANT mgyla_rartotlo_210806_ma                                                                                             
+                                                                                   
+GLOBAL VDIR "/RAR3/SAS/GYM/BD"
+GLOBAL VVALOR01 'SI'
+GLOBAL VVALOR02 'NO'
+GLOBAL VVALOR03 '979000206'
+GLOBAL VVALOR04 '979000211'
+GLOBAL _EFIERR_ 0
+CONTEO7=
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      858:24   
+NOTE: There were 26 observations read from the data set WORK.MATCH_C4.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      1 at 868:34   
+NOTE: There were 26 observations read from the data set WORK.MATCH_C4.
+NOTE: The data set WORK.TMPACUM has 26 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 26 rows were inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 26 observations read from the data set WORK.MATCH_C4.
+NOTE: The data set WORK.TMPACUM has 26 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+14                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 26 rows were inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Character values have been converted to numeric values at the places given by: (Line):(Column).
+      936:37   937:40   
+NOTE: There were 400 observations read from the data set ASSET.RESUMEN_POC_DQ.
+NOTE: The data set WORK.POC_MES_ACT has 20 observations and 3 variables.
+NOTE: The data set WORK.POC_MES_ANT has 20 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 20 observations read from the data set WORK.POC_MES_ACT.
+NOTE: The data set WORK.POC_MES_ACT has 20 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 20 observations read from the data set WORK.POC_MES_ANT.
+NOTE: The data set WORK.POC_MES_ANT has 20 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 20 observations read from the data set WORK.POC_MES_ACT.
+NOTE: The data set WORK.POC_MES_ACT has 20 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.02 seconds
+      
+
+
+NOTE: There were 20 observations read from the data set WORK.POC_MES_ANT.
+NOTE: The data set WORK.POC_MES_ANT has 20 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 20 observations read from the data set WORK.POC_MES_ACT.
+NOTE: There were 20 observations read from the data set WORK.POC_MES_ANT.
+NOTE: The data set WORK.POC_MES has 20 observations and 6 variables.
+15                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: The query requires remerging summary statistics back with the original data.
+NOTE: Table WORK.POC_MES1 created, with 20 rows and 7 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+GLOBAL ACT 298692608
+GLOBAL ACT206CON 9676856
+GLOBAL ACT206SUM 828407955341.5
+GLOBAL ACT211CON 9676856
+GLOBAL ACT211SUM 1346647795300.7
+GLOBAL ACT3 78592397635.108
+GLOBAL ANT 300736633
+GLOBAL ANT206CON 9662830
+GLOBAL ANT206SUM 836519375725.125
+GLOBAL ANT211CON 9662830
+GLOBAL ANT211SUM 1347360574639.92
+GLOBAL ANT3 79785852940.23
+GLOBAL ARCHMET2 '/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv'
+GLOBAL CAC3 9854989
+GLOBAL CAN3 9760604
+GLOBAL CCTRLACR ctl
+GLOBAL CCTRLACS csv
+GLOBAL CCTRLFUE 'SAS'
+GLOBAL CCTRLNDA 't_ries_sas_quality_results'
+GLOBAL CCTRLNOM "DQLEGACY_DQ1_20211123.csv"
+GLOBAL CCTRLOUT '/SREPGRM/Asset_Allocation/OUTPUT/DQLEGACY_DQ1_'
+GLOBAL CODES_PATH /SREPGRM/Asset_Allocation/CODIGOS/
+GLOBAL COHORTE 202108
+GLOBAL COHORTE_ANT 202107
+GLOBAL CONTEO4            1
+GLOBAL CONTEO7            1
+GLOBAL CONTEO9 
+GLOBAL DANT2ANIO         2021
+GLOBAL DANT2MES            6
+GLOBAL DANTANIO         2021
+GLOBAL DANTMES            7
+GLOBAL DCONTRA Mv_bancomer_1992
+GLOBAL DPROCANIO         2021
+GLOBAL DPROCMES            8
+GLOBAL DQ_FIN DQLEGACY_DQ1
+GLOBAL DSERVIP '150.100.151.47'
+GLOBAL DUSUARIO xmz8599
+GLOBAL EXNOMBREAR1 '.gz'
+GLOBAL EXNOMBREAR2 '.lck'
+GLOBAL FECHA_LOG 20211123T191527
+GLOBAL FINNOMBREAR '_ma'
+GLOBAL ININOMBREAR 'mgyla_rartotlo_'
+GLOBAL MES_ACT 01AUG2021
+GLOBAL MES_ACT1        22493
+GLOBAL MES_ACT2 AUG2021
+16                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+GLOBAL MES_ANT 01JUL2021
+GLOBAL MES_ANT1        22462
+GLOBAL MES_ANT2 JUL2021
+GLOBAL METRICA SETASS.METRICA
+GLOBAL REPOVALI '/SREPGRM/Asset_Allocation/OUTPUT/DQLEGACYVALIDACION.xls'
+GLOBAL RES_FINALES_HOLDING Output.DQLEGACY
+GLOBAL SETCONFI SETASS.CONFIG
+GLOBAL SETEMAIL SETASS.ENVCORREO
+GLOBAL SQLEXITCODE 0
+GLOBAL SQLOBS 20
+GLOBAL SQLOOPS 40
+GLOBAL SQLRC 0
+GLOBAL SQLXOBS 0
+GLOBAL SYS_SQL_IP_ALL -1
+GLOBAL SYS_SQL_IP_STMT 
+GLOBAL TABCONCE '/SREPGRM/Asset_Allocation/SALIDAS/DQLEGACY'
+GLOBAL VARCACT mgyla_rartotlo_210907_ma                                                                                             
+                                                                                   
+GLOBAL VARCANT mgyla_rartotlo_210806_ma                                                                                             
+                                                                                   
+GLOBAL VDIR "/RAR3/SAS/GYM/BD"
+GLOBAL VVALOR01 'SI'
+GLOBAL VVALOR02 'NO'
+GLOBAL VVALOR03 '979000206'
+GLOBAL VVALOR04 '979000211'
+GLOBAL _EFIERR_ 0
+CONTEO9=
+
+NOTE: Numeric values have been converted to character values at the places given by: (Line):(Column).
+      965:24   
+NOTE: There were 20 observations read from the data set WORK.POC_MES1.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 20 observations read from the data set WORK.POC_MES1.
+NOTE: The data set WORK.TMPACUM has 20 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: 20 rows were inserted into WORK.ADIC.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: The query requires remerging summary statistics back with the original data.
+NOTE: Table WORK.TMPACUM1_OK created, with 9 rows and 3 columns.
+
+NOTE: PROC SQL statements are executed immediately; The RUN statement has no effect.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+17                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+      
+
+NOTE: The query requires remerging summary statistics back with the original data.
+NOTE: Table WORK.TMPACUM1_TOT created, with 9 rows and 9 columns.
+
+NOTE: PROC SQL statements are executed immediately; The RUN statement has no effect.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set WORK.TMPACUM1_TOT.
+NOTE: There were 9 observations read from the data set WORK.TMPACUM1_OK.
+NOTE: The data set WORK.ADIC_3 has 9 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.ADIC_2 created, with 9 rows and 10 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set WORK.ADIC_2.
+NOTE: The data set WORK.ADIC_1 has 9 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: 9 rows were inserted into WORK.ADIC_GRAL.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK.METRICA_TEP created, with 9 rows and 28 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set WORK.METRICA_TEP.
+NOTE: The data set WORK.METRICA_TEP has 9 observations and 28 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+18                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: There were 9 observations read from the data set WORK.ADIC_GRAL.
+NOTE: The data set WORK.ADIC_GRAL has 9 observations and 10 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set WORK.METRICA_TEP.
+NOTE: There were 9 observations read from the data set WORK.ADIC_GRAL.
+NOTE: The data set WORK.TMP_DQLEGACY_2 has 9 observations and 42 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set WORK.METRICA_TEP.
+NOTE: There were 153 observations read from the data set WORK.ADIC.
+NOTE: The data set WORK.TMP_DQLEGACY_FULL has 153 observations and 43 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+1160       %include "&Codes_Path.A4_Salidas.sas";
+NOTE: Table WORK.TMP_DQ_FULL created, with 153 rows and 25 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Table WORK.TMP_DQ created, with 9 rows and 24 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: 9 rows were inserted into WORK.TMP_DQLEGACY.
+
+NOTE: PROC SQL statements are executed immediately; The RUN statement has no effect.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 153 observations read from the data set WORK.TMP_DQ_FULL.
+NOTE: The data set OUTPUT.TMP_SALIDA has 153 observations and 25 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 9 observations read from the data set WORK.TMP_DQLEGACY.
+19                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: The data set WORK.TMP_DQLEGACY_HOLDING has 9 observations and 21 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 0 observations read from the data set OUTPUT.DQLEGACY.
+NOTE: The data set OUTPUT.DQLEGACY has been updated.  There were 0 observations rewritten, 0 observations added and 0 observations 
+      deleted.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: 9 rows were inserted into OUTPUT.DQLEGACY.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Libref OUTPUTF was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/DQLEGACY_RIESGOS
+
+NOTE: Appending OUTPUT.DQLEGACY to OUTPUTF.DQLEGACY.
+NOTE: There were 9 observations read from the data set OUTPUT.DQLEGACY.
+NOTE: 9 observations added.
+NOTE: The data set OUTPUTF.DQLEGACY has 9 observations and 21 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: PROC SQL statements are executed immediately; The RUN statement has no effect.
+NOBS_1=9
+NOTE: The PROCEDURE SQL printed page 3.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+1313        /**********************************************************************
+1314        *   PRODUCT:   SAS
+1315        *   VERSION:   9.4
+1316        *   CREATOR:   External File Interface
+1317        *   DATE:      23NOV21
+1318        *   DESC:      Generated SAS Datastep Code
+1319        *   TEMPLATE SOURCE:  (None Specified.)
+1320        ***********************************************************************/
+1321           data _null_;
+1322           %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+1323           %let _EFIREC_ = 0;     /* clear export record count macro variable */
+1324           file OUTPUT delimiter='|' DSD DROPOVER ;
+1325          set  OUTPUTF.DQLEGACY   end=EFIEOD;
+1326              format gf_cutoff_date yymmdd10. ;
+20                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+1327              format gf_quality_rule_execution_date ymdhms23. ;
+1328              format g_data_system_country_id $char3. ;
+1329              format gf_uuaa_id $char4. ;
+1330              format gf_data_system_name $char40. ;
+1331              format gf_quality_rule_drilldown_desc $char255. ;
+1332              format gf_legacy_qr_sequential_id $char10. ;
+1333              format g_quality_rule_principle_type best4. ;
+1334              format g_quality_rule_type best4. ;
+1335              format gf_object_physical_name $char40. ;
+1336              format gf_field_physical_name $char40. ;
+1337              format gf_quality_rule_compliance_per 5.2 ;
+1338              format gf_qr_cplc_numerator_number best11. ;
+1339              format gf_qr_cplc_denominator_number best11. ;
+1340              format g_qr_execution_frequency_type $char10. ;
+1341              format gf_qr_minimum_threshold_per 5.2 ;
+1342              format gf_qr_target_threshold_per 5.2 ;
+1343              format gf_qr_amount_field_name $char40. ;
+1344              format gf_qr_balance_compliance_per 5.2 ;
+1345              format gf_qr_numerator_amount 26.2 ;
+1346              format gf_qr_denominator_amount 26.2 ;
+1347            do;
+1348              EFIOUT + 1;
+1349              put gf_cutoff_date @;
+1350              put gf_quality_rule_execution_date @;
+1351              put g_data_system_country_id $ @;
+1352              put gf_uuaa_id $ @;
+1353              put gf_data_system_name $ @;
+1354              put gf_quality_rule_drilldown_desc $ @;
+1355              put gf_legacy_qr_sequential_id $ @;
+1356              put g_quality_rule_principle_type @;
+1357              put g_quality_rule_type @;
+1358              put gf_object_physical_name $ @;
+1359              put gf_field_physical_name $ @;
+1360              put gf_quality_rule_compliance_per @;
+1361              put gf_qr_cplc_numerator_number @;
+1362              put gf_qr_cplc_denominator_number @;
+1363              put g_qr_execution_frequency_type $ @;
+1364              put gf_qr_minimum_threshold_per @;
+1365              put gf_qr_target_threshold_per @;
+1366              put gf_qr_amount_field_name $ @;
+1367              put gf_qr_balance_compliance_per @;
+1368              put gf_qr_numerator_amount @;
+1369              put gf_qr_denominator_amount ;
+1370              ;
+1371            end;
+1372           if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */
+1373           if EFIEOD then call symputx('_EFIREC_',EFIOUT);
+1374           run;
+
+NOTE: The file OUTPUT is:
+      Filename=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.csv,
+      Owner Name=usrrpgrm,Group Name=grprpgrm,
+      Access Permission=-rw-r-----,
+      Last Modified=23Nov2021:19:22:58
+
+NOTE: 9 records were written to the file OUTPUT.
+      The minimum record length was 135.
+      The maximum record length was 233.
+21                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: There were 9 observations read from the data set OUTPUTF.DQLEGACY.
+NOTE: At least one W.D format was too small for the number to be printed. The decimal may be shifted by the "BEST" format.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+9 records created in OUTPUT from OUTPUTF.DQLEGACY.
+  
+  
+NOTE: "OUTPUT" file was successfully created.
+NOTE: PROCEDURE EXPORT used (Total process time):
+      real time           0.23 seconds
+      cpu time            0.08 seconds
+      
+
+
+NOTE: The file CTL_FILE is:
+      Filename=/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.ctl,
+      Owner Name=xmz8599,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=23Nov2021:19:22:58
+
+NOTE: 1 record was written to the file CTL_FILE.
+      The minimum record length was 115.
+      The maximum record length was 115.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Fileref CTL_FILE has been deassigned.
+1463       /*%include "&Codes_Path.A5_SalidaRisk.sas";*/
+1464       %include "&Codes_Path.A5_Env_Mail.sas";
+NOTE: Table WORK.GENINF created, with 153 rows and 25 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 153 observations read from the data set WORK.GENINF.
+NOTE: The data set WORK.GENINF has 153 observations and 25 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Procedures might not support all options or statements for all devices. For details, see the documentation for each procedure.
+
+NOTE: There were 153 observations read from the data set WORK.GENINF.
+NOTE: At least one W.D format was too small for the number to be printed. The decimal may be shifted by the "BEST" format.
+NOTE: The PROCEDURE REPORT printed pages 4-9.
+NOTE: PROCEDURE REPORT used (Total process time):
+      real time           0.60 seconds
+      cpu time            0.60 seconds
+      
+22                                                         The SAS System                           19:15 Tuesday, November 23, 2021
+
+
+NOTE: Writing EXCEL file: /SREPGRM/Asset_Allocation/OUTPUT/DQLEGACYVALIDACION.xls
+
+    SAS (r) Proprietary Software Release 9.4  TS1M3
+
+
+Group=EMAIL
+ EMAILACKWAIT=30   Specifies the number of seconds to wait for the SMTP server acknowledgement.
+ EMAILAUTHPROTOCOL=NONE
+                   Specifies the SMTP e-mail authentication protocol.
+ NOEMAILFROM       Does not require the FROM e-mail option when sending e-mail by using the FILE or FILENAME statements.
+ EMAILHOST=150.100.207.52
+                   Specifies one or more domain names for SMTP e-mail servers.
+ EMAILID=          Specifies the SAS user's logon ID, profile or e-mail address.
+ EMAILPORT=25      Specifies the port number for the SMTP e-mail server that is specified in the EMAILHOST option.
+ EMAILPW=XXXXXXXX  Specifies the password for the e-mail address specified by the EMAILID option.
+ EMAILUTCOFFSET=   For SMTP e-mail sent using the FILENAME statement, specifies a UTC offset that is used in the Date header field 
+                   of the e-mail message.
+ EMAILSYS=SMTP     Specifies the e-mail protocol that is used for sending electronic mail.
+NOTE: PROCEDURE OPTIONS used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set SETASS.ENVCORREO.
+NOTE: DATA statement used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Writing HTML Body file: OUTBOX
+Message sent
+      To:          'marcoantonio.vega.esquivel.contractor@bbva.com'
+      Cc:          'julio.jimenez.1.contractor@bbva.com'
+      Bcc:         
+      Subject:     - Esto es una prueba de Asset Allocation (9 Controles) - AUG2021 
+      Attachments: ( "/SREPGRM/Asset_Allocation/SETTING/Asset_Allocation_mail.jpg" INLINED = 'sgplot' ) 
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           7:26.69
+      cpu time            3:12.00
+      

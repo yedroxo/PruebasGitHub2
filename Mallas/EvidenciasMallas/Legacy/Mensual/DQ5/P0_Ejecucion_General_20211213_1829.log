@@ -1,0 +1,34 @@
+#---20211213_1829 INICIA PROCESO EJECUCION GRAL
+***********************************************************************************************
+*                                   PROCESO EJECUCION GRAL                                    *
+*                            FECHA:  dia: 13/12/2021 hora:18:29:21             *
+***********************************************************************************************
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ PATH=/SREPGRM/RISK_TEST/CDGO/CDGO_E
++ PASO=P0_Ejecucion_General
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211213_1829 Iniciar: SAS P0_Ejecucion_General'
+#---20211213_1829 Iniciar: SAS P0_Ejecucion_General
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/RISK_TEST/CDGO/CDGO_E/P0_Ejecucion_General.sas -log /SREPGRM/Shells/Logs/P0_Ejecucion_General_SAS_20211213_1829.log -print /SREPGRM/Shells/Logs/P0_Ejecucion_General_20211213_1829.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=0
++ echo 'El codigo de salida es:' 0
+El codigo de salida es: 0
++ '[' 0 -ne 0 ']'
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211213_2043 Completado: SAS P0_Ejecucion_General'
+#---20211213_2043 Completado: SAS P0_Ejecucion_General
++ return 0

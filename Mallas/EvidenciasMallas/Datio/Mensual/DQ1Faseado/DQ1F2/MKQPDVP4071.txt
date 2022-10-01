@@ -1,0 +1,116 @@
++ /opt/datio/sentry-mx/dataproc_sentry.py -ns mx.kqpd.app-id-21822.dev -jn kqpd-mx-spk-qlt-sasqualityresultsr-01 -o 0dpek -b '{"env\
+": {"CUTOFF_DATE":"2022-02-28","SUBSET_DATE":"2022-02-28", "SUFFIX":"DQ1F2", "FILE_DATE":"20220228", "DATA1": "GI Risk Data","DATA2\
+": "BCBS_Excel_R_Asset_Dashboard_yyyymm","DATA3": "RAR_CREDITO", "DATA4": "", "DATA5": "", "DATA6": "", "DATA7": "", "DATA8": "", "\
+DATA9": "", "CONTROLM_JOB_ID":"MKQPDVP4071", "CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"} }'
+Deprecation Notice: The argument -e is no longer required and it will be ignored
+2022-06-29 16:18:56 [Order Id: 0dpek] [INFO] Starting Sentry execution [traceId='08f99ea3-bb48-4175-96f9-370cc072046d', host='sentr\
+y-1']
+2022-06-29 16:18:56 [Order Id: 0dpek] [INFO] New job execution: ns -> mx.kqpd.app-id-21822.dev; job_name -> kqpd-mx-spk-qlt-sasqual\
+ityresultsr-01
+2022-06-29 16:18:56 [Order Id: 0dpek] [INFO] Job body -> {'env': {'CUTOFF_DATE': '2022-02-28', 'SUBSET_DATE': '2022-02-28', 'SUFFIX\
+': 'DQ1F2', 'FILE_DATE': '20220228', 'DATA1': 'GI Risk Data', 'DATA2': 'BCBS_Excel_R_Asset_Dashboard_yyyymm', 'DATA3': 'RAR_CREDITO\
+', 'DATA4': '', 'DATA5': '', 'DATA6': '', 'DATA7': '', 'DATA8': '', 'DATA9': '', 'CONTROLM_JOB_ID': 'MKQPDVP4071', 'CONTROLM_JOB_FL\
+OW': 'CR-MXKQPDSEM-K02', 'CONTROLM_ORDERID': '0dpek'}}
+2022-06-29 16:18:56 [Order Id: 0dpek] [INFO] Request execution -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-21\
+822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs
+2022-06-29 16:18:57 [Order Id: 0dpek] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"08f99ea3-bb48-4175-96f9-370cc072046d","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ1F2","CONTROLM_ORDERID":"0dpek","SUBSET_DATE":"2022-02-28","FILE_DATE":"20220228","C\
+UTOFF_DATE":"2022-02-28","DATA7":"","DATA6":"","DATA9":"","DATA8":"","DATA3":"RAR_CREDITO","DATA2":"BCBS_Excel_R_Asset_Dashboard_yy\
+yymm","DATA5":"","CONTROLM_JOB_ID":"MKQPDVP4071","DATA4":"","DATA1":"GI Risk Data","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status"\
+:{"id":"PENDING","updatedAt":"2022-06-29T16:18:57.027076Z"},"statusHistory":[{"id":"PENDING","updatedAt":"2022-06-29T16:18:57.02707\
+6Z"}],"_id":"4b1896be-e1c1-4fff-8651-9d765b4c3b61","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-\
+sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqp\
+d-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"20\
+22-06-29T16:18:57.027076Z","_updatedAt":"2022-06-29T16:18:57.027077Z"}
+2022-06-29 16:18:57 [Order Id: 0dpek] [INFO] Execution request was successful. Obtained runId: 4b1896be-e1c1-4fff-8651-9d765b4c3b61
+2022-06-29 16:18:57 [Order Id: 0dpek] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61
+2022-06-29 16:18:57 [Order Id: 0dpek] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"08f99ea3-bb48-4175-96f9-370cc072046d","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ1F2","CONTROLM_ORDERID":"0dpek","SUBSET_DATE":"2022-02-28","FILE_DATE":"20220228","C\
+UTOFF_DATE":"2022-02-28","DATA7":"","DATA6":"","DATA9":"","DATA8":"","DATA3":"RAR_CREDITO","DATA2":"BCBS_Excel_R_Asset_Dashboard_yy\
+yymm","CONTROLM_JOB_ID":"MKQPDVP4071","DATA5":"","DATA4":"","DATA1":"GI Risk Data","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status"\
+:{"id":"PENDING","updatedAt":"2022-06-29T16:18:57.027076Z"},"_id":"4b1896be-e1c1-4fff-8651-9d765b4c3b61","_locator":"//dataproc.wor\
+k-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61","_parent":"/\
+/dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.EC\
+S","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-06-29T16:18:57.027076Z","_updatedAt":"2022-06-29T16:18:57.027077Z"}
+2022-06-29 16:18:57 [Order Id: 0dpek] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-sasqualityresultsr-01 with id 4b189\
+6be-e1c1-4fff-8651-9d765b4c3b61 is in status: {'name': 'PENDING', 'updatedAt': '2022-06-29T16:18:57.027076Z'}
+2022-06-29 16:19:34 [Order Id: 0dpek] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61
+2022-06-29 16:19:34 [Order Id: 0dpek] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"08f99ea3-bb48-4175-96f9-370cc072046d","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ1F2","CONTROLM_ORDERID":"0dpek","SUBSET_DATE":"2022-02-28","FILE_DATE":"20220228","C\
+UTOFF_DATE":"2022-02-28","DATA7":"","DATA6":"","DATA9":"","DATA8":"","DATA3":"RAR_CREDITO","DATA2":"BCBS_Excel_R_Asset_Dashboard_yy\
+yymm","CONTROLM_JOB_ID":"MKQPDVP4071","DATA5":"","DATA4":"","DATA1":"GI Risk Data","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status"\
+:{"id":"RUNNING","updatedAt":"2022-06-29T16:19:16.295Z"},"_id":"4b1896be-e1c1-4fff-8651-9d765b4c3b61","_locator":"//dataproc.work-0\
+2/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61","_parent":"//da\
+taproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS",\
+"_type":"dataproc.Run","_ac":false,"_createdAt":"2022-06-29T16:18:57.027076Z","_updatedAt":"2022-06-29T16:19:16.723649Z"}
+2022-06-29 16:19:34 [Order Id: 0dpek] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-sasqualityresultsr-01 with id 4b189\
+6be-e1c1-4fff-8651-9d765b4c3b61 is in status: {'name': 'RUNNING', 'updatedAt': '2022-06-29T16:19:16.295Z'}
+2022-06-29 16:20:21 [Order Id: 0dpek] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61
+2022-06-29 16:20:21 [Order Id: 0dpek] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"08f99ea3-bb48-4175-96f9-370cc072046d","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ1F2","CONTROLM_ORDERID":"0dpek","SUBSET_DATE":"2022-02-28","FILE_DATE":"20220228","C\
+UTOFF_DATE":"2022-02-28","DATA7":"","DATA6":"","DATA9":"","DATA8":"","DATA3":"RAR_CREDITO","DATA2":"BCBS_Excel_R_Asset_Dashboard_yy\
+yymm","CONTROLM_JOB_ID":"MKQPDVP4071","DATA5":"","DATA4":"","DATA1":"GI Risk Data","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status"\
+:{"id":"RUNNING","updatedAt":"2022-06-29T16:19:16.295Z"},"_id":"4b1896be-e1c1-4fff-8651-9d765b4c3b61","_locator":"//dataproc.work-0\
+2/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61","_parent":"//da\
+taproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS",\
+"_type":"dataproc.Run","_ac":false,"_createdAt":"2022-06-29T16:18:57.027076Z","_updatedAt":"2022-06-29T16:19:16.723649Z"}
+2022-06-29 16:20:21 [Order Id: 0dpek] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-sasqualityresultsr-01 with id 4b189\
+6be-e1c1-4fff-8651-9d765b4c3b61 is in status: {'name': 'RUNNING', 'updatedAt': '2022-06-29T16:19:16.295Z'}
+2022-06-29 16:21:20 [Order Id: 0dpek] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61
+2022-06-29 16:21:20 [Order Id: 0dpek] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"08f99ea3-bb48-4175-96f9-370cc072046d","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ1F2","CONTROLM_ORDERID":"0dpek","SUBSET_DATE":"2022-02-28","FILE_DATE":"20220228","C\
+UTOFF_DATE":"2022-02-28","DATA7":"","DATA6":"","DATA9":"","DATA8":"","DATA3":"RAR_CREDITO","DATA2":"BCBS_Excel_R_Asset_Dashboard_yy\
+yymm","CONTROLM_JOB_ID":"MKQPDVP4071","DATA5":"","DATA4":"","DATA1":"GI Risk Data","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status"\
+:{"id":"SUCCESS","updatedAt":"2022-06-29T16:20:56.513Z"},"_id":"4b1896be-e1c1-4fff-8651-9d765b4c3b61","_locator":"//dataproc.work-0\
+2/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4b1896be-e1c1-4fff-8651-9d765b4c3b61","_parent":"//da\
+taproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS",\
+"_type":"dataproc.Run","_ac":false,"_createdAt":"2022-06-29T16:18:57.027076Z","_updatedAt":"2022-06-29T16:20:56.833043Z"}
+2022-06-29 16:21:20 [Order Id: 0dpek] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-sasqualityresultsr-01 with id 4b189\
+6be-e1c1-4fff-8651-9d765b4c3b61 is in status: {'name': 'SUCCESS', 'updatedAt': '2022-06-29T16:20:56.513Z'}
+2022-06-29 16:21:20 [Order Id: 0dpek] [INFO] Sending summary to psi: {"endStatus":"SUCCESS","traceId":"08f99ea3-bb48-4175-96f9-370c\
+c072046d","namespace":"mx.kqpd.app-id-21822.dev","jobName":"kqpd-mx-spk-qlt-sasqualityresultsr-01","runId":"4b1896be-e1c1-4fff-8651\
+-9d765b4c3b61","startTime":"2022-06-29T16:18:56Z","endTime":"2022-06-29T16:21:20Z","status":[{"name":"PENDING","updatedAt":"2022-06\
+-29T16:18:57.027076Z"},{"name":"RUNNING","updatedAt":"2022-06-29T16:19:16.295Z"},{"name":"SUCCESS","updatedAt":"2022-06-29T16:20:56\
+.513Z"}],"errors":false,"error_description":null,"country":"mx","sentryHost":"sentry-1"}
+*** JOB EXECUTION SUMMARY ***
+{
+    "endStatus": "SUCCESS",
+    "traceId": "08f99ea3-bb48-4175-96f9-370cc072046d",
+    "namespace": "mx.kqpd.app-id-21822.dev",
+    "jobName": "kqpd-mx-spk-qlt-sasqualityresultsr-01",
+    "runId": "4b1896be-e1c1-4fff-8651-9d765b4c3b61",
+    "startTime": "2022-06-29T16:18:56Z",
+    "endTime": "2022-06-29T16:21:20Z",
+    "status": [
+        {
+            "name": "PENDING",
+            "updatedAt": "2022-06-29T16:18:57.027076Z"
+        },
+        {
+            "name": "RUNNING",
+            "updatedAt": "2022-06-29T16:19:16.295Z"
+        },
+        {
+            "name": "SUCCESS",
+            "updatedAt": "2022-06-29T16:20:56.513Z"
+        }
+    ],
+    "errors": false,
+    "country": "mx",
+    "sentryHost": "sentry-1"
+}
+*****************************

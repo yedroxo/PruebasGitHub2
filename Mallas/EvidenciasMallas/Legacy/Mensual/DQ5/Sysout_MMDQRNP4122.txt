@@ -1,0 +1,35 @@
++ DSLOGS=/SREPGRM/Shells/Logs
++ FILENAM=P0_Ejecucion_General
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/P0_Ejecucion_General_20211213_1829.log
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211213_1829 INICIA PROCESO EJECUCION GRAL'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO EJECUCION GRAL                                    *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 13/12/2021 hora:18:29:21 '            *'
++ echo '***********************************************************************************************'
++ PASO_00
++ TABLA=0
++ '[' 0 -ne 0 ']'
++ DSLOGS=/SREPGRM/Shells/Logs
++ FILENAM=Prueba_LS
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/Prueba_LS_20211213_2043.log
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211213_2043 INICIA PROCESO PRUEBA LS'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO PRUEBA LS                                         *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 13/12/2021 hora:20:43:45 '            *'
++ echo '***********************************************************************************************'
++ PASO_01
++ AA=0
++ '[' 0 -ne 0 ']'
++ exit 0

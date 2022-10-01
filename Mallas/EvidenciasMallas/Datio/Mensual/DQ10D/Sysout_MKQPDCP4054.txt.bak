@@ -1,0 +1,119 @@
++ /opt/datio/sentry-mx/dataproc_sentry.py -ns mx.kqpd.app-id-21822.dev -jn kqpd-mx-krb-inr-sasqualityresultsi-01 -o 0mjrm -b '{"env\
+": {"SUFFIX":"DQ10", "FILE_DATE":"20220430", "KIRBY_REPARTITION":"1", "CUTOFF_DATE":"2022-04-30", "CONTROLM_JOB_ID":"MKQPDCP4025", \
+"CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"} }'
+Deprecation Notice: The argument -e is no longer required and it will be ignored
+2022-09-14 00:33:58 [Order Id: 0mjrm] [INFO] Starting Sentry execution [traceId='d66ed2ae-d4fe-4503-a0cd-b0d9dfa0dea1', host='sentr\
+y-1']
+2022-09-14 00:33:58 [Order Id: 0mjrm] [INFO] New job execution: ns -> mx.kqpd.app-id-21822.dev; job_name -> kqpd-mx-krb-inr-sasqual\
+ityresultsi-01
+2022-09-14 00:33:58 [Order Id: 0mjrm] [INFO] Job body -> {'env': {'SUFFIX': 'DQ10', 'FILE_DATE': '20220430', 'KIRBY_REPARTITION': '\
+1', 'CUTOFF_DATE': '2022-04-30', 'CONTROLM_JOB_ID': 'MKQPDCP4025', 'CONTROLM_JOB_FLOW': 'CR-MXKQPDSEM-K02', 'CONTROLM_ORDERID': '0m\
+jrm'}}
+2022-09-14 00:33:58 [Order Id: 0mjrm] [INFO] Request execution -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-21\
+822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs
+2022-09-14 00:33:59 [Order Id: 0mjrm] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"S","executionTraceId":"d66ed2ae-d4fe-4503-a0cd-b0d9dfa0dea1","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx.\
+ether.igrupobbva/artifactory/datio-generic-snapshot/kirby/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults.inc.conf",\
+"artifactUrl":"https://artifactory-flegetonte.live.mx.ether.igrupobbva/artifactory/spark-global-libs-release-local/com/datio/datapr\
+oc/kirby/kirby-standalone/3.3.1/kirby-standalone-3.3.1.jar","sparkHistoryEnabled":"false","mainClass":"com.datio.dataproc.kirby.sta\
+ndalone.KirbyLauncher"},"jobEnv":{},"runParams":{},"runEnv":{"CUTOFF_DATE":"2022-04-30","SUFFIX":"DQ10","CONTROLM_ORDERID":"0mjrm",\
+"CONTROLM_JOB_ID":"MKQPDCP4025","KIRBY_REPARTITION":"1","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","FILE_DATE":"20220430"},"status":{"i\
+d":"PENDING","updatedAt":"2022-09-14T00:33:58.997Z"},"statusHistory":[{"id":"PENDING","updatedAt":"2022-09-14T00:33:58.997Z"}],"_id\
+":"ddaed155-60f0-4bb4-89be-35994e7d82b3","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasquality\
+resultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-i\
+nr-sasqualityresultsi-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-09-14T0\
+0:33:58.997Z","_updatedAt":"2022-09-14T00:33:58.997Z"}
+2022-09-14 00:33:59 [Order Id: 0mjrm] [INFO] Execution request was successful. Obtained runId: ddaed155-60f0-4bb4-89be-35994e7d82b3
+2022-09-14 00:33:59 [Order Id: 0mjrm] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3
+2022-09-14 00:33:59 [Order Id: 0mjrm] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"S","executionTraceId":"d66ed2ae-d4fe-4503-a0cd-b0d9dfa0dea1","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx.\
+ether.igrupobbva/artifactory/datio-generic-snapshot/kirby/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults.inc.conf",\
+"artifactUrl":"https://artifactory-flegetonte.live.mx.ether.igrupobbva/artifactory/spark-global-libs-release-local/com/datio/datapr\
+oc/kirby/kirby-standalone/3.3.1/kirby-standalone-3.3.1.jar","sparkHistoryEnabled":"false","mainClass":"com.datio.dataproc.kirby.sta\
+ndalone.KirbyLauncher"},"jobEnv":{},"runParams":{},"runEnv":{"CUTOFF_DATE":"2022-04-30","SUFFIX":"DQ10","CONTROLM_ORDERID":"0mjrm",\
+"CONTROLM_JOB_ID":"MKQPDCP4025","KIRBY_REPARTITION":"1","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","FILE_DATE":"20220430"},"status":{"i\
+d":"PENDING","updatedAt":"2022-09-14T00:33:58.997Z"},"_id":"ddaed155-60f0-4bb4-89be-35994e7d82b3","_locator":"//dataproc.work-02/ns\
+/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3","_parent":"//datapr\
+oc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_ty\
+pe":"dataproc.Run","_ac":false,"_createdAt":"2022-09-14T00:33:58.997Z","_updatedAt":"2022-09-14T00:33:58.997Z"}
+2022-09-14 00:33:59 [Order Id: 0mjrm] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-krb-inr-sasqualityresultsi-01 with id ddaed\
+155-60f0-4bb4-89be-35994e7d82b3 is in status: {'name': 'PENDING', 'updatedAt': '2022-09-14T00:33:58.997Z'}
+2022-09-14 00:34:36 [Order Id: 0mjrm] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3
+2022-09-14 00:34:36 [Order Id: 0mjrm] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"S","executionTraceId":"d66ed2ae-d4fe-4503-a0cd-b0d9dfa0dea1","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx.\
+ether.igrupobbva/artifactory/datio-generic-snapshot/kirby/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults.inc.conf",\
+"artifactUrl":"https://artifactory-flegetonte.live.mx.ether.igrupobbva/artifactory/spark-global-libs-release-local/com/datio/datapr\
+oc/kirby/kirby-standalone/3.3.1/kirby-standalone-3.3.1.jar","sparkHistoryEnabled":"false","mainClass":"com.datio.dataproc.kirby.sta\
+ndalone.KirbyLauncher"},"jobEnv":{},"runParams":{},"runEnv":{"CUTOFF_DATE":"2022-04-30","SUFFIX":"DQ10","CONTROLM_ORDERID":"0mjrm",\
+"CONTROLM_JOB_ID":"MKQPDCP4025","KIRBY_REPARTITION":"1","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","FILE_DATE":"20220430"},"status":{"i\
+d":"RUNNING","updatedAt":"2022-09-14T00:34:22.218Z"},"_id":"ddaed155-60f0-4bb4-89be-35994e7d82b3","_locator":"//dataproc.work-02/ns\
+/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3","_parent":"//datapr\
+oc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_ty\
+pe":"dataproc.Run","_ac":false,"_createdAt":"2022-09-14T00:33:58.997Z","_updatedAt":"2022-09-14T00:34:22.538Z"}
+2022-09-14 00:34:36 [Order Id: 0mjrm] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-krb-inr-sasqualityresultsi-01 with id ddaed\
+155-60f0-4bb4-89be-35994e7d82b3 is in status: {'name': 'RUNNING', 'updatedAt': '2022-09-14T00:34:22.218Z'}
+2022-09-14 00:35:23 [Order Id: 0mjrm] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3
+2022-09-14 00:35:23 [Order Id: 0mjrm] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"S","executionTraceId":"d66ed2ae-d4fe-4503-a0cd-b0d9dfa0dea1","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx.\
+ether.igrupobbva/artifactory/datio-generic-snapshot/kirby/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults.inc.conf",\
+"artifactUrl":"https://artifactory-flegetonte.live.mx.ether.igrupobbva/artifactory/spark-global-libs-release-local/com/datio/datapr\
+oc/kirby/kirby-standalone/3.3.1/kirby-standalone-3.3.1.jar","sparkHistoryEnabled":"false","mainClass":"com.datio.dataproc.kirby.sta\
+ndalone.KirbyLauncher"},"jobEnv":{},"runParams":{},"runEnv":{"CUTOFF_DATE":"2022-04-30","SUFFIX":"DQ10","CONTROLM_ORDERID":"0mjrm",\
+"CONTROLM_JOB_ID":"MKQPDCP4025","KIRBY_REPARTITION":"1","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","FILE_DATE":"20220430"},"status":{"i\
+d":"RUNNING","updatedAt":"2022-09-14T00:34:22.218Z"},"_id":"ddaed155-60f0-4bb4-89be-35994e7d82b3","_locator":"//dataproc.work-02/ns\
+/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3","_parent":"//datapr\
+oc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_ty\
+pe":"dataproc.Run","_ac":false,"_createdAt":"2022-09-14T00:33:58.997Z","_updatedAt":"2022-09-14T00:34:22.538Z"}
+2022-09-14 00:35:23 [Order Id: 0mjrm] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-krb-inr-sasqualityresultsi-01 with id ddaed\
+155-60f0-4bb4-89be-35994e7d82b3 is in status: {'name': 'RUNNING', 'updatedAt': '2022-09-14T00:34:22.218Z'}
+2022-09-14 00:36:22 [Order Id: 0mjrm] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3
+2022-09-14 00:36:22 [Order Id: 0mjrm] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"S","executionTraceId":"d66ed2ae-d4fe-4503-a0cd-b0d9dfa0dea1","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx.\
+ether.igrupobbva/artifactory/datio-generic-snapshot/kirby/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults.inc.conf",\
+"artifactUrl":"https://artifactory-flegetonte.live.mx.ether.igrupobbva/artifactory/spark-global-libs-release-local/com/datio/datapr\
+oc/kirby/kirby-standalone/3.3.1/kirby-standalone-3.3.1.jar","sparkHistoryEnabled":"false","mainClass":"com.datio.dataproc.kirby.sta\
+ndalone.KirbyLauncher"},"jobEnv":{},"runParams":{},"runEnv":{"CUTOFF_DATE":"2022-04-30","SUFFIX":"DQ10","CONTROLM_ORDERID":"0mjrm",\
+"CONTROLM_JOB_ID":"MKQPDCP4025","KIRBY_REPARTITION":"1","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","FILE_DATE":"20220430"},"status":{"i\
+d":"SUCCESS","updatedAt":"2022-09-14T00:35:32.323Z"},"_id":"ddaed155-60f0-4bb4-89be-35994e7d82b3","_locator":"//dataproc.work-02/ns\
+/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs/ddaed155-60f0-4bb4-89be-35994e7d82b3","_parent":"//datapr\
+oc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-krb-inr-sasqualityresultsi-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_ty\
+pe":"dataproc.Run","_ac":false,"_createdAt":"2022-09-14T00:33:58.997Z","_updatedAt":"2022-09-14T00:35:32.583Z"}
+2022-09-14 00:36:22 [Order Id: 0mjrm] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-krb-inr-sasqualityresultsi-01 with id ddaed\
+155-60f0-4bb4-89be-35994e7d82b3 is in status: {'name': 'SUCCESS', 'updatedAt': '2022-09-14T00:35:32.323Z'}
+2022-09-14 00:36:22 [Order Id: 0mjrm] [INFO] Sending summary to psi: {"endStatus":"SUCCESS","traceId":"d66ed2ae-d4fe-4503-a0cd-b0d9\
+dfa0dea1","namespace":"mx.kqpd.app-id-21822.dev","jobName":"kqpd-mx-krb-inr-sasqualityresultsi-01","runId":"ddaed155-60f0-4bb4-89be\
+-35994e7d82b3","startTime":"2022-09-14T00:33:58Z","endTime":"2022-09-14T00:36:22Z","status":[{"name":"PENDING","updatedAt":"2022-09\
+-14T00:33:58.997Z"},{"name":"RUNNING","updatedAt":"2022-09-14T00:34:22.218Z"},{"name":"SUCCESS","updatedAt":"2022-09-14T00:35:32.32\
+3Z"}],"errors":false,"error_description":null,"country":"mx","sentryHost":"sentry-1"}
+*** JOB EXECUTION SUMMARY ***
+{
+    "endStatus": "SUCCESS",
+    "traceId": "d66ed2ae-d4fe-4503-a0cd-b0d9dfa0dea1",
+    "namespace": "mx.kqpd.app-id-21822.dev",
+    "jobName": "kqpd-mx-krb-inr-sasqualityresultsi-01",
+    "runId": "ddaed155-60f0-4bb4-89be-35994e7d82b3",
+    "startTime": "2022-09-14T00:33:58Z",
+    "endTime": "2022-09-14T00:36:22Z",
+    "status": [
+        {
+            "name": "PENDING",
+            "updatedAt": "2022-09-14T00:33:58.997Z"
+        },
+        {
+            "name": "RUNNING",
+            "updatedAt": "2022-09-14T00:34:22.218Z"
+        },
+        {
+            "name": "SUCCESS",
+            "updatedAt": "2022-09-14T00:35:32.323Z"
+        }
+    ],
+    "errors": false,
+    "country": "mx",
+    "sentryHost": "sentry-1"
+}
+*****************************

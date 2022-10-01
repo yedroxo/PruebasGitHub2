@@ -1,0 +1,77 @@
+#---20220830_1901 INICIA PROCESO LIQUIDEZ MENSUAL
+***********************************************************************************************
+*                                   PROCESO LIQUIDEZ MENSUAL_SEMANAL                            *
+*                            FECHA:  dia: 30/08/2022 hora:19:01:31             *
+***********************************************************************************************
++ PASO=LiqMesSem_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20220830_1901 Iniciar: SAS LiqMesSem_ejecucion'
+#---20220830_1901 Iniciar: SAS LiqMesSem_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/Liquidez/Mensual_Sem/Codigos/LiqMesSem_ejecucion.sas -log /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220830_1901.log -print /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220830_1901.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=0
++ echo 'El codigo de salida es:' 0
+El codigo de salida es: 0
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /bin/chmod 777 /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220830_1901.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /bin/chmod 777 /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220830_1901.lst
++ '[' 0 -ne 0 ']'
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20220830_1901 Completado con exito: SAS LiqMesSem_ejecucion'
+#---20220830_1901 Completado con exito: SAS LiqMesSem_ejecucion
++ fPurge '/SREPGRM/Shells/Logs/LiqMesSem_ejecucion_*.l*' 3
++ path='/SREPGRM/Shells/Logs/LiqMesSem_ejecucion_*.l*'
++ keep_file_num=3
++ echo 'Eliminando archivos '
+Eliminando archivos 
++ echo 'Ruta borra archivos  /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_*.l*'
+Ruta borra archivos  /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_*.l*
+++ /bin/grep '^-'
+++ /usr/bin/wc -l
+++ /bin/ls -ltr /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.log /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.lst /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220830_1901.log /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220830_1901.lst /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220826_0932.log /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220830_1901.log
++ total_files=6
++ echo 'Num Archivos 6'
+Num Archivos 6
++ let num_to_delete=6-3
++ echo 'Resto 3'
+Resto 3
++ '[' 3 -gt 0 ']'
+++ /usr/bin/head -n 3
+++ /bin/ls -tr /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.log /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.lst /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220830_1901.log /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220830_1901.lst /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220826_0932.log /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220830_1901.log
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220826_0932.log
++ echo /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220826_0932.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqMesSem_ejecucion_SAS_20220826_0932.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.lst
++ echo /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.lst 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.lst Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.log
++ echo /SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqMesSem_ejecucion_20220826_0932.log Archivo Borrado
++ /bin/chmod 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ22.txt /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ22_20220630_ant.csv /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ22_20220630_ant.ctl /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ22_20220630.csv /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ22_20220630.ctl
+/bin/chmod: changing permissions of `/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ22.txt': Permission denied
+/bin/chmod: changing permissions of `/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ22_20220630_ant.csv': Permission denied
+/bin/chmod: changing permissions of `/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ22_20220630_ant.ctl': Permission denied
+/bin/chmod: changing permissions of `/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ22_20220630.csv': Permission denied
+/bin/chmod: changing permissions of `/SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ22_20220630.ctl': Permission denied
++ /bin/mv -f /SREPGRM/Liquidez/Mensual_Sem/Setting/arc_act_MEXICO_RL.xlsx /SREPGRM/Liquidez/Mensual_Sem/Setting/__arc_act_MEXICO_RL.xlsx
++ /bin/mv -f /SREPGRM/Liquidez/Mensual_Sem/Setting/mes_sem_ant_MEXICO_RL.xlsx /SREPGRM/Liquidez/Mensual_Sem/Setting/__mes_sem_ant_MEXICO_RL.xlsx
++ exit 0

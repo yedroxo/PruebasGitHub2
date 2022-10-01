@@ -1,0 +1,58 @@
+                                                           The SAS System                        18:29 Monday, December 13, 2021   1
+
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                              Regla de                                            
+       Fecha  Reporte                         Métrica                         calidad     Responsable                             
+  2021-10-31  GE Map                          FECHA                           1800000100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          CER*NEGATIVO                    1800200100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          CER*POSITIVO                    1800200200  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          UnidadEFAN_NULL                 18002C0100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          CER*CERO                        18002M0100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          EAD*POSITIVA                    18003M0100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          EAD*NEGATIVA                    18003M0200  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          PE*NEGATIVA                     18004M0100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          PE*POSITIVA                     18004M0200  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          DLGD_VALORES_ENTRE_0_1          18005M0300  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          DLGD>=LGD*SECTOR                18005M0400  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          DLGD_NULL                       1800800100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          DLGD >=LGD                      1800800200  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          Epígrafe EFAN_VALOR_CATALOGO    1801100100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          LGD_NULL                        1801200100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          LGD_VALORES_ENTRE_0_1           1801300100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          PD_NULL                         1801500100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          PD_VALORES_ENTRE_0_1            1801600100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          SectorAA_VALOR_CATALOGO         1802100100  Rodolfo García Fuentes                  
+  2021-10-31  GE Map                          UnidadEFAN_VALOR_CATALOGO       1802200100  Rodolfo García Fuentes                  
+                                                           The SAS System                        18:29 Monday, December 13, 2021   2
+
+                 Porce                                                  Porce                                                    
+                 ntaje                                                  ntaje                                                    
+                 Cumpl                                                  Cumpl                                                    
+   Umbra  Umbra  imien                                                  imien                                                  SE
+       l      l     to                                                     to                                                  MA
+   Mínim  Objet  Regis                                                  Impor                                                  FO
+       o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo     te     Suma Saldos Cumplen      Suma Saldos Objeto  RO
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                      40                      40   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     413                     413   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI
+   90.00  95.00  95.45                      21                      22   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     443                     443   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                      41                      41   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                      41                      41   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     443                     443   0.00                    0.00                    0.00  SI
+   90.00  95.00  99.79                     474                     475   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     335                     335   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI
+   90.00  95.00  99.79                     474                     475   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     475                     475   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                     484                     484   0.00                    0.00                    0.00  SI

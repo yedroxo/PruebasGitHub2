@@ -1,0 +1,327 @@
+1                                                          The SAS System                            18:29 Monday, December 13, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.34 seconds
+      cpu time            0.04 seconds
+      
+1          options dflang='spanish';
+2          proc import file="/SREPGRM/RISK_TEST/CTLG/Catalogos_layout.xlsx"
+3          				out=Parametros
+4          				dbms=xlsx
+5          				replace;
+6          	range="Macrovariables$A1:B";
+7          	
+8          run;
+
+NOTE: The import data set has 31 observations and 2 variables.
+NOTE: WORK.PARAMETROS data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.01 seconds
+      
+
+2                                                          The SAS System                            18:29 Monday, December 13, 2021
+
+9          proc sql noprint;
+10         	select '%let '||trim(Nombre_macro)||"="||trim(valor)
+11         		into :parametros separated by ";"
+12         	from Parametros
+13         ;
+14         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+15         &parametros.;
+16         LIBNAME CTL "&CAT.";
+NOTE: Libref CTL was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/RISK_TEST/CTLG
+17         libname SAL_1 "/SREPGRM/RISK_TEST/DQSALIDA";
+NOTE: Libref SAL_1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/RISK_TEST/DQSALIDA
+18         LIBNAME IFRAGO "&IFRAGO./%sysfunc(upcase(%sysfunc(intnx(month,%sysfunc(today()),-&i.),eurdfmy5.)))/";
+NOTE: Libref IFRAGO was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /UAIR_PIV/IFRS9/SALIDA/NOV21
+19         LIBNAME RARAGO "&RARAGO./%sysfunc(upcase(%sysfunc(intnx(month,%sysfunc(today()),-&i.),eurdfmy5.)))";
+NOTE: Libref RARAGO was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /RAR3/SAS/GYS/APROVRAR/BD/NOV21
+20         LIBNAME SALDOS '/RAR3/Reservas/SAS/APROVRESERVAS/BD';
+NOTE: Libref SALDOS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /RAR3/Reservas/SAS/APROVRESERVAS/BD
+21         LIBNAME CATAL '/FINANZAS/IPAB/IFRS9/CATALOGOS';
+NOTE: Libref CATAL was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /FINANZAS/IPAB/IFRS9/CATALOGOS
+22         LIBNAME DQ '/FINANZAS/IPAB/IFRS9/DQ';
+NOTE: Libref DQ was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /FINANZAS/IPAB/IFRS9/DQ
+23         libname OUT_H "/SREPGRM/RISK_TEST/DQSALIDA/Holding/";
+NOTE: Libref OUT_H was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/RISK_TEST/DQSALIDA/Holding
+24         LIBNAME SERVIDOR "&Salida.";
+NOTE: Libref SERVIDOR was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /FINANZAS/Carlos_Castillo
+25         LIBNAME PREPAGOS '/FINANZAS/IPAB/IFRS9/PREPAGOS';
+NOTE: Libref PREPAGOS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /FINANZAS/IPAB/IFRS9/PREPAGOS
+26         proc import file="&Catalogo_1."
+27         out=Variables_exclu
+28         dbms=xlsx
+29         replace;
+30         range="TAB_RESPALDO$A1:A";
+31         run;
+3                                                          The SAS System                            18:29 Monday, December 13, 2021
+
+
+NOTE: The import data set has 5 observations and 1 variables.
+NOTE: WORK.VARIABLES_EXCLU data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+32         proc sql noprint;
+33         select "MEMNAME like '%"||compress(Var_resp)||"' "
+34         into :Var_exc separated by " or "
+35         from Variables_exclu
+36         ;
+37         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+38         %let entro=0;
+39         %LET SYSTEM = IFRAGO;
+40         %LET CATALOGO = CATAL;
+41         %macro valida_existencia();
+42         	PROC CONTENTS DATA=IFRAGO._ALL_ OUT=CONTENIDO(where=((MEMNAME like '%MX_ATRIBCONTRATOS' or
+43         														 MEMNAME like '%MX_ATRIBCLIENTES' or
+44         														 MEMNAME like '%MX_VERTICAL_SALDOS' or
+45         														 MEMNAME like '%MX_RATINGM_VIG' or
+46         														 MEMNAME like '%MX_GARANTIAS' or
+47         														 /*MEMNAME like '%MX_MAESTRO_CONTRCLI_AJ%' or */
+48         														 MEMNAME like '%MX_GARANTES') and
+49         														 not (&Var_exc.)
+50         	
+51         	) keep=MEMNAME MODATE) NOPRINT;RUN;
+52         	proc sort data=CONTENIDO nodupkey; by descending MEMNAME  descending MODATE;run;
+53         	data a;
+54         	set CONTENIDO;
+55         	nombre_sfec=substr(MEMNAME,9,length(MEMNAME)-8);
+56         	run;
+57         	proc sort data=a nodupkey; by descending nombre_sfec  descending MODATE;run;
+58         	proc sort data=a nodupkey; by descending nombre_sfec;run;
+59         	proc sql noprint;
+60         		select count(*) as conteo
+61         			into :C_teo
+62         		from a;
+63         	quit;
+64         	data _null_;
+65         		if &entro.=12 then do;
+66         			put "El proceso fue cancelado los archivos no estaban en 12 horas.";
+67         			abort cancel file;
+68         		end;
+69         	run;
+70         	%put @Tablas existentes: &C_teo.;
+71         	%if &C_teo. NE 6 %then %do;
+72         		%put %sysfunc(datetime(),datetime.);
+73         		data _null_;
+74         			call sleep(60*60,1);
+75         			%put @durmio el proceso:%sysfunc(datetime(),datetime.);
+76         			call symput("entro",&entro.+1);
+4                                                          The SAS System                            18:29 Monday, December 13, 2021
+
+77         		run;
+78         		%valida_existencia();
+79         	%end;
+80         %MEND;
+81         %valida_existencia;
+
+NOTE: The data set WORK.CONTENIDO has 201 observations and 2 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           3.85 seconds
+      cpu time            0.99 seconds
+      
+
+
+NOTE: There were 201 observations read from the data set WORK.CONTENIDO.
+NOTE: 195 observations with duplicate key values were deleted.
+NOTE: The data set WORK.CONTENIDO has 6 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 6 observations read from the data set WORK.CONTENIDO.
+NOTE: The data set WORK.A has 6 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 6 observations read from the data set WORK.A.
+NOTE: 0 observations with duplicate key values were deleted.
+NOTE: The data set WORK.A has 6 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 6 observations read from the data set WORK.A.
+NOTE: 0 observations with duplicate key values were deleted.
+NOTE: The data set WORK.A has 6 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+5                                                          The SAS System                            18:29 Monday, December 13, 2021
+
+@Tablas existentes:        6
+82         
+83         
+84         
+85         %let ruta_codigos=/SREPGRM/RISK_TEST/CDGO/CDGO_E/;
+86         
+87         %include "&ruta_codigos.P1_1_AutoExe.sas";
+
+NOTE: The import data set has 31 observations and 2 variables.
+NOTE: WORK.PARAMETROS data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.06 seconds
+      user cpu time       0.01 seconds
+      system cpu time     0.00 seconds
+      memory              1013.50k
+      OS Memory           10912.00k
+      Timestamp           12/13/2021 06:29:26 PM
+      Step Count                        12  Switch Count  0
+      Page Faults                       2
+      Page Reclaims                     137
+      Page Swaps                        0
+      Voluntary Context Switches        17
+      Involuntary Context Switches      0
+      Block Input Operations            144
+      Block Output Operations           144
+      
+
+NOTE: The PROCEDURE SQL printed page 1.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.03 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              5316.09k
+      OS Memory           16036.00k
+      Timestamp           12/13/2021 06:29:26 PM
+      Step Count                        13  Switch Count  0
+      Page Faults                       93
+      Page Reclaims                     32
+      Page Swaps                        0
+      Voluntary Context Switches        13
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           0
+      
+
+@i=1
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              791.93k
+      OS Memory           10912.00k
+      Timestamp           12/13/2021 06:29:26 PM
+      Step Count                        14  Switch Count  0
+      Page Faults                       226
+      Page Reclaims                     49
+      Page Swaps                        0
+6                                                          The SAS System                            18:29 Monday, December 13, 2021
+
+      Voluntary Context Switches        1
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           0
+      
+
+VALOR FECHA_LOG=20211213T182927
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           2:14:22.46
+      user cpu time       26:44.34
+      system cpu time     21:12.88
+      memory              2121519.73k
+      OS Memory           2126416.00k
+      Timestamp           12/13/2021 08:43:44 PM
+      Step Count                        345  Switch Count  1879
+      Page Faults                       144567
+      Page Reclaims                     18278928
+      Page Swaps                        0
+      Voluntary Context Switches        6655235
+      Involuntary Context Switches      82127
+      Block Input Operations            561604168
+      Block Output Operations           627168744
+      

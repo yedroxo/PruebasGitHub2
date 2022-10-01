@@ -1,0 +1,64 @@
+#---20211130_1915 INICIA PROCESO LIQUIDEZ SEMANAL
+***********************************************************************************************
+*                                   PROCESO LIQUIDEZ SEMANAL                                   *
+*                            FECHA:  dia: 30/11/2021 hora:19:15:12             *
+***********************************************************************************************
++ PASO=LiqSem_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211130_1915 Iniciar: SAS LiqSem_ejecucion'
+#---20211130_1915 Iniciar: SAS LiqSem_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/Liquidez/Semanal/Codigos/LiqSem_ejecucion.sas -log /SREPGRM/Shells/Logs/LiqSem_ejecucion_SAS_20211130_1915.log -print /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211130_1915.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=0
++ echo 'El codigo de salida es:' 0
+El codigo de salida es: 0
++ '[' 0 -ne 0 ']'
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211130_1915 Completado con exito: SAS LiqSem_ejecucion'
+#---20211130_1915 Completado con exito: SAS LiqSem_ejecucion
++ fPurge '/SREPGRM/Shells/Logs/LiqSem_ejecucion_*.l*' 3
++ path='/SREPGRM/Shells/Logs/LiqSem_ejecucion_*.l*'
++ keep_file_num=3
++ echo 'Eliminando archivos '
+Eliminando archivos 
++ echo 'Ruta borra archivos  /SREPGRM/Shells/Logs/LiqSem_ejecucion_*.l*'
+Ruta borra archivos  /SREPGRM/Shells/Logs/LiqSem_ejecucion_*.l*
+++ /bin/grep '^-'
+++ /usr/bin/wc -l
+++ /bin/ls -ltr /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.log /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.lst /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211130_1915.log /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211130_1915.lst /SREPGRM/Shells/Logs/LiqSem_ejecucion_SAS_20211129_1830.log /SREPGRM/Shells/Logs/LiqSem_ejecucion_SAS_20211130_1915.log
++ total_files=6
++ echo 'Num Archivos 6'
+Num Archivos 6
++ let num_to_delete=6-3
++ echo 'Resto 3'
+Resto 3
++ '[' 3 -gt 0 ']'
+++ /usr/bin/head -n 3
+++ /bin/ls -tr /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.log /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.lst /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211130_1915.log /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211130_1915.lst /SREPGRM/Shells/Logs/LiqSem_ejecucion_SAS_20211129_1830.log /SREPGRM/Shells/Logs/LiqSem_ejecucion_SAS_20211130_1915.log
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqSem_ejecucion_SAS_20211129_1830.log
++ echo /SREPGRM/Shells/Logs/LiqSem_ejecucion_SAS_20211129_1830.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqSem_ejecucion_SAS_20211129_1830.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.lst
++ echo /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.lst 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.lst Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.log
++ echo /SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/LiqSem_ejecucion_20211129_1830.log Archivo Borrado
++ /bin/mv -f /SREPGRM/Liquidez/Semanal/Setting/sem_ant_MEXICO_RL.xls /SREPGRM/Liquidez/Semanal/Setting/_sem_ant_MEXICO_RL.xls
++ exit 0

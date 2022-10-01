@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/COVID_Minorista/Setting/ConfCovidMin.xlsx CREATE 0 60 10 3 10
+0614 18:30:05 : File '/SREPGRM/COVID_Minorista/Setting/ConfCovidMin.xlsx' exists, it's current size is 2877064 bytes . id=1.
+0614 18:30:35 : File transfer was completed. The size of file '/SREPGRM/COVID_Minorista/Setting/ConfCovidMin.xlsx' is 2877064 bytes. id=1. Modified 16/05/2022 11:29

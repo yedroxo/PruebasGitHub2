@@ -1,0 +1,433 @@
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   1
+
+      Obs    SECTOR                                                 LIMITE_A           MES          LIMITE_AA    TIPO      RFG
+
+        1    Autos                                               53360000000    08/01/2021    53360000000.000             0.06
+        2    Autos, components & Durable goods                   29770000000    08/01/2021    29770000000.000             0.35
+        3    BEyG                                               442610000000             .              .                    .
+        4    Basic Materials                                     56720000000    08/01/2021    56720000000.000             0.22
+        5    Bilateral Derivados                                252458000000             .              .                    .
+        6    CIB                                                296390000000             .              .                    .
+        7    Capital goods & Industrial services                 24570000000    08/01/2021    24570000000.000             0.29
+        8    Cartera/ Sector                                               .             .              .                    .
+        9    Construction & Construction Materials               30730000000    08/01/2021    30730000000.000             0.18
+       10    Consumer                                            83140000000    08/01/2021    83140000000.000              0.2
+       11    Consumer + Credit Cards                            373870000000    08/01/2021    373870000000.00             0.05
+       12    Consumer Loans                                     199520000000    08/01/2021    199520000000.00             0.06
+       13    Contrapartida Neta                                 100458000000             .              .                    .
+       14    Contrapartida Neta CE                                 870000000             .              .                    .
+       15    Credit Cards                                       174350000000    08/01/2021    174350000000.00             0.05
+       16    Cámaras                                            231000000000             .              .                    .
+       17    Depos + Others                                       2000000000             .              .                    .
+       18    Energy (Oil & Gas)                                44914873871.6    08/01/2021    44914873871.600            0.173
+       19    FX                                                  10190000000             .              .                    .
+       20    Financial Services                                  32680000000    08/01/2021    32680000000.000             0.08
+       21    Financiero                                            500000000             .              .                    .
+       22    GTF/Avales                                           1200000000             .              .                    .
+       23    Healthcare                                          20480000000    08/01/2021    20480000000.000             0.41
+       24    Institutions                                       122130000000    08/01/2021    122130000000.00             0.08
+       25    Leisure & Consumer Services                         63310000000    08/01/2021    63310000000.000             0.06
+       26    Lending                                           1482980000000             .              .                    .
+       27    Lending Financial Institutions                       3200000000             .              .                    .
+       28    Lending Financial Institutions CE                      50000000             .              .                    .
+       29    Leveraged Lending (exFA)                             1937000000             .              .                    .
+       30    Leveraged Lending Corp. > 6x
+(exFA y                 916000000             .              .                    .
+       31    Leveraged Lending Financial Sponsor N                  66000000             .              .                    .
+       32    Leveraged Lending Total                              3180000000    08/01/2021    3180000000.0000                0
+       33    ML                                                 536630000000             .              .                    .
+       34    Mortgage                                           285010000000    08/01/2021    285010000000.00             0.04
+       35    Neutral                                             67650000000             .              .                    .
+       36    No concentrado                                                0             .              .                    .
+       37    Personal Loans                                     146150000000    08/01/2021    146150000000.00             0.06
+       38    Project Finance                                      1190000000    08/01/2021    1190000000.0000             0.24
+       39    Real Estate                                         89330000000    08/01/2021    89330000000.000             0.11
+       40    Real Estate Inmuebles CE                             1155000000             .              .                    .
+       41    Renta Variable Estructural CE                         850000000             .              .                    .
+       42    Retail                                                        .    08/01/2021    747500000000.00             0.05
+       43    Retail Lending CE                                   51290000000             .              .                    .
+       44    Retail Lending Raroec                                      0.62             .              .                    .
+       45    Retailers                                      43434344611.0202    08/01/2021    43434344611.020            0.227
+       46    Riesgo Emisor                                      803100000000             .              .                    .
+       47    Riesgo Emisor CE                                    20500000000             .              .                    .
+       48    Small Business                                      88620000000    08/01/2021    88620000000.000             0.08
+       49    Sobreponderar                                                 0             .              .                    .
+       50    Solo Financial Institutions                           800000000             .              .                    .
+       51    Telecoms, Technology & Media                        32590000000    08/01/2021    32590000000.000             0.52
+       52    Total Financial Institutions                         4500000000             .              .                    .
+       53    Total Lending Raroec                                       0.38             .              .                    .
+       54    Total Retail                                       747500000000             .              .                    .
+       55    Transportation                                      36190000000    08/01/2021    36190000000.000             0.14
+       56    Utilities                                           67650000000    08/01/2021    67650000000.000             0.13
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   2
+
+      Obs    SECTOR                                                 LIMITE_A           MES          LIMITE_AA    TIPO     RFG
+
+       57    Wholesale                                          735480000000    08/01/2021    735480000000.00            0.11
+       58    Wholesale Lending CE                                46650000000             .              .                   .
+       59    Wholesale Lending Raroec                                   0.11             .              .                   .
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   3
+
+                                                                      
+                                                              --------
+                                                                     9
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   4
+
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                              Regla de                                            
+       Fecha  Reporte                         Métrica                         calidad     Responsable                             
+  2021-08-31  ASSET_ALLOCATION                APRs                            0100200100  Araceli Canchola                        
+  2021-08-31  ASSET_ALLOCATION                CET1 / Base de capital          0100300100  Araceli Canchola                        
+  2021-08-31  ASSET_ALLOCATION                Consumo de Capital Económico    0100400100  Jorge Armando Jimenez                   
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                EAD                             0100600100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   5
+
+                 Porce                                                  Porce                                                    
+                 ntaje                                                  ntaje                                                    
+                 Cumpl                                                  Cumpl                                                    
+   Umbra  Umbra  imien                                                  imien                                                  SE
+       l      l     to                                                     to                                                  MA
+   Mínim  Objet  Regis                                                  Impor                                                  FO
+       o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo     te     Suma Saldos Cumplen      Suma Saldos Objeto  RO
+   90.00  100.0  100.1               9,676,856               9,662,830  99.03      828,407,955,341.50      836,519,375,725.13  SI
+   90.00  110.0  100.0                       1                       1  99.32          298,692,608.00          300,736,633.00  SI
+   90.00  110.0  101.0               9,854,989               9,760,604  98.50       78,592,397,635.11       79,785,852,940.23  SI
+   80.00  120.0  100.0                       1                       1  99.29       68,774,977,219.39       69,263,616,479.53  SI
+   80.00  120.0  100.0                       1                       1  106.7       49,634,714,958.66       46,538,611,248.74  SI
+   80.00  120.0  100.0                       1                       1  104.9      279,498,909,195.81      266,391,346,600.01  SI
+   80.00  120.0  100.0                       1                       1  103.4      727,946,975,457.18      703,697,590,115.97  SI
+   80.00  120.0  100.0                       1                       1  99.70      192,137,979,540.44      192,711,963,536.18  SI
+   80.00  120.0  100.0                       1                       1  97.86       56,070,572,626.09       57,298,295,802.23  SI
+   80.00  120.0  100.0                       1                       1  87.78       52,396,098,803.74       59,692,357,646.97  SI
+   80.00  120.0  100.0                       1                       1  95.29       30,174,289,393.11       31,666,541,895.38  SI
+   80.00  120.0  100.0                       1                       1  113.9       42,553,913,808.69       37,365,857,689.48  SI
+   80.00  120.0  100.0                       1                       1  103.5      143,184,752,878.56      138,403,623,091.88  SI
+   80.00  120.0  100.0                       1                       1  93.02        1,801,543,079.79        1,936,628,287.90  SI
+   80.00  120.0  100.0                       1                       1  101.1      362,860,727,564.86      358,873,855,312.69  SI
+   80.00  120.0  100.0                       1                       1  116.7       16,915,893,262.74       14,490,379,832.43  SI
+   80.00  120.0  100.0                       1                       1  84.41       18,611,180,846.95       22,049,109,182.69  SI
+   80.00  120.0   0.00                       0                       1  76.70       23,204,641,486.03       30,252,341,365.86  NO
+   80.00  120.0  100.0                       1                       1  96.49          925,451,240.60          959,130,443.87  SI
+   80.00  120.0  100.0                       1                       1  99.38      660,709,540,389.29      664,836,378,297.51  SI
+   80.00  120.0  100.0                       1                       1  102.7      170,722,748,024.42      166,161,891,776.51  SI
+   80.00  120.0  100.0                       1                       1  101.3       81,335,910,472.55       80,293,149,336.05  SI
+   80.00  120.0  100.0                       1                       1  97.50       18,590,887,967.44       19,068,077,621.99  SI
+   80.00  120.0  100.0                       1                       1  90.14       48,953,226,661.88       54,308,340,444.30  SI
+   80.00  120.0  100.0                       1                       1  110.0       23,518,217,650.19       21,383,867,294.27  SI
+   80.00  120.0  100.0                       1                       1  109.9       39,903,349,647.78       36,317,606,483.06  SI
+   80.00  120.0  100.0                       1                       1  109.1       85,587,338,696.51       78,432,388,203.27  SI
+   80.00  120.0  100.0                       1                       1  90.85       23,678,556,005.27       26,063,269,838.39  SI
+   80.00  120.0  100.0                       1                       1  102.0      115,333,034,389.66      113,081,407,105.31  SI
+   90.00  100.0  100.0                       1                       1  100.0      735,480,000,000.00      735,480,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       20,480,000,000.00       20,480,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       88,620,000,000.00       88,620,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       36,190,000,000.00       36,190,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       32,590,000,000.00       32,590,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       89,330,000,000.00       89,330,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0      146,150,000,000.00      146,150,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0      285,010,000,000.00      285,010,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0        3,180,000,000.00        3,180,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       32,680,000,000.00       32,680,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0      174,350,000,000.00      174,350,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0      199,520,000,000.00      199,520,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0      373,870,000,000.00      373,870,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       30,730,000,000.00       30,730,000,000.00  SI
+   90.00  100.0   0.00                       0                       1    .        747,500,000,000.00                     .      
+   90.00  100.0  100.0                       1                       1  100.0       43,434,344,611.02       43,434,344,611.02  SI
+   90.00  100.0  100.0                       1                       1  100.0       24,570,000,000.00       24,570,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       56,720,000,000.00       56,720,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       29,770,000,000.00       29,770,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       53,360,000,000.00       53,360,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       67,650,000,000.00       67,650,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0       83,140,000,000.00       83,140,000,000.00  SI
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   6
+
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                              Regla de                                            
+       Fecha  Reporte                         Métrica                         calidad     Responsable                             
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Limites                         0100700200  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-07-31  ASSET_ALLOCATION                RAROEC                          0100800100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Room for Growth                 0100900100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   7
+
+                 Porce                                                  Porce                                                    
+                 ntaje                                                  ntaje                                                    
+                 Cumpl                                                  Cumpl                                                    
+   Umbra  Umbra  imien                                                  imien                                                  SE
+       l      l     to                                                     to                                                  MA
+   Mínim  Objet  Regis                                                  Impor                                                  FO
+       o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo     te     Suma Saldos Cumplen      Suma Saldos Objeto  RO
+   90.00  100.0  100.0                       1                       1  100.0       44,914,873,871.60       44,914,873,871.60  SI
+   90.00  100.0  100.0                       1                       1  100.0       63,310,000,000.00       63,310,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0      122,130,000,000.00      122,130,000,000.00  SI
+   90.00  100.0  100.0                       1                       1  100.0        1,190,000,000.00        1,190,000,000.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0   0.00                       0                       1   0.00                    0.00                    1.00  NO
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0   0.00                       0                       1   0.00                    0.00                    1.00  NO
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0   0.00                       0                       1   0.00                    0.00                    1.00  NO
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   80.00  120.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   8
+
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                              Regla de                                            
+       Fecha  Reporte                         Métrica                         calidad     Responsable                             
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100100  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+  2021-08-31  ASSET_ALLOCATION                Uso del limite (%)              0101100200  Erendira Navarro / Carlos Raul Alba     
+                                                           The SAS System                       19:15 Tuesday, November 23, 2021   9
+
+                 Porce                                                  Porce                                                    
+                 ntaje                                                  ntaje                                                    
+                 Cumpl                                                  Cumpl                                                    
+   Umbra  Umbra  imien                                                  imien                                                  SE
+       l      l     to                                                     to                                                  MA
+   Mínim  Objet  Regis                                                  Impor                                                  FO
+       o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo     te     Suma Saldos Cumplen      Suma Saldos Objeto  RO
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SA
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   50.00  150.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI
+   100.0  100.0  100.0                       1                       1   0.00                    0.00                    1.00  SI

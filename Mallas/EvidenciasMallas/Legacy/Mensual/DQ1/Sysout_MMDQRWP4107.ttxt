@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/Asset_Allocation/INPUT/ESQUEMA.xlsx CREATE 0 60 10 3 10
+1123 19:15:00 : File '/SREPGRM/Asset_Allocation/INPUT/ESQUEMA.xlsx' exists, it's current size is 134967 bytes . id=1.
+1123 19:15:30 : File transfer was completed. The size of file '/SREPGRM/Asset_Allocation/INPUT/ESQUEMA.xlsx' is 134967 bytes. id=1. Modified 23/11/2021 12:24

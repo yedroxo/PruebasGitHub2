@@ -1,0 +1,1513 @@
+1                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.11 seconds
+      cpu time            0.04 seconds
+      
+1          
+2          options errorabend mprint mlogic dflang='spanish' source2 source;
+3          /* Start timer */
+4          %let _timer_start = %sysfunc(datetime());
+5          
+6          proc import file="/SREPGRM/RISK_TEST/CTLG/Catalogos_layout.xlsx"
+7          				out=Parametros
+8          				dbms=xlsx
+9          				replace;
+10         	range="Macrovariables$A1:B";
+11         run;
+
+NOTE: The import data set has 31 observations and 2 variables.
+NOTE: WORK.PARAMETROS data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.02 seconds
+2                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+      cpu time            0.02 seconds
+      
+
+12         proc sql noprint;
+13         	select '%let '||trim(Nombre_macro)||"="||trim(valor)
+14         		into :parametros separated by ";"
+15         	from Parametros
+16         ;
+17         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+18         &parametros.;
+19         
+20         
+21         LIBNAME CTL "&CAT.";
+NOTE: Libref CTL was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/RISK_TEST/CTLG
+22         libname SAL_1 "/SREPGRM/RISK_TEST/DQSALIDA";
+NOTE: Libref SAL_1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/RISK_TEST/DQSALIDA
+23         LIBNAME IFRAGO "&IFRAGO./%sysfunc(upcase(%sysfunc(intnx(month,%sysfunc(today()),-&i.),eurdfmy5.)))/";
+NOTE: Libref IFRAGO was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /UAIR_PIV/IFRS9/SALIDA/NOV21
+24         LIBNAME RARAGO "&RARAGO./%sysfunc(upcase(%sysfunc(intnx(month,%sysfunc(today()),-&i.),eurdfmy5.)))";
+NOTE: Libref RARAGO was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /RAR3/SAS/GYS/APROVRAR/BD/NOV21
+25         LIBNAME SALDOS '/RAR3/Reservas/SAS/APROVRESERVAS/BD';
+NOTE: Libref SALDOS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /RAR3/Reservas/SAS/APROVRESERVAS/BD
+26         LIBNAME CATAL '/FINANZAS/IPAB/IFRS9/CATALOGOS';
+NOTE: Libref CATAL was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /FINANZAS/IPAB/IFRS9/CATALOGOS
+27         LIBNAME DQ '/FINANZAS/IPAB/IFRS9/DQ';
+NOTE: Libref DQ was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /FINANZAS/IPAB/IFRS9/DQ
+28         libname OUT_H "/SREPGRM/RISK_TEST/DQSALIDA/Holding/";
+NOTE: Libref OUT_H was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/RISK_TEST/DQSALIDA/Holding
+29         LIBNAME SERVIDOR "&Salida.";
+NOTE: Libref SERVIDOR was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /FINANZAS/Carlos_Castillo
+30         proc import file="&Catalogo_1."
+31         				out=Correos_dest_lib
+32         				dbms=xlsx
+33         				replace;
+34         	range="correo_lib_destinatario$A1:A";
+3                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+35         run;
+
+NOTE: The import data set has 1 observations and 1 variables.
+NOTE: WORK.CORREOS_DEST_LIB data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+36         proc import file="&Catalogo_1."
+37         				out=Correos_envia_lib
+38         				dbms=xlsx
+39         				replace;
+40         	range="Correo_lib_envia$A1:A";
+41         run;
+
+NOTE: The import data set has 1 observations and 1 variables.
+NOTE: WORK.CORREOS_ENVIA_LIB data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+42         proc import file="&Catalogo_1."
+43         				out=Catalogo_Controles
+44         				dbms=xlsx
+45         				replace;
+46         	range="Layout$B1:Q";
+47         run;
+
+NOTE: The import data set has 496 observations and 16 variables.
+NOTE: WORK.CATALOGO_CONTROLES data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.06 seconds
+      
+
+48         proc sql noprint;
+49         	select """"||compress(Correos)||""""
+50         		into :Correos_dest_lib separated by ","
+51         	from Correos_dest_lib;
+52         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+53         proc sql noprint;
+54         	select """"||compress(Correo_envio)||""""
+55         		into :Correos_envia_lib
+56         	from Correos_envia_lib;
+57         quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+58         %Macro valida_lib();
+4                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+59         	%if &syslibrc. NE 0 %then %do;
+60         		proc options group=email;run;
+61         		options EMAILSYS=SMTP emailhost='150.100.207.52' emailport=25;
+62         		filename outbox email
+63         							to=(&Correos_dest_lib.)
+64         							type="text/html"
+65         							subject="ERROR asignacion Teradata proceso IFRS9 Inputs"
+66         							attach=("/SREPGRM/RISK_TEST/CTLG/imagenes/Error_teradata.jpg" inlined='sgplot')
+67         							from=&Correos_envia_lib.;
+68         		ods html body=outbox rs=none;
+69         		ODS Html text="<html><img src=cid:sgplot></html>";
+70         		ODS Html text=" ";
+71         		ods html close;
+72         		data _null_;
+73         				abort cancel file;
+74         		run;
+75         	%end;
+76         %MEND;
+77         LIBNAME KIDS6 TERADATA SERVER='150.100.151.57' user=&usu_T.  password= "&pass_T." schema='KIDS6';
+NOTE: Libref KIDS6 was successfully assigned as follows: 
+      Engine:        TERADATA 
+      Physical Name: 150.100.151.57
+78         %valida_lib();
+MLOGIC(VALIDA_LIB):  Beginning execution.
+MLOGIC(VALIDA_LIB):  %IF condition &syslibrc. NE 0 is FALSE
+MLOGIC(VALIDA_LIB):  Ending execution.
+79         LIBNAME PREPAGOS '/FINANZAS/IPAB/IFRS9/PREPAGOS';
+NOTE: Libref PREPAGOS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /FINANZAS/IPAB/IFRS9/PREPAGOS
+80         /********************************/
+81         /********Macro variables********/
+82         /********************************/
+83         %LET _CLIENTTASKLABEL='COD_FINAL_DQ';
+84         %LET _CLIENTPROJECTNAME='DQ.egp';
+85         %LET _SASPROGRAMFILE=;
+86         
+87         data _null_;
+88            	COHORTE=put(intnx("MONTH",today(), -&i.,'e'),yymmddn8.);
+89         	CALL SYMPUT(COMPRESS('COHORTE'),COHORTE);
+90         	call symputx('SET1',"'"||put(intnx('month',today(),-&i.,'E'),yymmddn8.)||"'");
+91         	call symputx('SET2',"'"||put(intnx('month',today(),-&i.,'E'),yymmddn8.)||"'");
+92         	call symputx('CD_MES',put(intnx('month',today(),-&i.),yymmn6.));
+93         	call symputx('CD_MES2',put(intnx('month',today(),-&i.),yymmn6.));
+94         	*call symputx('FEC_PI',"'"||put(intnx('month',today(),-&i.,'E'),date9.)||"'D");
+95         run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+96         proc sql noprint;
+97         	select "'"||compress(put(max(FEC_CIERRE),date9.))||"'D"
+98         		into :FEC_PI
+99         	from KIDS6.VKIDSZSW;
+100        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+5                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+      real time           14.24 seconds
+      cpu time            6.21 seconds
+      
+
+101        %put &FEC_PI.;
+'10DEC2021'D
+102        
+103        %let entro=0;
+104        %LET SYSTEM = IFRAGO;
+105        %LET CATALOGO = CATAL;
+106        %macro valida_existencia();
+107        	PROC CONTENTS DATA=IFRAGO._ALL_ OUT=CONTENIDO(where=((MEMNAME like '%MX_ATRIBCONTRATOS' or
+108        														 MEMNAME like '%MX_ATRIBCLIENTES' or
+109        														 MEMNAME like '%MX_SCORINGM_VIG' or
+110        														 MEMNAME like '%MX_VERTICAL_SALDOS' or
+111        														 MEMNAME like '%MX_RATINGM_VIG' or
+112        														 MEMNAME like '%MX_GARANTIAS' or
+113        														 MEMNAME like '%MX_PROYECCIONES' or
+114        														 MEMNAME like '%MX_GARANTES')
+115        	
+116        	) keep=MEMNAME MODATE) NOPRINT;RUN;
+117        	proc sort data=CONTENIDO nodupkey; by descending MEMNAME  /*descending*/ MODATE;run;
+118        	data a;
+119        	set CONTENIDO;
+120        	nombre_sfec=substr(MEMNAME,9,length(MEMNAME)-8);
+121        	run;
+122        	proc sort data=a nodupkey; by descending nombre_sfec  /*descending*/ MODATE;run;
+123        	proc sort data=a nodupkey; by descending nombre_sfec;run;
+124        	proc sql noprint;
+125        		select count(*) as conteo
+126        			into :C_teo
+127        		from a;
+128        	quit;
+129        	data _null_;
+130        		if &entro.=12 then do;
+131        			put "El proceso fue cancelado los archivos no estaban en 12 horas.";
+132        			abort cancel file;
+133        		end;
+134        	run;
+135        	%put @&C_teo.;
+136        	%if &C_teo. NE 8 %then %do;
+137        		%put %sysfunc(datetime(),datetime.);
+138        		data _null_;
+139        			call sleep(60*60,1);
+140        			%put @durmio el proceso:%sysfunc(datetime(),datetime.);
+141        			call symput("entro",&entro.+1);
+142        		run;
+143        		%valida_existencia();
+144        	%end;
+145        	%put @Salio del ciclo:%sysfunc(datetime(),datetime.);
+146        %MEND;
+147        %valida_existencia;
+MLOGIC(VALIDA_EXISTENCIA):  Beginning execution.
+MPRINT(VALIDA_EXISTENCIA):   PROC CONTENTS DATA=IFRAGO._ALL_ OUT=CONTENIDO(where=((MEMNAME like '%MX_ATRIBCONTRATOS' or MEMNAME 
+like '%MX_ATRIBCLIENTES' or MEMNAME like '%MX_SCORINGM_VIG' or MEMNAME like '%MX_VERTICAL_SALDOS' or MEMNAME like '%MX_RATINGM_VIG' 
+or MEMNAME like '%MX_GARANTIAS' or MEMNAME like '%MX_PROYECCIONES' or MEMNAME like '%MX_GARANTES') ) keep=MEMNAME MODATE) NOPRINT;
+MPRINT(VALIDA_EXISTENCIA):  RUN;
+
+6                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+NOTE: The data set WORK.CONTENIDO has 223 observations and 2 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           3.45 seconds
+      cpu time            2.85 seconds
+      
+
+MPRINT(VALIDA_EXISTENCIA):   proc sort data=CONTENIDO nodupkey;
+MPRINT(VALIDA_EXISTENCIA):   by descending MEMNAME MODATE;
+MPRINT(VALIDA_EXISTENCIA):  run;
+
+NOTE: There were 223 observations read from the data set WORK.CONTENIDO.
+NOTE: 215 observations with duplicate key values were deleted.
+NOTE: The data set WORK.CONTENIDO has 8 observations and 2 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(VALIDA_EXISTENCIA):   data a;
+MPRINT(VALIDA_EXISTENCIA):   set CONTENIDO;
+MPRINT(VALIDA_EXISTENCIA):   nombre_sfec=substr(MEMNAME,9,length(MEMNAME)-8);
+MPRINT(VALIDA_EXISTENCIA):   run;
+NOTE: There were 8 observations read from the data set WORK.CONTENIDO.
+NOTE: The data set WORK.A has 8 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(VALIDA_EXISTENCIA):   proc sort data=a nodupkey;
+MPRINT(VALIDA_EXISTENCIA):   by descending nombre_sfec MODATE;
+MPRINT(VALIDA_EXISTENCIA):  run;
+
+NOTE: There were 8 observations read from the data set WORK.A.
+NOTE: 0 observations with duplicate key values were deleted.
+NOTE: The data set WORK.A has 8 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MPRINT(VALIDA_EXISTENCIA):   proc sort data=a nodupkey;
+MPRINT(VALIDA_EXISTENCIA):   by descending nombre_sfec;
+MPRINT(VALIDA_EXISTENCIA):  run;
+
+NOTE: There were 8 observations read from the data set WORK.A.
+NOTE: 0 observations with duplicate key values were deleted.
+NOTE: The data set WORK.A has 8 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+MPRINT(VALIDA_EXISTENCIA):   proc sql noprint;
+MPRINT(VALIDA_EXISTENCIA):   select count(*) as conteo into :C_teo from a;
+MPRINT(VALIDA_EXISTENCIA):   quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+7                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+      cpu time            0.00 seconds
+      
+
+MPRINT(VALIDA_EXISTENCIA):   data _null_;
+MPRINT(VALIDA_EXISTENCIA):   if 0=12 then do;
+MPRINT(VALIDA_EXISTENCIA):   put "El proceso fue cancelado los archivos no estaban en 12 horas.";
+MPRINT(VALIDA_EXISTENCIA):   abort cancel file;
+MPRINT(VALIDA_EXISTENCIA):   end;
+MPRINT(VALIDA_EXISTENCIA):   run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+MLOGIC(VALIDA_EXISTENCIA):  %PUT @&C_teo.
+@       8
+MLOGIC(VALIDA_EXISTENCIA):  %IF condition &C_teo. NE 8 is FALSE
+MLOGIC(VALIDA_EXISTENCIA):  %PUT @Salio del ciclo:%sysfunc(datetime(),datetime.)
+@Salio del ciclo:13DEC21:20:44:04
+MLOGIC(VALIDA_EXISTENCIA):  Ending execution.
+148        PROC CONTENTS DATA=IFRAGO._ALL_ OUT=CONTENIDO NOPRINT;RUN;
+
+NOTE: The data set WORK.CONTENIDO has 597 observations and 41 variables.
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.38 seconds
+      cpu time            0.01 seconds
+      
+
+149        proc sql noprint outobs=1;
+150        	select MEMNAME
+151        		into :CONTRATOS
+152        	from (select MEMNAME,CRDATE
+153        		  from contenido
+154        		  where MEMNAME like '%MX_ATRIBCONTRATOS'
+155        		  )
+156        	order by CRDATE /*desc*/
+157        ;
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+158        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+159        proc sql noprint outobs=1;
+160        	select MEMNAME
+161        		into :CLIENTES
+162        	from (select MEMNAME,CRDATE
+163        		  from contenido
+164        		  where MEMNAME like '%MX_ATRIBCLIENTES'
+165        		  )
+166        	order by CRDATE /*desc*/
+167        ;
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+168        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+8                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+      cpu time            0.00 seconds
+      
+
+169        proc sql noprint outobs=1;
+170        	select MEMNAME
+171        		into :SCORING
+172        	from (select MEMNAME,CRDATE
+173        		  from contenido
+174        		  where MEMNAME like '%MX_SCORINGM_VIG'
+175        		  )
+176        	order by CRDATE /*desc*/
+177        ;
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+178        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+179        proc sql noprint outobs=1;
+180        	select MEMNAME
+181        		into :SALDOS
+182        	from (select MEMNAME,CRDATE
+183        		  from contenido
+184        		  where MEMNAME like '%MX_VERTICAL_SALDOS'
+185        		  )
+186        	order by CRDATE /*desc*/
+187        ;
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+188        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+189        proc sql noprint outobs=1;
+190        	select MEMNAME
+191        		into :RATING
+192        	from (select MEMNAME,CRDATE
+193        		  from contenido
+194        		  where MEMNAME like '%MX_RATINGM_VIG'
+195        		  )
+196        	order by CRDATE /*desc*/
+197        ;
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+198        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+199        proc sql noprint outobs=1;
+200        	select MEMNAME
+201        		into :GARANTIAS
+202        	from (select MEMNAME,CRDATE
+203        		  from contenido
+204        		  where MEMNAME like '%MX_GARANTIAS'
+205        		  )
+9                                                          The SAS System                            20:43 Monday, December 13, 2021
+
+206        	order by CRDATE /*desc*/
+207        ;
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+208        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+209        proc sql noprint outobs=1;
+210        	select MEMNAME
+211        		into :PROYECS
+212        	from (select MEMNAME,CRDATE
+213        		  from contenido
+214        		  where MEMNAME like '%MX_PROYECCIONES'
+215        		  )
+216        	order by CRDATE /*desc*/
+217        ;
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+218        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+219        proc sql noprint outobs=1;
+220        	select MEMNAME
+221        		into :GARANTES
+222        	from (select MEMNAME,CRDATE
+223        		  from contenido
+224        		  where MEMNAME like '%MX_GARANTES'
+225        		  )
+226        	order by CRDATE /*desc*/
+227        ;
+NOTE: The query as specified involves ordering by an item that doesn't appear in its SELECT clause.
+228        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+229        
+230        %put &=CONTRATOS;
+CONTRATOS=F211202_MX_ATRIBCONTRATOS
+231        %put &=CLIENTES;
+CLIENTES=F211202_MX_ATRIBCLIENTES
+232        %put &=SCORING;
+SCORING=F211202_MX_SCORINGM_VIG
+233        %put &=SALDOS;
+SALDOS=F211202_MX_VERTICAL_SALDOS
+234        %put &=RATING;
+RATING=F211202_MX_RATINGM_VIG
+235        %put &=GARANTES;
+GARANTES=F211202_MX_GARANTES
+236        %put &=GARANTIAS;
+GARANTIAS=F211202_MX_GARANTIAS
+237        %put &=PROYECS;
+PROYECS=F211202_MX_PROYECCIONES
+10                                                         The SAS System                            20:43 Monday, December 13, 2021
+
+238        
+239        %LET FECDEF = '19000101' '00010101' '99991231';
+240        /*%LET SALDNOM = 'SAP','EXC','IIP','MSP','MAP','MFP','FBP','DDP','LIP','PAP','VFP','FGP','MTM','NOC' ;*/
+241        %LET SALDNOM = 'SAP','EXC','IIP','MRP','MSP','MAP','MFP','FBP','DDP','LIP','PAP', 'VFP','FGP','MTM','NOC',
+241      ! 'GRS','MST','CRE', 'CRG', 'PSU';
+242        
+243        %LET EPIGRAFE_EFAN = CATAL.&EPIGRAFE_.;
+244        %LET UNIDAD_EFAN = CATAL.&UNIDAD_.;
+245        %LET FAMILIA = CATAL.&CAT_FAM.;
+246        %LET CATAL_PRODFINA = CATAL.&COD_PROD.;
+247        %LET CATAL_PRODHOLDING = CATAL.&PROD_HOLDING.;
+248        %LET CATAL_TIPGAINI = CATAL.&TIPO_GARAN.;
+249        %LET CATAL_CNAE = CATAL.&CNAE.;
+250        %LET CATGAR = CATAL.&TIPO_GARANTE.;
+251        %LET CATDIV = CATAL.&DIVISA.;
+252        %LET CATCHV = CATAL.&HERRAM_RATING.;
+253        %LET CATEMRV = CATAL.&ESCALA_RATING.;
+254        %LET PRODCOM = CATAL.&COD_PRODCOM.;
+255        %LET PAISES = CATAL.&COD_CPAISO.;
+256        
+257        %LET OBS = MAX;
+258        /*proc printto log="&log_SSAS.%sysfunc(today(),ddmmyyn8.).log" new;*/
+259        /*run;*/
+260        proc import file="&Catalogo_Q."
+261        				out=Querys
+262        				dbms=xlsx
+263        				replace;
+264        	range="&Rango_CQ.";
+265        run;
+
+NOTE: The import data set has 500 observations and 9 variables.
+NOTE: WORK.QUERYS data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.05 seconds
+      
+
+266        
+267        
+268        PROC SQL;
+269        	CREATE TABLE ENIRR AS
+270        	SELECT COD_CCLIEN,FEC_PRIMPAGO FROM
+271        	&SYSTEM..&CONTRATOS. WHERE /*COD_CBANCO = 74 AND */ XTI_RRORINVE = '1'
+272        	AND FEC_PRIMPAGO <> '00010101'
+273        	ORDER BY COD_CCLIEN, FEC_PRIMPAGO ASC;
+NOTE: The "<>" operator is interpreted as "not equals".
+NOTE: Table WORK.ENIRR created, with 364641 rows and 2 columns.
+
+274        QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           1:52.42
+      cpu time            4.89 seconds
+      
+
+275        	
+276        	
+276      !  DATA ENIRR;
+277        	SET ENIRR;
+11                                                         The SAS System                            20:43 Monday, December 13, 2021
+
+278        	COUNT + 1;
+279        	BY COD_CCLIEN FEC_PRIMPAGO;
+280        	IF FIRST.COD_CCLIEN THEN COUNT = 1;
+281        	RUN;
+
+NOTE: There were 364641 observations read from the data set WORK.ENIRR.
+NOTE: The data set WORK.ENIRR has 364641 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.06 seconds
+      
+
+282        
+283         	
+283      !   PROC SQL;
+284        	DELETE FROM ENIRR WHERE
+285        	COUNT > 1;
+NOTE: 76647 rows were deleted from WORK.ENIRR.
+
+286        	RUN;
+NOTE: PROC SQL statements are executed immediately; The RUN statement has no effect.
+287        /*Querys de catalogos*/
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.25 seconds
+      cpu time            0.25 seconds
+      
+
+288        proc sql;
+289         create table a as
+290        	select *,compbl(
+291        	        case when orden  BETWEEN 1   AND 100 then "proc sql; insert into SAL_1.FINAL_TABLE_01 "
+292        			when orden  BETWEEN 101 AND 200 then "proc sql; insert into SAL_1.FINAL_TABLE_02 "
+293        			when orden  BETWEEN 201 AND 300 then "proc sql; insert into SAL_1.FINAL_TABLE_03 "
+294        			when orden  BETWEEN 301 AND 400 then "proc sql; insert into SAL_1.FINAL_TABLE_04 "
+295        			else                                 "proc sql; insert into SAL_1.FINAL_TABLE_05 "
+296                    end||
+297        		   case when Distinct_=1 then "select distinct '"
+298        		   		else "select '"
+299        		   end||
+300        		   compress(ID_DQ)||"' as ID_DQ, "||trim(POBLACION)||" as POBLACION, "||trim(FAILURES)||"
+301                    as FAILURES from "||
+302        		   from_||" "||case when Where_ is not missing then " where "
+303        		   					else " " end||trim(Where_)||
+304        			case when Order_ is not missing then " order by "
+305        				 else " " end||compbl(Order_)||
+306        			case when group_ is not missing then " group by "
+307        				else " " end||compbl(group_)||" ;quit;") as query_1
+308        	from Querys;
+NOTE: Table WORK.A created, with 500 rows and 10 columns.
+
+309        quit;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+310        
+311        PROC SQL;
+12                                                         The SAS System                            20:43 Monday, December 13, 2021
+
+312        	CREATE TABLE SAL_1.FINAL_TABLE (ID_DQ CHAR(50), POBLACION NUM, FAILURES NUM);
+NOTE: Table SAL_1.FINAL_TABLE created, with 0 rows and 3 columns.
+313        QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.01 seconds
+      
+
+314        
+315        PROC SQL;
+316        	CREATE TABLE SAL_1.FINAL_TABLE_01 (ID_DQ CHAR(50), POBLACION NUM, FAILURES NUM);
+NOTE: Table SAL_1.FINAL_TABLE_01 created, with 0 rows and 3 columns.
+317        QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.00 seconds
+      
+
+318        
+319        PROC SQL;
+320        	CREATE TABLE SAL_1.FINAL_TABLE_02 (ID_DQ CHAR(50), POBLACION NUM, FAILURES NUM);
+NOTE: Table SAL_1.FINAL_TABLE_02 created, with 0 rows and 3 columns.
+321        QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.00 seconds
+      
+
+322        PROC SQL;
+323        	CREATE TABLE SAL_1.FINAL_TABLE_03 (ID_DQ CHAR(50), POBLACION NUM, FAILURES NUM);
+NOTE: Table SAL_1.FINAL_TABLE_03 created, with 0 rows and 3 columns.
+324        QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.01 seconds
+      
+
+325        PROC SQL;
+326        	CREATE TABLE SAL_1.FINAL_TABLE_04 (ID_DQ CHAR(50), POBLACION NUM, FAILURES NUM);
+NOTE: Table SAL_1.FINAL_TABLE_04 created, with 0 rows and 3 columns.
+327        QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.00 seconds
+      
+
+328        PROC SQL;
+329        	CREATE TABLE SAL_1.FINAL_TABLE_05 (ID_DQ CHAR(50), POBLACION NUM, FAILURES NUM);
+NOTE: Table SAL_1.FINAL_TABLE_05 created, with 0 rows and 3 columns.
+330        QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.01 seconds
+      
+
+331        
+332        %include "/SREPGRM/RISK_TEST/CDGO/PARALELISMO/Ejecuta_Querys.sas";
+NOTE: %INCLUDE (level 1) file /SREPGRM/RISK_TEST/CDGO/PARALELISMO/Ejecuta_Querys.sas is file 
+13                                                         The SAS System                            20:43 Monday, December 13, 2021
+
+      /SREPGRM/RISK_TEST/CDGO/PARALELISMO/Ejecuta_Querys.sas.
+333       +
+334       +data a_1;
+335       +	set  a(firstobs=1 obs=100);
+336       +run;
+
+NOTE: There were 100 observations read from the data set WORK.A.
+NOTE: The data set WORK.A_1 has 100 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+337       +
+338       +data a_2;
+339       +	set  a(firstobs=101 obs=200);
+340       +run;
+
+NOTE: There were 100 observations read from the data set WORK.A.
+NOTE: The data set WORK.A_2 has 100 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+341       +
+342       +data a_3;
+343       +	set  a(firstobs=201 obs=300);
+344       +run;
+
+NOTE: There were 100 observations read from the data set WORK.A.
+NOTE: The data set WORK.A_3 has 100 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+345       +
+346       +data a_4;
+347       +	set  a(firstobs=301 obs=400);
+348       +run;
+
+NOTE: There were 100 observations read from the data set WORK.A.
+NOTE: The data set WORK.A_4 has 100 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+349       +
+350       +data a_5;
+351       +	set  a(firstobs=401 obs=MAX);
+352       +run;
+
+NOTE: There were 100 observations read from the data set WORK.A.
+NOTE: The data set WORK.A_5 has 100 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+14                                                         The SAS System                            20:43 Monday, December 13, 2021
+
+      cpu time            0.00 seconds
+      
+
+353       +
+354       +
+355       +%let RUTA_SALIDA=/SREPGRM/RISK_TEST/CDGO/PARALELISMO/;
+356       +%let ruta_logs=/SREPGRM/RISK_TEST/LOGS/PARALELISMO/;
+357       +
+358       +filename salida_1 "&RUTA_SALIDA.Set1.sas";
+359       +filename salida_2 "&RUTA_SALIDA.Set2.sas";
+360       +filename salida_3 "&RUTA_SALIDA.Set3.sas";
+361       +filename salida_4 "&RUTA_SALIDA.Set4.sas";
+362       +filename salida_5 "&RUTA_SALIDA.Set5.sas";
+363       +
+364       +data _null_;
+365       +	set a_1;
+366       +	file salida_1;
+367       +	put query_1 ;
+368       +run;
+
+NOTE: The file SALIDA_1 is:
+      Filename=/SREPGRM/RISK_TEST/CDGO/PARALELISMO/Set1.sas,
+      Owner Name=xmy4042,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=13Dec2021:20:46:37
+
+NOTE: 100 records were written to the file SALIDA_1.
+      The minimum record length was 197.
+      The maximum record length was 1030.
+NOTE: There were 100 observations read from the data set WORK.A_1.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+369       +
+370       +data _null_;
+371       +	set a_2;
+372       +	file salida_2;
+373       +	put query_1;
+374       +run;
+
+NOTE: The file SALIDA_2 is:
+      Filename=/SREPGRM/RISK_TEST/CDGO/PARALELISMO/Set2.sas,
+      Owner Name=xmy4042,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=13Dec2021:20:46:37
+
+NOTE: 100 records were written to the file SALIDA_2.
+      The minimum record length was 199.
+      The maximum record length was 1003.
+NOTE: There were 100 observations read from the data set WORK.A_2.
+NOTE: DATA statement used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.01 seconds
+      
+
+375       +
+15                                                         The SAS System                            20:43 Monday, December 13, 2021
+
+376       +data _null_;
+377       +	set a_3;
+378       +	file salida_3;
+379       +	put query_1;
+380       +run;
+
+NOTE: The file SALIDA_3 is:
+      Filename=/SREPGRM/RISK_TEST/CDGO/PARALELISMO/Set3.sas,
+      Owner Name=xmy4042,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=13Dec2021:20:46:38
+
+NOTE: 100 records were written to the file SALIDA_3.
+      The minimum record length was 193.
+      The maximum record length was 799.
+NOTE: There were 100 observations read from the data set WORK.A_3.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.00 seconds
+      
+
+381       +
+382       +data _null_;
+383       +	set a_4;
+384       +	file salida_4;
+385       +	put query_1;
+386       +run;
+
+NOTE: The file SALIDA_4 is:
+      Filename=/SREPGRM/RISK_TEST/CDGO/PARALELISMO/Set4.sas,
+      Owner Name=xmy4042,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=13Dec2021:20:46:38
+
+NOTE: 100 records were written to the file SALIDA_4.
+      The minimum record length was 192.
+      The maximum record length was 1429.
+NOTE: There were 100 observations read from the data set WORK.A_4.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.00 seconds
+      
+
+387       +
+388       +data _null_;
+389       +	set a_5;
+390       +	file salida_5;
+391       +	put query_1;
+392       +run;
+
+NOTE: The file SALIDA_5 is:
+      Filename=/SREPGRM/RISK_TEST/CDGO/PARALELISMO/Set5.sas,
+      Owner Name=xmy4042,Group Name=grpmexmt,
+      Access Permission=-rwxrwxrwx,
+      Last Modified=13Dec2021:20:46:38
+
+NOTE: 100 records were written to the file SALIDA_5.
+      The minimum record length was 189.
+16                                                         The SAS System                            20:43 Monday, December 13, 2021
+
+      The maximum record length was 879.
+NOTE: There were 100 observations read from the data set WORK.A_5.
+NOTE: DATA statement used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.00 seconds
+      
+
+393       +
+394       +%macro procesa_paralelo();
+395       +%let path_job=&RUTA_SALIDA.;
+396       +options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+397       +%syslput rutaTrabajo = &path_job /REMOTE=A01;
+398       +rsubmit A01 WAIT=NO LOG="&ruta_logs.Set1_%sysfunc(today(),ddmmyyn8.).log";
+399       +%include "&rutaTrabajo.Librerias_parametros.sas";
+400       +%include "&rutaTrabajo.Set1.sas";
+401       +endrsubmit;
+402       +
+403       +options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+404       +%syslput rutaTrabajo = &path_job /REMOTE=A02;
+405       +rsubmit A02 WAIT=NO LOG="&ruta_logs.Set2_%sysfunc(today(),ddmmyyn8.).log";
+406       +%include "&rutaTrabajo.Librerias_parametros.sas";
+407       +%include "&rutaTrabajo.Set2.sas";
+408       +endrsubmit;
+409       +
+410       +options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+411       +%syslput rutaTrabajo = &path_job /REMOTE=A03;
+412       +rsubmit A03 WAIT=NO LOG="&ruta_logs.Set3_%sysfunc(today(),ddmmyyn8.).log";
+413       +%include "&rutaTrabajo.Librerias_parametros.sas";
+414       +%include "&rutaTrabajo.Set3.sas";
+415       +endrsubmit;
+416       +
+417       +options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+418       +%syslput rutaTrabajo = &path_job /REMOTE=A04;
+419       +rsubmit A04 WAIT=NO LOG="&ruta_logs.Set4_%sysfunc(today(),ddmmyyn8.).log";
+420       +%include "&rutaTrabajo.Librerias_parametros.sas";
+421       +%include "&rutaTrabajo.Set4.sas";
+422       +endrsubmit;
+423       +
+424       +options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+425       +%syslput rutaTrabajo = &path_job /REMOTE=A05;
+426       +rsubmit A05 WAIT=NO LOG="&ruta_logs.Set5_%sysfunc(today(),ddmmyyn8.).log";
+427       +%include "&rutaTrabajo.Librerias_parametros.sas";
+428       +%include "&rutaTrabajo.Set5.sas";
+429       +endrsubmit;
+430       +
+431       +waitfor _ALL_ A01 A02 A03 A04 A05;
+432       +signoff A01;
+433       +signoff A02;
+434       +signoff A03;
+435       +signoff A04;
+436       +signoff A05;
+437       +%mend;
+438       +
+NOTE: %INCLUDE (level 1) ending.
+439        %procesa_paralelo();
+MLOGIC(PROCESA_PARALELO):  Beginning execution.
+MLOGIC(PROCESA_PARALELO):  %LET (variable name is PATH_JOB)
+MPRINT(PROCESA_PARALELO):   options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+17                                                         The SAS System                            20:43 Monday, December 13, 2021
+
+MLOGIC(PROCESA_PARALELO):  %SYSLPUT (variable name is RUTATRABAJO)
+NOTE: Remote signon to A01 commencing (SAS Release 9.04.01M3P062415).
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.22 seconds
+      cpu time            0.05 seconds
+      
+NOTE: Remote signon to A01 complete.
+MPRINT(PROCESA_PARALELO):   rsubmit WAIT=NO LOG="/SREPGRM/RISK_TEST/LOGS/PARALELISMO/Set1_13122021.log";
+18                                                         The SAS System                            20:45 Monday, December 13, 2021
+
+NOTE: Background remote submit to A01 in progress.
+MPRINT(PROCESA_PARALELO):   options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+MLOGIC(PROCESA_PARALELO):  %SYSLPUT (variable name is RUTATRABAJO)
+NOTE: Remote signon to A02 commencing (SAS Release 9.04.01M3P062415).
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.06 seconds
+      cpu time            0.04 seconds
+      
+NOTE: Remote signon to A02 complete.
+MPRINT(PROCESA_PARALELO):   rsubmit WAIT=NO LOG="/SREPGRM/RISK_TEST/LOGS/PARALELISMO/Set2_13122021.log";
+18                                                         The SAS System                            20:45 Monday, December 13, 2021
+
+NOTE: Background remote submit to A02 in progress.
+MPRINT(PROCESA_PARALELO):   options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+MLOGIC(PROCESA_PARALELO):  %SYSLPUT (variable name is RUTATRABAJO)
+NOTE: Remote signon to A03 commencing (SAS Release 9.04.01M3P062415).
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.09 seconds
+      cpu time            0.03 seconds
+      
+NOTE: Remote signon to A03 complete.
+MPRINT(PROCESA_PARALELO):   rsubmit WAIT=NO LOG="/SREPGRM/RISK_TEST/LOGS/PARALELISMO/Set3_13122021.log";
+18                                                         The SAS System                            20:45 Monday, December 13, 2021
+
+NOTE: Background remote submit to A03 in progress.
+MPRINT(PROCESA_PARALELO):   options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+MLOGIC(PROCESA_PARALELO):  %SYSLPUT (variable name is RUTATRABAJO)
+NOTE: Remote signon to A04 commencing (SAS Release 9.04.01M3P062415).
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.09 seconds
+      cpu time            0.04 seconds
+      
+NOTE: Remote signon to A04 complete.
+MPRINT(PROCESA_PARALELO):   rsubmit WAIT=NO LOG="/SREPGRM/RISK_TEST/LOGS/PARALELISMO/Set4_13122021.log";
+18                                                         The SAS System                            20:45 Monday, December 13, 2021
+
+NOTE: Background remote submit to A04 in progress.
+MPRINT(PROCESA_PARALELO):   options autosignon=YES sascmd='/sasgrid94/SASHome/SASFoundation/9.4/sas' FULLSTIMER;
+MLOGIC(PROCESA_PARALELO):  %SYSLPUT (variable name is RUTATRABAJO)
+NOTE: Remote signon to A05 commencing (SAS Release 9.04.01M3P062415).
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.10 seconds
+      cpu time            0.06 seconds
+      
+NOTE: Remote signon to A05 complete.
+MPRINT(PROCESA_PARALELO):   rsubmit WAIT=NO LOG="/SREPGRM/RISK_TEST/LOGS/PARALELISMO/Set5_13122021.log";
+18                                                         The SAS System                            20:45 Monday, December 13, 2021
+
+NOTE: Background remote submit to A05 in progress.
+MPRINT(PROCESA_PARALELO):   waitfor _ALL_ A01 A02 A03 A04 A05;
+MPRINT(PROCESA_PARALELO):   signoff;
+NOTE: Remote signoff from A01 commencing.
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5:26:32.96
+      user cpu time       6:40.05
+      system cpu time     8:56.50
+      memory              2719361.68k
+      OS Memory           3105440.00k
+      Timestamp           12/14/2021 02:12:31 AM
+      Step Count                        116  Switch Count  282
+      Page Faults                       7542
+      Page Reclaims                     3903983
+      Page Swaps                        0
+      Voluntary Context Switches        1456059
+      Involuntary Context Switches      19547
+      Block Input Operations            724333352
+      Block Output Operations           13734576
+      
+NOTE: Remote signoff from A01 complete.
+MPRINT(PROCESA_PARALELO):   signoff;
+NOTE: Remote signoff from A02 commencing.
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5:26:32.67
+      user cpu time       10:11.95
+      system cpu time     10:57.61
+      memory              2719635.53k
+      OS Memory           3105696.00k
+      Timestamp           12/14/2021 02:12:31 AM
+      Step Count                        116  Switch Count  305
+      Page Faults                       10620
+      Page Reclaims                     5190383
+      Page Swaps                        0
+      Voluntary Context Switches        1874036
+      Involuntary Context Switches      29844
+      Block Input Operations            751285712
+      Block Output Operations           35853480
+      
+NOTE: Remote signoff from A02 complete.
+MPRINT(PROCESA_PARALELO):   signoff;
+NOTE: Remote signoff from A03 commencing.
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5:26:32.98
+      user cpu time       52:05.95
+      system cpu time     14:26.14
+      memory              2719354.50k
+      OS Memory           3105696.00k
+      Timestamp           12/14/2021 02:12:32 AM
+      Step Count                        116  Switch Count  866
+      Page Faults                       16133
+      Page Reclaims                     9736374
+      Page Swaps                        0
+      Voluntary Context Switches        1854105
+      Involuntary Context Switches      136350
+      Block Input Operations            967359960
+      Block Output Operations           63587232
+      
+NOTE: Remote signoff from A03 complete.
+MPRINT(PROCESA_PARALELO):   signoff;
+NOTE: Remote signoff from A04 commencing.
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5:26:32.85
+      user cpu time       10:48.66
+      system cpu time     9:57.14
+      memory              3618381.09k
+      OS Memory           4132000.00k
+      Timestamp           12/14/2021 02:12:32 AM
+      Step Count                        116  Switch Count  2501
+      Page Faults                       19098
+      Page Reclaims                     18124688
+      Page Swaps                        0
+      Voluntary Context Switches        2687524
+      Involuntary Context Switches      28866
+      Block Input Operations            463155048
+      Block Output Operations           109309752
+73                                                         The SAS System                            20:45 Monday, December 13, 2021
+
+      
+NOTE: Remote signoff from A04 complete.
+MPRINT(PROCESA_PARALELO):   signoff;
+NOTE: Remote signoff from A05 commencing.
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5:26:32.72
+      user cpu time       11:55.63
+      system cpu time     14:21.51
+      memory              2114789.48k
+      OS Memory           2119080.00k
+      Timestamp           12/14/2021 02:12:32 AM
+      Step Count                        116  Switch Count  328
+      Page Faults                       15778
+      Page Reclaims                     16493701
+      Page Swaps                        0
+      Voluntary Context Switches        2916144
+      Involuntary Context Switches      37118
+      Block Input Operations            1092076184
+      Block Output Operations           106868160
+      
+NOTE: Remote signoff from A05 complete.
+MLOGIC(PROCESA_PARALELO):  Ending execution.
+440        
+441        
+442        proc printto log="&log_SSAS.%sysfunc(today(),ddmmyyn8.).log" new;
+443        run;
+
+NOTE: PROCEDURE PRINTTO used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              5.78k
+      OS Memory           30116.00k
+      Timestamp           12/14/2021 04:48:16 AM
+      Step Count                        662  Switch Count  0
+      Page Faults                       0
+      Page Reclaims                     0
+      Page Swaps                        0
+      Voluntary Context Switches        4
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           0
+      
+
+2317       *options emailsys=smtp emailhost=smtp.bbva.com emailport=25;
+2318       proc options group=email;run;
+
+    SAS (r) Proprietary Software Release 9.4  TS1M3
+
+
+Group=EMAIL
+ EMAILACKWAIT=30   Specifies the number of seconds to wait for the SMTP server acknowledgement.
+ EMAILAUTHPROTOCOL=NONE
+                   Specifies the SMTP e-mail authentication protocol.
+ NOEMAILFROM       Does not require the FROM e-mail option when sending e-mail by using the FILE or FILENAME statements.
+ EMAILHOST=LOCALHOST
+                   Specifies one or more domain names for SMTP e-mail servers.
+ EMAILID=          Specifies the SAS user's logon ID, profile or e-mail address.
+ EMAILPORT=25      Specifies the port number for the SMTP e-mail server that is specified in the EMAILHOST option.
+ EMAILPW=XXXXXXXX  Specifies the password for the e-mail address specified by the EMAILID option.
+ EMAILUTCOFFSET=   For SMTP e-mail sent using the FILENAME statement, specifies a UTC offset that is used in the Date header field 
+                   of the e-mail message.
+ EMAILSYS=smtp     Specifies the e-mail protocol that is used for sending electronic mail.
+NOTE: PROCEDURE OPTIONS used (Total process time):
+      real time           0.00 seconds
+      user cpu time       0.00 seconds
+      system cpu time     0.00 seconds
+      memory              20.96k
+      OS Memory           30116.00k
+      Timestamp           12/14/2021 04:48:16 AM
+      Step Count                        663  Switch Count  0
+      Page Faults                       10
+345                                                        The SAS System                            20:43 Monday, December 13, 2021
+
+      Page Reclaims                     0
+      Page Swaps                        0
+      Voluntary Context Switches        0
+      Involuntary Context Switches      0
+      Block Input Operations            0
+      Block Output Operations           0
+      
+
+2319       options EMAILSYS=SMTP emailhost='150.100.207.52' emailport=25;
+2320       filename outbox email
+2321       					to=(&Correos_dest.)
+2322       					type="text/html"
+2323       					subject="Reporte DQ 500 Controles"
+2324       					attach="&Rep_pdf.&FEC_REP..pdf"
+2325       					attach=('/SREPGRM/RISK_TEST/DQSALIDA/DQLEGACY.xlsx' content_type="Excel")
+2326       					attach=('/SREPGRM/RISK_TEST/DQSALIDA/HISTORICO_500_CONTROLES.xlsx' content_type="Excel")
+2327       					attach=("/SREPGRM/RISK_TEST/CTLG/imagenes/Reporte_IFRS9_mail.jpg" inlined='sgplot')
+2328       					from=&Correos_envia.;
+2329       ods html body=outbox rs=none;
+NOTE: Writing HTML Body file: OUTBOX
+2330       ODS Html text="<html><img src=cid:sgplot></html>";
+2331       ODS HTML text="<img align='LEFT' border='0' height='50' name='m_-8817629227236473501_logotipo'
+2331     ! src='https://ci6.googleusercontent.com/proxy/Vff8yXn5FVjzp4mnlacPheVvm1SXK4S4uMwKCVFczju9Az5N0szYwC_TZ5OHT6-7cwm46JAIOXW3
+2331     ! 9JYGIkB6KS0_aA=s0-d-e1-ft#https://www.bancomer.com/comun/img/logo-bbva.jpg' width='183' class='CToWUd'>";
+2332       ODS HTML text="<div style='line-height:18px;padding-left:5px'><font color='#004481' face='Arial, sans-serif'><b>Equipo
+2332     ! dqriesgostaskforce</b></font><br><span style='color:rgb(45,204,205);font-family:Arial,sans-serif;font-size:12px;
+2332     ! font-weight:700'>Data Quality RISK</span></div>";
+2333       ODS HTML text="<div style='line-height:18px;padding-left:5px'><span style='color:rgb(45,204,205);
+2333     ! font-family:Arial,sans-serif;font-size:12px;font-weight:700'>DQ</span></div>";
+2334       ODS HTML text="<div style='line-height:18px;padding-left:5px'><span style='color:rgb(102,102,102);
+2334     ! font-family:Arial,sans-serif;font-size:13px;font-weight:300'>Tel. – <a href='mailto:dqriesgostaskforce.group@bbva.com'
+2334     ! rel='noreferrer' target='_blank'><span class='il'>dqriesgostaskforce.group@bbva.com</span></a></span><br><span
+2334     ! style='color:rgb(45,204,205);font-family:Arial,sans-serif;font-size:12px;font-weight:700'></span></div>";
+2335       ODS HTML text="<div style='font-family:Arial,sans-serif;font-size:13px;line-height:18px;padding-left:5px'><span
+2335     ! style='color:rgb(45,204,205);font-size:12px;font-weight:700'>Parques BBVA Polanco Mariano Escobedo 303 (Laguna de Mayrán)
+2335     !  11320 Miguel Hidalgo, Distrito Federal México</span><br></div>";
+2336       ODS HTML text="<div style='font-family:Arial,sans-serif;font-size:13px;line-height:18px;padding-left:5px'><span
+2336     ! style='color:rgb(72,174,100);font-size:9px'><br></span></div>";
+2337       ODS HTML text="<div style='font-family:Arial,sans-serif;font-size:13px;line-height:18px;padding-left:5px'><span
+2337     ! style='color:rgb(72,174,100);font-size:9px'>Antes de imprimir este mensaje, por favor comprueba que es necesario hacerlo.
+2337     !  Before you print this message please consider if it is really necessary.</span><br></div>";
+2338       ods html close;
+Message sent
+      To:          "marianaalejandra.zuniga.contractor@bbva.com"
+      Cc:          
+      Bcc:         
+      Subject:     Reporte DQ 500 Controles
+      Attachments: ( "/SREPGRM/RISK_TEST/CTLG/imagenes/Reporte_IFRS9_mail.jpg" INLINED = 'sgplot' ) 
+2339       proc datasets library=work kill;
+WARNING: No output destinations active.
+NOTE: Deleting WORK.A (memtype=DATA).
+NOTE: Deleting WORK.A_1 (memtype=DATA).
+NOTE: Deleting WORK.A_2 (memtype=DATA).
+NOTE: Deleting WORK.A_3 (memtype=DATA).
+NOTE: Deleting WORK.A_4 (memtype=DATA).
+NOTE: Deleting WORK.A_5 (memtype=DATA).
+NOTE: Deleting WORK.CATALOGO_CONTROLES (memtype=DATA).
+NOTE: Deleting WORK.COMPL_INFORMACION (memtype=DATA).
+346                                                        The SAS System                            20:43 Monday, December 13, 2021
+
+NOTE: Deleting WORK.CONTENIDO (memtype=DATA).
+NOTE: Deleting WORK.CORREOS_DEST (memtype=DATA).
+NOTE: Deleting WORK.CORREOS_DEST_LIB (memtype=DATA).
+NOTE: Deleting WORK.CORREOS_ENVIA (memtype=DATA).
+NOTE: Deleting WORK.CORREOS_ENVIA_LIB (memtype=DATA).
+NOTE: Deleting WORK.DASHBOARD (memtype=DATA).
+NOTE: Deleting WORK.DASHBOARD_DQ (memtype=DATA).
+NOTE: Deleting WORK.DASHBOARD_DQ2 (memtype=DATA).
+NOTE: Deleting WORK.DASHBOARD_DQ3 (memtype=DATA).
+NOTE: Deleting WORK.DASHBOARD_DQ_TAB (memtype=DATA).
+NOTE: Deleting WORK.DASHBOARD_DQ_TOTAL (memtype=DATA).
+NOTE: Deleting WORK.DASHBOARD_IR (memtype=DATA).
+NOTE: Deleting WORK.DETALLE_FECHA (memtype=DATA).
+NOTE: Deleting WORK.DETALLE_FECHA2 (memtype=DATA).
+NOTE: Deleting WORK.DETALLE_NUM (memtype=DATA).
+NOTE: Deleting WORK.DETALLE_NUM2 (memtype=DATA).
+NOTE: Deleting WORK.DISTINCT_TABLE (memtype=DATA).
+NOTE: Deleting WORK.DISTINCT_TABLENUM_1 (memtype=DATA).
+NOTE: Deleting WORK.DISTINCT_TABLE_1 (memtype=DATA).
+NOTE: Deleting WORK.DISTINCT_TABLE_NUM (memtype=DATA).
+NOTE: Deleting WORK.DISTINCT_TABLE_UNION (memtype=DATA).
+NOTE: Deleting WORK.DISTINCT_TABLE_UNION_2 (memtype=DATA).
+NOTE: Deleting WORK.DISTINCT_TABLE_UNION_3 (memtype=DATA).
+NOTE: Deleting WORK.DQLEGACY (memtype=DATA).
+NOTE: Deleting WORK.DQ_202111 (memtype=DATA).
+NOTE: Deleting WORK.ENIRR (memtype=DATA).
+NOTE: Deleting WORK.FORMATS (memtype=CATALOG).
+NOTE: Deleting WORK.HISTORIA_SALIDA_1 (memtype=DATA).
+NOTE: Deleting WORK.HISTORICO_PDF_1 (memtype=DATA).
+NOTE: Deleting WORK.IR_FINAL (memtype=DATA).
+NOTE: Deleting WORK.LLAVE (memtype=DATA).
+NOTE: Deleting WORK.PARAMETROS (memtype=DATA).
+NOTE: Deleting WORK.QUERYS (memtype=DATA).
+NOTE: Deleting WORK.SASGOPT (memtype=CATALOG).
+NOTE: File WORK.SASGOPT (memtype=CATALOG) cannot be deleted because it is in use.
+NOTE: Deleting WORK.SASMACR (memtype=CATALOG).
+NOTE: File WORK.SASMACR (memtype=CATALOG) cannot be deleted because it is in use.
+NOTE: Deleting WORK.TEMP2 (memtype=DATA).
+2340       run;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.19 seconds
+      user cpu time       0.01 seconds
+      system cpu time     0.03 seconds
+      memory              512.96k
+      OS Memory           30116.00k
+      Timestamp           12/14/2021 04:48:17 AM
+      Step Count                        664  Switch Count  0
+      Page Faults                       177
+      Page Reclaims                     41
+      Page Swaps                        0
+      Voluntary Context Switches        389
+      Involuntary Context Switches      4
+      Block Input Operations            360
+      Block Output Operations           8
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+347                                                        The SAS System                            20:43 Monday, December 13, 2021
+
+NOTE: The SAS System used:
+      real time           8:04:31.29
+      user cpu time       27:24.05
+      system cpu time     15:17.27
+      memory              2116374.28k
+      OS Memory           2130928.00k
+      Timestamp           12/14/2021 04:48:17 AM
+      Step Count                        664  Switch Count  9459
+      Page Faults                       57205
+      Page Reclaims                     29725317
+      Page Swaps                        0
+      Voluntary Context Switches        1033383
+      Involuntary Context Switches      88091
+      Block Input Operations            1787125854
+      Block Output Operations           209726480
+      

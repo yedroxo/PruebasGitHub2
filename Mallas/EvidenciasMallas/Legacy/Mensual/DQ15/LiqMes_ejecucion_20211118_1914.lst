@@ -1,0 +1,55 @@
+                                                           The SAS System                      19:14 Thursday, November 18, 2021   1
+
+                                                                MAXIMO
+                                                              --------
+                                                                     2
+                                                           The SAS System                      19:14 Thursday, November 18, 2021   2
+
+                   gf_legacy_qr_
+                   sequential_id                    VARIACION                   VARIACION  Umbral_Min  Umbral_Max
+                   ----------------------------------------------------------------------------------------------
+                   1702800100                        0.102952                    0.102952       -0.45        0.45
+                                                           The SAS System                      19:14 Thursday, November 18, 2021   3
+
+                   gf_legacy_qr_
+                   sequential_id                    VARIACION                   VARIACION  Umbral_Min  Umbral_Max
+                   ----------------------------------------------------------------------------------------------
+                   1702700100                        0.019775                    0.019775          -2           2
+                                                           The SAS System                      19:14 Thursday, November 18, 2021   4
+
+                                                                      
+                                                              --------
+                                                                     2
+                                                           The SAS System                      19:14 Thursday, November 18, 2021   5
+
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+         Fecha  Reporte                         Métrica                                                                         
+    2021-09-30  Liquidez                        Stress Testing  Core Buffer Suficiencia 1M (Escenario Worst Case)               
+    2021-09-30  Liquidez                        Stress Testing Total Buffer Suficiencia 3M (Escenario Worst Case)               
+                                                           The SAS System                      19:14 Thursday, November 18, 2021   6
+
+                                                                         Porce                                                
+                                                                         ntaje                                                
+                                                                         Cumpl                                                
+                                                           Umbra  Umbra  imien                                                
+                                                               l      l     to                                                
+     Regla de                                              Mínim  Objet  Regis                                                
+     calidad     Responsable                                   o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo
+     1702700100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1702800100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+                                                           The SAS System                      19:14 Thursday, November 18, 2021   7
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                 SE
+                                                                                                                 MA
+                       Variación Máxima                                                                          FO
+                              Permitida             Dato Actual           Dato Anterior               Variación  RO
+                                  2.000                  2.6375                  2.6177                  0.0198  SI
+                                  0.450                  2.1290                  2.0260                  0.1030  SI

@@ -1,0 +1,1241 @@
+Conexion IPC Producción: $DBConnectionCF=BFRBP001        (FRAUDES) --PROD
+Conexion IPC Desarrollo: $DBConnectionCF=BPABD001_DBSBFR (FRAUDES) --DESARROLLO
+
+Conexion IPC Producción: $DBConnection1=balbp0011_dbsbal (Atlas)   --PROD
+Conexion IPC Desarrollo: $DBConnection1=bpabd001_dbsbal  (Atlas)   --DESARROLLO
+
+Conexion IPC Producción: $DBConnection_AT=blcbp001        (LAC)    --PROD
+Conexion IPC Desarrollo: $DBConnection_AT=bpabd001_DBSBLC (LAC)    --DESARROLLO
+
+Conexion IP Produccion: $DBConnectionTR=klarmxp_zlarmp10  (LAR)    
+Conexion IP Desarrollo: $DBConnectionTR=klarmxd_zlarmd10  (LAR)
+
+PR QA KQPD 21/05/2021
+https://globaldevtools.bbva.com/bitbucket/projects/DQLHO/repos/dqlho_skynet_kqpd_datio_ingestion/pull-requests/13
+
+ARCHIVOS CATALOGOS FRAUDES
+https://drive.google.com/drive/folders/0BwNbUU1zVKa2aTJQNVctRGdnVms
+ 
+Ruta documentación OPA Commerce
+ENTREGABLE:PBPBG
+INICIATIVA: IN3GKX
+PROYECTO:YA9H1T
+FOLIO DYD: 2015-339
+RUTA DE DOCS:\\150.100.180.168\g_cb041\Documentacion_SYO\PBPBG\IN3GKX
+
+
+Nodos Connect Direct ETL
+Desa
+El nombre del nodo de Connect Direct del eqipo 150.50.102.246 se llama CDTRANSD
+
+Prod
+El nombre del nodo de Connect Direct del equipo 150.100.246.100 se llama CDETLMXP
+
+Bolampb3
+150.100.151.48
+Fraudes
+fraumex
+0p9o8i7u
+
+LAC
+lacmex
+2tpm36FJ
+
+LAP
+lapmex
+carde1pa
+
+SAS
+150.100.195.61
+xm020hy
+
+usrrpgrm   Usuario aplicativo SAS producción a cargo de Luis Alberto Catalán
+
+-------------------------------------------------
+Archivo host de windows 
+150.50.102.246      pcetlmtyd1
+#150.250.250.84     pcetlmtyd1
+150.100.246.100     pcetlmp1
+150.100.125.36      mb26100
+
+
+
+Producción 
+Usuario: etloper
+Password:Pr0d_3tl_mx
+la ip es 150.100.246.100
+
+javier diaz vargas
+
+Usuarios Moi Solorzano García
+Usuario ETL : XM06253
+	Password    : b1dbs3b0f2i3f19
+unix desarrollo
+Usuario: xm06253
+	Password: M05g7410
+
+
+-----------------------------------------
+Wi-fi
+core2
+XM020HY2
+e3mczdgj
+
+LAPCOREi5
+XM020HY1
+jn3ptdkt
+
+-------------------------------
+cbnocfs15 --> 150.100.180.138
+cbnocfs08 --> 150.100.180.132
+
+Les comparto el usuario y pass del usuario aplicativo de nueva creacion, dicho user y pass son las mismas para ambos ambientes.
+Aclaraciones
+User: ZDBACLA 
+Pass: 1a2b3c4d
+
+Desarrollo:
+Instancia: BPABD002
+Ip: 150.50.102.239
+Puerto: 1521
+Hostname: bolacmd
+
+Producción:
+Instancia: klabp001
+IP: 150.100.43.141
+puerto: 1521
+hostname: boex3db07
+
+
+Gra
+https://isaas-datio.live-04.platform.bbva.com/?url=https%3A%2F%2Fdaas.live.mx.ether.igrupobbva%2Fmonitoring%2Fgrafana%2Fd%2Fhome%2F00-home%3ForgId%3D1%26refresh%3D1m
+
+
+https://remedy.es.igrupobbva/ITSMBBVA/arsys/shared/loggedout.jsp
+https://remedy.es.igrupobbva/ITSMBBVA/arsys/forms/itsmbbva/SHR:LandingConsole/Default+Administrator+View/?cacheid=e5164869
+xmz0888
+1a2b3c4d
+
+Ras:
+M906810
+M906810
+
+http://ctxccr.intranet.com.mx/Citrix/XenApp/auth/login.aspx
+http://ctxenduser.mex.igrupobbva/Citrix/VMWeb/
+
+cdh03M4r
+cdh044br
+cdh05M4y
+cdh06Jun
+cdh07Jul
+cdh084g0 cdh084G0
+cdh09S3p cdh0953P  
+cdh0953P O47vt&Ym2
+cdh100cT O47vt&Ym2
+cdh100cT 047vT&YM2
+etl desarrollo  passw   O47vt&Ym2   07-Oct-2021
+cdh11N0v  fgG%qr32  O47vT&Ym2   16-Nov-2021    l&rpV120 EvjX%w5r
+cdh11N0v  EvjX%w5r   08/12/2021
+cdh12D1c  EvjX%w5r   09/12/2021
+cdh02FeB  3Vjy&WsR   07/02/2021
+cdH03M4r  4vJy&T7h   05/03/2022
+cDh0A4bR  4vJy&T7h   02/04/2022
+cdH05M4y  5AYf%O6i   02/05/2022
+cDH07J14  A5TF&o9I   02/06/2022   
+cDH08A22  95FT#yk$   14/07/2022
+cDH08A22  EvjX&T7h   25/08/2022
+cDH09S29  EvjX&T7h   25/08/2022 
+
+ricardo alberto amaya armenta
+U4t38mlb
+
+
+/etl_work/idi_fs07/CF/cf_0002_amazon/shells/
+
+dqtaskforceriesgos.group@bbva.com
+
+mv -f "Metricos Originacion PyME 202207.xlsx" "Metricos Originacion PyME 202206.xlsx"
+
+NODOS DATIO
+Desarrollo
+LCVWMXAXFT01  ctl rey
+lcvwtdaxai00  hammurabi rey
+
+Productivos
+lcvpmxaxft00  este de arriba son generadores ctl
+lcvpmxaxai00  Datio staging
+
+
+cenreq.mx@bbva.com    Centro de REQs
+remedyfocalpoint.mx@bbva.com  
+
+Servidor CONTROL M
+SERVIDOR: 150.250.40.250  (ctrlmtyd)
+PUERTO: 13075
+
+SERVIDOR:150.250.40.128
+PUERTO: 13075
+
+
+  
+
+https://globaldevtools.bbva.com/bitbucket/projects/EGPNU/repos/mdco-ingestion/browse
+MARIA FERNANDA GONZALEZ GONZALEZ
+17:01
+PI 8 - https://docs.google.com/spreadsheets/d/1R8LWNoUDu2e7fOTFdwVAZ0otdxujRi_K2jnsrW2y0ao/edit#gid=778256625
+PI 9 - https://docs.google.com/spreadsheets/d/1J5sH5tS6lfdnZUIncTc9b20WFORE2Z7yTI_MJF0gInE/edit#gid=778256625
+PI 10 - https://docs.google.com/spreadsheets/d/1spu3h--hBLStsz3HvRqVvZUYooGLSSxib3OuHgxHsik/edit#gid=824731200
+PI 11 - https://docs.google.com/spreadsheets/d/1o6OSwyF73BBHM6hNMKIS58H8Bwc7aOe6ZyBFuwgMp78/edit#gid=0
+PI 12 - https://docs.google.com/spreadsheets/d/1Sl0xosNxoRCrcqPCrxgOA1Y1ubeKHjkncVPb6WZ3-Ds/edit#gid=0
+PI 13 - https://docs.google.com/spreadsheets/d/1iiB1y98ilVium8j6HVo047vHilfoM2bJd-Yt3QhdZb0/edit#gid=0
+MARIA FERNANDA GONZALEZ GONZALEZ
+17:03
+REGLA CTL 
+{
+            class: "com.datio.hammurabi.rules.completeness.MetadataCompletenessRule"
+            config: {
+                dataValues: {
+                    metadataType: "ctl"
+                    delimiter: "|"
+                    position: 3
+                    path: "/in/staging/ratransmit/host/myah/MYAH_EVENSTAT_"${?HOST_DATE}".ctl"
+                }
+                acceptanceMin: 100
+                minThreshold: 100
+                targetThreshold: 100
+                isCritical: true
+  
+
+
+xm15083
+3l19a4d5
+XM15063
+
+XM06507  Lalo Control M
+
+xm020qs
+jctm2017
+
+unix
+xm020qs
+JC2016TM
+
+
+XM055321     Usuario Marco
+XM055321
+
+
+
+
+
+Reporte de incidencias Citrix con evidencia del error (imagen):
+ incidentes.fudesa.mx@bbva.com
+
+BZONE (Alta para IPC)
+https://sites.google.com/a/bbva.com/bip_zone/Centro-de-conocimientos/herramientas/herramienta_ipc/formatos_ipc	
+
+GEF@
+ https://srapidas.igrupobbva/DRCG/drcg_mx/index.jsp?PD-VFHOST=communityinterno.grupobbva.com&PD-VF=BAGs3DCCAWsCAQECAgGaAgECAgEABAAEggFYSIjPpEynewig63qTkOOuFNN9dvn3XBc1O6AiWnMUt6E/tZR2ZMhYTl7VvFIxzM/nawVghSficHLUvi9drjYNvHpx5xn4zc69TKCUGidxcmfpQRjFKSmy/SXTA7wm6Z8z35uaHnp3nnqEHq+5fUX27+Sqc0Nf8DQUqzbAW/TgLlMXcLhgva4zMUZsAF21QfMLPX8p+gRA1c2p8K2S2oTwcvOtRczeJinSVwmXAIDk/Ubp76VsQOzr3GaVnxu0CZzkgUrJAVODxGZNCxQC/D3b0KEymT1un4Z4lW05wPwAkCgzPHci2zzp8EqbVpGhbKG45ZfI3Fqk3X15Ujd2IU3O15HgxDLQKKCD4wz2rXskQq+yQ2ZEm/GApVNyUJIxk3RkZz1QfSQEmhhdIA45Cr/+b5WOzJD7VXXe3w2WIgVWPrhPizk5VpmdkRoBeb3qjcBEI8fw5C3Ia9g=
+ 
+ ADMINISTRACIÓN DE BASE DE DATOS DISTRIBUIDAS (BZG05952)" <bddist.mx@bbva.com>
+ 
+fumexcambios.mx@bbva.com    Frente único
+ 61130
+
+Dimensions: (FRA)
+http://150.50.102.145:8080/dimensions/?jsp=login
+m906810
+Septiembre10
+
+Dimensions  (Riesgos)
+http://150.50.102.145:8080/dimensions/?jsp=login
+m901223        Usuario Juan Gibran Romero Miranda
+OA7VT%yMD
+EvjX%w5r      08/Nov/2021
+EvjX%w5r      08/Nov/2021
+3vjX%wsr      20/Dic/2021
+4vJy&T7h      04/Mar/2022
+5AYf%O6i      10/May/2022
+Z%oq3&9#      12/Junio/2022
+7&yR6%t-      11/Julio/2022
+95FT#yk$      25/Julio/2022
+T%Hk#9cl      O1/Septiembre/2022
+
+
+
+dqriesgostaskforce.group@bbva.com    comunitario Riesgos
+
+xm06507
+lalo2813
+XM06507
+
+
+JIRA 
+https://globaldevtools.bbva.com/jira
+
+bolacmd  (BOLAMP DESARROLLO)
+150.50.102.239
+usr:lacdesa
+psw:Zxcv6789
+
+
+https://drive.google.com/drive/folders/1PYMHOnjxAaFjAfCxgiwQ_MgJZQuSaqrW   malla datio extranet
+CDLCVPMXAXFT01  nodo prod
+
+
+Formatos PMO & SYO
+https://sites.google.com/a/bbva.com/pmoformatos/?pli=1
+
+
+Ligas Datio
+https://globaldevtools.bbva.com/jira/servicedesk/customer/portal/26   ticket ls sandbox
+
+
+https://isaas-datio.live-04.platform.bbva.com/?url=https://daas.live.mx.ether.igrupobbva/services/sandboxconsole/sandboxes/      Sandboxes
+
+Argos:
+https://isaas.work.mx.nextgen.igrupobbva/?url=https%3A%2F%2Fdaas.work.mx.ether.igrupobbva%2Fmonitoring%2Fargos-front%2Fdashboard
+XMZ0480    Gibran
+Password: 0813jgrm
+
+Intranet- High performance desktop
+https://bbva-intranet.appspot.com/
+
+Sophia
+http://datadictionary.bbva.com/welcome/
+
+Jupyter:
+https://isaas.work.mx.nextgen.igrupobbva/?url=https%3A%2F%2Fdaas.work.mx.ether.igrupobbva%2Fservices%2Fvbox%2Fintelligence%2Fuser%2FMB91477%2Flab%2Fworkspaces%2Fauto-R
+
+Sandbox:
+https://isaas.work.mx.nextgen.igrupobbva/?url=https%3A%2F%2Fdaas.work.mx.ether.igrupobbva%2Fservices%2Fsandbox%2F
+
+Bitbucket
+https://globaldevtools.bbva.com/bitbucket/projects/DQLHO/repos/dqlho_skynet_kqpd_datio_ingestion/pull-requests/1/overview
+
+Artifactory
+https://globaldevtools.bbva.com/artifactory/webapp/#/profile
+
+token bitbucket
+OTQxMDA4NTU5MDE3OmvIl7v5yTtfZAQ/wmyfI15UphdK
+
+https://globaldevtools.bbva.com/artifactory/webapp/#/profile
+https://globaldevtools.bbva.com/artifactory/webapp/#/home
+http://datadictionary.bbva.com/welcome/
+
+
+5566176048   Carlos Eduardo Reyes del Angel
+jimmac07@gmail.com
+
+MKQPDVP9990
+
+CLAR
+Ext 61104
+
+EXT lugar
+97255
+
+Password Internet Bancomer
+
+
+Registro Cambios 
+https://sites.google.com/a/bbva.com/bbva-sistemas-holding/gestion-de-cambios/registro
+
+Nicolas Andrade Arenas (Pruebas de volumen)
+62304
+pruebas solo se atienden en un horario de 8:30 a 12:30 la ultima
+
+
+
+
+REQ000000220871 -- Solicitud de usuario remedy
+
+CRQ000000100025-- Instalacion Paquete de mantenimiento Fraudes
+
+REQ000000222977 --> Revisión de mallas 360
+
+REQ000000229120 --->Revision del Modelo de Transmisiones  Ruta /NDM36/cdunix/progs  (GED Carga de Scripts en Concentrador o Equipo Aplicativo)
+Se solicita de favor la revisión del modelo de transmisión e instalación en desarrollo de los scripts adjuntos para transmisiones, la transmisión se llevará a cabo del servidor unix etl a un cbnoc
+
+REQ000000230907 --> Asignación de privilegios a usuario aplicativo LAP (Actualizar Role Oracle)  --Cancelado  si las puedo ver
+
+REQ000000230930 --> Asignación de privilegios a usuario aplicativo FRA (Actualizar Role Oracle)  --Pendiente  si las puedo ver
+
+REQ000000230954 --> Asignación de privilegios a usuario aplicativo ATLAS (Actualizar Role Oracle) --Pendiente si las puedo ver
+
+REQ000000230989 --> Asignacion de SELECT_CATALOG_ROLE DBSBLP (Asignar Roles a Usuarios Oracle)  --Terminado 
+
+REQ000000230997 --> Asignacion de SELECT_CATALOG_ROLE DBSBFR (Asignar Roles a Usuarios Oracle)  --Terminado 
+
+REQ000000231105 --> Asignacion de SELECT_CATALOG_ROLE DBSBAL (Asignar Roles a Usuarios Oracle)  --Terminado 
+
+CRQ000000104278 --> Agregar campo de fecha informacion a la TABLA TFR055_LOG_AUTORIZADOR desarrollo
+
+REQ000000232191 --> Validacion de nodos Connect Direct (Desa) 
+                    En el servidor 150.100.151.48 el nombre del nodo de connect direct es CDORALACP y en el servidor 150.50.102.246 se llama CDTRANSD
+
+REQ000000232301 --> Validacion de nodos Connect Direct (PROD) Rechazado por fecha
+
+REQ000000232586 --> Validacion de nodos Connect Direct (PROD) Rechazado
+
+REQ000000232594 --> Validacion de nodos Connect Direct (Desa)
+
+REQ000000232724 --> Validacion de nodos Connect Direct (PROD)
+
+REQ000000233312 --> Interconexion entre 150.100.246.100 y 150.100.151.48 (si existe)
+
+REQ000000233315 --> INTERCONEXION entre 150.50.102.246 y 150.50.102.239 (si existe)
+
+REQ000000235676 --> Revision del Modelo de Transmisiones de etl desarrollo a Bolampb3
+
+REQ000000236495 --> Revision del Modelo de Transmisiones  Ruta /NDM36/cdunix/progs (GED Carga de Scripts en Concentrador o Equipo Aplicativo) (sobre escritura REQ000000229120  .bad)
+
+REQ000000236841 --> Revision del Modelo de Transmisiones  Ruta /NDM36/cdunix/progs (GED Carga de Scripts en Concentrador o Equipo Aplicativo) (sobre escritura REQ000000229120  .gz)
+
+REQ000000238989 --> Revision del modelo de transmisiones a desarrollo
+
+
+Se solicita de favor la revisión del modelo de transmisión e instalación en desarrollo de los scripts adjuntos para transmisiones, la transmisión se llevará a cabo del servidor unix etl a otro unix
+
+
+En el servidor 150.100.151.48 (Bolampb3 Producción) el nombre del nodo de connect direct es CDORALACP y 
+
+en el servidor 150.50.102.246 (ETL desarrollo) se llama CDTRANSD
+
+El nombre del nodo de Connect Direct del servidor 150.100.246.100 (ETL PRODUCCION) se llama CDETLMXP
+
+El nombre del nodo de connect direct del servidor 150.50.102.239 (bolacmd DESARROLLO) se llama CDBOLACMD
+
+  
+Validar si es posible la transmisión bidireccional a través de connect direct entre los servidores 150.100.246.100 y 150.100.151.48
+Validar si es posible la transmisión bidireccional a través de connect direct entre los servidores 150.50.102.246 y 150.50.102.239
+
+Solicitar los nodos Connect Direct de 2 servidores, los servidores son ambos unix 150.50.102.246  y 150.100.151.48, y si me pueden proporcionar ambos nodos connect direct de favor.
+
+Solicito de favor el nombre del nodo Connect Direct del servidor unix 150.100.246.100 (pcetlmp1)
+
+Solicito de favor el nombre del nodo Connect Direct del servidor unix 150.50.102.239
+
+CRQ000000109992 --> Eliminacion de columnas TFR055_LOG_AUTORIZADOR en desarrollo
+CRQ000000110382
+REQ000000247035 --> Revision del Modelo de Transmisiones  Ruta /NDM36/cdunix/progs (GED Carga de Scripts en Concentrador o Equipo Aplicativo)
+
+REQ000000258407
+Se solicita la revision de la malla BC-MXFRADIA-T02.xml de fraudes en entorno distribuido
+
+CRQ000000119591  Alter a la tabla TAL007 desarrollo
+CRQ000000119766  Alter a la tabla TAL010 desarrollo (Cancelado)
+CRQ000000119775  Alter a la tabla TAL010 desarrollo
+ALTER TABLE GORAPR.TAL010_PAN_FINANC DROP CONSTRAINT IAL010P1_PAN_FINAN;
+
+REQ000000268177   
+
+REQ000000268368
+
+CRQ000000128062 Creacion de tablas TFR039 y TFR060
+
+REQ000000283072  -->  Revision del Modelo de Transmisiones  Ruta /NDM36/cdunix/progs (GED Carga de Scripts en Concentrador o Equipo Aplicativo)  la transmisión se llevará a cabo del servidor unix etl a un cbnoc  (RX_MFRACDFRA.sh, RX_MFRACDLYNX.sh)
+REQ000000284300  -->  Revision del Modelo de Transmisiones  Ruta /NDM36/cdunix/progs (GED Carga de Scripts en Concentrador o Equipo Aplicativo)  la transmisión se llevará a cabo del servidor unix etl a un cbnoc (RX_MFRACDALL.sh, RX_MFRACDFLX.sh)
+CRQ000000129523  -->  Agregado de campos desarrollo
+REQ000000284746  -->  Revision del Modelo de Transmisiones  Ruta /NDM36/cdunix/progs (GED Carga de Scripts en Concentrador o Equipo Aplicativo) 
+
+REQ000000285077 
+
+
+
+REQ000000287123  -->  Quitar espacio a TS TS_DAT001_02 de Fraudes        --OK
+REQ000000287128  -->  Crear y asignar espacio a TS TS_DAT060 de Fraudes  --OK
+REQ000000287535  -->  Inatalacion de shell de transmisión en prod        --OK
+
+REQ000000309596  --> Cambio passw unix ETL  
+
+bpabd001
+150.50.102.239
+
+
+https://teletrabajo.b-enlinea.com/dana-na/auth/url_9/welcome.cgi
+http://proxybc.intranet.com.mx/BlueCoat/bcproxy.pac
+Time Report
+https://www.miportalwiffi.mex.bancomer.com/vhvarias/TimeReport/login.zul
+
+Entorno Colaborativo
+https://bbva-intranet.appspot.com/
+
+ETL PRODUCCION
+150.100.246.100	(pcetlmp1)
+/NDM36/cdunix/progs/   (transmisiones)
+etladmin
+c0ckr04ch
+
+ETL DESARROLLO
+150.50.102.246
+pcetlmtyd1
+/NDM36/cdunix/progs/
+%%ODATE
+ndm36
+
+IPC Monitor Prod
+etloper/1q2w3e4r
+
+
+https://jira.indra.es/login.jsp    
+
+https://login.indraweb.net/logon/LogonPoint/tmindex.html
+jcjimenezy@minsait.com
+?@*H1tks3XQ+%*  14/Sept/2022
+
+https://portal4.payhuman.com/IND/logout.ph#!/login
+
+
+
+
+
+Transmisiones doctos
+https://sites.google.com/a/bbva.com/estandaresccr/?pli=1
+
+Bip zone
+https://sites.google.com/a/bbva.com/bip_zone/Centro-de-conocimientos/herramientas/herramienta_ipc/formatos_ipc?pli=1
+
+Extensión lugar
+97558
+
+veronica carrillo (Fumex)
+15798
+
+ruben luna orozco (Fumex)
+94027
+
+Omar Guzman Oliva (Fumex)
+97048
+
+José Rojas (Seguridad base de datos)
+99271
+
+BBVA CCR (CLAR)
+Nayely Martìnez Jimènez
+Tel. +52 55 5621 3434 - Ext 96380
+
+ADMINISTRACIÓN DE BASE DE DATOS DISTRIBUIDAS (BZG05952)
+Foto del perfil de ADMINISTRACIÓN DE BASE DE DATOS DISTRIBUIDAS (BZG05952)
+bddist.mx@bbva.com
+Edgar Robles (responsable de BD externo)
+Jorge Alejandro Avalos Carvajal (responsable de BD interno)
+63534
+
+Carlos Ivan Quiróz (encargado del cbnoc)
+
+
+MATLCP4002
+MFRACP4007
+
+tr -d '\0'  log_aut_ext_fza.txt <> log_aut_ext_fza_tmp.txt
+
+cat log_aut_ext_fza_tmp.txt > log_aut_ext_fza.txt
+
+
+Asignar privilegios de select, insert, update y delete al rol RL_APL_DBSBFR sobre la tabla TFR604_CAT_BBVGLOB 
+Se anexa VoBo de Autorizaciones Seguridad
+
+
+
+
+Asignar privilegios de select, insert, update y delete al rol RL_APL_DBSBFR sobre la tabla TFR603_360_CONTROL_CIFRA 
+Se anexa VoBo de Autorizaciones Seguridad
+
+
+
+UNIX ETL Desarrollo (150.50.102.246)
+xmz0888
+septiembre2017
+
+xm020hy Unix Default
+Bbv4Mx08
+
+
+laptop Tavo
+xmz0888
+bancomer9
+
+REMEDY 
+XM020HY
+XM020HY
+
+
+
+XM020QS
+JCTM2015
+
+Diagramas 12, 13 y 14
+
+LAC
+150.100.151.31:1521/blcbp001
+DBSBLC
+DBSBLC12
+
+
+
+Tranzaciones
+./CF_0002_s_RQ001_2.sh
+./CF_0002_s_RQ001_2_1.sh 
+./CF_0002_s_RQ001_2_3.sh
+Tokenizado -->  CF_0002_s_RQ096.sh  y CF_0002_s_RQ097.sh
+CF_0002_s_RQ002.sh
+999.sh
+
+
+*Correos Ejemplo
+ ANS INFORMACIONAL DISTRIBUIDO <ans.info.dist@bbva.com>  (Solicitud de creación de nombres PIB para trasmisión de Host a distribuido)
+  Se anexa Documento.
+  Correo enviado por Marco el 10 de agosto "Solicitud de nombre PIB para Log Autorizador Extendido"
+  Con el folio que se genera mandar un correo al encargado de IPC (vaquero)
+
+*Solicitud de nombre PIB para Log Autorizador Extendido
+ans.info.dist@bbva.com
+Enviado el 11/Agosto/2015
+
+
+
+Te mando los datos que normalmente se ponen en los documentos en los cuadros principales
+
+IN3GF9 (ATL) ONBOARDING ATLAS LAC
+YA9HJZ (ATL) ONBOARDING ATLAS LAC
+
+Ruta: \\150.100.180.168\g_cb041\Documentacion_SYO\DR04W\IN3GF9
+
+MOVTOS.txt -->  Host: MXBP.TI.FIX.E11331.LAP00002 ---  MBVP.BG.FIX.F&FECHA..BGIVND02.MOVDETA
+           -->  Posteo: MXPBCP_LAP0000200_TR
+
+
+4772913017693237
+4772143003063878   
+
+
+declare
+v_nombtabla varchar2(30);
+cv_cur1 SYS_REFCURSOR;
+v_cadena varchar2(200);
+begin
+    
+    DBMS_OUTPUT.disable;
+    DBMS_OUTPUT.ENABLE(500000);
+    open cv_cur1 for 
+    select TABLE_NAME
+    from ALL_TABLES  
+    where owner = 'GORAPR'
+    and TABLE_NAME like 'TLP%'
+    order by TABLE_NAME;
+    
+     loop
+                 
+         FETCH cv_cur1 INTO v_nombtabla;
+         EXIT WHEN cv_cur1%NOTFOUND;
+                         
+         v_cadena := 'select /*+ parallel(tabla, default) */  ''' || v_nombtabla ||''' nomTabla, count(*) conteo from gorapr.' || v_nombtabla || ' tabla union';
+         DBMS_OUTPUT.PUT_LINE(v_cadena);                                         
+    end loop;
+    close cv_cur1; 
+END;
+
+
+
+anotense este dato para el tema de las solicitudes de autoridad
+Auditoria -  Victor Ramirez, Paty Ramirez o Adriana Palma
+PLD  Edmundo Fidencio - Eduardo Martinez
+SAT - Marco Jasso - Karen Loya
+y Regulatorios Horacio y Bibiana
+ellos son quienes nos pueden pedir información, tegulatorios o demas entidades
+
+
+
+
+declare 
+  TYPE rowid_array is table of ROWID;
+  TYPE string_array is table of varchar2(40);
+  m_rowid rowid_array;
+  v_cliente string_array;
+  v_retencion string_array;
+  v_sttarjeta string_array;
+  v_chip string_array;
+  v_particion varchar2(40);
+  v_sql varchar2(700);
+  v_tabla varchar2(20);
+  cv_cur1 SYS_REFCURSOR;
+  cv_cur2 SYS_REFCURSOR;
+  v_limite integer := 0;
+BEGIN
+          v_limite :=100000;
+          v_tabla := 'TFR065_LOGAUTOCORT';  --TFR065_LOGAUTOCORT TFR055_LOG_AUTORIZADOR
+         
+          open cv_cur1 for
+            select subobject_name
+            from sys.ALL_OBJECTS
+            where owner = 'GORAPR'
+            and object_name = v_tabla
+            and subobject_name is not null
+            order by subobject_name;
+            
+            loop
+                                      
+                 FETCH cv_cur1 INTO v_particion;
+                 EXIT WHEN cv_cur1%NOTFOUND;
+                         
+                 v_sql := 'select /*+  parallel(cte, default) parallel( logauto, default) */ distinct logauto.ROWID row_id,  cte.cd_cliente, cte.cd_retencion, cte.st_tarjeta, cte.cd_chip
+                           from gorapr.'||v_tabla||' partition('||v_particion||') logauto  
+                           inner join gorapr.TFR061_CLIENTE cte  on (trim(cte.cd_bin_tarjeta) = trim(logauto.cd_bin_tarjeta) and trim(cte.cd_tarjeta) = trim(logauto.nu_tarjeta))
+                               --inner join gorapr.TFR065_LOGAUTOCORT  logautoc on (trim(logautoc.cd_bin_tarjeta) = trim(logauto.cd_bin_tarjeta) and trim(logautoc.nu_tarjeta) = trim(logauto.nu_tarjeta))
+                           and trim(logauto.cd_cliente) is null';
+                           EXECUTE IMMEDIATE v_sql;
+                               
+                 OPEN  cv_cur2 FOR v_sql;      
+                 loop
+                                      
+                           FETCH cv_cur2 BULK COLLECT INTO m_rowid, v_cliente, v_retencion, v_sttarjeta, v_chip limit v_limite;
+                           EXIT WHEN m_rowid.count = 0;
+                             
+                               FORALL i IN 1 .. m_rowid.COUNT
+                                    UPDATE /*+ parallel(logauto2,default) */  GORAPR.TFR065_LOGAUTOCORT logauto2
+                                    SET cd_cliente = v_cliente(i), cd_retencion = v_retencion(i), st_tarjeta = v_sttarjeta(i) , cd_chip = v_chip(i)
+                                    WHERE  ROWID = m_rowid(i);      
+                                COMMIT;                          
+                                         
+                 end loop;
+                 close cv_cur2;       
+                  
+                 v_sql := '';                       
+            end loop;
+            CLOSE cv_cur1;
+         
+END;
+
+----------------------------------
+
+SELECT /*+ PARALLEL(CORTO,DEFAULT) */ *--COUNT(*)
+FROM GORAPR.TFR065_LOGAUTOCORT CORTO
+WHERE TRIM(CD_CLIENTE) IS NULL
+
+6,436,169
+
+
+
+
+declare 
+  TYPE rowid_array is table of ROWID;
+  TYPE string_array is table of varchar2(40);
+  m_rowid rowid_array;
+  v_cliente string_array;
+  v_retencion string_array;
+  v_sttarjeta string_array;
+  v_chip string_array;
+  v_particion varchar2(40);
+  v_sql varchar2(700);
+  v_tabla varchar2(20);
+  cv_cur1 SYS_REFCURSOR;
+  cv_cur2 SYS_REFCURSOR;
+  v_limite integer := 0;
+BEGIN
+          v_limite :=100000;
+          v_tabla := 'TFR065_LOGAUTOCORT';  --TFR065_LOGAUTOCORT TFR055_LOG_AUTORIZADOR
+         
+          /*open cv_cur1 for
+            select subobject_name
+            from sys.ALL_OBJECTS
+            where owner = 'GORAPR'
+            and object_name = v_tabla
+            and subobject_name is not null
+            order by subobject_name;
+            
+            loop
+                                      
+                 FETCH cv_cur1 INTO v_particion;
+                 EXIT WHEN cv_cur1%NOTFOUND;*/
+                         
+                 v_sql := 'select /*+  parallel(cte, default) parallel( logautoc, default) */ distinct logautoc.ROWID row_id,  cte.cd_cliente, cte.cd_retencion, cte.st_tarjeta, cte.cd_chip
+                           from gorapr.TFR055_LOG_AUTORIZADOR PARTITION(P7) logautoc 
+                           inner join gorapr.TFR061_CLIENTE cte  on (trim(cte.cd_bin_tarjeta) = trim(logautoc.cd_bin_tarjeta) and trim(cte.cd_tarjeta) = trim(logautoc.nu_tarjeta))
+                           Where trim(logautoc.cd_cliente) is null';
+                           EXECUTE IMMEDIATE v_sql;
+                               
+                 OPEN  cv_cur2 FOR v_sql;      
+                 loop
+                                      
+                           FETCH cv_cur2 BULK COLLECT INTO m_rowid, v_cliente, v_retencion, v_sttarjeta, v_chip limit v_limite;
+                           EXIT WHEN m_rowid.count = 0;
+                             
+                               FORALL i IN 1 .. m_rowid.COUNT
+                                    UPDATE /*+ parallel(logauto2,default) */ GORAPR.TFR055_LOG_AUTORIZADOR PARTITION(P7) logauto2
+                                    SET cd_cliente = v_cliente(i), cd_retencion = v_retencion(i), st_tarjeta = v_sttarjeta(i) , cd_chip = v_chip(i)
+                                    WHERE  ROWID = m_rowid(i);      
+                                COMMIT;                          
+                                         
+                 end loop;
+                 close cv_cur2;       
+                  
+           /*      v_sql := '';                       
+            end loop;
+            CLOSE cv_cur1;*/
+END;
+
+---------------------------------
+merge /*+ parallel(logauto, default) parallel(cte, default) */  into GORAPR.tfr055_log_autorizador logauto
+using
+   ( 
+        select  /*+ parallel(tfr061, default) */  distinct cd_cliente, cd_bin_tarjeta, cd_tarjeta
+        from gorapr.TFR061_CLIENTE tfr061
+        where cd_cliente is not null
+   ) cte
+     on 
+  ( 
+        trim(cte.cd_bin_tarjeta) = trim(logauto.cd_bin_tarjeta) and trim(cte.cd_tarjeta) = trim(logauto.nu_tarjeta)
+  ) 
+when matched then update set logauto.cd_cliente = cte.cd_cliente
+where trim(logauto.cd_cliente) is null;
+commit;
+
+-------------------------------
+
+select /*+ parallel(cte, default)*/ count(*)
+from gorapr.tfr061_cliente cte
+
+31,429,760
+31,429,770
+GORAPR.TFR061_CLIENTE
+
+DECLARE
+R VARCHAR2(200);
+BEGIN
+PG_ABD.sp_Truncate_TableNF('GORAPR','TFR061_CLIENTE');
+DBMS_OUTPUT.PUT_LINE(R);                        
+END;
+
+
+
+
+
+select count(*)
+from
+(
+select /*+  parallel(cte, default) parallel( logauto, default) */ logauto.ROWID row_id, cte.cd_cliente
+from gorapr.TFR061_CLIENTE cte
+inner join gorapr.tfr055_log_autorizador logauto on (trim(cte.cd_bin_tarjeta) = trim(logauto.cd_bin_tarjeta) and trim(cte.cd_tarjeta) = trim(logauto.nu_tarjeta))
+inner join gorapr.TFR065_LOGAUTOCORT  logautoc on (trim(logautoc.cd_bin_tarjeta) = trim(logauto.cd_bin_tarjeta) and trim(logautoc.nu_tarjeta) = trim(logauto.nu_tarjeta))
+)
+
+
+Select *
+from gorapr.TFR065_LOGAUTOCORT
+
+
+
+
+merge /*+ parallel(logauto, default) parallel(Vl, default) */ into GORAPR.tfr055_log_autorizador logauto
+using
+   ( 
+      select distinct cd_cliente, cd_bin_tarjeta, cd_tarjeta
+      from gorapr.TFR061_CLIENTE 
+      where cd_cliente is not null
+      
+     ) cte
+           on 
+     ( 
+             trim(cte.cd_bin_tarjeta) = trim(logauto.cd_bin_tarjeta) and trim(cte.cd_tarjeta) = trim(logauto.nu_tarjeta)
+     ) 
+when matched then update set logauto.cd_cliente = cte.cd_cliente
+where trim(logauto.cd_cliente) is null
+commit
+
+
+select count(*)
+from gorapr.TFR065_LOGAUTOCORT
+
+
+select /*+ parallel(logauto, default) */ count(*)
+from gorapr.tfr055_log_autorizador logauto
+where trim(cd_cliente) is not null
+
+select *--subobject_name
+from sys.ALL_OBJECTS
+where owner = 'GORAPR'
+
+--delete from gorapr.TFR065_LOGAUTOCORT
+
+
+update /*+ parallel(logauto, default) */ gorapr.tfr055_log_autorizador logauto 
+set cd_cliente = null
+where cd_cliente is not null;
+commit
+
+----------------------------------------------
+
+sqlldr GORAPR/manager1@127.0.0.1:1521/orcl control=TFR065Carga_desa.ctl data=MCDTLOGT093.txt errors=15000 log=TFR065.log bad=TFR065.bad MULTITHREADING=TRUE SILENT = ALL DIRECT=TRUE ROWS=200000
+
+TS_DAT099,TS_DAT095,TS_DAT096,TS_DAT097,TS_DAT098,TS_DAT090,TS_DAT091,TS_DAT092,TS_DAT093
+TS_DAT081,TS_DAT223,TS_DAT221,TS_DAT224
+
+TAS000000457652   GORAPR.TLP146_CTO_CTA
+
+REQ000000368707
+
+Favor de crear el rol para usuario generico RL_USR_VLGEN para el entorno a producción de LAP 150.100.151.31:1521/blpbp001
+
+
+CRQ000000173880    cambio a desarrollo   -> Vobo Revisión de script TFR065
+
+CRQ000000174340    TAS000000470524  Favor de ayudarme a realizar la revisión del scipt de la tabla TFR065_LOGAUTOCORT y sus particionamientos.
+
+
+CRQ000000173898 Ampliacion de campos a TLP133 prod
+CRQ000000173936 Tablas Fraudes log 15 min prod	Cambio a produccion
+
+
+150.50.102.239:1521/bpabd001
+DBSBLP
+
+
+Cuentas Victor
+Unix 
+us: xmz7687
+pwd: V1CT0R1NDR4
+
+VPN Victor
+USER: XMZ7687
+PIN es : 7687
+
+
+VPN Cecy
+usr...   xm05715t
+pw        7936
+
+Remdy
+usuario: XMZ7687
+contraseña: verde123
+
+IPC
+USR CHAVA: XM15083
+PWR: P0W3R1PC
+
+
+REQ000007419671 Creacion de usr control m
+REQ000007421286 GED Creación de Usuario Citrix Países
+
+
+
+Los links Para instalaciones son:
+
+Para ingresar instalacion IPC  (CIVI)
+https://goo.gl/forms/o42cbmdms04Wt0Um1
+https://docs.google.com/a/bbva.com/forms/d/e/1FAIpQLScewKHuDb-LfTHNkfhggm5HBiUE2n7--QwGRLlpu2Kdm4LSHw/viewform?c=0&w=1
+https://docs.google.com/forms/d/e/1FAIpQLScewKHuDb-LfTHNkfhggm5HBiUE2n7--QwGRLlpu2Kdm4LSHw/viewform
+
+
+ANS
+
+Autoservicio Servicios:  https://docs.google.com/forms/d/e/1FAIpQLSdX8Qimgw5TSOdaesMbDOZIXgCDNRuvAoRlyepAHUTl7nHCLw/viewform    (Para captura ticket de Instalación (IPC))
+Autoservicio Incidencias: https://bancomer-myit.onbmc.com/ux/myitapp/
+Autoservicio Servicios: http://150.100.246.155/EntradaCap.asp        (Para captura ticket de Instalación (IPC) )
+
+Checklist OCTA 
+https://bbva-dqportal.appspot.com/checklist/analysis    Nueva liga OCTA   2022
+https://sites.google.com/a/bbva.com/octa_ccr/validaciones-tecnicas/cheklist_octa_cpm                           ok
+https://script.google.com/a/bbva.com/macros/s/AKfycbw7qQ2wMgFVmkMvIbEcgEI_khOWVoiAeWB1FhBwZmaoVOminROB/exec
+https://script.google.com/a/bbva.com/macros/s/AKfycbwVvO56K98rCzBpwcYN9Who4oNSyh18ZDYv4Cild9VzIKey9c0G/exec
+
+ARO
+https://docs.google.com/forms/d/e/1FAIpQLSdfNUlc9o0GyPhDiUSNwdTsqnN6J-fY_lcrS6pkupo1W14D-w/viewform
+
+
+Centro de mando 
+centrodemandoccr.mx@bbva.com
+ext 61104 opcion 1, opcion 3
+PRODUCCION
+ext 61360 
+
+CGI
+(55) 5621 3434 Ext.: 61130 opc 1
+cgi.mx@bbva.com
+
+
+Centro de Requerimientos
+cenreq.mx@bbva.com
+61104 opc 3
+
+remedyfocalpoint.mx@bbva.com
+Modificación de Status 
+
+bfpc.mx@bbva.com
+Planeación de cambios
+
+
+Medios de pago
+Nacho Roldan
+juan.roldan@bbva.com
+
+
+Jorge Mujica Tema de Alertas
+
+
+NODOS FRAUDES
+Fraudes vive en 4 nodos
+boex5db01        boex5db02        boex5db03        boex5db04
+150.100.42.84        150.100.42.86        150.100.42.88        150.100.42.90
+
+
+EGLOBAL
+Erick Villegas
+/etl_work/idi_fs07/CF/cf_0005_eglolac/input
+
+
+manuales para inscribir los cambios, para que la revisen y eliminemos  los rechazos al registrar los cambios
+
+https://sites.google.com/a/bbva.com/servicio-al-cliente-cambios/?pli=1
+
+
+DATOS DATAMARTS
+https://docs.google.com/a/bbva.com/spreadsheets/d/1hp1o47gygXkO3c4sPc5jFWT21tbkcV3gziRtkAZy5a8/edit?usp=sharing
+
+Control M errores mas comunes
+http://150.100.216.64:8080/scheduling/erroresCD
+
+Mallas de prueba
+Angel Gómez Juárez ext       63179
+José Luis Jiménez ext 63169 
+cesar.trejo@bbva.com
+ext.
+63346
+
+Monitor IPC
+USER:etloper
+PASS:0p3r3tl
+
+
+-------------------
+
+TORIBIO IPC
+xm06507
+usuario123
+
+
+-----------------
+RDA
+
+Citrix y Remedy 
+Usuario: xmz7687
+Passw: V4qu3r09
+
+---------------------------------------
+Cento de Atención a incidencias Producción
+cgi@bbva.bancomer.com 
+ext. 61130
+
+-----------------------------------------------
+Pib Express
+http://150.100.246.220/pibex/iniciotablero.htm
+http://150.100.216.64:8080/scheduling/sysouts
+http://150.100.246.155/folioasignadoCap.asp          Folios Ans
+-----------------------------------------------
+Remedy Url
+https://remedy.es.igrupobbva/
+-----------------------------------------------
+
+\\Cbnocfs15\o_cb039\AUTORIZADOR1\Catalogos\
+------------------------------------------
+
+JIRA PRODUCCIÓN
+ https://globaldevtools.bbva.com/jira
+
+COMUNIDAD ENGINEERING MX 
+https://plus.google.com/u/0/communities/116826922844614177712 
+
+
+--------
+Archivos DRIVE
+Layouts CIFRAS ADQUIRENTE.xlsx  (Proyecto con Carlos Ivan 
+https://docs.google.com/spreadsheets/d/1yssjmmhCPkZfm-89S8kgUtdnr_d2fpCVp4bkhsaKP9U/edit#gid=764986033
+Revisión DM Gestión del Gasto - LAC.xlsx
+https://docs.google.com/spreadsheets/d/1-DF5u6TCpD_ho9RXqfYJ9Cu-E9kVQ9qvthjb7Dx30no/edit?ts=5aba62db#gid=1186164553
+Ejecucion360Commerce.xlsx
+https://docs.google.com/spreadsheets/d/1-MP2ETCBz4JYL6D8UnfHsFdZSIxmjf1Q18ffYlD_DRo/edit#gid=450343348
+RESPONSABLES_LAC_Actualizados.xlsx
+https://docs.google.com/spreadsheets/d/1CGLz-m1POb-rBGYRB51wvEkH9W87MOiP0gomcSOGBgs/edit#gid=1947036896
+Job_LAC
+https://docs.google.com/spreadsheets/d/14pdw8vDzwzFqMHoNL-BOIsS8lYkNkigNTNOhFKE2tHk/edit#gid=0
+JOBS-Score-Cobranza
+https://docs.google.com/spreadsheets/d/1uxUF_J9Vwut1x9gjMXmO6vTKdv1TRs3n97TUFZmB56k/edit#gid=1454045782
+Tablas Prioritarias Ingesta PI9.xls
+https://docs.google.com/spreadsheets/d/1nnfDt5o3yn0un-9NZlbnKv9FuGn1dWciu_L9pxO3nno/edit#gid=1307211611
+Trazabilidad_mapeo.xlsx  ??
+https://docs.google.com/spreadsheets/d/1cwveY5WEuFErmii0Rtw1cH76vOwywGf0vXVeSbQusT0/edit#gid=818053748
+DICCIONARIO DE DATOS LAC.xlsx
+https://docs.google.com/spreadsheets/d/1XOfJNvoxba09_HWlZnTKHjd_RWoFiIK8SG3X20epavM/edit#gid=394498885
+Layout Log Autorizador.xlsx
+https://docs.google.com/spreadsheets/d/1OGKcpb0cECpi0a4gHuf32oJN98RWgFbaFTE6JkILNVs/edit#gid=1537556135
+Plan Vacaciones DM CyC 2018
+https://docs.google.com/spreadsheets/d/1qi51_awAqu7BgehZ7KOuSixpghKL2xbCrM-pyvv6J1E/edit#gid=0
+RSP 2018 (directorio filesystem nuestros)
+https://drive.google.com/drive/folders/1HBGPkpC2VfIl4KqPfMEY26AVwhXwp0oj
+RSP 2018 (filesystem)
+https://drive.google.com/drive/folders/1HBGPkpC2VfIl4KqPfMEY26AVwhXwp0oj
+Directorio "Delegacion SLM"
+https://drive.google.com/drive/folders/0APmz9uHypB5kUk9PVA
+
+Registro Cambios (consolidado)
+https://sites.google.com/a/bbva.com/bbva-sistemas-holding/gestion-de-cambios/registro
+
+Cuestionario Octa
+https://sites.google.com/a/bbva.com/octa_ccr/validaciones-tecnicas/cheklist_octa_cpm
+https://script.google.com/a/bbva.com/macros/s/AKfycbw7qQ2wMgFVmkMvIbEcgEI_khOWVoiAeWB1FhBwZmaoVOminROB/exec   Nueva
+
+
+CURSOS
+Hola Julio
+te mando los links de los cursos
+IBM – Big Data with IBM https://cognitiveclass.ai/learn/big-data-ibm/
+Big Data 101: https://cognitiveclass.ai/courses/what-is-big-data
+Hadoop 101: https://cognitiveclass.ai/courses/introduction-to-hadoop
+Accessing Hadoop Data Using Hive: https://cognitiveclass.ai/courses/hadoop-hive
+SQL Access for Hadoop: https://cognitiveclass.ai/courses/sql-access-for-hadoop
+Spark Fundamentals I: https://cognitiveclass.ai/courses/what-is-spark
+
+
+DATIO
+
+Pagina Ether
+https://platform.bbva.com/en-us/developers/data-governance/documentation/hammurabi/manuals/05-quality-rules    
+https://platform.bbva.com/en-us/developers/data-governance/documentation/hammurabi/what-is
+
+Liga para solicitar jobs de la malla mdco diaria:
+https://docs.google.com/spreadsheets/d/1gAGM-mKuak3POTca2HBsJeXaXumbxZKkegqyMZB3AW8/edit#gid=79034457
+
+AKCp8hyQ5cKee2ix1XJBPp8oWJVGPpSxAWAk919LpnTpZLHDyUHkvXDd6b5pmqxVLwd5q9nyY      --Artifactory
+
+
+OTE4NTc5OTY2NDc1OvFf3lx34j60HA8DAebJOtgbkVqP  bitbuket access token
+
+
+1. Despliegue de esquemas
+2. Solicitud de repositorio caso de uso
+(plantilla)
+3. Jobs previos de ingesta (dormirlos) 
+
+
+
+https://docs.google.com/spreadsheets/d/1-rOddgOWiG0WLN_2AhKb_TGA73Gb-cP88RvP3MfMG7Y/edit#gid=0
+
+
+https://www.google.com/url?sa=D&q=https://platform.bbva.com/en-us/developers/dataproc/documentation/dataproc-api/details/06-job-naming-scheme&ust=1622744381680533&usg=AFQjCNH9fGWJ1QKQmSKlXmACxGvl3fftUA
+
+Contacto cerrajero
+Lucía Zamitiz Bautista cuando estuviera en el lugar
+522-61103 o al 61134 opción 4
+
+Ligas DQ Task force Riesgos Tier1
+https://docs.google.com/spreadsheets/d/1AgbkzDs_SaOqukRMiCBw1ceKsR4QVPsZBXsOU68ItDo/edit#gid=1953462851    consolidado
+https://docs.google.com/spreadsheets/d/1NzI_gw1tj3N2whNz-SA92OyJfG7UZKVUd_FdCDQccUc/edit?pli=1#gid=1693342447   Malla temporakles Riesgos
+https://docs.google.com/spreadsheets/d/1v_9m6SO1SnL6DcMtAlAXDEJpbAUJ3ok0/edit?pli=1#gid=601791106    Inventario Jobs SAS Core
+https://docs.google.com/document/d/1gO72eTTGADQg4KOw4PA6zFDnYAmFewKh9xGvHnt4rFE/edit?pli=1#heading=h.ugs765udcpxm  manual Sentry
+https://timereport-eng.com/
+https://docs.google.com/spreadsheets/d/1PF3pgXFs2AjCqBkunzQPQzmAHevh8RLW/edit?pli=1#gid=1583461698  Fechas Ejecución DQs
+https://docs.google.com/spreadsheets/d/1Q4SDUIgmhBwAlgRXjv2vvFsvjXl7xFIo/edit?pli=1#gid=2038608892   Crn Archivos Ingesta Datio
+https://docs.google.com/spreadsheets/d/1N29MDyi2Pk2jLiTi714szD-L6aeebs9bLPhduwdXsPE/edit#gid=382459408    DQ Estándar Riesgos - Controles a Métricas
+https://isaas.work.mx.nextgen.igrupobbva/?url=https%3A%2F%2Fdaas.work.mx.ether.igrupobbva%2Fservices%2Fvbox%2Fintelligence%2Fuser%2FXM020HY%2Flab   jupyter
+https://docs.google.com/spreadsheets/d/1hRK5kl1huYTkftRuAWIIJyqE-s3CtzMR/edit#gid=667230082  Planing
+https://docs.google.com/forms/u/0/d/e/1FAIpQLSedEE5Y7xYcqdV1NGwr4NzR2dnhrLpIor23Ia082G1A2XGLUA/formResponse    Horas incurridas en ingestas
+https://docs.google.com/spreadsheets/d/1anfXG9JWKuNTNDRpTcFEKqizRXv3JLJL/edit#gid=323083289    Nombre Archivos Ingesta Datio datasystems
+http://150.50.102.145:8080/dimensions/?jsp=login   dimensions
+http://150.100.216.64:8080/scheduling/ajF?filtro=BC-MXMDQRTMP-T02    scheduling
+https://isaas.work.mx.nextgen.igrupobbva/?url=https%3A%2F%2Fdaas.work.mx.ether.igrupobbva%2Fservices%2Fvbox%2Fintelligence%2Fuser%2FXM020HY%2Flab%2Fworkspaces%2Fauto-R%3Fredirects%3D1  jupyterLab
+https://isaas.work.mx.nextgen.igrupobbva/?url=https%3A%2F%2Fdaas.work.mx.ether.igrupobbva%2Fservices%2Fvbox%2Fintelligence%2Fhub%2Fhome  jupyterHub2
+https://isaas.work.mx.nextgen.igrupobbva/?url=https%3A%2F%2Fidp.work.global.platform.bbva.com%2Fidp%2Fprofile%2FSAML2%2FPOST%2FSSO%3Fexecution%3De1s1  jupyter BBVA
+https://sites.google.com/a/bbva.com/controlm-distribuido/scheduling/avanzado   Contorl M   Casos Prácticos
+https://docs.google.com/document/d/1Jzf-MtyxnVl2zx19DK3j9y0zw60aDs1EiI_btJgmKHc/edit   CRQ Remdy (Rod Alvarado)
+https://globaldevtools.bbva.com/jira/servicedesk/customer/portal/40https://globaldevtools.bbva.com/jira/servicedesk/customer/portal/40
+https://globaldevtools.bbva.com/jira/servicedesk/customer/portal/40/group/255    Ether
+https://docs.google.com/spreadsheets/d/1NzI_gw1tj3N2whNz-SA92OyJfG7UZKVUd_FdCDQccUc/edit#gid=33557866
+https://docs.google.com/document/d/1XbxfUgNrRdrsYnGMu8H9UWsUgovTCelI/edit  Instalación clievte parche Control M
+https://globaldevtools.bbva.com/jira/secure/RapidBoard.jspa?rapidView=25384&view=detail&selectedIssue=MDS-26931   JIRA
+https://script.google.com/a/macros/bbva.com/s/AKfycbwvgiVJvKOLCY_6n1OyiPp-HVPiX_D2cyQYj7epaQm0DuMb9QH7cCy_Gp48QIY7Hm-YPQ/exec  Asignador Jobs Name Datio
+https://isaas.live.mx.nextgen.igrupobbva/?url=https://daas.live.mx.ether.igrupobbva/services/sandboxconsole/sandboxes    jupyter live
+
+Documentación Data X publicada en Ether:
+https://platform.bbva.com/en-us/developers/data-x/documentation/what-is
+
+video presentado en la Data Hub Syncro que se dio en enero 2021, se adjunta la presentación que se explicó en el video):
+https://drive.google.com/file/d/1ssau_UbZt32Rjx6d4O5JD-sbARHzddoz/edit
+
+Se adjunta la ppt con la descarga del Portal TeamSpaces  de Data X "Manual de DataX - piloto CDD" (DataX - Documentación.pdf)
+
+Vuelvo a compartirles la liga de la documentación del onboarding Data X
+https://docs.google.com/document/d/1bUyok-e6JjOthf2A79rU7hm07zc9MiU6fURAybnz-c4/edit#
+
+
+Apache Spark Quiz
+https://data-flair.training/blogs/apache-spark-online-quiz-part-1/
+https://data-flair.training/blogs/spark-interview-questions/
+
+
+
+
+\\150.100.180.168\o_cb002\KIDS_IN\SRE\DQ\
+
+MARTIN LOMELI GARCIA, 48 min
+\\150.100.180.168\o_cb002\KIDS_IN\SREP\DQ
+APRHIS_ajus.txt
+
+MARTIN LOMELI GARCIA, 43 min
+Req con los vobo: REQ000012757924
+
+
+\\150.100.180.168\o_cb002\KIDS_IN\SREP\DQ\
+
+
+AGUA
+ALEATIC
+ALFA
+ALSEA
+AXTELCPO
+BACHOCOB
+BSMX
+CADU
+CEMEX
+CIEB
+CMRB
+CREAL
+CULTIBAB  *
+CYDSASAA  *
+FINDEP    *
+FRAGUAB   *
+GFAMSAA
+GFMULTIO ?
+GICSAB   ?
+GISSAA  ?
+GMD  *
+GMXT  ?
+GSANBORB1 ? 
+HCITY *
+HOTEL  ?
+KIMBERA
+LIVEPOLC1  ?
+MFRISCOA1
+MINSAB
+NEMAKA
+PEOLES
+PINFRA
+POCHTECB  ***
+SORIANAB ***
+TLEVISACPO ?
+TMMA ***
+UNIFIN ***
+URBI
+VASCONI ***
+VITROA ***
+VOLAR ?
+
+----
+ICA
+IASASA
+INGEAL
+
+
+
+
+
+	

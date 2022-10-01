@@ -1,0 +1,15 @@
++ for i in '{1..1000}'
+++ grep '|1|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ11.txt
+++ awk '-F|' '{print $3}'
++ ds=BCBS_tabla_core_limits_int_DEF
++ '[' 30 -gt 0 ']'
++ '[' 0 == 0 ']'
++ cadena='|1|BCBS_tabla_core_limits_int_DEF'
++ for i in '{1..1000}'
+++ grep '|2|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ11.txt
+++ awk '-F|' '{print $3}'
++ ds=
++ '[' 0 -gt 0 ']'
++ break
++ echo '|1|BCBS_tabla_core_limits_int_DEF'
++ chmod 666 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEMNEW_DQ11.txt

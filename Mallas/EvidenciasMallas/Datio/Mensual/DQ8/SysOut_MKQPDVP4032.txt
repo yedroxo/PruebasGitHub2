@@ -1,0 +1,129 @@
++ /opt/datio/sentry-mx/dataproc_sentry.py -ns mx.kqpd.app-id-21822.dev -jn kqpd-mx-spk-qlt-sasqualityresultsr-01 -o 0ksli -b '{"env\
+": {"CUTOFF_DATE":"2022-06-30", "SUBSET_DATE":"2022-06-30", "SUFFIX":"DQ8", "FILE_DATE":"20220630", "DATA1": "BCBS_Excel_Cuadro_de_\
+Mandos_Envios", "DATA2": "BCBS_Excel_Vol_Cal_PyME", "DATA3": "BCBS_Oracle_Tbl_Pyme_Form", "DATA4": "BCBS_Oracle_Tbl_dmc_rar_conting\
+", "DATA5": "BCBS_Oracle_Universo_Areas_Contrato_PyME", "DATA6": "BCBS_SAS_Reest_Stock", "DATA7": "BCBS_SAS_TBL_REC90D_M", "DATA8":\
+ "BCBS_SAS_Tbl_Moras", "DATA9": "BCBS_SAS_VW_OFERTASPA_CTE", "CONTROLM_JOB_ID":"MKQPDVP4032", "CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02\
+"} }'
+Deprecation Notice: The argument -e is no longer required and it will be ignored
+2022-08-31 20:34:25 [Order Id: 0ksli] [INFO] Starting Sentry execution [traceId='7914d7b1-d6d8-4c41-bc09-90ccd27f111a', host='sentr\
+y-1']
+2022-08-31 20:34:25 [Order Id: 0ksli] [INFO] New job execution: ns -> mx.kqpd.app-id-21822.dev; job_name -> kqpd-mx-spk-qlt-sasqual\
+ityresultsr-01
+2022-08-31 20:34:25 [Order Id: 0ksli] [INFO] Job body -> {'env': {'CUTOFF_DATE': '2022-06-30', 'SUBSET_DATE': '2022-06-30', 'SUFFIX\
+': 'DQ8', 'FILE_DATE': '20220630', 'DATA1': 'BCBS_Excel_Cuadro_de_Mandos_Envios', 'DATA2': 'BCBS_Excel_Vol_Cal_PyME', 'DATA3': 'BCB\
+S_Oracle_Tbl_Pyme_Form', 'DATA4': 'BCBS_Oracle_Tbl_dmc_rar_conting', 'DATA5': 'BCBS_Oracle_Universo_Areas_Contrato_PyME', 'DATA6': \
+'BCBS_SAS_Reest_Stock', 'DATA7': 'BCBS_SAS_TBL_REC90D_M', 'DATA8': 'BCBS_SAS_Tbl_Moras', 'DATA9': 'BCBS_SAS_VW_OFERTASPA_CTE', 'CON\
+TROLM_JOB_ID': 'MKQPDVP4032', 'CONTROLM_JOB_FLOW': 'CR-MXKQPDSEM-K02', 'CONTROLM_ORDERID': '0ksli'}}
+2022-08-31 20:34:25 [Order Id: 0ksli] [INFO] Request execution -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-21\
+822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs
+2022-08-31 20:34:26 [Order Id: 0ksli] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"7914d7b1-d6d8-4c41-bc09-90ccd27f111a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ8","CONTROLM_ORDERID":"0ksli","SUBSET_DATE":"2022-06-30","FILE_DATE":"20220630","CUT\
+OFF_DATE":"2022-06-30","DATA7":"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"\
+BCBS_SAS_Tbl_Moras","DATA3":"BCBS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","DATA5":"BCBS_Oracle_Universo_Areas_Contr\
+ato_PyME","CONTROLM_JOB_ID":"MKQPDVP4032","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","C\
+ONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status":{"id":"PENDING","updatedAt":"2022-08-31T20:34:26.039Z"},"statusHistory":[{"id":"PEND\
+ING","updatedAt":"2022-08-31T20:34:26.039Z"}],"_id":"4ffb3936-449f-4215-a111-5de39e0f3799","_locator":"//dataproc.work-02/ns/mx.kqp\
+d.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb3936-449f-4215-a111-5de39e0f3799","_parent":"//dataproc.work\
+-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"da\
+taproc.Run","_ac":false,"_createdAt":"2022-08-31T20:34:26.039Z","_updatedAt":"2022-08-31T20:34:26.039Z"}
+2022-08-31 20:34:26 [Order Id: 0ksli] [INFO] Execution request was successful. Obtained runId: 4ffb3936-449f-4215-a111-5de39e0f3799
+2022-08-31 20:34:26 [Order Id: 0ksli] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb3936-449f-4215-a111-5de39e0f3799
+2022-08-31 20:34:26 [Order Id: 0ksli] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"7914d7b1-d6d8-4c41-bc09-90ccd27f111a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ8","CONTROLM_ORDERID":"0ksli","SUBSET_DATE":"2022-06-30","FILE_DATE":"20220630","CUT\
+OFF_DATE":"2022-06-30","DATA7":"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"\
+BCBS_SAS_Tbl_Moras","DATA3":"BCBS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","CONTROLM_JOB_ID":"MKQPDVP4032","DATA5":"\
+BCBS_Oracle_Universo_Areas_Contrato_PyME","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","C\
+ONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status":{"id":"PENDING","updatedAt":"2022-08-31T20:34:26.039Z"},"_id":"4ffb3936-449f-4215-a1\
+11-5de39e0f3799","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb393\
+6-449f-4215-a111-5de39e0f3799","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01\
+/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-08-31T20:34:26.039Z","_updatedA\
+t":"2022-08-31T20:34:26.039Z"}
+2022-08-31 20:34:26 [Order Id: 0ksli] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-sasqualityresultsr-01 with id 4ffb3\
+936-449f-4215-a111-5de39e0f3799 is in status: {'name': 'PENDING', 'updatedAt': '2022-08-31T20:34:26.039Z'}
+2022-08-31 20:35:03 [Order Id: 0ksli] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb3936-449f-4215-a111-5de39e0f3799
+2022-08-31 20:35:03 [Order Id: 0ksli] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"7914d7b1-d6d8-4c41-bc09-90ccd27f111a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ8","CONTROLM_ORDERID":"0ksli","SUBSET_DATE":"2022-06-30","FILE_DATE":"20220630","CUT\
+OFF_DATE":"2022-06-30","DATA7":"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"\
+BCBS_SAS_Tbl_Moras","DATA3":"BCBS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","CONTROLM_JOB_ID":"MKQPDVP4032","DATA5":"\
+BCBS_Oracle_Universo_Areas_Contrato_PyME","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","C\
+ONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status":{"id":"RUNNING","updatedAt":"2022-08-31T20:34:39.456Z"},"_id":"4ffb3936-449f-4215-a1\
+11-5de39e0f3799","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb393\
+6-449f-4215-a111-5de39e0f3799","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01\
+/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-08-31T20:34:26.039Z","_updatedA\
+t":"2022-08-31T20:34:39.797Z"}
+2022-08-31 20:35:03 [Order Id: 0ksli] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-sasqualityresultsr-01 with id 4ffb3\
+936-449f-4215-a111-5de39e0f3799 is in status: {'name': 'RUNNING', 'updatedAt': '2022-08-31T20:34:39.456Z'}
+2022-08-31 20:35:50 [Order Id: 0ksli] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb3936-449f-4215-a111-5de39e0f3799
+2022-08-31 20:35:50 [Order Id: 0ksli] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"7914d7b1-d6d8-4c41-bc09-90ccd27f111a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ8","CONTROLM_ORDERID":"0ksli","SUBSET_DATE":"2022-06-30","FILE_DATE":"20220630","CUT\
+OFF_DATE":"2022-06-30","DATA7":"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"\
+BCBS_SAS_Tbl_Moras","DATA3":"BCBS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","CONTROLM_JOB_ID":"MKQPDVP4032","DATA5":"\
+BCBS_Oracle_Universo_Areas_Contrato_PyME","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","C\
+ONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status":{"id":"RUNNING","updatedAt":"2022-08-31T20:34:39.456Z"},"_id":"4ffb3936-449f-4215-a1\
+11-5de39e0f3799","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb393\
+6-449f-4215-a111-5de39e0f3799","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01\
+/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-08-31T20:34:26.039Z","_updatedA\
+t":"2022-08-31T20:34:39.797Z"}
+2022-08-31 20:35:50 [Order Id: 0ksli] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-sasqualityresultsr-01 with id 4ffb3\
+936-449f-4215-a111-5de39e0f3799 is in status: {'name': 'RUNNING', 'updatedAt': '2022-08-31T20:34:39.456Z'}
+2022-08-31 20:36:49 [Order Id: 0ksli] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb3936-449f-4215-a111-5de39e0f3799
+2022-08-31 20:36:49 [Order Id: 0ksli] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"7914d7b1-d6d8-4c41-bc09-90ccd27f111a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/raw/sasqualityresults/0.1.1-SNAPSHOT/sasqualityresults-01.conf"},"j\
+obEnv":{},"runParams":{},"runEnv":{"SUFFIX":"DQ8","CONTROLM_ORDERID":"0ksli","SUBSET_DATE":"2022-06-30","FILE_DATE":"20220630","CUT\
+OFF_DATE":"2022-06-30","DATA7":"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"\
+BCBS_SAS_Tbl_Moras","DATA3":"BCBS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","CONTROLM_JOB_ID":"MKQPDVP4032","DATA5":"\
+BCBS_Oracle_Universo_Areas_Contrato_PyME","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","C\
+ONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"},"status":{"id":"SUCCESS","updatedAt":"2022-08-31T20:35:59.587Z"},"_id":"4ffb3936-449f-4215-a1\
+11-5de39e0f3799","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/4ffb393\
+6-449f-4215-a111-5de39e0f3799","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01\
+/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-08-31T20:34:26.039Z","_updatedA\
+t":"2022-08-31T20:35:59.890Z"}
+2022-08-31 20:36:49 [Order Id: 0ksli] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-sasqualityresultsr-01 with id 4ffb3\
+936-449f-4215-a111-5de39e0f3799 is in status: {'name': 'SUCCESS', 'updatedAt': '2022-08-31T20:35:59.587Z'}
+2022-08-31 20:36:49 [Order Id: 0ksli] [INFO] Sending summary to psi: {"endStatus":"SUCCESS","traceId":"7914d7b1-d6d8-4c41-bc09-90cc\
+d27f111a","namespace":"mx.kqpd.app-id-21822.dev","jobName":"kqpd-mx-spk-qlt-sasqualityresultsr-01","runId":"4ffb3936-449f-4215-a111\
+-5de39e0f3799","startTime":"2022-08-31T20:34:25Z","endTime":"2022-08-31T20:36:49Z","status":[{"name":"PENDING","updatedAt":"2022-08\
+-31T20:34:26.039Z"},{"name":"RUNNING","updatedAt":"2022-08-31T20:34:39.456Z"},{"name":"SUCCESS","updatedAt":"2022-08-31T20:35:59.58\
+7Z"}],"errors":false,"error_description":null,"country":"mx","sentryHost":"sentry-1"}
+*** JOB EXECUTION SUMMARY ***
+{
+    "endStatus": "SUCCESS",
+    "traceId": "7914d7b1-d6d8-4c41-bc09-90ccd27f111a",
+    "namespace": "mx.kqpd.app-id-21822.dev",
+    "jobName": "kqpd-mx-spk-qlt-sasqualityresultsr-01",
+    "runId": "4ffb3936-449f-4215-a111-5de39e0f3799",
+    "startTime": "2022-08-31T20:34:25Z",
+    "endTime": "2022-08-31T20:36:49Z",
+    "status": [
+        {
+            "name": "PENDING",
+            "updatedAt": "2022-08-31T20:34:26.039Z"
+        },
+        {
+            "name": "RUNNING",
+            "updatedAt": "2022-08-31T20:34:39.456Z"
+        },
+        {
+            "name": "SUCCESS",
+            "updatedAt": "2022-08-31T20:35:59.587Z"
+        }
+    ],
+    "errors": false,
+    "country": "mx",
+    "sentryHost": "sentry-1"
+}
+*****************************
+

@@ -1,0 +1,243 @@
+FRg7ER7ZFp8  contraseña reunion webex prueba
+
+https://localhost:1158/em/console/logon/logoff?event=load
+
+reporte edo de salud
+https://docs.google.com/spreadsheets/d/1W5P5G78c8pUMHY_z4MycrWDDKKcYgkM-cw870g825G4/edit?ts=5e72b50e#gid=0
+
+JIRA
+https://globaldevtools.bbva.com/jira/browse/MEXTMP1-143606
+
+Instalacion SW
+https://docs.google.com/spreadsheets/d/1Q_bKsCz20x2E2ScjsR04ERVwiWWfYChNAUYuu5ndPUI/edit?ts=5ec5ab30#gid=0
+
+VPN
+https://docs.google.com/spreadsheets/d/1UuR-HfxRAkZShqpe9gpCRTWeLP7rfxkwx_eDoNHdWRM/edit?ts=5e72a28e#gid=0
+
+Instalacion IPC (Formulario)
+https://docs.google.com/forms/d/e/1FAIpQLSdX8Qimgw5TSOdaesMbDOZIXgCDNRuvAoRlyepAHUTl7nHCLw/viewform 
+
+CIVI DE CAMBIOS SISTEMAS HOLDING
+https://docs.google.com/forms/d/e/1FAIpQLScewKHuDb-LfTHNkfhggm5HBiUE2n7--QwGRLlpu2Kdm4LSHw/viewform
+
+Jira Ejemplo
+https://globaldevtools.bbva.com/jira/browse/MEXTMP1-138278
+
+Jira Dependencia
+https://globaldevtools.bbva.com/jira/browse/MEXTMP1-152270
+
+Cuestionario RCA Engineering - Evaluación de Riesgo Tecnológico y Operativo
+https://docs.google.com/forms/u/0/d/e/1FAIpQLSdfNUlc9o0GyPhDiUSNwdTsqnN6J-fY_lcrS6pkupo1W14D-w/formResponse
+
+Cheklist OCTA
+https://sites.google.com/a/bbva.com/octa_ccr/validaciones-tecnicas/cheklist_octa_cpm
+
+Time Report
+https://www.miportalwiffi.mex.bancomer.com/vhvarias/TimeReport/login.zul
+
+
+https://vdi.workplace.bbva.mx/appblast/webclient/index.html?&domainName=CB&user=XM020HY@cb.bbvabancomer.com.mx&acceptDisclaimer=true&SAMLart=AAQAAKKPBuIRspVoT%2BnlK1U98QssX5JmR3W40usjSj4LQZuGjl8g0%2BJV7oU%3D&desktopId=S.1001.39.502&desktopName=Ws1VDISysEn0424&horizonId=1345ac70-35c8-4a94-8722-db15a5f4d8bf/launchitems#/launchitems
+
+puedes eliminar el archivo DMO_0003_OPERA_200306_1425_v3.val de la ruta
+/etl_work/idi_fs01/DMO/dmo_0003_opera/tmp/InstalacionVisionCliente/ 
+
+
+Se requiere instalar malla para llenar las tablas de creditos hipotecario y de auto, para el control de su cobro.
+
+https://bbvamx.workspaceoneaccess.com/
+
+
+
+LILIANA DULCE OLIVEROS ROBLES
+Tu asesor de servicio.
+443 2982252 de lunes a viernes de 9:00 a 20:00
+
+
+
+
+cdh66jbk
+cdh66jbk
+
+61190
+
+Time Report
+https://www.miportalwiffi.mex.bancomer.com/vhvarias/TimeReport/login.zul
+
+DESKTOP-56ECNAH
+80-E8-2C-2C-9A-E3
+
+CRQ000001573690  revisar  (José Manuel Vizcaino)
+
+
+google
+facebook
+ibm
+starbucks
+microsoft  *  sube
+union pacific
+Hersys    * sube
+clorox    * sube
+UPS
+Apache    *
+Baster    *
+Black and deker
+Oracle
+Rose store
+IPR  
+
+
+
+
+MMPPTP0006 
+MMPPTP0013
+
+El codigo de desbloqueo mcafee para CORE 2 es 457387
+
+Creacion de tabla para cobranza CRQ000001663948 cancelado
+
+
+150.50.102.246      pcetlmtyd1
+
+Software Bancomer
+Android Studio	Apache JMeter	apache tomcat 8.0.29	APX (Eclipse)	APX CLI	Aqua Data Studio	Beyond Compare	bitbukect	Bower	bundler	Citrix reviever	CIVI	CLAN	client mysql	compass	Dbeaver	descompilador jdgui	Docker Desktop	Draw.io	EditPlus v3.20	ETL	figma	FileZilla 3.3.2.1	Firefox 50, 74	Firefox 70	gem	Generador de Código QR	Git 2.22	Google Chrome Browser 80	IBM Data Studio	IDE APX	IDE Claim Center	IDE Spring	INSOMNIA	iReport 3.0	Java 1.6	Java 1.8	java decompiler	Java JRE	JDK 8	jenkis	JRE 8	Kdiff3	MAP EDITOR	Maven 3.6.3	Meld 3.18.3	Microsoft SQL Server Management Studio ver 18	MobaXterm	MONGO CALIDAD	MONGO DESARROLLO	MyEclipse	MyEclipse Blue Edition 8.5	MySQL Wockbench	nacar RAD	Netbeans 8.2	NodeJS	Notepad++	npm	Opera	ORACLE 11.2	Oracle 12 modo Administrador	ORACLE MIDDLEWARE	Oracle Virtual Box	ORACLE WEBLOGIC	PayaraServerCommunity 5	Personal Communications	PHP Storm	Polymer CLI	"Postman
+ - cliente de servicios / apis"	Putty Release 0.71	Robo 3T	Robomongo	ruby	rvm	Scheduling	Secure Shell	Server Studio	Soap UI	SourceTree	SQL DBX	SQLDevelopment Spring Tool	Sublime texto 3	Sybase 15.7 y 12.5	TERADATA 16.10	TimeReport	Tn3270	Toad for Oracle	TortoiseSVN	UltraEdit	Visual Nacar	Visual Studio Code	Visual Studio Community 2015 .NET C#	WAS 9	Websphere teradata	WinMerge	WinSCP	Xcode	Xming Server	Sql Developer	Firefox 5	Cisco Webex	Firefox 70	Mocha TM3270	workbench	Eclipse IDE	Diver 6.4	Informatica PowerCenter 10	Zeplin 3.2.2002	Oracle 12 c	Sqlserver 2008 R2	XINFO	IIR informatica Identity Resolution	PIBEX	STS (Spring Tools Suit)	Dbvisualaizer 10.0.22	JAVA 1.7.11	JAVA1.8.201	DIMENSIONS	JAVA 1.7.8	REMEDY	AVAYA ONE X	AVAYA CMS	SIP PHONE 1.1	ASPECT SIP PHONE	JRE-8U112-WINDOWS-I586	JMeter	ECLIPSE 4.6.0	VISUAL STUDIO .NET 2017 c#
+
+
+https://aws.amazon.com/marketplace/solutions/machine-learning
+https://aws.amazon.com/es/training/?nc2=h_ql_ce_tc
+https://www.youtube.com/watch?v=ijxySOpkGWk
+https://bbvamx.workspaceoneaccess.com/
+
+
+------------------------------------------------------------
+
+select CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO, NU_EVALUACION
+from manager.TDM476_VLRCNAGENTE
+
+select count(*)
+from
+(
+   select NU_EVALUACION
+   from manager.TDM476_VLRCNAGENTE
+)
+
+select count(*)
+from
+(
+    select distinct NU_EVALUACION
+    from manager.TDM476_VLRCNAGENTE
+)
+
+select count(*)
+from  manager.TDM476_VLRCNAGENTE
+where NU_EVALUACION is null
+
+select count(*)
+from  manager.TDM476_VLRCNAGENTE
+where NU_EVALUACION = 0
+
+
+select CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO, NU_EVALUACION, count(*)
+from manager.TDM476_VLRCNAGENTE
+group by CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO, NU_EVALUACION
+having count(*) > 1
+
+select CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO, count(*)
+from manager.TDM476_VLRCNAGENTE
+group by CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO
+having count(*) > 1
+
+select count(*)
+from
+(
+select CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO, NU_EVALUACION, count(*)
+from manager.TDM476_VLRCNAGENTE
+group by CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO, NU_EVALUACION
+having count(*) > 1
+)
+
+
+
+
+ALTER TABLE manager.TDM476_VLRCNAGENTE
+ DROP PRIMARY KEY CASCADE;
+ 
+DROP INDEX manager.IDM476P1_VLRCNAGTE;
+
+CREATE UNIQUE INDEX manager.IDM476P1_VLRCNAGTE ON manager.TDM476_VLRCNAGENTE
+(CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO, NU_EVALUACION) TABLESPACE USERS;
+
+ALTER TABLE manager.TDM476_VLRCNAGENTE ADD (
+  CONSTRAINT IDM476P1_VLRCNAGTE
+  PRIMARY KEY
+  (CD_CLAVEASESOR, FH_GESTION, HR_GESTION, CD_CONTRATO, FH_MONITOREO, NU_EVALUACION)
+  USING INDEX manager.IDM476P1_VLRCNAGTE
+  ENABLE VALIDATE);
+  
+ALTER TABLE manager.TDM476_VLRCNAGENTE 
+modify NU_EVALUACION NUMBER(19) not null;
+
+
+---------------
+
+Invierno2020
+yedroxo197E01
+
+WP5ew171
+WP5ew181   24/07/2020
+?@*cHVDq753+%*
+?@*Zg865Eqd+%*
+m1ns41t197E   jcjimenezy@minsait.com 
+M1ns41t197E
+M1nS41t197e  08/08/2021
+0723X_J00123456789  25/N0v/2021
+
+m1ns41t197E  jcjimenezy@minsait.com  en google
+
+jcjimenezy
+0JD201
+0JD202
+
+xm020hy
+cdh11Nov
+cdh12Dic
+
+VDI
+cdh02F3b
+cdh03M4r
+
+
+Inversor Global TV
+​Para sumarte a Doble o Nada podés hacer click acá: https://bit.ly/3dsBWTM o llamar al 0810-444-2800 y sumarte telefónicamente.
+
+
+Hola Sha, con proyecto 0JD202 es a partir de hoy hasta fin de 
+mes, y de 3 de agosto hasta el viernes 14 de agosto es con 0JD201?
+
+https://login.microsoftonline.com/common/oauth2/logoutredirect    las políticas de delegación
+
+https://bancomer.service-now.com/sp?id=sc_cat_item&sys_id=15cbb47d1b93d8500f8fdac4bd4bcb3c  requerimientos ServiceNow
+
+https://forms.gle/uzENm6ELmfhBi8wr5
+https://forms.gle/H39hAsE2mPgkTe417
+
+
+
+https://data-flair.training/blogs/spark-tutorial/                 tutorial spark
+https://indra.udemy.com/course/rock-the-jvm-scala-for-beginners
+
+https://opportunity.linkedin.com/es-es/skills-for-in-demand-jobs  Cursos Linkedin
+
+https://sites.google.com/bbva.com/modelodeentregadeldevalbex/p%C3%A1gina-principal   
+
+
+----------------------------------------------------
+Datio
+ \\150.100.180.168\o_cb002\SP\COSTOS\
+nodo CBNOCCDFT02
+
+Va de nuevo la info del dataX
+https://platform.bbva.com/en-us/developers/data-x/documentation/what-is
+
+video de UD´s
+https://mail.google.com/mail/u/0/?pli=1#search/ud/FMfcgxwJWrhMklXjHwQmVZMHkWZjCGCS?projector=1

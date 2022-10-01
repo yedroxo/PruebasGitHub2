@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/Liquidez/Setting/ConfLiq.xlsx CREATE 0 60 10 3 10
+1130 18:15:00 : File '/SREPGRM/Liquidez/Setting/ConfLiq.xlsx' exists, it's current size is 18694 bytes . id=1.
+1130 18:15:30 : File transfer was completed. The size of file '/SREPGRM/Liquidez/Setting/ConfLiq.xlsx' is 18694 bytes. id=1. Modified 01/09/2021 11:27

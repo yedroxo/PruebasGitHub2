@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/GE_Map/Insumos/insumo_ge_map.csv CREATE 0 60 10 3 10
+1213 18:30:00 : File '/SREPGRM/GE_Map/Insumos/insumo_ge_map.csv' exists, it's current size is 130890 bytes . id=1.
+1213 18:30:30 : File transfer was completed. The size of file '/SREPGRM/GE_Map/Insumos/insumo_ge_map.csv' is 130890 bytes. id=1. Modified 22/11/2021 12:54

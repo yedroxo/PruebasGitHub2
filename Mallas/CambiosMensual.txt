@@ -1,0 +1,20 @@
+Se solicita de favor la revisión de la malla mensual BC-MXMDQRMEN-T02.xml, La malla ya se encuentra en calidad en el paquete MBLMDQR_REQ_6 en dimensions.
+
+Cambio de valor a la variable PARM
+MMDQRNP4103   
+MMDQRNP4106
+MMDQRNP4109
+MMDQRNP4112
+MMDQRNP4120
+
+Se agrego la variable PARM
+MMDQRNP4119
+MMDQRNP4121
+MMDQRNP4122
+
+Se agregó condición de salida
+MMDQRTP4103
+MMDQRTP4107
+MMDQRTP4108
+MMDQRTP4109
+MMDQRTP4110

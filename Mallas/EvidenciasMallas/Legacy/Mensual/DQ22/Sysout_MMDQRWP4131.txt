@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/Liquidez/Mensual_Sem/Setting/mes_sem_ant_MEXICO_RL.xlsx CREATE 0 60 10 3 10 Y
+0830 19:01:00 : File '/SREPGRM/Liquidez/Mensual_Sem/Setting/mes_sem_ant_MEXICO_RL.xlsx' exists, it's current size is 1193882 bytes . id=1.
+0830 19:01:30 : File transfer was completed. The size of file '/SREPGRM/Liquidez/Mensual_Sem/Setting/mes_sem_ant_MEXICO_RL.xlsx' is 1193882 bytes. id=1. Modified 28/07/2022 11:10

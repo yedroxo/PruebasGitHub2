@@ -1,0 +1,4 @@
+++ grep '|1|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEMNEW_DQ11.txt
+++ awk '-F|' '{print $0}'
++ echo '|1|BCBS_tabla_core_limits_int_DEF'
+|1|BCBS_tabla_core_limits_int_DEF

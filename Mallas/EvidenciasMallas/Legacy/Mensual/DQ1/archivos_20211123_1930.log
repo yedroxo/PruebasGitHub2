@@ -1,0 +1,35 @@
+#---20211123_1930 INICIA PROCESO CONCENTRACIONES
+***********************************************************************************************
+*                                   CREA ARCHIVO DQLEGACY                                     *
+*                            FECHA:  dia: 23/11/2021 hora:19:30:56             *
+***********************************************************************************************
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ PATH=/SREPGRM/Concentraciones/Codigos
++ PASO=archivos
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1930 Iniciar: SAS archivos'
+#---20211123_1930 Iniciar: SAS archivos
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/Concentraciones/Codigos/archivos.sas -log /SREPGRM/Shells/Logs/archivos_SAS_20211123_1930.log -print /SREPGRM/Shells/Logs/archivos_20211123_1930.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=0
++ echo 'El codigo de salida es:' 0
+El codigo de salida es: 0
++ '[' 0 -ne 0 ']'
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1930 Completado: SAS archivos'
+#---20211123_1930 Completado: SAS archivos
++ /bin/chmod -f 777 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.csv /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210831.ctl /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210930.csv /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DQLEGACY_DQ1_20210930.ctl
++ return 0

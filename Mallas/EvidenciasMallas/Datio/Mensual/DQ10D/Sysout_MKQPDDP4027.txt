@@ -1,0 +1,114 @@
++ /opt/datio/sentry-mx/dataproc_sentry.py -ns mx.kqpd.app-id-21822.dev -jn kqpd-mx-dfs-rmv-hdfs-01 -o 0ngwq -b '{"env": {"HADOOP_MO\
+DE": "REMOVE", "HADOOP_PATH": "/in/staging/ratransmit/sas/bcbs/DQLEGACY_DQ10D_20220331.c*", "CONTROLM_JOB_ID":"MKQPDDP4027","CONTRO\
+LM_JOB_FLOW":"CR-MXKQPDSEM-K02"}}'
+Deprecation Notice: The argument -e is no longer required and it will be ignored
+2022-09-21 01:09:49 [Order Id: 0ngwq] [INFO] Starting Sentry execution [traceId='94cec23a-a560-4814-adac-2eaedc173198', host='sentr\
+y-1']
+2022-09-21 01:09:49 [Order Id: 0ngwq] [INFO] New job execution: ns -> mx.kqpd.app-id-21822.dev; job_name -> kqpd-mx-dfs-rmv-hdfs-01
+2022-09-21 01:09:49 [Order Id: 0ngwq] [INFO] Job body -> {'env': {'HADOOP_MODE': 'REMOVE', 'HADOOP_PATH': '/in/staging/ratransmit/s\
+as/bcbs/DQLEGACY_DQ10D_20220331.c*', 'CONTROLM_JOB_ID': 'MKQPDDP4027', 'CONTROLM_JOB_FLOW': 'CR-MXKQPDSEM-K02', 'CONTROLM_ORDERID':\
+ '0ngwq'}}
+2022-09-21 01:09:49 [Order Id: 0ngwq] [INFO] Request execution -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-21\
+822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs
+2022-09-21 01:09:49 [Order Id: 0ngwq] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"94cec23a-a560-4814-adac-2eaedc173198","jobParams":{},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_OR\
+DERID":"0ngwq","HADOOP_MODE":"REMOVE","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","HADOOP_PATH":"/in/staging/ratransmit/sas/bcbs/DQLEGAC\
+Y_DQ10D_20220331.c*","CONTROLM_JOB_ID":"MKQPDDP4027"},"status":{"id":"PENDING","updatedAt":"2022-09-21T01:09:49.631Z"},"statusHisto\
+ry":[{"id":"PENDING","updatedAt":"2022-09-21T01:09:49.631Z"}],"_id":"a1272e88-7388-4198-856c-9a34939e3740","_locator":"//dataproc.w\
+ork-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272e88-7388-4198-856c-9a34939e3740","_parent":"//dataproc.wo\
+rk-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run",\
+"_ac":false,"_createdAt":"2022-09-21T01:09:49.631Z","_updatedAt":"2022-09-21T01:09:49.631Z"}
+2022-09-21 01:09:49 [Order Id: 0ngwq] [INFO] Execution request was successful. Obtained runId: a1272e88-7388-4198-856c-9a34939e3740
+2022-09-21 01:09:49 [Order Id: 0ngwq] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272e88-7388-4198-856c-9a34939e3740
+2022-09-21 01:09:49 [Order Id: 0ngwq] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"94cec23a-a560-4814-adac-2eaedc173198","jobParams":{},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_OR\
+DERID":"0ngwq","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","HADOOP_MODE":"REMOVE","HADOOP_PATH":"/in/staging/ratransmit/sas/bcbs/DQLEGAC\
+Y_DQ10D_20220331.c*","CONTROLM_JOB_ID":"MKQPDDP4027"},"status":{"id":"PENDING","updatedAt":"2022-09-21T01:09:49.631Z"},"_id":"a1272\
+e88-7388-4198-856c-9a34939e3740","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272\
+e88-7388-4198-856c-9a34939e3740","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs","_cre\
+atedBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-09-21T01:09:49.631Z","_updatedAt":"2022-09-\
+21T01:09:49.631Z"}
+2022-09-21 01:09:49 [Order Id: 0ngwq] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-dfs-rmv-hdfs-01 with id a1272e88-7388-4198-\
+856c-9a34939e3740 is in status: {'name': 'PENDING', 'updatedAt': '2022-09-21T01:09:49.631Z'}
+2022-09-21 01:10:27 [Order Id: 0ngwq] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272e88-7388-4198-856c-9a34939e3740
+2022-09-21 01:10:27 [Order Id: 0ngwq] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"94cec23a-a560-4814-adac-2eaedc173198","jobParams":{},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_OR\
+DERID":"0ngwq","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","HADOOP_MODE":"REMOVE","HADOOP_PATH":"/in/staging/ratransmit/sas/bcbs/DQLEGAC\
+Y_DQ10D_20220331.c*","CONTROLM_JOB_ID":"MKQPDDP4027"},"status":{"id":"PENDING","updatedAt":"2022-09-21T01:09:49.631Z"},"_id":"a1272\
+e88-7388-4198-856c-9a34939e3740","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272\
+e88-7388-4198-856c-9a34939e3740","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs","_cre\
+atedBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-09-21T01:09:49.631Z","_updatedAt":"2022-09-\
+21T01:09:49.631Z"}
+2022-09-21 01:10:27 [Order Id: 0ngwq] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-dfs-rmv-hdfs-01 with id a1272e88-7388-4198-\
+856c-9a34939e3740 is in status: {'name': 'PENDING', 'updatedAt': '2022-09-21T01:09:49.631Z'}
+2022-09-21 01:11:14 [Order Id: 0ngwq] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272e88-7388-4198-856c-9a34939e3740
+2022-09-21 01:11:14 [Order Id: 0ngwq] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"94cec23a-a560-4814-adac-2eaedc173198","jobParams":{},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_OR\
+DERID":"0ngwq","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","HADOOP_MODE":"REMOVE","HADOOP_PATH":"/in/staging/ratransmit/sas/bcbs/DQLEGAC\
+Y_DQ10D_20220331.c*","CONTROLM_JOB_ID":"MKQPDDP4027"},"status":{"id":"PENDING","updatedAt":"2022-09-21T01:09:49.631Z"},"_id":"a1272\
+e88-7388-4198-856c-9a34939e3740","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272\
+e88-7388-4198-856c-9a34939e3740","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs","_cre\
+atedBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-09-21T01:09:49.631Z","_updatedAt":"2022-09-\
+21T01:09:49.631Z"}
+2022-09-21 01:11:14 [Order Id: 0ngwq] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-dfs-rmv-hdfs-01 with id a1272e88-7388-4198-\
+856c-9a34939e3740 is in status: {'name': 'PENDING', 'updatedAt': '2022-09-21T01:09:49.631Z'}
+2022-09-21 01:12:12 [Order Id: 0ngwq] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272e88-7388-4198-856c-9a34939e3740
+2022-09-21 01:12:13 [Order Id: 0ngwq] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"94cec23a-a560-4814-adac-2eaedc173198","jobParams":{},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_OR\
+DERID":"0ngwq","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","HADOOP_MODE":"REMOVE","HADOOP_PATH":"/in/staging/ratransmit/sas/bcbs/DQLEGAC\
+Y_DQ10D_20220331.c*","CONTROLM_JOB_ID":"MKQPDDP4027"},"status":{"id":"RUNNING","updatedAt":"2022-09-21T01:12:12.135Z"},"_id":"a1272\
+e88-7388-4198-856c-9a34939e3740","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272\
+e88-7388-4198-856c-9a34939e3740","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs","_cre\
+atedBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-09-21T01:09:49.631Z","_updatedAt":"2022-09-\
+21T01:12:12.415Z"}
+2022-09-21 01:12:13 [Order Id: 0ngwq] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-dfs-rmv-hdfs-01 with id a1272e88-7388-4198-\
+856c-9a34939e3740 is in status: {'name': 'RUNNING', 'updatedAt': '2022-09-21T01:12:12.135Z'}
+2022-09-21 01:13:26 [Order Id: 0ngwq] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272e88-7388-4198-856c-9a34939e3740
+2022-09-21 01:13:26 [Order Id: 0ngwq] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"94cec23a-a560-4814-adac-2eaedc173198","jobParams":{},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_OR\
+DERID":"0ngwq","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02","HADOOP_MODE":"REMOVE","HADOOP_PATH":"/in/staging/ratransmit/sas/bcbs/DQLEGAC\
+Y_DQ10D_20220331.c*","CONTROLM_JOB_ID":"MKQPDDP4027"},"status":{"id":"SUCCESS","updatedAt":"2022-09-21T01:12:22.259Z"},"_id":"a1272\
+e88-7388-4198-856c-9a34939e3740","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs/a1272\
+e88-7388-4198-856c-9a34939e3740","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-dfs-rmv-hdfs-01/runs","_cre\
+atedBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-09-21T01:09:49.631Z","_updatedAt":"2022-09-\
+21T01:12:22.560Z"}
+2022-09-21 01:13:26 [Order Id: 0ngwq] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-dfs-rmv-hdfs-01 with id a1272e88-7388-4198-\
+856c-9a34939e3740 is in status: {'name': 'SUCCESS', 'updatedAt': '2022-09-21T01:12:22.259Z'}
+2022-09-21 01:13:26 [Order Id: 0ngwq] [INFO] Sending summary to psi: {"endStatus":"SUCCESS","traceId":"94cec23a-a560-4814-adac-2eae\
+dc173198","namespace":"mx.kqpd.app-id-21822.dev","jobName":"kqpd-mx-dfs-rmv-hdfs-01","runId":"a1272e88-7388-4198-856c-9a34939e3740"\
+,"startTime":"2022-09-21T01:09:49Z","endTime":"2022-09-21T01:13:26Z","status":[{"name":"PENDING","updatedAt":"2022-09-21T01:09:49.6\
+31Z"},{"name":"RUNNING","updatedAt":"2022-09-21T01:12:12.135Z"},{"name":"SUCCESS","updatedAt":"2022-09-21T01:12:22.259Z"}],"errors"\
+:false,"error_description":null,"country":"mx","sentryHost":"sentry-1"}
+*** JOB EXECUTION SUMMARY ***
+{
+    "endStatus": "SUCCESS",
+    "traceId": "94cec23a-a560-4814-adac-2eaedc173198",
+    "namespace": "mx.kqpd.app-id-21822.dev",
+    "jobName": "kqpd-mx-dfs-rmv-hdfs-01",
+    "runId": "a1272e88-7388-4198-856c-9a34939e3740",
+    "startTime": "2022-09-21T01:09:49Z",
+    "endTime": "2022-09-21T01:13:26Z",
+    "status": [
+        {
+            "name": "PENDING",
+            "updatedAt": "2022-09-21T01:09:49.631Z"
+        },
+        {
+            "name": "RUNNING",
+            "updatedAt": "2022-09-21T01:12:12.135Z"
+        },
+        {
+            "name": "SUCCESS",
+            "updatedAt": "2022-09-21T01:12:22.259Z"
+        }
+    ],
+    "errors": false,
+    "country": "mx",
+    "sentryHost": "sentry-1"
+}
+*****************************

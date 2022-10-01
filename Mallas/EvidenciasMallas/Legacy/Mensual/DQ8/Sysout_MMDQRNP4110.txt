@@ -1,0 +1,55 @@
++ echo '#*********************************************************************************#'
+#*********************************************************************************#
++ echo '#                                                                                 #'
+#                                                                                 #
++ echo '#                                                                                 #'
+#                                                                                 #
++ echo '# ==== ESTE FLUJO ES EJECUTADO PARA BUSCAR EL ARCHIVO Vol-Cal_PyME_MMMYY.xlsx === #'
+# ==== ESTE FLUJO ES EJECUTADO PARA BUSCAR EL ARCHIVO Vol-Cal_PyME_MMMYY.xlsx === #
++ echo '#                                                                                 #'
+#                                                                                 #
++ echo '#                                                                                 #'
+#                                                                                 #
++ echo '#*********************************************************************************#'
+#*********************************************************************************#
++ PATH_RAIZ=/SREPGRM/RDA_Pyme/
++ PATH_INPUT=/SREPGRM/RDA_Pyme/Input/
++ cd /SREPGRM/RDA_Pyme/Input/
++ /bin/date '+%D %T -->INICIO de Cambio de nombre insumo DQ8'
+08/26/22 19:00:32 -->INICIO de Cambio de nombre insumo DQ8
+++ /bin/date
++ echo 'Comienza ejecuci n' Fri Aug 26 19:00:32 CDT 2022
+Comienza ejecuci n Fri Aug 26 19:00:32 CDT 2022
++ main
++ buscaArchivoInsumoDQ8
++ echo 'Ejecutamos proceso de busqueda y cambio de nombre de archivo insumo de DQ8'
+Ejecutamos proceso de busqueda y cambio de nombre de archivo insumo de DQ8
++ sort -r
++ read archivo
++ ls -t Vol-Cal_PyME_JUN22.xlsx
++ echo 'El Archivo encontrado es: Vol-Cal_PyME_JUN22.xlsx'
+El Archivo encontrado es: Vol-Cal_PyME_JUN22.xlsx
++ cambiaNombreArchivo Vol-Cal_PyME_JUN22.xlsx
++ archivoOrig=Vol-Cal_PyME_JUN22.xlsx
++ echo 'Cambiando Nombre del archivo Vol-Cal_PyME_JUN22.xlsx espere por favor.....'
+Cambiando Nombre del archivo Vol-Cal_PyME_JUN22.xlsx espere por favor.....
++ nomArchivo1=Vol-Cal_PyME_
++ fechaLetra=JUN
++ nomArchivo2=22.xlsx
++ '[' JUN = JAN ']'
++ '[' JUN = FEB ']'
++ '[' JUN = MAR ']'
++ '[' JUN = APR ']'
++ '[' JUN = MAY ']'
++ '[' JUN = JUN ']'
++ fechaNum=006
++ echo 'Se sustituye JUN por 006 como parte del nombre de archivo Vol-Cal_PyME_JUN22.xlsx '
+Se sustituye JUN por 006 como parte del nombre de archivo Vol-Cal_PyME_JUN22.xlsx 
++ /bin/mv -f Vol-Cal_PyME_JUN22.xlsx Vol-Cal_PyME_00622.xlsx
++ echo 'Se sustituyo el nombre del archivo Vol-Cal_PyME_JUN22.xlsx por Vol-Cal_PyME_00622.xlsx'
+Se sustituyo el nombre del archivo Vol-Cal_PyME_JUN22.xlsx por Vol-Cal_PyME_00622.xlsx
++ read archivo
+++ /bin/date
++ echo 'Finaliza ejecuci n' Fri Aug 26 19:00:32 CDT 2022
+Finaliza ejecuci n Fri Aug 26 19:00:32 CDT 2022
++ exit 0

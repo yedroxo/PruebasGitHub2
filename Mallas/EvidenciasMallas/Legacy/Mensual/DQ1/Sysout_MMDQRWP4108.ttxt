@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv CREATE 0 60 10 3 10
+1123 19:15:00 : File '/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv' exists, it's current size is 50 bytes . id=1.
+1123 19:15:30 : File transfer was completed. The size of file '/SREPGRM/Asset_Allocation/INPUT/CAPITALNETO.csv' is 50 bytes. id=1. Modified 23/11/2021 12:24

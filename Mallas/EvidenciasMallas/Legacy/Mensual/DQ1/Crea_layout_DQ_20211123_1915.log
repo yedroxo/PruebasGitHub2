@@ -1,0 +1,34 @@
+#---20211123_1915 INICIA PROCESO CONCENTRACIONES
+***********************************************************************************************
+*                                   PROCESO CREA LAYOUT                                       *
+*                            FECHA:  dia: 23/11/2021 hora:19:15:25             *
+***********************************************************************************************
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ PATH=/SREPGRM/Concentraciones/Codigos
++ PASO=Crea_layout_DQ
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1915 Iniciar: SAS Crea_layout_DQ'
+#---20211123_1915 Iniciar: SAS Crea_layout_DQ
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/Concentraciones/Codigos/Crea_layout_DQ.sas -log /SREPGRM/Shells/Logs/Crea_layout_DQ_SAS_20211123_1915.log -print /SREPGRM/Shells/Logs/Crea_layout_DQ_20211123_1915.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=0
++ echo 'El codigo de salida es:' 0
+El codigo de salida es: 0
++ '[' 0 -ne 0 ']'
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1915 Completado: SAS Crea_layout_DQ'
+#---20211123_1915 Completado: SAS Crea_layout_DQ
++ return 0

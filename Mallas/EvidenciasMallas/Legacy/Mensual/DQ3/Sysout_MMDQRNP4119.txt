@@ -1,0 +1,18 @@
++ fechaodate=
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ DSLOGS=/SREPGRM/Shells/Logs
++ PATH=/SREPGRM/GroupCreditRiskMetrics/Codigos
++ FILENAM=Ejecucucion_Credit_Risk
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/Ejecucucion_Credit_Risk_20211214_1859.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211214_1859 INICIA PROCESO Credit Risk MENSUAL'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO Credit Risk MENSUAL                               *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 14/12/2021 hora:18:59:50 '            *'
++ echo '***********************************************************************************************'
++ PASO_00

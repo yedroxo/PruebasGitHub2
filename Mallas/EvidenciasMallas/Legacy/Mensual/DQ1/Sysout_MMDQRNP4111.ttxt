@@ -1,0 +1,29 @@
++ for i in '{1..1000}'
+++ grep '|1|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ1.txt
+++ awk '-F|' '{print $3}'
++ ds=BCBS_Excel_R_Asset_Dashboard_yyyymm
++ '[' 35 -gt 0 ']'
++ '[' 0 == 0 ']'
++ cadena='|1|BCBS_Excel_R_Asset_Dashboard_yyyymm'
++ for i in '{1..1000}'
+++ grep '|2|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ1.txt
+++ awk '-F|' '{print $3}'
++ ds='GI Risk Data'
++ '[' 12 -gt 0 ']'
++ '[' 38 == 0 ']'
++ cadena='|1|BCBS_Excel_R_Asset_Dashboard_yyyymm'\'','\''GI Risk Data'
++ for i in '{1..1000}'
+++ grep '|3|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ1.txt
+++ awk '-F|' '{print $3}'
++ ds=RAR_CREDITO
++ '[' 11 -gt 0 ']'
++ '[' 53 == 0 ']'
++ cadena='|1|BCBS_Excel_R_Asset_Dashboard_yyyymm'\'','\''GI Risk Data'\'','\''RAR_CREDITO'
++ for i in '{1..1000}'
+++ grep '|4|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEM_DQ1.txt
+++ awk '-F|' '{print $3}'
++ ds=
++ '[' 0 -gt 0 ']'
++ break
++ echo '|1|BCBS_Excel_R_Asset_Dashboard_yyyymm'\'','\''GI' Risk 'Data'\'','\''RAR_CREDITO'
++ chmod 666 /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEMNEW_DQ1.txt

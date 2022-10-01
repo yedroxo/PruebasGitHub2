@@ -1,0 +1,19 @@
++ fechaodate=202206
++ fechaodate2=0622
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ DSLOGS=/SREPGRM/Shells/Logs
++ PATH=/SREPGRM/RDA_Pyme/Codigos
++ FILENAM=R00_INC_RDA
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/R00_INC_RDA_20220826_1910.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20220826_1910 INICIA PROCESO RDA_Pyme MENSUAL'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO RDA PYME MENSUAL                                   *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 26/08/2022 hora:19:10:31 '            *'
++ echo '***********************************************************************************************'
++ PASO_00

@@ -1,0 +1,18 @@
++ fechaodate=
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ DSLOGS=/SREPGRM/Shells/Logs
++ PATH=/SREPGRM/COVID_Minorista/Codigos
++ FILENAM=COVID_Min_Maestro
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/COVID_Min_Maestro_20220614_1830.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20220614_1830 INICIA PROCESO LIQUIDEZ MENSUAL'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO COVID MINORISTA                                   *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 14/06/2022 hora:18:30:35 '            *'
++ echo '***********************************************************************************************'
++ PASO_00

@@ -1,0 +1,4 @@
+++ grep '|1|' /SREPGRM/DQLEGACY_RIESGOS/MENSUAL/DATASYSTEMNEW_DQ1.txt
+++ awk '-F|' '{print $0}'
++ echo '|1|BCBS_Excel_R_Asset_Dashboard_yyyymm'\'','\''GI' Risk 'Data'\'','\''RAR_CREDITO'
+|1|BCBS_Excel_R_Asset_Dashboard_yyyymm','GI Risk Data','RAR_CREDITO

@@ -1,0 +1,84 @@
+#---20211123_1915 INICIA PROCESO RAF MENSUAL
+***********************************************************************************************
+*                                   PROCESO RAF MENSUAL                                       *
+*                            FECHA:  dia: 23/11/2021 hora:19:15:25             *
+***********************************************************************************************
++ PASO=EjecutaRaf
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1915 Iniciar: SAS EjecutaRaf'
+#---20211123_1915 Iniciar: SAS EjecutaRaf
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/RAF/Codigos/EjecutaRaf.sas -log /SREPGRM/Shells/Logs/EjecutaRaf_SAS_20211123_1915.log -print /SREPGRM/Shells/Logs/EjecutaRaf_20211123_1915.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=0
++ echo 'El codigo de salida es:' 0
+El codigo de salida es: 0
++ '[' 0 -ne 0 ']'
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1915 Completado con exito: SAS EjecutaRaf'
+#---20211123_1915 Completado con exito: SAS EjecutaRaf
++ fPurge '/SREPGRM/Shells/Logs/EjecutaRaf_*.l*' 3
++ path='/SREPGRM/Shells/Logs/EjecutaRaf_*.l*'
++ keep_file_num=3
++ echo 'Eliminando archivos '
+Eliminando archivos 
++ echo 'Ruta borra archivos  /SREPGRM/Shells/Logs/EjecutaRaf_*.l*'
+Ruta borra archivos  /SREPGRM/Shells/Logs/EjecutaRaf_*.l*
+++ /bin/grep '^-'
+++ /usr/bin/wc -l
+++ /bin/ls -ltr /SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.log /SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.lst /SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.log /SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.lst /SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.log /SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.lst /SREPGRM/Shells/Logs/EjecutaRaf_20211123_1915.log /SREPGRM/Shells/Logs/EjecutaRaf_20211123_1915.lst /SREPGRM/Shells/Logs/EjecutaRaf_SAS_20211118_1914.log /SREPGRM/Shells/Logs/EjecutaRaf_SAS_20211123_1915.log /SREPGRM/Shells/Logs/EjecutaRaf_SAS.log
++ total_files=11
++ echo 'Num Archivos 11'
+Num Archivos 11
++ let num_to_delete=11-3
++ echo 'Resto 8'
+Resto 8
++ '[' 8 -gt 0 ']'
+++ /usr/bin/head -n 8
+++ /bin/ls -tr /SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.log /SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.lst /SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.log /SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.lst /SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.log /SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.lst /SREPGRM/Shells/Logs/EjecutaRaf_20211123_1915.log /SREPGRM/Shells/Logs/EjecutaRaf_20211123_1915.lst /SREPGRM/Shells/Logs/EjecutaRaf_SAS_20211118_1914.log /SREPGRM/Shells/Logs/EjecutaRaf_SAS_20211123_1915.log /SREPGRM/Shells/Logs/EjecutaRaf_SAS.log
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.lst
++ echo /SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.lst 'Archivo Borrado'
+/SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.lst Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.log
++ echo /SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/EjecutaRaf_20210910_1350.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/EjecutaRaf_SAS.log
++ echo /SREPGRM/Shells/Logs/EjecutaRaf_SAS.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/EjecutaRaf_SAS.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.lst
++ echo /SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.lst 'Archivo Borrado'
+/SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.lst Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.log
++ echo /SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/EjecutaRaf_20211014_1813.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/EjecutaRaf_SAS_20211118_1914.log
++ echo /SREPGRM/Shells/Logs/EjecutaRaf_SAS_20211118_1914.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/EjecutaRaf_SAS_20211118_1914.log Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.lst
++ echo /SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.lst 'Archivo Borrado'
+/SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.lst Archivo Borrado
++ for i in '$(/bin/ls -tr $path | /usr/bin/head -n $num_to_delete)'
++ /bin/rm -f /SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.log
++ echo /SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.log 'Archivo Borrado'
+/SREPGRM/Shells/Logs/EjecutaRaf_20211118_1914.log Archivo Borrado
++ /bin/mv -f /SREPGRM/RAF/Setting/ConfRaf.xlsx /SREPGRM/RAF/Setting/_ConfRaf.xlsx
++ exit 0

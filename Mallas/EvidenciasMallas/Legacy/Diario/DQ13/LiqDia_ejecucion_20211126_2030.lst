@@ -1,0 +1,96 @@
+                                                           The SAS System                        20:30 Friday, November 26, 2021   1
+
+                                                                Maximo
+                                                              --------
+                                                                     4
+                                                           The SAS System                        20:30 Friday, November 26, 2021   2
+
+                   gf_legacy_qr_
+                   sequential_id                    VARIACION                   VARIACION  Umbral_Min  Umbral_Max
+                   ----------------------------------------------------------------------------------------------
+                   1700500100                    48022.065025                48022.065025      -95000       95000
+                                                           The SAS System                        20:30 Friday, November 26, 2021   3
+
+                   gf_legacy_qr_
+                   sequential_id                    VARIACION                   VARIACION  Umbral_Min  Umbral_Max
+                   ----------------------------------------------------------------------------------------------
+                   1700100100                    41137.161240                41137.161240     -125000      125000
+                                                           The SAS System                        20:30 Friday, November 26, 2021   4
+
+                   gf_legacy_qr_
+                   sequential_id                    VARIACION                   VARIACION  Umbral_Min  Umbral_Max
+                   ----------------------------------------------------------------------------------------------
+                   1702300100                   -32378.642960               -32378.642960      -95000       95000
+                                                           The SAS System                        20:30 Friday, November 26, 2021   5
+
+                   gf_legacy_qr_
+                   sequential_id                    VARIACION                   VARIACION  Umbral_Min  Umbral_Max
+                   ----------------------------------------------------------------------------------------------
+                   1702600100                       -0.095304                   -0.095304        -0.5         0.5
+                                                           The SAS System                        20:30 Friday, November 26, 2021   6
+
+                                                                Maximo
+                                                              --------
+                                                                     2
+                                                           The SAS System                        20:30 Friday, November 26, 2021   7
+
+                   gf_legacy_qr_
+                   sequential_id                  DATO_ACTUAL                 DATO_ACTUAL  Umbral_Min  Umbral_Max
+                   ----------------------------------------------------------------------------------------------
+                   1702500100                    37560.167590                37560.167590      -70000       70000
+                                                           The SAS System                        20:30 Friday, November 26, 2021   8
+
+                   gf_legacy_qr_
+                   sequential_id                  DATO_ACTUAL                 DATO_ACTUAL  Umbral_Min  Umbral_Max
+                   ----------------------------------------------------------------------------------------------
+                   1702500100                   -13338.546427               -13338.546427      -55000       55000
+                                                           The SAS System                        20:30 Friday, November 26, 2021   9
+
+                                                                      
+                                                              --------
+                                                                     6
+                                                           The SAS System                        20:30 Friday, November 26, 2021  10
+
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+         Fecha  Reporte                         Métrica                                                                         
+    2021-11-19  Liquidez                        ACTIVOS EXPLÍCITOS DISPONIBLES                                                  
+    2021-11-19  Liquidez                        FINANCIACIÓN NETA CORTO PLAZO                                                   
+    2021-11-19  Liquidez                        CANTIDADES BÁSICAS A RENEGOCIAR                                                 
+    2021-11-19  Liquidez                        Posición de Liquidez Intradía (PLI) hasta 13:10                                 
+    2021-11-19  Liquidez                        Posición de Liquidez Intradía (PLI) después 13:10                               
+    2021-11-19  Liquidez                        RATIO CAPACIDAD BÁSICA                                                          
+                                                           The SAS System                        20:30 Friday, November 26, 2021  11
+
+                                                                         Porce                                                
+                                                                         ntaje                                                
+                                                                         Cumpl                                                
+                                                           Umbra  Umbra  imien                                                
+                                                               l      l     to                                                
+     Regla de                                              Mínim  Objet  Regis                                                
+     calidad     Responsable                                   o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo
+     1700100100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1700500100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1702300100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1702500100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1702500100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+     1702600100  Noreli Sánchez Miñón/Alicia Lara Méndez   100.0  100.0  100.0                       1                       1
+                                                           The SAS System                        20:30 Friday, November 26, 2021  12
+
+                                                                                                                   
+                                                                                                                   
+                                                                                                                   
+                                                                                                                 SE
+                                                                                                                 MA
+                       Variación Máxima                                                                          FO
+                              Permitida             Dato Actual           Dato Anterior               Variación  RO
+                            125,000.000            734,603.9493            693,466.7881             41,137.1612  SI
+                             95,000.000            179,540.4158            131,518.3508             48,022.0650  SI
+                             95,000.000           -338,352.9134           -305,974.2704            -32,378.6430  SI
+                             70,000.000             37,560.1676                  0.0000                  0.0000  SI
+                             55,000.000            -13,338.5464                  0.0000                  0.0000  SI
+                                  0.500                  2.1711                  2.2664                 -0.0953  SI

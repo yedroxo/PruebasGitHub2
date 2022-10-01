@@ -1,0 +1,56 @@
+#---20211118_1914 INICIA PROCESO LIQUIDEZ MENSUAL
+***********************************************************************************************
+*                                   PROCESO LIQUIDEZ MENSUAL                                   *
+*                            FECHA:  dia: 18/11/2021 hora:19:14:53             *
+***********************************************************************************************
++ PASO=LiqMes_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211118_1914 Iniciar: SAS LiqMes_ejecucion'
+#---20211118_1914 Iniciar: SAS LiqMes_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/Liquidez/Mensual/Codigos/LiqMes_ejecucion.sas -log /SREPGRM/Shells/Logs/LiqMes_ejecucion_SAS_20211118_1914.log -print /SREPGRM/Shells/Logs/LiqMes_ejecucion_20211118_1914.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=0
++ echo 'El codigo de salida es:' 0
+El codigo de salida es: 0
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /bin/chmod 777 /SREPGRM/Shells/Logs/LiqMes_ejecucion_SAS_20211118_1914.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /bin/chmod 777 /SREPGRM/Shells/Logs/LiqMes_ejecucion_20211118_1914.lst
++ '[' 0 -ne 0 ']'
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211118_1914 Completado con exito: SAS LiqMes_ejecucion'
+#---20211118_1914 Completado con exito: SAS LiqMes_ejecucion
++ fPurge '/SREPGRM/Shells/Logs/LiqMes_ejecucion_*.l*' 3
++ path='/SREPGRM/Shells/Logs/LiqMes_ejecucion_*.l*'
++ keep_file_num=3
++ echo 'Eliminando archivos '
+Eliminando archivos 
++ echo 'Ruta borra archivos  /SREPGRM/Shells/Logs/LiqMes_ejecucion_*.l*'
+Ruta borra archivos  /SREPGRM/Shells/Logs/LiqMes_ejecucion_*.l*
+++ /bin/grep '^-'
+++ /usr/bin/wc -l
+++ /bin/ls -ltr /SREPGRM/Shells/Logs/LiqMes_ejecucion_20211118_1914.log /SREPGRM/Shells/Logs/LiqMes_ejecucion_20211118_1914.lst /SREPGRM/Shells/Logs/LiqMes_ejecucion_SAS_20211118_1914.log
++ total_files=3
++ echo 'Num Archivos 3'
+Num Archivos 3
++ let num_to_delete=3-3
++ echo 'Resto 0'
+Resto 0
++ '[' 0 -gt 0 ']'
++ /bin/mv -f /SREPGRM/Liquidez/Mensual/Setting/mes_ant_MEXICO_RL.xls /SREPGRM/Liquidez/Mensual/Setting/__mes_ant_MEXICO_RL.xls
++ exit 0

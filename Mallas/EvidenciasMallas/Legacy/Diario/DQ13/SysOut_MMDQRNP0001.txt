@@ -1,0 +1,18 @@
++ fechaodate=20211119
++ SASGD94=/sasgrid94/SASHome/SASFoundation/9.4/sas
++ DSLOGS=/SREPGRM/Shells/Logs
++ PATH=/SREPGRM/Liquidez/Diaria/Codigos
++ FILENAM=LiqDia_ejecucion
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/LiqDia_ejecucion_20211126_2030.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211126_2030 INICIA PROCESO LIQUIDEZ DIARIO'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO LIQUIDEZ DIARIO                                   *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 26/11/2021 hora:20:30:20 '            *'
++ echo '***********************************************************************************************'
++ PASO_00

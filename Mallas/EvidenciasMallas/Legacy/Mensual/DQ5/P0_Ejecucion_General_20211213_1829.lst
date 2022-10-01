@@ -1,0 +1,123 @@
+                                                           The SAS System                        18:29 Monday, December 13, 2021   1
+
+                              
+                              ------------------------------------------------------------------------
+                              %let I=1                                                                
+                              %let IFRAGO=/UAIR_PIV/IFRS9/SALIDA                                      
+                              %let RARAGO=/RAR3/SAS/GYS/APROVRAR/BD                                   
+                              %let Salida=/FINANZAS/Carlos_Castillo                                   
+                              %let CAT=/SREPGRM/RISK_TEST/CTLG                                        
+                              %let usu_T=MB86014                                                      
+                              %let pass_T=Vl4d1sl4vPI2111                                             
+                              %let Catalogo_1=/SREPGRM/RISK_TEST/CTLG/Catalogos_layout.xlsx           
+                              %let imag_verde=/SREPGRM/RISK_TEST/CTLG/imagenes/Semaforo_verde.png     
+                              %let imag_naranja=/SREPGRM/RISK_TEST/CTLG/imagenes/Semaforo_naranja.png 
+                              %let imag_rojo=/SREPGRM/RISK_TEST/CTLG/imagenes/Semaforo_rojo.png       
+                              %let log_SSAS=/SREPGRM/RISK_TEST/LOGS/DQ06_                             
+                              %let Catalogo_Q=/SREPGRM/RISK_TEST/CTLG/Catalogo_querys.xlsx            
+                              %let Rango_CQ=Querys$A1:I                                               
+                              %let Rep_pdf=/SREPGRM/RISK_TEST/CTLG/IFRS9_500C_                        
+                              %let EPIGRAFE_=EFAN_EPIGRAFE_201802                                     
+                              %let UNIDAD_=EFAN_UNIDAD_201803                                         
+                              %let CAT_FAM=CAT_FAMILIAS2_25072017                                     
+                              %let COD_PROD=COD_PRODFINA                                              
+                              %let PROD_HOLDING=PRODUCTO_HOLDING                                      
+                              %let TIPO_GARAN=TIPO_GARANTIA                                           
+                              %let CNAE=CNAE                                                          
+                              %let TIPO_GARANTE=TIPO_GARANTE                                          
+                              %let DIVISA=DIVISA                                                      
+                              %let HERRAM_RATING=HERRAM_RATING                                        
+                              %let ESCALA_RATING=ESCALA_RATING                                        
+                              %let COD_PRODCOM=COD_PRODCOM                                            
+                              %let COD_CPAISO=COD_CPAISO                                              
+                              %let DQ_Fin=DQLEGACY_DQ5                                                
+                              %let COD_SECLI=COD_SECLI                                                
+                              %let PORTAFOLIO=PORTFOLIO                                               
+                                                           The SAS System                        18:29 Monday, December 13, 2021   2
+
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                              Regla de                                            
+       Fecha  Reporte                         Métrica                         calidad     Responsable                             
+  2021-11-30  Excepted loss                   Especialized Leanding           05001M0100  María Fernanda Soto                     
+  2021-11-30  Excepted loss                   Calificación WL                 0500500100  María Fernanda Soto                     
+  2021-11-30  Excepted loss                   Cartera retail                  0500600100  Araceli Canchola                        
+  2021-11-30  Excepted loss                   Código actividad económica(CNA  0501100200  Julio Monteverde                        
+  2021-11-30  Excepted loss                   Código Familia                  0501800200  Jose Angel Juarez                       
+  2021-11-30  Excepted loss                   Fecha de entrada en default     0503600200  Oscar Osvaldo Lopez                     
+  2021-11-30  Excepted loss                   Fecha de salida default contra  0504000200  Oscar Osvaldo Lopez                     
+  2021-11-30  Excepted loss                   Fecha Salida default cliente    0504900200  Oscar Osvaldo Lopez                     
+  2021-11-30  Excepted loss                   Fecha última mora               0505000200  Oscar Osvaldo Lopez                     
+  2021-11-30  Excepted loss                   Indicador local refinanciado/   0507800100  María Fernanda Soto/Roberto Diaz        
+  2021-11-30  Excepted loss                   Saldo refinanciado/ reestructu  0507800200  María Fernanda Soto/Roberto Diaz        
+  2021-11-30  Excepted loss                   Modelo de negocio               0509500200  Judith Granados Zamora                  
+  2021-11-30  Excepted loss                   PD actual                       0510900200  Jose Angel Juarez                       
+  2021-11-30  Excepted loss                   PD actual                       0510900300  Jose Angel Juarez                       
+  2021-11-30  Excepted loss                   Producto Holding                0511500100  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Producto Holding                0511500300  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Producto local                  0511600100  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Producto local                  0511600300  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Sector AA                       0512600100  Araceli Canchola                        
+  2021-11-30  Excepted loss                   Segmento FINREP                 0512700100  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Segmento local                  0512800100  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Tipo de saldo Holding           0514100800  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Tipo de saldo Holding           0514100900  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Tipo de Garante                 0513600100  Igor Peralta                            
+  2021-11-30  Excepted loss                   Tipo garantía local             0514300100  Igor Peralta                            
+  2021-11-30  Excepted loss                   Escala maestra de rating        0503100100  Renato Delgado                          
+  2021-11-30  Excepted loss                   Fecha Refinanciación/Reestruct  0504800200  Roberto Diaz                            
+  2021-11-30  Excepted loss                   Fecha última refinanciación     0505100300  Roberto Diaz                            
+  2021-11-30  Excepted loss                   Fecha de última tasación        0504100100  Igor Peralta                            
+  2021-11-30  Excepted loss                   Fecha de entrada en Inversión   0503700400  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Fecha primer impago             0504701200  Fabiola Algalan                         
+  2021-11-30  Excepted loss                   Fecha vencimiento garantía      0505400200  Igor Peralta                            
+  2021-11-30  Excepted loss                   Tipo de interés inicial (conce  0513900100  Laura Patricia Valle                    
+  2021-11-30  Excepted loss                   Tasa de interés efectiva actua  0513300100  Laura Patricia Valle                    
+  2021-11-30  Excepted loss                   Importe de la última tasación   0506400100  Igor Peralta                            
+                                                           The SAS System                        18:29 Monday, December 13, 2021   3
+
+                 Porce                                                  Porce                                                    
+                 ntaje                                                  ntaje                                                    
+                 Cumpl                                                  Cumpl                                                    
+   Umbra  Umbra  imien                                                  imien                                                  SE
+       l      l     to                                                     to                                                  MA
+   Mínim  Objet  Regis                                                  Impor                                                  FO
+       o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo     te     Suma Saldos Cumplen      Suma Saldos Objeto  RO
+   100.0  100.0  100.0                      32                      32   0.00                    0.00                    0.00  SI
+   100.0  100.0  100.0                     210                     210   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0               9,756,447               9,756,447   0.00                    0.00                    0.00  SI
+   95.00  97.00  99.94              29,966,427              29,985,492   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0              10,085,157              10,085,157   0.00                    0.00                    0.00  SI
+   90.00  100.0   0.00                       0                      48   0.00                    0.00                    0.00  NO
+   90.00  100.0   0.00                       0                       0   0.00                    0.00                    0.00  NO
+   90.00  100.0  100.0                      33                      33   0.00                    0.00                    0.00  SI
+   90.00  100.0   5.08                   2,172                  42,715   0.00                    0.00                    0.00  NO
+   80.00  95.00  100.0                  99,616                  99,616   0.00                    0.00                    0.00  SI
+   80.00  95.00  100.0                  99,616                  99,616  100.0       47,126,965,641.47       47,126,965,641.47  SI
+   99.50  100.0  100.0              10,085,157              10,085,157   0.00                    0.00                    0.00  SI
+   90.00  95.00  94.98               8,158,189               8,589,319   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0               8,589,319               8,589,319  100.0    1,806,030,211,510.05    1,806,030,211,510.05  SI
+   97.00  98.00  100.0               8,589,318               8,589,318   0.00                    0.00                    0.00  SI
+   95.00  98.00  37.51               3,221,942               8,589,318  81.21    1,466,677,428,903.81    1,806,030,183,449.95  NO
+   97.00  98.00  100.0               8,591,489               8,591,489   0.00                    0.00                    0.00  SI
+   95.00  98.00  100.0               8,591,489               8,591,489  100.0    1,885,186,951,180.11    1,885,186,951,180.11  SI
+   90.00  95.00  100.0                 307,640                 307,640   0.00                    0.00                    0.00  SI
+   95.00  98.00  100.0              34,708,361              34,709,272   0.00                    0.00                    0.00  SI
+   95.00  98.00  100.0              34,708,077              34,709,272   0.00                    0.00                    0.00  SI
+   97.00  98.00  99.43              29,856,059              30,028,326   0.00                    0.00                    0.00  SI
+   95.00  98.00  97.61              29,311,232              30,028,326  99.18    4,726,435,111,129.84    4,765,387,210,008.80  SI
+   90.00  95.00  99.99               1,360,377               1,360,488   0.00                    0.00                    0.00  SI
+   90.00  95.00  99.28                 916,738                 923,352   0.00                    0.00                    0.00  SI
+   95.00  100.0  74.25                 218,197                 293,867   0.00                    0.00                    0.00  NO
+   95.00  100.0  100.0                 144,262                 144,262   0.00                    0.00                    0.00  SI
+   95.00  100.0  99.99                 100,371                 100,378   0.00                    0.00                    0.00  SI
+   80.00  85.00  90.18                 298,205                 330,668   0.00                    0.00                    0.00  SI
+   95.00  98.00  99.78              34,634,012              34,709,272   0.00                    0.00                    0.00  SI
+   95.00  98.00  99.08               9,992,405              10,085,157   0.00                    0.00                    0.00  SI
+   90.00  95.00  100.0                 673,837                 673,841   0.00                    0.00                    0.00  SI
+   95.00  100.0  39.62               3,995,929              10,085,157   0.00                    0.00                    0.00  NO
+   95.00  100.0  97.18               9,800,531              10,085,157   0.00                    0.00                    0.00  SI
+   90.00  95.00  97.98                 323,986                 330,668  97.98              323,986.00              330,668.00  SI

@@ -1,0 +1,69 @@
++ DSLOGS=/SREPGRM/Shells/Logs
++ FILENAM=Crea_layout_DQ
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/Crea_layout_DQ_20211123_1915.log
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1915 INICIA PROCESO CONCENTRACIONES'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO CREA LAYOUT                                       *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 23/11/2021 hora:19:15:25 '            *'
++ echo '***********************************************************************************************'
++ PASO_00
++ TABLA=0
++ '[' 0 -ne 0 ']'
++ DSLOGS=/SREPGRM/Shells/Logs
++ FILENAM=A00_Includes
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/A00_Includes_20211123_1915.log
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1915 INICIA PROCESO ASSET'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO ASSET                                             *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 23/11/2021 hora:19:15:26 '            *'
++ echo '***********************************************************************************************'
++ PASO_01
++ AA=0
++ '[' 0 -ne 0 ']'
++ DSLOGS=/SREPGRM/Shells/Logs
++ FILENAM=Concentraciones_ejecucion
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/Concentraciones_ejecucion_20211123_1922.log
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1922 INICIA PROCESO CONCENTRACIONES'
++ echo '***********************************************************************************************'
++ echo '*                                   PROCESO CONCENTRACIONES                                   *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 23/11/2021 hora:19:22:53 '            *'
++ echo '***********************************************************************************************'
++ PASO_02
++ CONC=0
++ '[' 0 -ne 0 ']'
++ FILENAM=archivos
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ LOGFILE=/SREPGRM/Shells/Logs/archivos_20211123_1930.log
++ APPWORK=/mexmetodologias/work/
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211123_1930 INICIA PROCESO CONCENTRACIONES'
++ echo '***********************************************************************************************'
++ echo '*                                   CREA ARCHIVO DQLEGACY                                     *'
+++ /bin/date '+dia: %d/%m/%Y hora:%H:%M:%S'
++ echo '*                            FECHA: ' dia: 23/11/2021 hora:19:30:56 '            *'
++ echo '***********************************************************************************************'
++ PASO_03
++ FILES=0
++ '[' 0 -ne 0 ']'
++ /bin/mv -f /SREPGRM/Asset_Allocation/INPUT/ESQUEMA.xlsx /SREPGRM/Asset_Allocation/INPUT/_ESQUEMA.xlsx
++ exit 0

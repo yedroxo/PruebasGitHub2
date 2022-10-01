@@ -1,0 +1,44 @@
+#---20211214_1959 INICIA PROCESO RDA MENSUAL
+***********************************************************************************************
+*                                   PROCESO RDA MENSUAL                                       *
+*                            FECHA:  dia: 14/12/2021 hora:19:59:51             *
+***********************************************************************************************
++ PASO=Principal_RDA_Minorista
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211214_1959 Iniciar: SAS Principal_RDA_Minorista'
+#---20211214_1959 Iniciar: SAS Principal_RDA_Minorista
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /sasgrid94/SASHome/SASFoundation/9.4/sas /SREPGRM/RDA_Minorista/Codigos/Principal_RDA_Minorista.sas -log /SREPGRM/Shells/Logs/Principal_RDA_Minorista_SAS_20211214_1959.log -print /SREPGRM/Shells/Logs/Principal_RDA_Minorista_20211214_1959.lst -work /mexmetodologias/work/
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 98: expr: command not found
+/sasgrid94/SASHome/SASFoundation/9.4/sas: line 75: [: : integer expression expected
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 899: sed: command not found
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 902: uname: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: grep: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
+/sasgrid94/thirdparty/share/lsf/conf/profile.lsf: line 925: sed: No such file or directory
++ status=2
++ echo 'El codigo de salida es:' 2
+El codigo de salida es: 2
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /bin/chmod 777 /SREPGRM/Shells/Logs/Principal_RDA_Minorista_SAS_20211214_1959.log
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ /bin/chmod 777 /SREPGRM/Shells/Logs/Principal_RDA_Minorista_20211214_1959.lst
+/bin/chmod: cannot access `/SREPGRM/Shells/Logs/Principal_RDA_Minorista_20211214_1959.lst': No such file or directory
++ '[' 2 -ne 0 ']'
++ fError
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211214_1959 ERROR: -EXISTE ERROR- STOP'
+#---20211214_1959 ERROR: -EXISTE ERROR- STOP
+++ fDate
+++ /bin/date +%Y%m%d_%H%M
++ echo '#---20211214_1959 ERROR: SAS Principal_RDA_Minorista'
+#---20211214_1959 ERROR: SAS Principal_RDA_Minorista
++ exit 1

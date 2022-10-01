@@ -1,0 +1,5 @@
++ fecha=20211119
+++ awk '-F|' '{print $0}'
+++ grep '|1|' /SREPGRM/DQLEGACY_RIESGOS/DIARIA/DATASYSTEMNEW_DQ13_20211119.txt
++ echo '|1|BCBS_Excel_Liquidez_Diaria'
+|1|BCBS_Excel_Liquidez_Diaria

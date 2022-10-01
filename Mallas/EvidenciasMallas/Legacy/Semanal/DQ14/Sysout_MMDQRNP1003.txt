@@ -1,0 +1,3 @@
+++ grep '|1|' /SREPGRM/DQLEGACY_RIESGOS/DIARIA/DATASYSTEMNEW_DQ14.txt
+++ awk '-F|' '{print $0}'
++ echo

@@ -1,0 +1,54 @@
+                                                           The SAS System                        18:29 Monday, December 13, 2021   1
+
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                                                                                  
+                                                                              Regla de                                            
+       Fecha  Reporte                         Métrica                         calidad     Responsable                             
+  2021-11-30  IFRS9_Output                    Stage                           0500000300  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    PD LT                           0500000400  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Clave CCF                       05002M0100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Clave EAD                       05003M0100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Clave LGD                       05004M0100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Clave PD                        05005M0100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    EAD                             0502600100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Calificación WL                 0509400100  María Fernanda Soto                     
+  2021-11-30  IFRS9_Output                    PD                              0510800100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    PD de originación stock (carga  0511000100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Perdida Esperada                0511100100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Perdida Esperada                0511100101  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Perdida Esperada                0511100200  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Perdida Esperada                0511100300  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Perdida Esperada EAD            0511200100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Perdida Esperada                0511200200  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Saldo                           0512300100  Jose Angel Juarez Ordoñez               
+  2021-11-30  IFRS9_Output                    Stages                          0513200100  Jose Angel Juarez Ordoñez               
+                                                           The SAS System                        18:29 Monday, December 13, 2021   2
+
+                 Porce                                                  Porce                                                    
+                 ntaje                                                  ntaje                                                    
+                 Cumpl                                                  Cumpl                                                    
+   Umbra  Umbra  imien                                                  imien                                                  SE
+       l      l     to                                                     to                                                  MA
+   Mínim  Objet  Regis                                                  Impor                                                  FO
+       o    ivo    tro    Nº Registros Cumplen   Nº Registros Objetivo     te     Suma Saldos Cumplen      Suma Saldos Objeto  RO
+   95.00  100.0  100.0              10,028,254              10,028,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,028,249              10,028,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0               6,546,236               6,546,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,028,255              10,028,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,028,245              10,028,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,028,245              10,028,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,382,289              10,382,289  100.0       32,588,405,091.31       32,588,405,091.31  SI
+   100.0  100.0  100.0                     201                     201   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0                 237,208                 237,209   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0               3,226,558               3,226,623   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,382,289              10,382,289  100.0        1,316,582,917.03        1,316,582,917.03  SI
+   95.00  100.0  100.0                 910,583                 910,583  100.0        1,431,587,956.66        1,431,587,956.66  SI
+   95.00  100.0  100.0              10,028,245              10,028,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,028,254              10,028,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,382,289              10,382,289  100.0       32,588,405,091.31       32,588,405,091.31  SI
+   95.00  98.00  100.0              10,028,163              10,028,255   0.00                    0.00                    0.00  SI
+   95.00  100.0  100.0              10,382,289              10,382,289  100.0       28,676,219,889.81       28,676,219,889.81  SI
+   95.00  100.0  100.0                  17,113                  17,113  100.0        1,850,664,006.39        1,850,664,006.39  SI

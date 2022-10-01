@@ -1,0 +1,133 @@
+1                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: Unable to open SASUSER.REGSTRY. WORK.REGSTRY will be opened instead.
+NOTE: All registry changes will be lost at the end of the session.
+
+WARNING: Unable to copy SASUSER registry to WORK registry. Because of this, you will not see registry customizations during this 
+         session.
+NOTE: Unable to open SASUSER.PROFILE. WORK.PROFILE will be opened instead.
+NOTE: All profile changes will be lost at the end of the session.
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M3) 
+      Licensed to BBVA BANCOMER SA, Site 70176951.
+NOTE: This session is executing on the Linux 2.6.32-754.12.1.el6.x86_64 (LIN X64) platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 14.1
+      SAS/ETS 14.1
+      SAS/OR 14.1
+      SAS/IML 14.1
+      SAS/QC 14.1
+
+NOTE: Additional host information:
+
+ Linux LIN X64 2.6.32-754.12.1.el6.x86_64 #1 SMP Thu Mar 7 22:07:44 EST 2019 x86_64 Red Hat Enterprise Linux Server release 6.10 
+      (Santiago) 
+
+You are running SAS 9. Some SAS 8 files will be automatically converted 
+by the V9 engine; others are incompatible.  Please see 
+http://support.sas.com/rnd/migration/planning/platform/64bit.html
+
+PROC MIGRATE will preserve current SAS file attributes and is 
+recommended for converting all your SAS libraries from any 
+SAS 8 release to SAS 9.  For details and examples, please see
+http://support.sas.com/rnd/migration/index.html
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the file "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+
+NOTE: SAS initialization used:
+      real time           0.43 seconds
+      cpu time            0.04 seconds
+      
+1          LIBNAME OUTPUT '/SREPGRM/DQLEGACY_RIESGOS';
+NOTE: Libref OUTPUT was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: /SREPGRM/DQLEGACY_RIESGOS
+2          %LET RES_FINALES_HOLDING = OUTPUT.DQLEGACY;
+3          
+4          %MACRO ELIMINA_LAYOUTS();
+5          	%IF %SYSFUNC(EXIST(OUTPUT.DQLEGACY)) %THEN
+6          		%DO;
+2                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+7          			PROC SQL;
+8          				DROP TABLE OUTPUT.DQLEGACY;
+9          			QUIT;
+10         		%END;
+11         %MEND;
+12         %ELIMINA_LAYOUTS();
+NOTE: Table OUTPUT.DQLEGACY has been dropped.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.01 seconds
+      
+
+13         
+14         PROC SQL;
+15         	CREATE TABLE &RES_FINALES_HOLDING.
+16         		(
+17         		gf_cutoff_date num format=YYMMDD10. informat=DATE.,
+18         		gf_quality_rule_execution_date num format=YMDHMS. informat=DATE.,
+19         		g_data_system_country_id char(3) format=$CHAR3. informat=$3.,
+20         		gf_uuaa_id char(4) format=$CHAR4. informat=$4.,
+21         		gf_data_system_name char(40) format=$CHAR40. informat=$40.,
+22         		gf_quality_rule_drilldown_desc char(255) format=$CHAR255. informat=$255.,
+23         		gf_legacy_qr_sequential_id char(10) format=$CHAR10.,
+24         		g_quality_rule_principle_type num format=BEST4. informat=BEST4.,
+25         		g_quality_rule_type num format=BEST4. informat=BEST4.,
+26         		gf_object_physical_name char(40) format=$CHAR40. informat=$40.,
+27         		gf_field_physical_name char(40) format=$CHAR40. informat=$40.,
+28         		gf_quality_rule_compliance_per num format=5.2,
+29         		gf_qr_cplc_numerator_number num format=BEST11.,
+30         		gf_qr_cplc_denominator_number num format=BEST11.,
+31         		g_qr_execution_frequency_type char(10) format=$CHAR10. informat=$10.,
+32         		gf_qr_minimum_threshold_per num format=5.2 informat=5.2,
+33         		gf_qr_target_threshold_per num format=5.2 informat=5.2,
+34         		gf_qr_amount_field_name char(40) format=$CHAR40. informat=$40.,
+35         		gf_qr_balance_compliance_per num format=5.2,
+36         		gf_qr_numerator_amount num format=26.2,
+37         		gf_qr_denominator_amount num format=26.2
+38         		);
+NOTE: Table OUTPUT.DQLEGACY created, with 0 rows and 21 columns.
+39         QUIT;
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+40         
+41         filename sas pipe "chmod 777 /SREPGRM/DQLEGACY_RIESGOS/dqlegacy.sas7bdat";
+42         
+43         data _null_;
+44             file sas;
+45          run;
+
+NOTE: The file SAS is:
+      Pipe command="chmod 777 /SREPGRM/DQLEGACY_RIESGOS/dqlegacy.sas7bdat"
+
+Message(s) received from the pipe command:
+/usr/bin/ksh: chmod: not found
+
+3                                                          The SAS System                           19:15 Tuesday, November 23, 2021
+
+NOTE: 0 records were written to the file SAS.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.61 seconds
+      cpu time            0.06 seconds
+      

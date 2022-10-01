@@ -1,0 +1,124 @@
+
++ /opt/datio/sentry-mx/dataproc_sentry.py -ns mx.kqpd.app-id-21822.dev -jn kqpd-mx-spk-qlt-legacystatsm-01 -o 0kslj -b '{"env": {"C\
+UTOFF_DATE": "2022-06-30", "SUBSET_DATE":"2022-06-30", "DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios", "DATA2":"BCBS_Excel_Vol_Cal_Py\
+ME", "DATA3":"BCBS_Oracle_Tbl_Pyme_Form", "DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting", "DATA5":"BCBS_Oracle_Universo_Areas_Contrato_P\
+yME", "DATA6":"BCBS_SAS_Reest_Stock", "DATA7":"BCBS_SAS_TBL_REC90D_M", "DATA8":"BCBS_SAS_Tbl_Moras", "DATA9":"BCBS_SAS_VW_OFERTASPA\
+_CTE", "CONTROLM_JOB_ID":"MKQPDVP4033", "CONTROLM_JOB_FLOW":"CR-MXKQPDSEM-K02"} }'
+Deprecation Notice: The argument -e is no longer required and it will be ignored
+2022-08-31 20:41:47 [Order Id: 0kslj] [INFO] Starting Sentry execution [traceId='920ff082-5436-4845-8b81-23e9137aea6a', host='sentr\
+y-1']
+2022-08-31 20:41:47 [Order Id: 0kslj] [INFO] New job execution: ns -> mx.kqpd.app-id-21822.dev; job_name -> kqpd-mx-spk-qlt-legacys\
+tatsm-01
+2022-08-31 20:41:47 [Order Id: 0kslj] [INFO] Job body -> {'env': {'CUTOFF_DATE': '2022-06-30', 'SUBSET_DATE': '2022-06-30', 'DATA1'\
+: 'BCBS_Excel_Cuadro_de_Mandos_Envios', 'DATA2': 'BCBS_Excel_Vol_Cal_PyME', 'DATA3': 'BCBS_Oracle_Tbl_Pyme_Form', 'DATA4': 'BCBS_Or\
+acle_Tbl_dmc_rar_conting', 'DATA5': 'BCBS_Oracle_Universo_Areas_Contrato_PyME', 'DATA6': 'BCBS_SAS_Reest_Stock', 'DATA7': 'BCBS_SAS\
+_TBL_REC90D_M', 'DATA8': 'BCBS_SAS_Tbl_Moras', 'DATA9': 'BCBS_SAS_VW_OFERTASPA_CTE', 'CONTROLM_JOB_ID': 'MKQPDVP4033', 'CONTROLM_JO\
+B_FLOW': 'CR-MXKQPDSEM-K02', 'CONTROLM_ORDERID': '0kslj'}}
+2022-08-31 20:41:47 [Order Id: 0kslj] [INFO] Request execution -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-21\
+822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs
+2022-08-31 20:41:47 [Order Id: 0kslj] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"920ff082-5436-4845-8b81-23e9137aea6a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/master/t_kqpd_legacy_stats/0.1.1-SNAPSHOT/t_kqpd_legacy_stats-01.co\
+nf"},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_ORDERID":"0kslj","SUBSET_DATE":"2022-06-30","CUTOFF_DATE":"2022-06-30","DATA7":\
+"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"BCBS_SAS_Tbl_Moras","DATA3":"BC\
+BS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","DATA5":"BCBS_Oracle_Universo_Areas_Contrato_PyME","CONTROLM_JOB_ID":"MK\
+QPDVP4033","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM\
+-K02"},"status":{"id":"PENDING","updatedAt":"2022-08-31T20:41:47.289Z"},"statusHistory":[{"id":"PENDING","updatedAt":"2022-08-31T20\
+:41:47.289Z"}],"_id":"cbd303ef-152e-49c4-b645-937bec156db8","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx\
+-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/\
+kqpd-mx-spk-qlt-legacystatsm-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.ECS","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-\
+08-31T20:41:47.289Z","_updatedAt":"2022-08-31T20:41:47.289Z"}
+2022-08-31 20:41:47 [Order Id: 0kslj] [INFO] Execution request was successful. Obtained runId: cbd303ef-152e-49c4-b645-937bec156db8
+2022-08-31 20:41:47 [Order Id: 0kslj] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8
+2022-08-31 20:41:47 [Order Id: 0kslj] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"920ff082-5436-4845-8b81-23e9137aea6a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/master/t_kqpd_legacy_stats/0.1.1-SNAPSHOT/t_kqpd_legacy_stats-01.co\
+nf"},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_ORDERID":"0kslj","SUBSET_DATE":"2022-06-30","CUTOFF_DATE":"2022-06-30","DATA7":\
+"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"BCBS_SAS_Tbl_Moras","DATA3":"BC\
+BS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","CONTROLM_JOB_ID":"MKQPDVP4033","DATA5":"BCBS_Oracle_Universo_Areas_Cont\
+rato_PyME","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM\
+-K02"},"status":{"id":"PENDING","updatedAt":"2022-08-31T20:41:47.289Z"},"_id":"cbd303ef-152e-49c4-b645-937bec156db8","_locator":"//\
+dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8","_pare\
+nt":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.EC\
+S","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-08-31T20:41:47.289Z","_updatedAt":"2022-08-31T20:41:47.289Z"}
+2022-08-31 20:41:47 [Order Id: 0kslj] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-legacystatsm-01 with id cbd303ef-15\
+2e-49c4-b645-937bec156db8 is in status: {'name': 'PENDING', 'updatedAt': '2022-08-31T20:41:47.289Z'}
+2022-08-31 20:42:24 [Order Id: 0kslj] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8
+2022-08-31 20:42:25 [Order Id: 0kslj] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"920ff082-5436-4845-8b81-23e9137aea6a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/master/t_kqpd_legacy_stats/0.1.1-SNAPSHOT/t_kqpd_legacy_stats-01.co\
+nf"},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_ORDERID":"0kslj","SUBSET_DATE":"2022-06-30","CUTOFF_DATE":"2022-06-30","DATA7":\
+"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"BCBS_SAS_Tbl_Moras","DATA3":"BC\
+BS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","CONTROLM_JOB_ID":"MKQPDVP4033","DATA5":"BCBS_Oracle_Universo_Areas_Cont\
+rato_PyME","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM\
+-K02"},"status":{"id":"RUNNING","updatedAt":"2022-08-31T20:42:09.387Z"},"_id":"cbd303ef-152e-49c4-b645-937bec156db8","_locator":"//\
+dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8","_pare\
+nt":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.EC\
+S","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-08-31T20:41:47.289Z","_updatedAt":"2022-08-31T20:42:09.683Z"}
+2022-08-31 20:42:25 [Order Id: 0kslj] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-legacystatsm-01 with id cbd303ef-15\
+2e-49c4-b645-937bec156db8 is in status: {'name': 'RUNNING', 'updatedAt': '2022-08-31T20:42:09.387Z'}
+2022-08-31 20:43:11 [Order Id: 0kslj] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8
+2022-08-31 20:43:12 [Order Id: 0kslj] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"920ff082-5436-4845-8b81-23e9137aea6a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/master/t_kqpd_legacy_stats/0.1.1-SNAPSHOT/t_kqpd_legacy_stats-01.co\
+nf"},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_ORDERID":"0kslj","SUBSET_DATE":"2022-06-30","CUTOFF_DATE":"2022-06-30","DATA7":\
+"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"BCBS_SAS_Tbl_Moras","DATA3":"BC\
+BS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","CONTROLM_JOB_ID":"MKQPDVP4033","DATA5":"BCBS_Oracle_Universo_Areas_Cont\
+rato_PyME","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM\
+-K02"},"status":{"id":"RUNNING","updatedAt":"2022-08-31T20:42:09.387Z"},"_id":"cbd303ef-152e-49c4-b645-937bec156db8","_locator":"//\
+dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8","_pare\
+nt":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.EC\
+S","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-08-31T20:41:47.289Z","_updatedAt":"2022-08-31T20:42:09.683Z"}
+2022-08-31 20:43:12 [Order Id: 0kslj] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-legacystatsm-01 with id cbd303ef-15\
+2e-49c4-b645-937bec156db8 is in status: {'name': 'RUNNING', 'updatedAt': '2022-08-31T20:42:09.387Z'}
+2022-08-31 20:44:10 [Order Id: 0kslj] [INFO] Request job status -> https://dataproc.work-02.ether.igrupobbva/v3/ns/mx.kqpd.app-id-2\
+1822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8
+2022-08-31 20:44:10 [Order Id: 0kslj] [DEBUG] Response body: {"executor":"//dataproc.work-02/ns/ecs.dataproc/executors/default","si\
+ze":"XS","executionTraceId":"920ff082-5436-4845-8b81-23e9137aea6a","jobParams":{"configUrl":"https://artifactory-flegetonte.live.mx\
+.ether.igrupobbva/artifactory/datio-generic-snapshot/dq/mx/kqpd/master/t_kqpd_legacy_stats/0.1.1-SNAPSHOT/t_kqpd_legacy_stats-01.co\
+nf"},"jobEnv":{},"runParams":{},"runEnv":{"CONTROLM_ORDERID":"0kslj","SUBSET_DATE":"2022-06-30","CUTOFF_DATE":"2022-06-30","DATA7":\
+"BCBS_SAS_TBL_REC90D_M","DATA6":"BCBS_SAS_Reest_Stock","DATA9":"BCBS_SAS_VW_OFERTASPA_CTE","DATA8":"BCBS_SAS_Tbl_Moras","DATA3":"BC\
+BS_Oracle_Tbl_Pyme_Form","DATA2":"BCBS_Excel_Vol_Cal_PyME","CONTROLM_JOB_ID":"MKQPDVP4033","DATA5":"BCBS_Oracle_Universo_Areas_Cont\
+rato_PyME","DATA4":"BCBS_Oracle_Tbl_dmc_rar_conting","DATA1":"BCBS_Excel_Cuadro_de_Mandos_Envios","CONTROLM_JOB_FLOW":"CR-MXKQPDSEM\
+-K02"},"status":{"id":"SUCCESS","updatedAt":"2022-08-31T20:44:09.529Z"},"_id":"cbd303ef-152e-49c4-b645-937bec156db8","_locator":"//\
+dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs/cbd303ef-152e-49c4-b645-937bec156db8","_pare\
+nt":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/jobs/kqpd-mx-spk-qlt-legacystatsm-01/runs","_createdBy":"SENTRY-BOT@DATAPROC.EC\
+S","_type":"dataproc.Run","_ac":false,"_createdAt":"2022-08-31T20:41:47.289Z","_updatedAt":"2022-08-31T20:44:09.830Z"}
+2022-08-31 20:44:10 [Order Id: 0kslj] [INFO] The job mx.kqpd.app-id-21822.dev > kqpd-mx-spk-qlt-legacystatsm-01 with id cbd303ef-15\
+2e-49c4-b645-937bec156db8 is in status: {'name': 'SUCCESS', 'updatedAt': '2022-08-31T20:44:09.529Z'}
+2022-08-31 20:44:10 [Order Id: 0kslj] [INFO] Sending summary to psi: {"endStatus":"SUCCESS","traceId":"920ff082-5436-4845-8b81-23e9\
+137aea6a","namespace":"mx.kqpd.app-id-21822.dev","jobName":"kqpd-mx-spk-qlt-legacystatsm-01","runId":"cbd303ef-152e-49c4-b645-937be\
+c156db8","startTime":"2022-08-31T20:41:47Z","endTime":"2022-08-31T20:44:10Z","status":[{"name":"PENDING","updatedAt":"2022-08-31T20\
+:41:47.289Z"},{"name":"RUNNING","updatedAt":"2022-08-31T20:42:09.387Z"},{"name":"SUCCESS","updatedAt":"2022-08-31T20:44:09.529Z"}],\
+"errors":false,"error_description":null,"country":"mx","sentryHost":"sentry-1"}
+*** JOB EXECUTION SUMMARY ***
+{
+    "endStatus": "SUCCESS",
+    "traceId": "920ff082-5436-4845-8b81-23e9137aea6a",
+    "namespace": "mx.kqpd.app-id-21822.dev",
+    "jobName": "kqpd-mx-spk-qlt-legacystatsm-01",
+    "runId": "cbd303ef-152e-49c4-b645-937bec156db8",
+    "startTime": "2022-08-31T20:41:47Z",
+    "endTime": "2022-08-31T20:44:10Z",
+    "status": [
+        {
+            "name": "PENDING",
+            "updatedAt": "2022-08-31T20:41:47.289Z"
+        },
+        {
+            "name": "RUNNING",
+            "updatedAt": "2022-08-31T20:42:09.387Z"
+        },
+        {
+            "name": "SUCCESS",
+            "updatedAt": "2022-08-31T20:44:09.529Z"
+        }
+    ],
+    "errors": false,
+    "country": "mx",
+    "sentryHost": "sentry-1"
+}
+*****************************

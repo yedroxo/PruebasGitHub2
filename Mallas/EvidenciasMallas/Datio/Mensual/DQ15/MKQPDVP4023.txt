@@ -1,0 +1,83 @@
+Environment information:
++-------------------------+--------------------------------------------------+
+|Connection Profile Name  |MX_DATIO_NS                                       |
++-------------------------+--------------------------------------------------+
+
+
+=============================================
+Operation: Execute
+Step name: 'GET_TOKEN'
+=============================================
+REST service details: 
+--------------------
+
+method: 	POST
+URL: 	https://daas.work.mx.ether.igrupobbva path: /auth/token?grant_type=client_credentials
+
+Response: 
+--------
+HttpResponseInfo [m_statusCode=200, m_statusMesg=OK, m_message={"access_token":"eyJ6aXAiOiJERUYiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.GN6tXJP2t5vyGLH6gVX3ZVntqGrl0FYn2XpjmX-sh-lhhswBCmxh-uJcjgjOfM5onRedoQNmbP--hArTXySKdCGhj6GIgT5HFfGdn0t9TsurOEjkB8Cl_MWD4W_7EP0iVmx_T55Ix6SIvYClhc_n08Bfnv_ADty-DvIxS28yWOXb9cMVWchrt_mi482ABoOoSwJkqDOkWMP78YcK_9s0jdrKvh4mGfFJEQrWi-WxtQQJLxPTGmhcYLV6G7VyKuqcA5mecfWPcQnXPQsRvBmii0vw6ND1JaaWtwP7cdQAsbn9QYIPc4X-i-E3Ni8LHdefNhta1znAXlkQBLlyWlY_dQ.fCGD7NzJAQDpxmBf.nfLbdNzkdbNEjcsVDG7Ca1gl4os3B90v372azrF3j6nSpSU4DmaJhZD_srHqYRHZdrrfRB-Z-afzeeqAhg3MtA4VuatcIh1wrw88IeMq-zOIHfW7KKUhXzVzfzBjz4d5Qpl4wdAHwucI5LGfDaCoa7NTRX6GTnYkUSmmiaHhMFwtoWtoC5xduYqxxsuKdzfiR1tBh3POLZglAX13vAbE0_s6n3PCFvbHkrDhQGXLAJVJf7TfbmJ2-_jbPWfpNzHCUngLkzjBuybbOSUTGmuflqz6OaP7mYwrLvatdtrK53LTuSsFcegkYoNzZUzoJOvGhGz-OkzC0FhDJaR5OW2udm2V6m2Finio21l9VuDvBBux0wHMgG3Jd_smNB0TBcDGLkrCWu6oOpoTXEQdGbLUFVGjSZgaILR_KMKeROzoelvKg1NVE5o5tv4jgRi6meNYUNwAEK4pM99WMvL1pNeLFImS1sBfHRQE24JQoJPG-M5zEqGP7aTBYYWPzHHGXsAbIh8RNPguBdcDMKqsggE2JnyVjTVLnWQQJ70.TreRMltxJi8b6viQACJfzA","token_type":"jwt","expires_in":35999,"scope":"ether;armadillo/admin-us ether;armadillo/admin-pe ether;armadillo/automation-api-pe ether;armadillo/admin-mx ether;armadillo/admin-co ether;armadillo/admin-ar"}, m_contentType=application/json;charset=UTF-8, m_headers=null:[HTTP/1.1 200 OK]; x-frame-options:[DENY]; x-envoy-upstream-service-time:[49]; x-rho-traceid:[4fd5726f7a64ae05c35bde23816db87cac3459f0]; vnd.bbva.security-transaction-id:[4fd5726f7a64ae05c35bde23816db87cac3459f0]; Connection:[keep-alive]; Server:[my-server]; pragma:[no-cache]; cache-control:[no-store]; Strict-Transport-Security:[max-age=63072000; includeSubDomains; preload]; x-content-type-options:[nosniff]; x-xss-protection:[1; mode=block]; Transfer-Encoding:[chunked]; Date:[Wed, 27 Oct 2021 23:21:32 GMT]; x-trace-id:[4fd5726f7a64ae05c35bde23816db87cac3459f0]; Content-Type:[application/json;charset=UTF-8]; ]
+Extracted runtime parameter:
+----------------------------
+'TOKEN'==> 'eyJ6aXAiOiJERUYiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.GN6tXJP2t5vyGLH6gVX3ZVntqGrl0FYn2XpjmX-sh-lhhswBCmxh-uJcjgjOfM5onRedoQNmbP--hArTXySKdCGhj6GIgT5HFfGdn0t9TsurOEjkB8Cl_MWD4W_7EP0iVmx_T55Ix6SIvYClhc_n08Bfnv_ADty-DvIxS28yWOXb9cMVWchrt_mi482ABoOoSwJkqDOkWMP78YcK_9s0jdrKvh4mGfFJEQrWi-WxtQQJLxPTGmhcYLV6G7VyKuqcA5mecfWPcQnXPQsRvBmii0vw6ND1JaaWtwP7cdQAsbn9QYIPc4X-i-E3Ni8LHdefNhta1znAXlkQBLlyWlY_dQ.fCGD7NzJAQDpxmBf.nfLbdNzkdbNEjcsVDG7Ca1gl4os3B90v372azrF3j6nSpSU4DmaJhZD_srHqYRHZdrrfRB-Z-afzeeqAhg3MtA4VuatcIh1wrw88IeMq-zOIHfW7KKUhXzVzfzBjz4d5Qpl4wdAHwucI5LGfDaCoa7NTRX6GTnYkUSmmiaHhMFwtoWtoC5xduYqxxsuKdzfiR1tBh3POLZglAX13vAbE0_s6n3PCFvbHkrDhQGXLAJVJf7TfbmJ2-_jbPWfpNzHCUngLkzjBuybbOSUTGmuflqz6OaP7mYwrLvatdtrK53LTuSsFcegkYoNzZUzoJOvGhGz-OkzC0FhDJaR5OW2udm2V6m2Finio21l9VuDvBBux0wHMgG3Jd_smNB0TBcDGLkrCWu6oOpoTXEQdGbLUFVGjSZgaILR_KMKeROzoelvKg1NVE5o5tv4jgRi6meNYUNwAEK4pM99WMvL1pNeLFImS1sBfHRQE24JQoJPG-M5zEqGP7aTBYYWPzHHGXsAbIh8RNPguBdcDMKqsggE2JnyVjTVLnWQQJ70.TreRMltxJi8b6viQACJfzA' 
+
+=============================================
+Operation: Execute
+Step name: 'LAUNCH_JOB'
+=============================================
+REST service details: 
+--------------------
+
+method: 	POST
+URL: 	https://daas.work.mx.ether.igrupobbva path: /services/automation-api/v2/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs
+
+Response: 
+--------
+HttpResponseInfo [m_statusCode=201, m_statusMesg=null, m_message={"data":{"jobName":"kqpd-mx-spk-qlt-sasqualityresultsr-01","status":{"id":"PENDING","name":"PENDING"},"internalRunId":"","createdDate":"2021-10-27T23:21:32.910796Z","params":[{"CUTOFF_DATE":"2020-12-31","SUFFIX":"DQ15","SUBSET_DATE":"2020-12-31","CONTROLM_JOB_ID":"MKQPDVP4023","TRACE_ID":"ea0bdfbb04b53909748495cd611909b4562feb19","DATA1":"BCBS_Excel_Liquidez_Mensual","CONTROLM_JOB_FLOW":"BC-MXFRASEM-T02","AAUUID":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","FILE_DATE":"20201231"}],"runId":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","_id":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/e6e8233f-9c3a-4948-a34e-1a3af85664ca","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"controlm","_updatedBy":null,"_type":"dataproc.run","_ac":false,"_createdAt":"2021-10-27T23:21:32.910796Z","_updatedAt":"2021-10-27T23:21:32.910796Z","id":"e6e8233f-9c3a-4948-a34e-1a3af85664ca"}}, m_contentType=application/json;charset=UTF-8, m_headers=null:[HTTP/1.1 201]; x-frame-options:[DENY]; location:[/v2/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/e6e8233f-9c3a-4948-a34e-1a3af85664ca]; deprecation:[true]; X-LP:[2]; X-RHO-TRACEID:[ea0bdfbb04b53909748495cd611909b4562feb19]; Connection:[keep-alive]; vnd.bbva.Security-Transaction-Id:[ea0bdfbb04b53909748495cd611909b4562feb19]; Server:[my-server]; marathonlb-host:[agent-public-3]; pragma:[no-cache]; cache-control:[no-cache, no-store, max-age=0, must-revalidate]; x-content-type-options:[nosniff]; x-xss-protection:[1; mode=block]; Strict-Transport-Security:[max-age=63072000; includeSubDomains; preload]; expires:[0]; Transfer-Encoding:[chunked]; Date:[Wed, 27 Oct 2021 23:21:32 GMT]; strict-transport-security:[max-age=31536000 ; includeSubDomains]; X-TRACE-ID:[ea0bdfbb04b53909748495cd611909b4562feb19]; Content-Type:[application/json;charset=UTF-8]; ]
+Extracted runtime parameter:
+----------------------------
+'RUNID'==> 'e6e8233f-9c3a-4948-a34e-1a3af85664ca' 
+
+=============================================
+Operation: MonitorCompletion
+Step name: 'Verify operation completion'
+=============================================
+REST service details: 
+--------------------
+
+method: 	GET
+URL: 	https://daas.work.mx.ether.igrupobbva path: /services/automation-api/v2/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/e6e8233f-9c3a-4948-a34e-1a3af85664ca
+
+Response: 
+--------
+HttpResponseInfo [m_statusCode=200, m_statusMesg=null, m_message={"data":{"jobName":"kqpd-mx-spk-qlt-sasqualityresultsr-01","status":{"id":"PENDING","name":"PENDING"},"internalRunId":"","createdDate":"2021-10-27T23:21:32.910796Z","params":[{"CUTOFF_DATE":"2020-12-31","SUFFIX":"DQ15","SUBSET_DATE":"2020-12-31","CONTROLM_JOB_ID":"MKQPDVP4023","TRACE_ID":"ea0bdfbb04b53909748495cd611909b4562feb19","DATA1":"BCBS_Excel_Liquidez_Mensual","CONTROLM_JOB_FLOW":"BC-MXFRASEM-T02","AAUUID":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","FILE_DATE":"20201231"}],"runId":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","_id":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/e6e8233f-9c3a-4948-a34e-1a3af85664ca","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"controlm","_updatedBy":null,"_type":"dataproc.run","_ac":false,"_createdAt":"2021-10-27T23:21:32.910796Z","_updatedAt":"2021-10-27T23:21:32.910796Z","id":"e6e8233f-9c3a-4948-a34e-1a3af85664ca"}}, m_contentType=application/json;charset=UTF-8, m_headers=null:[HTTP/1.1 200]; x-frame-options:[DENY]; deprecation:[true]; X-LP:[2]; X-RHO-TRACEID:[2e3fb5942e5fb5ab1bbc78196af5804335eb0db1]; Connection:[keep-alive]; vnd.bbva.Security-Transaction-Id:[2e3fb5942e5fb5ab1bbc78196af5804335eb0db1]; Server:[my-server]; marathonlb-host:[agent-public-3]; pragma:[no-cache]; cache-control:[no-cache, no-store, max-age=0, must-revalidate]; x-content-type-options:[nosniff]; x-xss-protection:[1; mode=block]; Strict-Transport-Security:[max-age=63072000; includeSubDomains; preload]; expires:[0]; Vary:[Accept-Encoding]; Transfer-Encoding:[chunked]; Date:[Wed, 27 Oct 2021 23:21:33 GMT]; strict-transport-security:[max-age=31536000 ; includeSubDomains]; X-TRACE-ID:[2e3fb5942e5fb5ab1bbc78196af5804335eb0db1]; Content-Type:[application/json;charset=UTF-8]; ]
+
+=============================================
+Operation: MonitorCompletion
+Step name: 'Verify operation completion'
+=============================================
+REST service details: 
+--------------------
+
+method: 	GET
+URL: 	https://daas.work.mx.ether.igrupobbva path: /services/automation-api/v2/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/e6e8233f-9c3a-4948-a34e-1a3af85664ca
+
+Response: 
+--------
+HttpResponseInfo [m_statusCode=200, m_statusMesg=null, m_message={"data":{"jobName":"kqpd-mx-spk-qlt-sasqualityresultsr-01","status":{"id":"SUCCESS","name":"SUCCESS"},"internalRunId":"","createdDate":"2021-10-27T23:21:32.910796Z","completedDate":"2021-10-27T23:23:06.975Z","params":[{"CUTOFF_DATE":"2020-12-31","SUFFIX":"DQ15","SUBSET_DATE":"2020-12-31","CONTROLM_JOB_ID":"MKQPDVP4023","TRACE_ID":"ea0bdfbb04b53909748495cd611909b4562feb19","DATA1":"BCBS_Excel_Liquidez_Mensual","CONTROLM_JOB_FLOW":"BC-MXFRASEM-T02","AAUUID":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","FILE_DATE":"20201231"}],"runId":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","_id":"e6e8233f-9c3a-4948-a34e-1a3af85664ca","_locator":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs/e6e8233f-9c3a-4948-a34e-1a3af85664ca","_parent":"//dataproc.work-02/ns/mx.kqpd.app-id-21822.dev/groups/processing/jobs/kqpd-mx-spk-qlt-sasqualityresultsr-01/runs","_createdBy":"controlm","_updatedBy":null,"_type":"dataproc.run","_ac":false,"_createdAt":"2021-10-27T23:21:32.910796Z","_updatedAt":"2021-10-27T23:21:32.910796Z","id":"e6e8233f-9c3a-4948-a34e-1a3af85664ca"}}, m_contentType=application/json;charset=UTF-8, m_headers=null:[HTTP/1.1 200]; x-frame-options:[DENY]; deprecation:[true]; X-LP:[2]; X-RHO-TRACEID:[abcb4b320e3cc4dd5f4c20757e4978cb722006f4]; Connection:[keep-alive]; vnd.bbva.Security-Transaction-Id:[abcb4b320e3cc4dd5f4c20757e4978cb722006f4]; Server:[my-server]; marathonlb-host:[agent-public-3]; pragma:[no-cache]; cache-control:[no-cache, no-store, max-age=0, must-revalidate]; x-content-type-options:[nosniff]; x-xss-protection:[1; mode=block]; Strict-Transport-Security:[max-age=63072000; includeSubDomains; preload]; expires:[0]; Vary:[Accept-Encoding]; Transfer-Encoding:[chunked]; Date:[Wed, 27 Oct 2021 23:23:33 GMT]; strict-transport-security:[max-age=31536000 ; includeSubDomains]; X-TRACE-ID:[abcb4b320e3cc4dd5f4c20757e4978cb722006f4]; Content-Type:[application/json;charset=UTF-8]; ]
+
+
+
+
+Job statistics:
++-------------------------+-------------------------+
+|Start Time               |20211027182132           |
++-------------------------+-------------------------+
+|End Time                 |20211027182333           |
++-------------------------+-------------------------+
+|Elapsed Time             |12063                    |
++-------------------------+-------------------------+
+Exit Code    = 0
+Exit Message = Normal completion
+
+

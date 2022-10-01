@@ -1,0 +1,3 @@
++ ctmfw /SREPGRM/RDA_Minorista/Setting/Configuracion_RDA_Minorista.xlsx CREATE 0 60 10 3 10
+0125 18:01:00 : File '/SREPGRM/RDA_Minorista/Setting/Configuracion_RDA_Minorista.xlsx' exists, it's current size is 59379 bytes . id=1.
+0125 18:01:30 : File transfer was completed. The size of file '/SREPGRM/RDA_Minorista/Setting/Configuracion_RDA_Minorista.xlsx' is 59379 bytes. id=1. Modified 13/01/2022 18:41
