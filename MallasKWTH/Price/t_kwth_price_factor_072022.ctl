@@ -1,0 +1,1 @@
+20220729| DATIO|t_kwth_price_factor_072022|000000000000066|t_kwth_price_factor

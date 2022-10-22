@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported at 24-07-2022 20:31:50-->
+<DEFTABLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Folder.xsd">
+    <FOLDER DATACENTER="CTM_CTRLMCCR" VERSION="900" PLATFORM="UNIX" FOLDER_NAME="CR-MXKWTHMEN-T02" LAST_UPLOAD="20220721233014UTC" FOLDER_ORDER_METHOD="SYSTEM" REAL_FOLDER_ID="0" TYPE="1" USED_BY_CODE="0">
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4001" JOBNAME="MKWTHVP4001" DESCRIPTION="QA REGLAS BASICAS STAGING - Market Emis Factors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="marcoantonio.martinez.uribe.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_market_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ STAGING" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="marketemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-marketemisfactors-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;DATA_DATE&quot;: &quot;%%PARM3&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />			
+            <OUTCOND NAME="MKWTHVP4001-TO-MKWTHCP4001" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHCP4001" JOBNAME="MKWTHCP4001" DESCRIPTION="INGESTA RAW - Market Emis Factors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="marcoantonio.martinez.uribe.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_market_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="INGESTA RAW" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="marketemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />			
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-krb-inr-marketemisfactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;DATA_DATE&quot;: &quot;%%PARM3&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHVP4001-TO-MKWTHCP4001" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />			
+            <OUTCOND NAME="MKWTHVP4001-TO-MKWTHCP4001" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHCP4001-TO-MKWTHCP4002" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHCP4002" JOBNAME="MKWTHCP4002" DESCRIPTION="INGESTA MASTER - Market Emis Factors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="marcoantonio.martinez.uribe.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_market_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="INGESTA MASTER" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="marketemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />			
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-krb-inm-marketemisfactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHCP4001-TO-MKWTHCP4002" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />			
+            <OUTCOND NAME="MKWTHCP4001-TO-MKWTHCP4002" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHCP4002-TO-MKWTHVP4002" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4002" JOBNAME="MKWTHVP4002" DESCRIPTION="QA REGLAS BASICAS RAW - Market Emis Factors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="marcoantonio.martinez.uribe.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_market_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ RAW" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="marketemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />			
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-marketemisfactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;DATA_DATE&quot;: &quot;%%PARM3&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHCP4002-TO-MKWTHVP4002" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />			
+            <OUTCOND NAME="MKWTHCP4002-TO-MKWTHVP4002" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHVP4002-TO-MKWTHVP4003" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4003" JOBNAME="MKWTHVP4003" DESCRIPTION="QA REGLAS BASICAS MASTER - Market Emis Factors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="marcoantonio.martinez.uribe.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_market_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ MASTER" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="marketemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="2021-01-01" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-marketemisfactorm-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;SUBSET_DATE&quot;:&quot;%%PARM3&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHVP4002-TO-MKWTHVP4003" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHVP4002-TO-MKWTHVP4003" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHVP4003-TO-MKWTHDP4001" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHDP4001" JOBNAME="MKWTHDP4001" DESCRIPTION="BORRADO STAGING - Market Emis Factors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="marcoantonio.martinez.uribe.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_market_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="BORRADO" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="marketemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn  -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;HADOOP_MODE&quot;: &quot;REMOVE&quot;, &quot;HADOOP_PATH&quot;: &quot;/in/staging/ratransmit/sas/bcbs/DQLEGACY_%%SUFIJO._%%PARM1..c*&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;}}" />
+            <INCOND NAME="MKWTHVP4003-TO-MKWTHDP4001" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />			
+            <OUTCOND NAME="MKWTHVP4003-TO-MKWTHDP4001" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+		
+	
+	
+		<JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4004" JOBNAME="MKWTHVP4004" DESCRIPTION="QA REGLAS BASICAS STAGING - Energy Emisfactors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="joseantonio.castillero.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_energy_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ STAGING" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="energyemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-energyemisfactors-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;DATA_DATE&quot;: &quot;%%PARM3&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MMDQRTP4103-TO-MKWTHVP4004" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MMDQRTP4103-TO-MKWTHVP4004" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHVP4004-TO-MKWTHCP4003" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHCP4003" JOBNAME="MKWTHCP4003" DESCRIPTION="INGESTA RAW - Energy Emisfactors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="joseantonio.castillero.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_energy_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="INGESTA RAW" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="energyemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-krb-inr-energyemisfactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;DATA_DATE&quot;: &quot;%%PARM3&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHVP4004-TO-MKWTHCP4003" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHVP4004-TO-MKWTHCP4003" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHCP4003-TO-MKWTHCP4004" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHCP4004" JOBNAME="MKWTHCP4004" DESCRIPTION="INGESTA MASTER - Energy Emisfactors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="joseantonio.castillero.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_energy_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="INGESTA MASTER" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="energyemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />			
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-krb-inm-energyemisfactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHCP4003-TO-MKWTHCP4004" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHCP4003-TO-MKWTHCP4004" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHCP4004-TO-MKWTHVP4005" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4005" JOBNAME="MKWTHVP4005" DESCRIPTION="QA REGLAS BASICAS RAW - Energy Emisfactors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="joseantonio.castillero.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_energy_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ RAW" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="energyemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />	
+			<VARIABLE NAME="%%PARM4" VALUE="2021-03-01" />			
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-energyemisfactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;DATA_DATE&quot;: &quot;%%PARM3&quot;, &quot;SUBSET_DATE&quot;:&quot;%%PARM4&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHCP4004-TO-MKWTHVP4005" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHCP4004-TO-MKWTHVP4005" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHVP4005-TO-MKWTHVP4006" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4006" JOBNAME="MKWTHVP4006" DESCRIPTION="QA REGLAS BASICAS MASTER - Energy Emisfactors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="joseantonio.castillero.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_energy_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ MASTER" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="energyemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+			<VARIABLE NAME="%%PARM4" VALUE="2021-03-01" />			
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-energyemisfactorm-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;SUBSET_DATE&quot;:&quot;%%PARM4&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHVP4005-TO-MKWTHVP4006" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHVP4005-TO-MKWTHVP4006" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHVP4006-TO-MKWTHDP4002" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHDP4002" JOBNAME="MKWTHDP4002" DESCRIPTION="BORRADO STAGING - Energy Emisfactors" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="joseantonio.castillero.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_energy_emis_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="BORRADO" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="energyemisfactors" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$ODATE" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn  -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;HADOOP_MODE&quot;: &quot;REMOVE&quot;, &quot;HADOOP_PATH&quot;: &quot;/in/staging/ratransmit/sas/bcbs/DQLEGACY_%%SUFIJO._%%PARM1..c*&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;}}" />
+            <INCOND NAME="MKWTHVP4006-TO-MKWTHDP4002" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHVP4006-TO-MKWTHDP4002" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+		
+		
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4007" JOBNAME="MKWTHVP4007" DESCRIPTION="QA REGLAS BASICAS STAGING - Price Factor" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="patricia.samano.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_price_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ STAGING" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="pricefactorr" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%$OYEAR.%%OMONTH.01 -1" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-pricefactors-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MMDQRTP4103-TO-MKWTHVP4007" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MMDQRTP4103-TO-MKWTHVP4007" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHVP4007-TO-MKWTHCP4005" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHCP4005" JOBNAME="MKWTHCP4005" DESCRIPTION="INGESTA RAW - Price Factor" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="patricia.samano.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_price_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="INGESTA RAW" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="pricefactorr" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%$OYEAR.%%OMONTH.01 -1" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-krb-inr-pricefactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHVP4007-TO-MKWTHCP4005" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHVP4007-TO-MKWTHCP4005" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHCP4005-TO-MKWTHCP4006" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHCP4006" JOBNAME="MKWTHCP4006" DESCRIPTION="INGESTA MASTER - Price Factor" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="patricia.samano.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_price_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="INGESTA MASTER" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="pricefactorr" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%$OYEAR.%%OMONTH.01 -1" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%KIRBYREPARTITION" VALUE="1" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-krb-inm-pricefactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;GF_CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;KIRBY_REPARTITION&quot;:&quot;%%KIRBYREPARTITION&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHCP4005-TO-MKWTHCP4006" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHCP4005-TO-MKWTHCP4006" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHCP4006-TO-MKWTHVP4008" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4008" JOBNAME="MKWTHVP4008" DESCRIPTION="QA REGLAS BASICAS RAW - Price Factor" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="patricia.samano.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_price_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ RAW" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="pricefactorr" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%$OYEAR.%%OMONTH.01 -1" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-pricefactorr-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;CUTOFF_DATE&quot;:&quot;%%PARM2&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHCP4006-TO-MKWTHVP4008" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHCP4006-TO-MKWTHVP4008" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHVP4008-TO-MKWTHVP4009" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHVP4009" JOBNAME="MKWTHVP4009" DESCRIPTION="QA REGLAS BASICAS MASTER - Price Factor" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="patricia.samano.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_price_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="DQ MASTER" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="pricefactorr" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%$OYEAR.%%OMONTH.01 -1" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn kwth-mx-spk-qlt-pricefactorm-01 -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;GF_CUTOFF_DATE&quot;: &quot;%%PARM2&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;, &quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;} }" />
+            <INCOND NAME="MKWTHVP4008-TO-MKWTHVP4009" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHVP4008-TO-MKWTHVP4009" ODATE="ODAT" SIGN="-" />
+            <OUTCOND NAME="MKWTHVP4009-TO-MKWTHDP4003" ODATE="ODAT" SIGN="+" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+        <JOB JOBISN="0" APPLICATION="KWTH-MX-DATIO" SUB_APPLICATION="KWTH-RKS-DATIO-CCR" MEMNAME="MKWTHDP4003" JOBNAME="MKWTHDP4003" DESCRIPTION="BORRADO STAGING - Price Factor" CREATED_BY="XMY0139" RUN_AS="sentry" CRITICAL="0" TASKTYPE="Command" CYCLIC="0" NODEID="MX-SENTRY-00" INTERVAL="00001M" MEMLIB="datio" CMDLINE="/opt/datio/sentry-mx/dataproc_sentry.py %%SENTRY_JOB %%SENTRY_OPT '%%SENTRY_PARM'" CONFIRM="0" DAYSCAL="MXHABILE" RETRO="0" MAXWAIT="3" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" DAYS="D5" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" CREATION_USER="XM060ER" CREATION_DATE="20220429" CREATION_TIME="113449" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXKWTHMEN-T02">
+            <VARIABLE NAME="%%CORREOS" VALUE="patricia.samano.contractor@bbva.com" />
+            <VARIABLE NAME="%%TABLA" VALUE="t_kwth_price_factor" />
+            <VARIABLE NAME="%%FASE" VALUE="BORRADO" />
+            <VARIABLE NAME="%%SUFIJO" VALUE="pricefactorr" />
+            <VARIABLE NAME="%%PARM1" VALUE="%%$CALCDATE %%$OYEAR.%%OMONTH.01 -1" />
+            <VARIABLE NAME="%%a" VALUE="%%SUBSTR %%PARM1 1 4" />
+            <VARIABLE NAME="%%m" VALUE="%%SUBSTR %%PARM1 5 2" />
+            <VARIABLE NAME="%%d" VALUE="%%SUBSTR %%PARM1 7 2" />
+            <VARIABLE NAME="%%PARM2" VALUE="%%a-%%m-%%d" />
+			<VARIABLE NAME="%%PARM3" VALUE="%%m.%%a" />
+            <VARIABLE NAME="%%SENTRY_JOB" VALUE="-ns mx.kwth.app-id-21839.pro -jn  -o %%ORDERID" />
+            <VARIABLE NAME="%%SENTRY_OPT" VALUE="-b" />
+            <VARIABLE NAME="%%SENTRY_PARM" VALUE="{&quot;env&quot;: {&quot;HADOOP_MODE&quot;: &quot;REMOVE&quot;, &quot;HADOOP_PATH&quot;: &quot;/in/staging/ratransmit/sas/bcbs/DQLEGACY_%%SUFIJO._%%PARM1..c*&quot;, &quot;CONTROLM_JOB_ID&quot;:&quot;%%JOBNAME&quot;,&quot;CONTROLM_JOB_FLOW&quot;:&quot;%%SCHEDTAB&quot;}}" />
+            <INCOND NAME="MKWTHVP4009-TO-MKWTHDP4003" ODATE="ODAT" AND_OR="A" />
+            <QUANTITATIVE NAME="DATIO_SENTRY_MX" QUANT="1" ONFAIL="R" ONOK="R" />
+            <OUTCOND NAME="MKWTHVP4009-TO-MKWTHDP4003" ODATE="ODAT" SIGN="-" />
+            <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="%%CORREOS" SUBJECT="%%JOBNAME: OK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="U" DEST="%%CORREOS" SUBJECT="%%JOBNAME: NOTOK, %%SUFIJO, %%TABLA, %%FASE, %%ODATE, %%PARM2" MESSAGE="0107Concluyo la Ejecucion de %%FASE del job %%JOBNAME del proceso %%TABLA con Odate %%$ODATE, favor de validar." ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="&quot;id&quot;:&quot;SUCCESS&quot;,&quot;name&quot;:&quot;SUCCESS&quot;">
+                <DOACTION ACTION="OK" />
+            </ON>
+        </JOB>
+    </FOLDER>
+</DEFTABLE>		

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Exported at 04-07-2022 09:28:53-->
+<DEFTABLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Folder.xsd">
+	<FOLDER DATACENTER="CTM_CTRLMCCR" VERSION="900" PLATFORM="UNIX" FOLDER_NAME="CR-MXRIGTMP-T02" FOLDER_ORDER_METHOD="PRUEBAS" REAL_FOLDER_ID="0" TYPE="1">
+        <JOB JOBISN="0" APPLICATION="RIG-MX-DATIO" SUB_APPLICATION="DQRISK-DATIO-P" JOBNAME="MRIGCPTD00" DESCRIPTION="Proceso iniciador" CREATED_BY="MI04063" RUN_AS="DUMMYUSR" CRITICAL="0" TASKTYPE="Dummy" CYCLIC="0" INTERVAL="00001M" CONFIRM="0" RETRO="0" MAXWAIT="0" MAXRERUN="0" AUTOARCH="1" MAXDAYS="0" MAXRUNS="0" TIMEFROM="1800" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="1" IND_CYCLIC="S" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" CM_VER="N/A" MULTY_AGENT="N" USE_INSTREAM_JCL="N" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="CR-MXRIGTMP-T02">
+            <ON STMT="*" CODE="OK">
+                <DOFORCEJOB TABLE_NAME="CR-MXRIGTMP-T02" NAME="MKQPDTPT001" ODATE="ODAT" REMOTE="N" /><!--Iniciador transmisión 1-->				
+                <DOFORCEJOB TABLE_NAME="CR-MXRIGTMP-T02" NAME="MKQPDTPT002" ODATE="ODAT" REMOTE="N" /><!--Iniciador transmisión 2-->				
+            </ON>
+            <ON STMT="*" CODE="COMPSTAT EQ ANY">
+                <DOMAIL URGENCY="R" DEST="martin.lomeli.garcia@bbva.com" SUBJECT="Proceso iniciador temporal 18 julio" ATTACH_SYSOUT="D" />
+            </ON>
+        </JOB>
+		
+	    <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="DQRISK-DATIO-P" MEMNAME="TX_MRIGCDSSEM.sh" JOBNAME="MKQPDTPT001" DESCRIPTION="Envia Archivos del servidor SAS a Staging Datio" CREATED_BY="JCJY" RUN_AS="ndm36" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="150.100.195.64" DOCLIB="/etl_work/idi_fs07/CF/cf_0003_frauaut/input/" DOCMEM="Matriz_Escala.txt" INTERVAL="00001M" MEMLIB="/NDM36/cdunix/progs" CONFIRM="0" RETRO="0" MAXWAIT="0" MAXRERUN="0" AUTOARCH="0" MAXDAYS="0" MAXRUNS="0" TIMEFROM="1801" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="0" IND_CYCLIC="S" CREATION_USER="XM58484" CREATION_DATE="20190226" CREATION_TIME="114900" CHANGE_USERID="XM020HY" CHANGE_DATE="20200303" CHANGE_TIME="125337" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRTMP-T02">
+            <VARIABLE NAME="%%PARM1" VALUE="20220722" /> 
+	        <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com" SUBJECT="Se ejecuto OK el proceso %%JOBNAME para los archivos DQ hacia Datio" MESSAGE="0042Ell proceso %%JOBNAME con script %%MEMNAME" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com;juangibran.romero.miranda@bbva.com" SUBJECT="Se ejecuto NOT OK el proceso %%JOBNAME para los archivos DQ hacia Datio" MESSAGE="0042Ell proceso %%JOBNAME con script %%MEMNAME" ATTACH_SYSOUT="Y" />
+            </ON>			
+        </JOB>
+	    <JOB JOBISN="0" APPLICATION="KQPD-MX-DATIO" SUB_APPLICATION="DQRISK-DATIO-P" MEMNAME="TX_MDQRCDDQ30.sh" JOBNAME="MKQPDTPT002" DESCRIPTION="Envia Archivos del servidor SAS a Staging Datio" CREATED_BY="JCJY" RUN_AS="ndm36" CRITICAL="0" TASKTYPE="Job" CYCLIC="0" NODEID="150.100.195.64" DOCLIB="/etl_work/idi_fs07/CF/cf_0003_frauaut/input/" DOCMEM="Matriz_Escala.txt" INTERVAL="00001M" MEMLIB="/NDM36/cdunix/progs" CONFIRM="0" RETRO="0" MAXWAIT="0" MAXRERUN="0" AUTOARCH="0" MAXDAYS="0" MAXRUNS="0" TIMEFROM="1802" JAN="1" FEB="1" MAR="1" APR="1" MAY="1" JUN="1" JUL="1" AUG="1" SEP="1" OCT="1" NOV="1" DEC="1" DAYS_AND_OR="O" SHIFT="Ignore Job" SHIFTNUM="+00" SYSDB="0" IND_CYCLIC="S" CREATION_USER="XM58484" CREATION_DATE="20190226" CREATION_TIME="114900" CHANGE_USERID="XM020HY" CHANGE_DATE="20200303" CHANGE_TIME="125337" RULE_BASED_CALENDAR_RELATIONSHIP="O" APPL_TYPE="OS" MULTY_AGENT="N" USE_INSTREAM_JCL="N" VERSION_SERIAL="1" CYCLIC_TOLERANCE="0" CYCLIC_TYPE="C" PARENT_FOLDER="BC-MXMDQRTMP-T02">
+            <VARIABLE NAME="%%PARM1" VALUE="20220430" /> 
+	        <ON STMT="*" CODE="OK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com" SUBJECT="Se ejecuto OK el proceso %%JOBNAME para los archivos DQ hacia Datio" MESSAGE="0042Ell proceso %%JOBNAME con script %%MEMNAME" ATTACH_SYSOUT="Y" />
+            </ON>
+            <ON STMT="*" CODE="NOTOK">
+                <DOMAIL URGENCY="R" DEST="julio.jimenez.1.contractor@bbva.com" SUBJECT="Se ejecuto NOT OK el proceso %%JOBNAME para los archivos DQ hacia Datio" MESSAGE="0042Ell proceso %%JOBNAME con script %%MEMNAME" ATTACH_SYSOUT="Y" />
+            </ON>			
+        </JOB>		
+ 	
+    </FOLDER>
+</DEFTABLE>
