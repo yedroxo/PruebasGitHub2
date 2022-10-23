@@ -1,0 +1,81 @@
+git add nombre_archivo
+git config --global user.name "yedroxo"
+git config --global user.email jcjyedra@gmail.com
+
+para mostrar los datos introducidos natriormente 
+git config user.name
+git config user.email
+git config --list
+
+Inicializa un directorio
+git init
+
+Agrega archivos al staging area
+git add nombre_archivo
+
+Nos indica el status del proycto
+git status 
+
+onfirma los cambios al repository 
+git commit -m "mensaje"
+
+Muestra la historia de las difrentes versiones del proyecto
+git log
+
+git remote add origin https://github.com/yedroxo/pruebasGitHub.git
+
+
+git pull
+
+git help
+git help --a
+
+los tres estados de Git 
+1.- Working directory  (modificación)
+2.- Staging area  (staged)
+3.- Local repository (aceptado)
+
+git clean -f  (remueve archivos que no se han regitrado (add) )
+git clean -n  (muestra lo que se eliminará)
+
+git revert (num commit)
+
+git mv nombrearchivoactual  nombrearchivonuevo
+
+git branch (muestra las diferentes ramas)
+git branch rama (crea una nueva rama) o git branch -b rama (crea la rama y nos cambia a esa nueva rama)
+git branch -d rama (elimina ramas)
+git branch -m nombre_rama_actual  nombre_rama_nuevo
+git checkout núm_de_commit para ir a esa versión  anterior de commit
+git checkout  rama   (va al último commit de rama)
+git checkout -b nueva_rama (crea rama y cambia se cambia a esa nueva rama)
+git pull repo_remoto rama_remota
+git merge rama_a_mezclar_a_master
+git stash (para guardar momentaneamente un trabajo aún no terminado en la rama actual)
+git stash pop (para recuperar el trabajo que se guardó momentaneamente sin concluir)
+git stash list (lista los elementos guardados en el stash)
+git stash clear (limpia la pila completa)
+git tag nombre_de_la_etiqueta (tag ligero. Se etiquta el último commit de la rama actual)
+git tag -a nombre_de_la_etiqueta (tag anotado. Se etiquta el último commit de la rama actual)
+git tag -a nombre_de_la_etiqueta -m "mensaje" id_has_del_commit_a_etiquetar
+git tag (para listar los tags)
+git checkout etiqueta (para cambiar entre etiquetas)
+git show nombre_tag (muestra la descripción de un tag)
+git tag -d nombre_tag
+git remote (lista los origenets remotos)
+git remote -v (lista los origenes remotos y sus rutas)
+git remote remove repositorio
+git push repositorio_remoto rama_local  (ejemplo   git push origin master)
+git clone https://github.com/yedroxo/pruebasGitHub.git  (https)
+git clone git@github.com:yedroxo/pruebasGitHub2.git  (SSH)
+
+ssh-keygen -t rsa -b 4096 -C "jcjyedra@yahoo.com"  (crea llave publica HASH)
+     tomar la llave que se generó en el archivo .pub  (ls -ltr ~/.ssh)
+	 
+git fetch repositorio_remoto rama_local  (ejemplo   git fetch origin master) Para observar lo recuperado por fetch
+git checkout origin/master  (para cambiar a lo recuperado por fetch)
+para mezclar (merge) ir a la rama donde se quiere hacer la mezcla por ejemplo git checkout master y ya esatndo ahí
+git merge origin/master (repositorio_remoto/rama_local)
+git push --force origin master  (Se otiliza para forzar la actulización remota, PERO ELIMINA actuliaciones en el repo remoto)
+
+
