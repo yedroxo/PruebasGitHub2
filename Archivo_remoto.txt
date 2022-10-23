@@ -2,4 +2,5 @@ Este es una archivo creado desde la página de github
 Este archivo fue modificado de manera remota
 Saludos  22 de octubre 2022
 Esta parte fue modificada en archivo local
-
+Las lineas anteriores se realizaton con fetch
+Las siguientes se recuperaran con pull
